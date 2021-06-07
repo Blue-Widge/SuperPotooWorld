@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.18"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Rendering Engine (RE): Référence de la structure RE_Texture_s</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Rendering Engine (RE)
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.18 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pro-attribs">Attributs protégés</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence de la structure RE_Texture_s<div class="ingroups"><a class="el" href="group___r_e___texture.html">Fonctions relatives à une texture</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Structure représentant une image optimisée pour un moteur de rendu. La texture peut contenir plusieurs sous-images organisées sous forme d'un tableau 2D, il s'agit alors d'un atlas de texture. Les différentes parties d'un atlas sont indicées à partir de 0 et dans l'ordre naturel de lecture.  
+ <a href="struct_r_e___texture__s.html#details">Plus de détails...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_r_e___texture_8h_source.html">RE_Texture.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Attributs protégés</h2></td></tr>
+<tr class="memitem:a912a717a6319414586bd2623ae586157"><td class="memItemLeft" align="right" valign="top"><a id="a912a717a6319414586bd2623ae586157"></a>
+<a class="el" href="group___r_e___renderer.html#gaebac3571aa15ff9abf32cf6128a29237">RE_Renderer</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_e___texture__s.html#a912a717a6319414586bd2623ae586157">m_renderer</a></td></tr>
+<tr class="memdesc:a912a717a6319414586bd2623ae586157"><td class="mdescLeft">&#160;</td><td class="mdescRight">Le moteur de rendu associé à la texture. <br /></td></tr>
+<tr class="separator:a912a717a6319414586bd2623ae586157"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa1970dc71e6376a83c6bd882e8f4576"><td class="memItemLeft" align="right" valign="top"><a id="aaa1970dc71e6376a83c6bd882e8f4576"></a>
+SDL_Texture *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_e___texture__s.html#aaa1970dc71e6376a83c6bd882e8f4576">m_textureSDL</a></td></tr>
+<tr class="memdesc:aaa1970dc71e6376a83c6bd882e8f4576"><td class="mdescLeft">&#160;</td><td class="mdescRight">La texture SDL. <br /></td></tr>
+<tr class="separator:aaa1970dc71e6376a83c6bd882e8f4576"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a226b54ebc937470a33ab6d4e01382371"><td class="memItemLeft" align="right" valign="top"><a id="a226b54ebc937470a33ab6d4e01382371"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_e___texture__s.html#a226b54ebc937470a33ab6d4e01382371">m_width</a></td></tr>
+<tr class="memdesc:a226b54ebc937470a33ab6d4e01382371"><td class="mdescLeft">&#160;</td><td class="mdescRight">La largeur en pixels de la texture. <br /></td></tr>
+<tr class="separator:a226b54ebc937470a33ab6d4e01382371"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6a72ba5cf510cdb179f3b1ae815bc65"><td class="memItemLeft" align="right" valign="top"><a id="ac6a72ba5cf510cdb179f3b1ae815bc65"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_e___texture__s.html#ac6a72ba5cf510cdb179f3b1ae815bc65">m_height</a></td></tr>
+<tr class="memdesc:ac6a72ba5cf510cdb179f3b1ae815bc65"><td class="mdescLeft">&#160;</td><td class="mdescRight">La hauteur en pixels de la texture. <br /></td></tr>
+<tr class="separator:ac6a72ba5cf510cdb179f3b1ae815bc65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d113992152d0c4611aea7e694a46a35"><td class="memItemLeft" align="right" valign="top"><a id="a9d113992152d0c4611aea7e694a46a35"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_e___texture__s.html#a9d113992152d0c4611aea7e694a46a35">m_nbRows</a></td></tr>
+<tr class="memdesc:a9d113992152d0c4611aea7e694a46a35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nombre de lignes de l'atlas de texture. <br /></td></tr>
+<tr class="separator:a9d113992152d0c4611aea7e694a46a35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83da66aa4f03d8528e9fd47195f7f6db"><td class="memItemLeft" align="right" valign="top"><a id="a83da66aa4f03d8528e9fd47195f7f6db"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_e___texture__s.html#a83da66aa4f03d8528e9fd47195f7f6db">m_nbCols</a></td></tr>
+<tr class="memdesc:a83da66aa4f03d8528e9fd47195f7f6db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nombre de colonnes de l'atlas de texture. <br /></td></tr>
+<tr class="separator:a83da66aa4f03d8528e9fd47195f7f6db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1684f08ea84a87a18f9c394e3e688552"><td class="memItemLeft" align="right" valign="top"><a id="a1684f08ea84a87a18f9c394e3e688552"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_e___texture__s.html#a1684f08ea84a87a18f9c394e3e688552">m_nbParts</a></td></tr>
+<tr class="memdesc:a1684f08ea84a87a18f9c394e3e688552"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nombre de sous-images dans l'atlas de texture. Correspond à m_nbRows * m_nbCols. <br /></td></tr>
+<tr class="separator:a1684f08ea84a87a18f9c394e3e688552"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5361fa91e581aa0ef25d92275322768e"><td class="memItemLeft" align="right" valign="top"><a id="a5361fa91e581aa0ef25d92275322768e"></a>
+SDL_Rect *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_e___texture__s.html#a5361fa91e581aa0ef25d92275322768e">m_parts</a></td></tr>
+<tr class="memdesc:a5361fa91e581aa0ef25d92275322768e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tableau contenant les coordonnées de texture des différentes partie de l'atlas de texture. <br /></td></tr>
+<tr class="separator:a5361fa91e581aa0ef25d92275322768e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>Structure représentant une image optimisée pour un moteur de rendu. La texture peut contenir plusieurs sous-images organisées sous forme d'un tableau 2D, il s'agit alors d'un atlas de texture. Les différentes parties d'un atlas sont indicées à partir de 0 et dans l'ordre naturel de lecture. </p>
+</div></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.18
+</small></address>
+</body>
+</html>

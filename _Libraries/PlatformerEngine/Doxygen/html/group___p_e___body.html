@@ -1,0 +1,1143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.18"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Plateformer Engine (PE): Fonctions relatives à un corps</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Plateformer Engine (PE)
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.18 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Structures de données</a> &#124;
+<a href="#typedef-members">Définitions de type</a> &#124;
+<a href="#enum-members">Énumérations</a> &#124;
+<a href="#func-members">Fonctions</a>  </div>
+  <div class="headertitle">
+<div class="title">Fonctions relatives à un corps</div>  </div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Structures de données</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_p_e___body_def__s.html">PE_BodyDef_s</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure regroupant les informations nécessaires à la création d'un corps. Une même définition peut servir à créer plusieurs corps.  <a href="struct_p_e___body_def__s.html#details">Plus de détails...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_p_e___body__s.html">PE_Body_s</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure représentant un corps indéformable dans le moteur physique.  <a href="struct_p_e___body__s.html#details">Plus de détails...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Définitions de type</h2></td></tr>
+<tr class="memitem:ga046c260b8e6698ea93e5830886abc26a"><td class="memItemLeft" align="right" valign="top"><a id="ga046c260b8e6698ea93e5830886abc26a"></a>
+typedef enum <a class="el" href="group___p_e___body.html#ga7a2cff5492ebfec821ba47da0a47f944">PE_BodyType_e</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_e___body.html#ga046c260b8e6698ea93e5830886abc26a">PE_BodyType</a></td></tr>
+<tr class="memdesc:ga046c260b8e6698ea93e5830886abc26a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumération donnant les types possibles pour un corps. <br /></td></tr>
+<tr class="separator:ga046c260b8e6698ea93e5830886abc26a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga63c75b18ba6e39e16bed7242673ac427"><td class="memItemLeft" align="right" valign="top"><a id="ga63c75b18ba6e39e16bed7242673ac427"></a>
+typedef struct <a class="el" href="struct_p_e___body_def__s.html">PE_BodyDef_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_e___body.html#ga63c75b18ba6e39e16bed7242673ac427">PE_BodyDef</a></td></tr>
+<tr class="memdesc:ga63c75b18ba6e39e16bed7242673ac427"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure regroupant les informations nécessaires à la création d'un corps. Une même définition peut servir à créer plusieurs corps. <br /></td></tr>
+<tr class="separator:ga63c75b18ba6e39e16bed7242673ac427"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa3c8a3304f9406491c0c380d2772d97a"><td class="memItemLeft" align="right" valign="top"><a id="gaa3c8a3304f9406491c0c380d2772d97a"></a>
+typedef struct <a class="el" href="struct_p_e___body__s.html">PE_Body_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_e___body.html#gaa3c8a3304f9406491c0c380d2772d97a">PE_Body</a></td></tr>
+<tr class="memdesc:gaa3c8a3304f9406491c0c380d2772d97a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure représentant un corps indéformable dans le moteur physique. <br /></td></tr>
+<tr class="separator:gaa3c8a3304f9406491c0c380d2772d97a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Énumérations</h2></td></tr>
+<tr class="memitem:ga7a2cff5492ebfec821ba47da0a47f944"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_e___body.html#ga7a2cff5492ebfec821ba47da0a47f944">PE_BodyType_e</a> { <a class="el" href="group___p_e___body.html#gga7a2cff5492ebfec821ba47da0a47f944a1f1a2ef8eab2524b99414ded29c3556e">PE_STATIC_BODY</a> = 0, 
+<a class="el" href="group___p_e___body.html#gga7a2cff5492ebfec821ba47da0a47f944a71db650a2d1c88914956c8363d04c7aa">PE_KINEMATIC_BODY</a>, 
+<a class="el" href="group___p_e___body.html#gga7a2cff5492ebfec821ba47da0a47f944a400fd5764736e77a31f657e80c1a5b74">PE_DYNAMIC_BODY</a>
+ }</td></tr>
+<tr class="memdesc:ga7a2cff5492ebfec821ba47da0a47f944"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumération donnant les types possibles pour un corps.  <a href="group___p_e___body.html#ga7a2cff5492ebfec821ba47da0a47f944">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga7a2cff5492ebfec821ba47da0a47f944"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:gae19d9986188f1c0e6436a335a820ad92"><td class="memItemLeft" align="right" valign="top">PE_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_e___body.html#gae19d9986188f1c0e6436a335a820ad92">PE_BodyDef_setDefault</a> (<a class="el" href="struct_p_e___body_def__s.html">PE_BodyDef</a> *def)</td></tr>
+<tr class="memdesc:gae19d9986188f1c0e6436a335a820ad92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise les valeurs par défaut de la définition de corps.  <a href="group___p_e___body.html#gae19d9986188f1c0e6436a335a820ad92">Plus de détails...</a><br /></td></tr>
+<tr class="separator:gae19d9986188f1c0e6436a335a820ad92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab20c3f1822797b9091198a184be89e54"><td class="memItemLeft" align="right" valign="top">PE_API <a class="el" href="group___p_e___collider.html#ga695d80a931ceacd9b4daa2250537ab10">PE_Collider</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_e___body.html#gab20c3f1822797b9091198a184be89e54">PE_Body_createCollider</a> (<a class="el" href="struct_p_e___body__s.html">PE_Body</a> *body, <a class="el" href="group___p_e___collider.html#ga48b853610c2c4ec83747d6bf59dd154d">PE_ColliderDef</a> *def)</td></tr>
+<tr class="memdesc:gab20c3f1822797b9091198a184be89e54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crée un nouveau collider et l'attache à un corps. La forme du collider est décrite dans le référentiel local au corps.  <a href="group___p_e___body.html#gab20c3f1822797b9091198a184be89e54">Plus de détails...</a><br /></td></tr>
+<tr class="separator:gab20c3f1822797b9091198a184be89e54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga415bc9adb45d4fd447eb44f51b766ac7"><td class="memItemLeft" align="right" valign="top">PE_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_e___body.html#ga415bc9adb45d4fd447eb44f51b766ac7">PE_Body_removeCollider</a> (<a class="el" href="struct_p_e___body__s.html">PE_Body</a> *body, <a class="el" href="group___p_e___collider.html#ga695d80a931ceacd9b4daa2250537ab10">PE_Collider</a> *collider)</td></tr>
+<tr class="memdesc:ga415bc9adb45d4fd447eb44f51b766ac7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Supprime un collider attaché à un corps. Le pointeur world ne doit pas être déréférencé après cet appel. Il est conseillé de l'affecter ensuite à NULL.  <a href="group___p_e___body.html#ga415bc9adb45d4fd447eb44f51b766ac7">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga415bc9adb45d4fd447eb44f51b766ac7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga099250d6c227e91317dbc1e3613683bf"><td class="memItemLeft" align="right" valign="top">PE_API PE_INLINE int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_e___body.html#ga099250d6c227e91317dbc1e3613683bf">PE_Body_getNbColliders</a> (<a class="el" href="struct_p_e___body__s.html">PE_Body</a> *body)</td></tr>
+<tr class="memdesc:ga099250d6c227e91317dbc1e3613683bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie le nombre de colliders attachés à un corps.  <a href="group___p_e___body.html#ga099250d6c227e91317dbc1e3613683bf">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga099250d6c227e91317dbc1e3613683bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga96155eb2241f67d5a90a575fe5c87570"><td class="memItemLeft" align="right" valign="top">PE_API PE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_e___body.html#ga96155eb2241f67d5a90a575fe5c87570">PE_Body_wakeUp</a> (<a class="el" href="struct_p_e___body__s.html">PE_Body</a> *body)</td></tr>
+<tr class="memdesc:ga96155eb2241f67d5a90a575fe5c87570"><td class="mdescLeft">&#160;</td><td class="mdescRight">Réveille un corps.  <a href="group___p_e___body.html#ga96155eb2241f67d5a90a575fe5c87570">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga96155eb2241f67d5a90a575fe5c87570"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8168bc2f6b0b3f132eebd10d7ff29383"><td class="memItemLeft" align="right" valign="top">PE_API PE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_e___body.html#ga8168bc2f6b0b3f132eebd10d7ff29383">PE_Body_sleep</a> (<a class="el" href="struct_p_e___body__s.html">PE_Body</a> *body)</td></tr>
+<tr class="memdesc:ga8168bc2f6b0b3f132eebd10d7ff29383"><td class="mdescLeft">&#160;</td><td class="mdescRight">Endort un corps.  <a href="group___p_e___body.html#ga8168bc2f6b0b3f132eebd10d7ff29383">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga8168bc2f6b0b3f132eebd10d7ff29383"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9001f4ca47816aeb7bc9c4f46b7e962d"><td class="memItemLeft" align="right" valign="top">PE_API PE_INLINE int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_e___body.html#ga9001f4ca47816aeb7bc9c4f46b7e962d">PE_Body_getType</a> (<a class="el" href="struct_p_e___body__s.html">PE_Body</a> *body)</td></tr>
+<tr class="memdesc:ga9001f4ca47816aeb7bc9c4f46b7e962d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie le type d'un corps.  <a href="group___p_e___body.html#ga9001f4ca47816aeb7bc9c4f46b7e962d">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga9001f4ca47816aeb7bc9c4f46b7e962d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga68af986712f5c9a8a068fb36cd7a9992"><td class="memItemLeft" align="right" valign="top">PE_API int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_e___body.html#ga68af986712f5c9a8a068fb36cd7a9992">PE_Body_setPosition</a> (<a class="el" href="struct_p_e___body__s.html">PE_Body</a> *body, <a class="el" href="group___p_e___math.html#gaceb0961b58165e028b9f21091df6af6f">PE_Vec2</a> *position)</td></tr>
+<tr class="memdesc:ga68af986712f5c9a8a068fb36cd7a9992"><td class="mdescLeft">&#160;</td><td class="mdescRight">Définit la position de l'origine du corps (dans le référentiel monde). Les collisions seront mises à jour lors du prochain appel à <a class="el" href="group___p_e___world.html#ga85616d078ee1a755c33920232272de0c" title="Met à jour les corps présents dans le monde d&#39;un pas de temps. Cette fonction fait met à jour les pos...">PE_World_fixedUpdate()</a>. Cette fonction est verrouillée dans les fonctions de rappels (callback).  <a href="group___p_e___body.html#ga68af986712f5c9a8a068fb36cd7a9992">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga68af986712f5c9a8a068fb36cd7a9992"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2b588547d0033781e5f8195f4d31c417"><td class="memItemLeft" align="right" valign="top">PE_API PE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_e___body.html#ga2b588547d0033781e5f8195f4d31c417">PE_Body_getPosition</a> (<a class="el" href="struct_p_e___body__s.html">PE_Body</a> *body, <a class="el" href="group___p_e___math.html#gaceb0961b58165e028b9f21091df6af6f">PE_Vec2</a> *position)</td></tr>
+<tr class="memdesc:ga2b588547d0033781e5f8195f4d31c417"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie la position de l'origine du corps (dans le référentiel monde). Cette position correspond à la position du corps lors du dernier appel à <a class="el" href="group___p_e___world.html#ga85616d078ee1a755c33920232272de0c" title="Met à jour les corps présents dans le monde d&#39;un pas de temps. Cette fonction fait met à jour les pos...">PE_World_fixedUpdate()</a>.  <a href="group___p_e___body.html#ga2b588547d0033781e5f8195f4d31c417">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga2b588547d0033781e5f8195f4d31c417"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5a156b2e8b0e7a9777ea5ca759acc237"><td class="memItemLeft" align="right" valign="top">PE_API PE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_e___body.html#ga5a156b2e8b0e7a9777ea5ca759acc237">PE_Body_getInterpolation</a> (<a class="el" href="struct_p_e___body__s.html">PE_Body</a> *body, float alpha, <a class="el" href="group___p_e___math.html#gaceb0961b58165e028b9f21091df6af6f">PE_Vec2</a> *position)</td></tr>
+<tr class="memdesc:ga5a156b2e8b0e7a9777ea5ca759acc237"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie la position interpolée de l'origine du corps (dans le référentiel monde). Cette position correspond l'interpolation linéaire entre la position du corps lors du dernier appel à <a class="el" href="group___p_e___world.html#ga85616d078ee1a755c33920232272de0c" title="Met à jour les corps présents dans le monde d&#39;un pas de temps. Cette fonction fait met à jour les pos...">PE_World_fixedUpdate()</a> et celle du prochain appel.  <a href="group___p_e___body.html#ga5a156b2e8b0e7a9777ea5ca759acc237">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga5a156b2e8b0e7a9777ea5ca759acc237"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga93dcf526090d806b4b9a5cf2b2637f22"><td class="memItemLeft" align="right" valign="top">PE_API int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_e___body.html#ga93dcf526090d806b4b9a5cf2b2637f22">PE_Body_setVelocity</a> (<a class="el" href="struct_p_e___body__s.html">PE_Body</a> *body, <a class="el" href="group___p_e___math.html#gaceb0961b58165e028b9f21091df6af6f">PE_Vec2</a> *velocity)</td></tr>
+<tr class="memdesc:ga93dcf526090d806b4b9a5cf2b2637f22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Définit la vitesse de l'origine du corps (dans le référentiel monde). Les collisions seront mises à jour lors du prochain appel à <a class="el" href="group___p_e___world.html#ga85616d078ee1a755c33920232272de0c" title="Met à jour les corps présents dans le monde d&#39;un pas de temps. Cette fonction fait met à jour les pos...">PE_World_fixedUpdate()</a>. Cette fonction est verrouillée dans les fonctions de rappel (callback).  <a href="group___p_e___body.html#ga93dcf526090d806b4b9a5cf2b2637f22">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga93dcf526090d806b4b9a5cf2b2637f22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad5497ff4675463c4aa284ad4226cce22"><td class="memItemLeft" align="right" valign="top">PE_API PE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_e___body.html#gad5497ff4675463c4aa284ad4226cce22">PE_Body_getVelocity</a> (<a class="el" href="struct_p_e___body__s.html">PE_Body</a> *body, <a class="el" href="group___p_e___math.html#gaceb0961b58165e028b9f21091df6af6f">PE_Vec2</a> *velocity)</td></tr>
+<tr class="memdesc:gad5497ff4675463c4aa284ad4226cce22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie la vitesse de l'origine du corps (dans le référentiel monde). Cette vitesse correspond à la vitesse du corps lors du dernier appel à <a class="el" href="group___p_e___world.html#ga85616d078ee1a755c33920232272de0c" title="Met à jour les corps présents dans le monde d&#39;un pas de temps. Cette fonction fait met à jour les pos...">PE_World_fixedUpdate()</a>.  <a href="group___p_e___body.html#gad5497ff4675463c4aa284ad4226cce22">Plus de détails...</a><br /></td></tr>
+<tr class="separator:gad5497ff4675463c4aa284ad4226cce22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gade6882ef20ac63f745129a2c6d829591"><td class="memItemLeft" align="right" valign="top">PE_API PE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_e___body.html#gade6882ef20ac63f745129a2c6d829591">PE_Body_setCollisionResponse</a> (<a class="el" href="struct_p_e___body__s.html">PE_Body</a> *body, <a class="el" href="group___p_e___math.html#gaceb0961b58165e028b9f21091df6af6f">PE_Vec2</a> *velocity)</td></tr>
+<tr class="memdesc:gade6882ef20ac63f745129a2c6d829591"><td class="mdescLeft">&#160;</td><td class="mdescRight">Définit la nouvelle vitesse de l'origine du corps (dans le référentiel monde) en réponse à une collision. Contrairement à <a class="el" href="group___p_e___body.html#ga93dcf526090d806b4b9a5cf2b2637f22" title="Définit la vitesse de l&#39;origine du corps (dans le référentiel monde). Les collisions seront mises à j...">PE_Body_setVelocity()</a>, cette fonction n'est pas verrouillée dans les fonctions de rappel. Elle ne réveille pas un corps endormi.  <a href="group___p_e___body.html#gade6882ef20ac63f745129a2c6d829591">Plus de détails...</a><br /></td></tr>
+<tr class="separator:gade6882ef20ac63f745129a2c6d829591"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga01bc02ec909736db5b2331ae0e655e44"><td class="memItemLeft" align="right" valign="top">PE_API PE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_e___body.html#ga01bc02ec909736db5b2331ae0e655e44">PE_Body_applyForce</a> (<a class="el" href="struct_p_e___body__s.html">PE_Body</a> *body, <a class="el" href="group___p_e___math.html#gaceb0961b58165e028b9f21091df6af6f">PE_Vec2</a> *force)</td></tr>
+<tr class="memdesc:ga01bc02ec909736db5b2331ae0e655e44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applique une force à un corps. Comme tous les corps ont une masse unitaire, la somme des forces appliquées à un corps correspond à son accélération.  <a href="group___p_e___body.html#ga01bc02ec909736db5b2331ae0e655e44">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga01bc02ec909736db5b2331ae0e655e44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae9a4325f53cfde0b44aff6b04991a444"><td class="memItemLeft" align="right" valign="top">PE_API PE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_e___body.html#gae9a4325f53cfde0b44aff6b04991a444">PE_Body_applyImpulse</a> (<a class="el" href="struct_p_e___body__s.html">PE_Body</a> *body, <a class="el" href="group___p_e___math.html#gaceb0961b58165e028b9f21091df6af6f">PE_Vec2</a> *impulse)</td></tr>
+<tr class="memdesc:gae9a4325f53cfde0b44aff6b04991a444"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applique une impulsion à un corps. L'impulsion s'ajoute directement à la vitesse du corps.  <a href="group___p_e___body.html#gae9a4325f53cfde0b44aff6b04991a444">Plus de détails...</a><br /></td></tr>
+<tr class="separator:gae9a4325f53cfde0b44aff6b04991a444"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga62f00702a51dcbe303e242989d3ccc66"><td class="memItemLeft" align="right" valign="top">PE_API PE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_e___body.html#ga62f00702a51dcbe303e242989d3ccc66">PE_Body_clearForces</a> (<a class="el" href="struct_p_e___body__s.html">PE_Body</a> *body)</td></tr>
+<tr class="memdesc:ga62f00702a51dcbe303e242989d3ccc66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Annule les forces appliquées à un corps.  <a href="group___p_e___body.html#ga62f00702a51dcbe303e242989d3ccc66">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga62f00702a51dcbe303e242989d3ccc66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga78e2909f14be3a3cdcc7a0d542368cbd"><td class="memItemLeft" align="right" valign="top">PE_API PE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_e___body.html#ga78e2909f14be3a3cdcc7a0d542368cbd">PE_Body_setXDamping</a> (<a class="el" href="struct_p_e___body__s.html">PE_Body</a> *body, float xDamping)</td></tr>
+<tr class="memdesc:ga78e2909f14be3a3cdcc7a0d542368cbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Définit l'amortissement linéaire d'un corps sur l'axe des abscisses. Ce paramètre permet de réduire la vitesse linéaire horizontale du corps.  <a href="group___p_e___body.html#ga78e2909f14be3a3cdcc7a0d542368cbd">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga78e2909f14be3a3cdcc7a0d542368cbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga243b68d68344443dd29b541bb60ed285"><td class="memItemLeft" align="right" valign="top">PE_API PE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_e___body.html#ga243b68d68344443dd29b541bb60ed285">PE_Body_setYDamping</a> (<a class="el" href="struct_p_e___body__s.html">PE_Body</a> *body, float yDamping)</td></tr>
+<tr class="memdesc:ga243b68d68344443dd29b541bb60ed285"><td class="mdescLeft">&#160;</td><td class="mdescRight">Définit l'amortissement linéaire d'un corps sur l'axe des ordonnées. Ce paramètre permet de réduire la vitesse linéaire verticale du corps.  <a href="group___p_e___body.html#ga243b68d68344443dd29b541bb60ed285">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga243b68d68344443dd29b541bb60ed285"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga022e34b5f5d5db663735e18cc728816c"><td class="memItemLeft" align="right" valign="top">PE_API PE_INLINE float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_e___body.html#ga022e34b5f5d5db663735e18cc728816c">PE_Body_getXDamping</a> (<a class="el" href="struct_p_e___body__s.html">PE_Body</a> *body)</td></tr>
+<tr class="memdesc:ga022e34b5f5d5db663735e18cc728816c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie l'amortissement linéaire d'un corps sur l'axe des abscisses.  <a href="group___p_e___body.html#ga022e34b5f5d5db663735e18cc728816c">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga022e34b5f5d5db663735e18cc728816c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7dde13f8244478b7471ba5bec98da583"><td class="memItemLeft" align="right" valign="top">PE_API PE_INLINE float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_e___body.html#ga7dde13f8244478b7471ba5bec98da583">PE_Body_getYDamping</a> (<a class="el" href="struct_p_e___body__s.html">PE_Body</a> *body)</td></tr>
+<tr class="memdesc:ga7dde13f8244478b7471ba5bec98da583"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie l'amortissement linéaire d'un corps sur l'axe des ordonnées.  <a href="group___p_e___body.html#ga7dde13f8244478b7471ba5bec98da583">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga7dde13f8244478b7471ba5bec98da583"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9e113d704f38a4ad3279fd96b43bbc9f"><td class="memItemLeft" align="right" valign="top">PE_API PE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_e___body.html#ga9e113d704f38a4ad3279fd96b43bbc9f">PE_Body_setGravityScale</a> (<a class="el" href="struct_p_e___body__s.html">PE_Body</a> *body, float gravityScale)</td></tr>
+<tr class="memdesc:ga9e113d704f38a4ad3279fd96b43bbc9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Définit l'échelle de gravité d'un corps. La force de gravité appliquée à un corps est égale au vecteur gravité du monde multiplié par l'échelle de gravité du corps.  <a href="group___p_e___body.html#ga9e113d704f38a4ad3279fd96b43bbc9f">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga9e113d704f38a4ad3279fd96b43bbc9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7b2b57cbd7679d2240485eb940a48b87"><td class="memItemLeft" align="right" valign="top">PE_API PE_INLINE float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_e___body.html#ga7b2b57cbd7679d2240485eb940a48b87">PE_Body_getGravityScale</a> (<a class="el" href="struct_p_e___body__s.html">PE_Body</a> *body)</td></tr>
+<tr class="memdesc:ga7b2b57cbd7679d2240485eb940a48b87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie l'échelle de gravité d'un corps.  <a href="group___p_e___body.html#ga7b2b57cbd7679d2240485eb940a48b87">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga7b2b57cbd7679d2240485eb940a48b87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5937ec81e9386f1f49bffd05521dd132"><td class="memItemLeft" align="right" valign="top">PE_API PE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_e___body.html#ga5937ec81e9386f1f49bffd05521dd132">PE_Body_setUserData</a> (<a class="el" href="struct_p_e___body__s.html">PE_Body</a> *body, void *data)</td></tr>
+<tr class="memdesc:ga5937ec81e9386f1f49bffd05521dd132"><td class="mdescLeft">&#160;</td><td class="mdescRight">Définit les données de l'utilisateur d'un corps. Ce pointeur sert à stocker les données spécifiques de votre application en lien avec un corps. La librairie ne modifie pas ces données.  <a href="group___p_e___body.html#ga5937ec81e9386f1f49bffd05521dd132">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga5937ec81e9386f1f49bffd05521dd132"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaef3fc2cc507150ba948c7b0cca804f7a"><td class="memItemLeft" align="right" valign="top">PE_API PE_INLINE void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_e___body.html#gaef3fc2cc507150ba948c7b0cca804f7a">PE_Body_getUserData</a> (<a class="el" href="struct_p_e___body__s.html">PE_Body</a> *body)</td></tr>
+<tr class="memdesc:gaef3fc2cc507150ba948c7b0cca804f7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie les données de l'utilisateur affectées à un corps.  <a href="group___p_e___body.html#gaef3fc2cc507150ba948c7b0cca804f7a">Plus de détails...</a><br /></td></tr>
+<tr class="separator:gaef3fc2cc507150ba948c7b0cca804f7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafe8c2249b8eeec21b04d68f5da6b3414"><td class="memItemLeft" align="right" valign="top">PE_API PE_INLINE <a class="el" href="struct_p_e___world__s.html">PE_World</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_e___body.html#gafe8c2249b8eeec21b04d68f5da6b3414">PE_Body_getWorld</a> (<a class="el" href="struct_p_e___body__s.html">PE_Body</a> *body)</td></tr>
+<tr class="memdesc:gafe8c2249b8eeec21b04d68f5da6b3414"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie le monde parent d'un corps.  <a href="group___p_e___body.html#gafe8c2249b8eeec21b04d68f5da6b3414">Plus de détails...</a><br /></td></tr>
+<tr class="separator:gafe8c2249b8eeec21b04d68f5da6b3414"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5629d233922335518610b5e3510ef454"><td class="memItemLeft" align="right" valign="top">PE_API PE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_e___body.html#ga5629d233922335518610b5e3510ef454">PE_Body_getColliderIterator</a> (<a class="el" href="struct_p_e___body__s.html">PE_Body</a> *body, PE_ColliderIterator *it)</td></tr>
+<tr class="memdesc:ga5629d233922335518610b5e3510ef454"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie un itérateur sur la collection des colliders attaché à un corps dans le monde.  <a href="group___p_e___body.html#ga5629d233922335518610b5e3510ef454">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga5629d233922335518610b5e3510ef454"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5bb0fe437c867ffaf16f1bb9f7a023f0"><td class="memItemLeft" align="right" valign="top">PE_API PE_INLINE Bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_e___body.html#ga5bb0fe437c867ffaf16f1bb9f7a023f0">PE_ColliderIterator_moveNext</a> (PE_ColliderIterator *it)</td></tr>
+<tr class="memdesc:ga5bb0fe437c867ffaf16f1bb9f7a023f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Avance l'itérateur pour qu'il pointe sur le prochain élément de la collection.  <a href="group___p_e___body.html#ga5bb0fe437c867ffaf16f1bb9f7a023f0">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga5bb0fe437c867ffaf16f1bb9f7a023f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga500cb71e7dc934738dee40aded7999f0"><td class="memItemLeft" align="right" valign="top">PE_API PE_INLINE <a class="el" href="group___p_e___collider.html#ga695d80a931ceacd9b4daa2250537ab10">PE_Collider</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_e___body.html#ga500cb71e7dc934738dee40aded7999f0">PE_ColliderIterator_current</a> (PE_ColliderIterator *it)</td></tr>
+<tr class="memdesc:ga500cb71e7dc934738dee40aded7999f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie un pointeur vers l'élément de la collection à la position courante de l'itérateur.  <a href="group___p_e___body.html#ga500cb71e7dc934738dee40aded7999f0">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga500cb71e7dc934738dee40aded7999f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<h2 class="groupheader">Documentation du type de l'énumération</h2>
+<a id="ga7a2cff5492ebfec821ba47da0a47f944"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7a2cff5492ebfec821ba47da0a47f944">&#9670;&nbsp;</a></span>PE_BodyType_e</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group___p_e___body.html#ga7a2cff5492ebfec821ba47da0a47f944">PE_BodyType_e</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enumération donnant les types possibles pour un corps. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Valeurs énumérées</th></tr><tr><td class="fieldname"><a id="gga7a2cff5492ebfec821ba47da0a47f944a1f1a2ef8eab2524b99414ded29c3556e"></a>PE_STATIC_BODY&#160;</td><td class="fielddoc"><p>Un corps statique est conçu pour ne jamais se déplacer sous simulation, même en cas de collision. Un corps statique ne peut entrer en collision qu'avec un corps dynamique. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga7a2cff5492ebfec821ba47da0a47f944a71db650a2d1c88914956c8363d04c7aa"></a>PE_KINEMATIC_BODY&#160;</td><td class="fielddoc"><p>Un corps cinématique est conçu pour se déplacer sous simulation, mais seulement sous le contrôle explicite de l'utilisateur. Il n'est pas soumis à la gravité et ne peut entrer en collision qu'avec un corps dynamique. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga7a2cff5492ebfec821ba47da0a47f944a400fd5764736e77a31f657e80c1a5b74"></a>PE_DYNAMIC_BODY&#160;</td><td class="fielddoc"><p>Un corps dynamique est conçu pour se déplacer sous simulation. Il est soumis à la gravité et peut potentiellement enter en collision avec n'importe quel autre corps. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des fonctions</h2>
+<a id="ga01bc02ec909736db5b2331ae0e655e44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga01bc02ec909736db5b2331ae0e655e44">&#9670;&nbsp;</a></span>PE_Body_applyForce()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PE_API PE_INLINE void PE_Body_applyForce </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_p_e___body__s.html">PE_Body</a> *&#160;</td>
+          <td class="paramname"><em>body</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group___p_e___math.html#gaceb0961b58165e028b9f21091df6af6f">PE_Vec2</a> *&#160;</td>
+          <td class="paramname"><em>force</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Applique une force à un corps. Comme tous les corps ont une masse unitaire, la somme des forces appliquées à un corps correspond à son accélération. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">body</td><td>le corps. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">force</td><td>la force à appliquer au corps. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gae9a4325f53cfde0b44aff6b04991a444"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae9a4325f53cfde0b44aff6b04991a444">&#9670;&nbsp;</a></span>PE_Body_applyImpulse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PE_API PE_INLINE void PE_Body_applyImpulse </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_p_e___body__s.html">PE_Body</a> *&#160;</td>
+          <td class="paramname"><em>body</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group___p_e___math.html#gaceb0961b58165e028b9f21091df6af6f">PE_Vec2</a> *&#160;</td>
+          <td class="paramname"><em>impulse</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Applique une impulsion à un corps. L'impulsion s'ajoute directement à la vitesse du corps. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">body</td><td>le corps. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">impulse</td><td>l'impulsion à appliquer au corps. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga62f00702a51dcbe303e242989d3ccc66"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga62f00702a51dcbe303e242989d3ccc66">&#9670;&nbsp;</a></span>PE_Body_clearForces()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PE_API PE_INLINE void PE_Body_clearForces </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_p_e___body__s.html">PE_Body</a> *&#160;</td>
+          <td class="paramname"><em>body</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Annule les forces appliquées à un corps. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">body</td><td>le corps. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gab20c3f1822797b9091198a184be89e54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab20c3f1822797b9091198a184be89e54">&#9670;&nbsp;</a></span>PE_Body_createCollider()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PE_API <a class="el" href="group___p_e___collider.html#ga695d80a931ceacd9b4daa2250537ab10">PE_Collider</a>* PE_Body_createCollider </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_p_e___body__s.html">PE_Body</a> *&#160;</td>
+          <td class="paramname"><em>body</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group___p_e___collider.html#ga48b853610c2c4ec83747d6bf59dd154d">PE_ColliderDef</a> *&#160;</td>
+          <td class="paramname"><em>def</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Crée un nouveau collider et l'attache à un corps. La forme du collider est décrite dans le référentiel local au corps. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">body</td><td>le corps auquel attacher le collider. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">def</td><td>la définition du collider. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Un pointeur vers le collider créé ou NULL en cas d'erreur. </dd></dl>
+
+</div>
+</div>
+<a id="ga5629d233922335518610b5e3510ef454"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5629d233922335518610b5e3510ef454">&#9670;&nbsp;</a></span>PE_Body_getColliderIterator()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PE_API PE_INLINE void PE_Body_getColliderIterator </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_p_e___body__s.html">PE_Body</a> *&#160;</td>
+          <td class="paramname"><em>body</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">PE_ColliderIterator *&#160;</td>
+          <td class="paramname"><em>it</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Renvoie un itérateur sur la collection des colliders attaché à un corps dans le monde. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">body</td><td>le corps. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">it</td><td>pointeur vers l'itérateur à initialiser.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>Voir également</dt><dd><a class="el" href="group___p_e___world.html#ga3bc4d331c30fcc9c5f2088afc9465c3f" title="Avance l&#39;itérateur pour qu&#39;il pointe sur le prochain élément de la collection.">PE_BodyIterator_moveNext()</a>, <a class="el" href="group___p_e___world.html#ga45d78b7947c59da931ae0e9d40b0d112" title="Renvoie un pointeur vers l&#39;élément de la collection à la position courante de l&#39;itérateur.">PE_BodyIterator_current()</a> </dd></dl>
+
+</div>
+</div>
+<a id="ga7b2b57cbd7679d2240485eb940a48b87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7b2b57cbd7679d2240485eb940a48b87">&#9670;&nbsp;</a></span>PE_Body_getGravityScale()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PE_API PE_INLINE float PE_Body_getGravityScale </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_p_e___body__s.html">PE_Body</a> *&#160;</td>
+          <td class="paramname"><em>body</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Renvoie l'échelle de gravité d'un corps. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">body</td><td>le corps. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>L'échelle de gravité du corps. </dd></dl>
+
+</div>
+</div>
+<a id="ga5a156b2e8b0e7a9777ea5ca759acc237"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5a156b2e8b0e7a9777ea5ca759acc237">&#9670;&nbsp;</a></span>PE_Body_getInterpolation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PE_API PE_INLINE void PE_Body_getInterpolation </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_p_e___body__s.html">PE_Body</a> *&#160;</td>
+          <td class="paramname"><em>body</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>alpha</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group___p_e___math.html#gaceb0961b58165e028b9f21091df6af6f">PE_Vec2</a> *&#160;</td>
+          <td class="paramname"><em>position</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Renvoie la position interpolée de l'origine du corps (dans le référentiel monde). Cette position correspond l'interpolation linéaire entre la position du corps lors du dernier appel à <a class="el" href="group___p_e___world.html#ga85616d078ee1a755c33920232272de0c" title="Met à jour les corps présents dans le monde d&#39;un pas de temps. Cette fonction fait met à jour les pos...">PE_World_fixedUpdate()</a> et celle du prochain appel. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">body</td><td>le corps. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">alpha</td><td>ratio entre 0.f et 1.f servant à l'interpolation. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">position</td><td>pointeur vers le vecteur dans lequel copier la position du corps. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga099250d6c227e91317dbc1e3613683bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga099250d6c227e91317dbc1e3613683bf">&#9670;&nbsp;</a></span>PE_Body_getNbColliders()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PE_API PE_INLINE int PE_Body_getNbColliders </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_p_e___body__s.html">PE_Body</a> *&#160;</td>
+          <td class="paramname"><em>body</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Renvoie le nombre de colliders attachés à un corps. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">body</td><td>le corps. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Le nombre de colliders du corps. </dd></dl>
+
+</div>
+</div>
+<a id="ga2b588547d0033781e5f8195f4d31c417"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2b588547d0033781e5f8195f4d31c417">&#9670;&nbsp;</a></span>PE_Body_getPosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PE_API PE_INLINE void PE_Body_getPosition </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_p_e___body__s.html">PE_Body</a> *&#160;</td>
+          <td class="paramname"><em>body</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group___p_e___math.html#gaceb0961b58165e028b9f21091df6af6f">PE_Vec2</a> *&#160;</td>
+          <td class="paramname"><em>position</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Renvoie la position de l'origine du corps (dans le référentiel monde). Cette position correspond à la position du corps lors du dernier appel à <a class="el" href="group___p_e___world.html#ga85616d078ee1a755c33920232272de0c" title="Met à jour les corps présents dans le monde d&#39;un pas de temps. Cette fonction fait met à jour les pos...">PE_World_fixedUpdate()</a>. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">body</td><td>le corps. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">position</td><td>pointeur vers le vecteur dans lequel copier la position du corps. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga9001f4ca47816aeb7bc9c4f46b7e962d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9001f4ca47816aeb7bc9c4f46b7e962d">&#9670;&nbsp;</a></span>PE_Body_getType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PE_API PE_INLINE int PE_Body_getType </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_p_e___body__s.html">PE_Body</a> *&#160;</td>
+          <td class="paramname"><em>body</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Renvoie le type d'un corps. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">body</td><td>le corps. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Le type du corps. </dd></dl>
+
+</div>
+</div>
+<a id="gaef3fc2cc507150ba948c7b0cca804f7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaef3fc2cc507150ba948c7b0cca804f7a">&#9670;&nbsp;</a></span>PE_Body_getUserData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PE_API PE_INLINE void* PE_Body_getUserData </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_p_e___body__s.html">PE_Body</a> *&#160;</td>
+          <td class="paramname"><em>body</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Renvoie les données de l'utilisateur affectées à un corps. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">body</td><td>le corps. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Les données de l'utilisateur affectées au corps. </dd></dl>
+
+</div>
+</div>
+<a id="gad5497ff4675463c4aa284ad4226cce22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad5497ff4675463c4aa284ad4226cce22">&#9670;&nbsp;</a></span>PE_Body_getVelocity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PE_API PE_INLINE void PE_Body_getVelocity </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_p_e___body__s.html">PE_Body</a> *&#160;</td>
+          <td class="paramname"><em>body</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group___p_e___math.html#gaceb0961b58165e028b9f21091df6af6f">PE_Vec2</a> *&#160;</td>
+          <td class="paramname"><em>velocity</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Renvoie la vitesse de l'origine du corps (dans le référentiel monde). Cette vitesse correspond à la vitesse du corps lors du dernier appel à <a class="el" href="group___p_e___world.html#ga85616d078ee1a755c33920232272de0c" title="Met à jour les corps présents dans le monde d&#39;un pas de temps. Cette fonction fait met à jour les pos...">PE_World_fixedUpdate()</a>. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">body</td><td>le corps. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">velocity</td><td>pointeur vers le vecteur dans lequel copier la vitesse du corps. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gafe8c2249b8eeec21b04d68f5da6b3414"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gafe8c2249b8eeec21b04d68f5da6b3414">&#9670;&nbsp;</a></span>PE_Body_getWorld()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PE_API PE_INLINE <a class="el" href="struct_p_e___world__s.html">PE_World</a>* PE_Body_getWorld </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_p_e___body__s.html">PE_Body</a> *&#160;</td>
+          <td class="paramname"><em>body</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Renvoie le monde parent d'un corps. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">body</td><td>le corps. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Le monde parent du corps. </dd></dl>
+
+</div>
+</div>
+<a id="ga022e34b5f5d5db663735e18cc728816c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga022e34b5f5d5db663735e18cc728816c">&#9670;&nbsp;</a></span>PE_Body_getXDamping()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PE_API PE_INLINE float PE_Body_getXDamping </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_p_e___body__s.html">PE_Body</a> *&#160;</td>
+          <td class="paramname"><em>body</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Renvoie l'amortissement linéaire d'un corps sur l'axe des abscisses. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">body</td><td>le corps. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>L'amortissement linéaire du corps sur l'axe des abscisses. </dd></dl>
+
+</div>
+</div>
+<a id="ga7dde13f8244478b7471ba5bec98da583"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7dde13f8244478b7471ba5bec98da583">&#9670;&nbsp;</a></span>PE_Body_getYDamping()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PE_API PE_INLINE float PE_Body_getYDamping </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_p_e___body__s.html">PE_Body</a> *&#160;</td>
+          <td class="paramname"><em>body</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Renvoie l'amortissement linéaire d'un corps sur l'axe des ordonnées. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">body</td><td>le corps. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>L'amortissement linéaire du corps sur l'axe des ordonnées. </dd></dl>
+
+</div>
+</div>
+<a id="ga415bc9adb45d4fd447eb44f51b766ac7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga415bc9adb45d4fd447eb44f51b766ac7">&#9670;&nbsp;</a></span>PE_Body_removeCollider()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PE_API void PE_Body_removeCollider </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_p_e___body__s.html">PE_Body</a> *&#160;</td>
+          <td class="paramname"><em>body</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group___p_e___collider.html#ga695d80a931ceacd9b4daa2250537ab10">PE_Collider</a> *&#160;</td>
+          <td class="paramname"><em>collider</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Supprime un collider attaché à un corps. Le pointeur world ne doit pas être déréférencé après cet appel. Il est conseillé de l'affecter ensuite à NULL. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">body</td><td>le corps. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">collider</td><td>le collider à supprimer du corps. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gade6882ef20ac63f745129a2c6d829591"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gade6882ef20ac63f745129a2c6d829591">&#9670;&nbsp;</a></span>PE_Body_setCollisionResponse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PE_API PE_INLINE void PE_Body_setCollisionResponse </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_p_e___body__s.html">PE_Body</a> *&#160;</td>
+          <td class="paramname"><em>body</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group___p_e___math.html#gaceb0961b58165e028b9f21091df6af6f">PE_Vec2</a> *&#160;</td>
+          <td class="paramname"><em>velocity</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définit la nouvelle vitesse de l'origine du corps (dans le référentiel monde) en réponse à une collision. Contrairement à <a class="el" href="group___p_e___body.html#ga93dcf526090d806b4b9a5cf2b2637f22" title="Définit la vitesse de l&#39;origine du corps (dans le référentiel monde). Les collisions seront mises à j...">PE_Body_setVelocity()</a>, cette fonction n'est pas verrouillée dans les fonctions de rappel. Elle ne réveille pas un corps endormi. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">body</td><td>le corps. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">velocity</td><td>la nouvelle vitesse de l'origine du corps. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>Voir également</dt><dd><a class="el" href="group___p_e___body.html#ga93dcf526090d806b4b9a5cf2b2637f22" title="Définit la vitesse de l&#39;origine du corps (dans le référentiel monde). Les collisions seront mises à j...">PE_Body_setVelocity()</a> </dd></dl>
+
+</div>
+</div>
+<a id="ga9e113d704f38a4ad3279fd96b43bbc9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9e113d704f38a4ad3279fd96b43bbc9f">&#9670;&nbsp;</a></span>PE_Body_setGravityScale()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PE_API PE_INLINE void PE_Body_setGravityScale </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_p_e___body__s.html">PE_Body</a> *&#160;</td>
+          <td class="paramname"><em>body</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>gravityScale</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définit l'échelle de gravité d'un corps. La force de gravité appliquée à un corps est égale au vecteur gravité du monde multiplié par l'échelle de gravité du corps. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">body</td><td>le corps. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">gravityScale</td><td>l'échelle de gravité du corps. <br  />
+ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga68af986712f5c9a8a068fb36cd7a9992"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga68af986712f5c9a8a068fb36cd7a9992">&#9670;&nbsp;</a></span>PE_Body_setPosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PE_API int PE_Body_setPosition </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_p_e___body__s.html">PE_Body</a> *&#160;</td>
+          <td class="paramname"><em>body</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group___p_e___math.html#gaceb0961b58165e028b9f21091df6af6f">PE_Vec2</a> *&#160;</td>
+          <td class="paramname"><em>position</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définit la position de l'origine du corps (dans le référentiel monde). Les collisions seront mises à jour lors du prochain appel à <a class="el" href="group___p_e___world.html#ga85616d078ee1a755c33920232272de0c" title="Met à jour les corps présents dans le monde d&#39;un pas de temps. Cette fonction fait met à jour les pos...">PE_World_fixedUpdate()</a>. Cette fonction est verrouillée dans les fonctions de rappels (callback). </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">body</td><td>le corps. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">position</td><td>la nouvelle position de l'origine du corps. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga5937ec81e9386f1f49bffd05521dd132"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5937ec81e9386f1f49bffd05521dd132">&#9670;&nbsp;</a></span>PE_Body_setUserData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PE_API PE_INLINE void PE_Body_setUserData </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_p_e___body__s.html">PE_Body</a> *&#160;</td>
+          <td class="paramname"><em>body</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définit les données de l'utilisateur d'un corps. Ce pointeur sert à stocker les données spécifiques de votre application en lien avec un corps. La librairie ne modifie pas ces données. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">body</td><td>le corps. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>les données de l'utilisateur. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga93dcf526090d806b4b9a5cf2b2637f22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga93dcf526090d806b4b9a5cf2b2637f22">&#9670;&nbsp;</a></span>PE_Body_setVelocity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PE_API int PE_Body_setVelocity </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_p_e___body__s.html">PE_Body</a> *&#160;</td>
+          <td class="paramname"><em>body</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group___p_e___math.html#gaceb0961b58165e028b9f21091df6af6f">PE_Vec2</a> *&#160;</td>
+          <td class="paramname"><em>velocity</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définit la vitesse de l'origine du corps (dans le référentiel monde). Les collisions seront mises à jour lors du prochain appel à <a class="el" href="group___p_e___world.html#ga85616d078ee1a755c33920232272de0c" title="Met à jour les corps présents dans le monde d&#39;un pas de temps. Cette fonction fait met à jour les pos...">PE_World_fixedUpdate()</a>. Cette fonction est verrouillée dans les fonctions de rappel (callback). </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">body</td><td>le corps. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">velocity</td><td>la nouvelle vitesse de l'origine du corps. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>Voir également</dt><dd><a class="el" href="group___p_e___body.html#ga93dcf526090d806b4b9a5cf2b2637f22" title="Définit la vitesse de l&#39;origine du corps (dans le référentiel monde). Les collisions seront mises à j...">PE_Body_setVelocity()</a> </dd></dl>
+
+</div>
+</div>
+<a id="ga78e2909f14be3a3cdcc7a0d542368cbd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga78e2909f14be3a3cdcc7a0d542368cbd">&#9670;&nbsp;</a></span>PE_Body_setXDamping()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PE_API PE_INLINE void PE_Body_setXDamping </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_p_e___body__s.html">PE_Body</a> *&#160;</td>
+          <td class="paramname"><em>body</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>xDamping</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définit l'amortissement linéaire d'un corps sur l'axe des abscisses. Ce paramètre permet de réduire la vitesse linéaire horizontale du corps. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">body</td><td>le corps. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">xDamping</td><td>l'amortissement linéaire sur l'axe des abscisses. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga243b68d68344443dd29b541bb60ed285"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga243b68d68344443dd29b541bb60ed285">&#9670;&nbsp;</a></span>PE_Body_setYDamping()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PE_API PE_INLINE void PE_Body_setYDamping </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_p_e___body__s.html">PE_Body</a> *&#160;</td>
+          <td class="paramname"><em>body</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>yDamping</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définit l'amortissement linéaire d'un corps sur l'axe des ordonnées. Ce paramètre permet de réduire la vitesse linéaire verticale du corps. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">body</td><td>le corps. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">yDamping</td><td>l'amortissement linéaire sur l'axe des ordonnées. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga8168bc2f6b0b3f132eebd10d7ff29383"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8168bc2f6b0b3f132eebd10d7ff29383">&#9670;&nbsp;</a></span>PE_Body_sleep()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PE_API PE_INLINE void PE_Body_sleep </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_p_e___body__s.html">PE_Body</a> *&#160;</td>
+          <td class="paramname"><em>body</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Endort un corps. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">body</td><td>le corps à endormir. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga96155eb2241f67d5a90a575fe5c87570"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga96155eb2241f67d5a90a575fe5c87570">&#9670;&nbsp;</a></span>PE_Body_wakeUp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PE_API PE_INLINE void PE_Body_wakeUp </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_p_e___body__s.html">PE_Body</a> *&#160;</td>
+          <td class="paramname"><em>body</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Réveille un corps. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">body</td><td>le corps à réveiller. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gae19d9986188f1c0e6436a335a820ad92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae19d9986188f1c0e6436a335a820ad92">&#9670;&nbsp;</a></span>PE_BodyDef_setDefault()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PE_API void PE_BodyDef_setDefault </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_p_e___body_def__s.html">PE_BodyDef</a> *&#160;</td>
+          <td class="paramname"><em>def</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialise les valeurs par défaut de la définition de corps. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">def</td><td>la définition à initialiser. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga500cb71e7dc934738dee40aded7999f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga500cb71e7dc934738dee40aded7999f0">&#9670;&nbsp;</a></span>PE_ColliderIterator_current()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PE_API PE_INLINE <a class="el" href="group___p_e___collider.html#ga695d80a931ceacd9b4daa2250537ab10">PE_Collider</a>* PE_ColliderIterator_current </td>
+          <td>(</td>
+          <td class="paramtype">PE_ColliderIterator *&#160;</td>
+          <td class="paramname"><em>it</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Renvoie un pointeur vers l'élément de la collection à la position courante de l'itérateur. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">it</td><td>l'itérateur. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>L'élément de la collection à la position courante de l'itérateur. </dd></dl>
+
+</div>
+</div>
+<a id="ga5bb0fe437c867ffaf16f1bb9f7a023f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5bb0fe437c867ffaf16f1bb9f7a023f0">&#9670;&nbsp;</a></span>PE_ColliderIterator_moveNext()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PE_API PE_INLINE Bool PE_ColliderIterator_moveNext </td>
+          <td>(</td>
+          <td class="paramtype">PE_ColliderIterator *&#160;</td>
+          <td class="paramname"><em>it</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Avance l'itérateur pour qu'il pointe sur le prochain élément de la collection. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">it</td><td>l'itérateur. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>FALSE si l'itérateur pointe sur le dernier élément de la collection, TRUE sinon. </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.18
+</small></address>
+</body>
+</html>

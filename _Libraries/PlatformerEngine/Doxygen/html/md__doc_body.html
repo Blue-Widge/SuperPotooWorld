@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.18"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Plateformer Engine (PE): Documentation de PE_Body</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Plateformer Engine (PE)
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.18 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="PageDoc"><div class="header">
+  <div class="headertitle">
+<div class="title">Documentation de PE_Body </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><h2><a class="anchor" id="autotoc_md6"></a>
+Création / suppression d'un corps</h2>
+<ul>
+<li><a class="el" href="group___p_e___world.html#ga9318aed17f7b9ba0698d21ab3bbacbf7" title="Crée un corps indéformable dans le monde. Cette fonction est verrouillée dans les fonctions de rappel...">PE_World_createBody()</a></li>
+<li><a class="el" href="group___p_e___world.html#gab71163cb794e3b1da259e3ad8cdc185f" title="Détruit un corps indéformable. Le pointeur world ne doit pas être déréférencé après cet appel....">PE_World_removeBody()</a></li>
+</ul>
+<h2><a class="anchor" id="autotoc_md7"></a>
+Création / suppression d'un collider</h2>
+<ul>
+<li><a class="el" href="group___p_e___body.html#gab20c3f1822797b9091198a184be89e54" title="Crée un nouveau collider et l&#39;attache à un corps. La forme du collider est décrite dans le référentie...">PE_Body_createCollider()</a></li>
+<li><a class="el" href="group___p_e___body.html#ga415bc9adb45d4fd447eb44f51b766ac7" title="Supprime un collider attaché à un corps. Le pointeur world ne doit pas être déréférencé après cet app...">PE_Body_removeCollider()</a></li>
+</ul>
+<h2><a class="anchor" id="autotoc_md8"></a>
+Informations sur le corps et modification</h2>
+<ul>
+<li><a class="el" href="group___p_e___body.html#ga96155eb2241f67d5a90a575fe5c87570" title="Réveille un corps.">PE_Body_wakeUp()</a></li>
+<li><a class="el" href="group___p_e___body.html#ga8168bc2f6b0b3f132eebd10d7ff29383" title="Endort un corps.">PE_Body_sleep()</a></li>
+<li><a class="el" href="group___p_e___body.html#ga9001f4ca47816aeb7bc9c4f46b7e962d" title="Renvoie le type d&#39;un corps.">PE_Body_getType()</a></li>
+<li><a class="el" href="group___p_e___body.html#ga68af986712f5c9a8a068fb36cd7a9992" title="Définit la position de l&#39;origine du corps (dans le référentiel monde). Les collisions seront mises à ...">PE_Body_setPosition()</a></li>
+<li><a class="el" href="group___p_e___body.html#ga2b588547d0033781e5f8195f4d31c417" title="Renvoie la position de l&#39;origine du corps (dans le référentiel monde). Cette position correspond à la...">PE_Body_getPosition()</a></li>
+<li><a class="el" href="group___p_e___body.html#ga5a156b2e8b0e7a9777ea5ca759acc237" title="Renvoie la position interpolée de l&#39;origine du corps (dans le référentiel monde). Cette position corr...">PE_Body_getInterpolation()</a></li>
+<li><a class="el" href="group___p_e___body.html#ga93dcf526090d806b4b9a5cf2b2637f22" title="Définit la vitesse de l&#39;origine du corps (dans le référentiel monde). Les collisions seront mises à j...">PE_Body_setVelocity()</a></li>
+<li><a class="el" href="group___p_e___body.html#gad5497ff4675463c4aa284ad4226cce22" title="Renvoie la vitesse de l&#39;origine du corps (dans le référentiel monde). Cette vitesse correspond à la v...">PE_Body_getVelocity()</a></li>
+<li><a class="el" href="group___p_e___body.html#gade6882ef20ac63f745129a2c6d829591" title="Définit la nouvelle vitesse de l&#39;origine du corps (dans le référentiel monde) en réponse à une collis...">PE_Body_setCollisionResponse()</a></li>
+<li><a class="el" href="group___p_e___body.html#ga01bc02ec909736db5b2331ae0e655e44" title="Applique une force à un corps. Comme tous les corps ont une masse unitaire, la somme des forces appli...">PE_Body_applyForce()</a></li>
+<li><a class="el" href="group___p_e___body.html#gae9a4325f53cfde0b44aff6b04991a444" title="Applique une impulsion à un corps. L&#39;impulsion s&#39;ajoute directement à la vitesse du corps.">PE_Body_applyImpulse()</a></li>
+<li><a class="el" href="group___p_e___body.html#ga62f00702a51dcbe303e242989d3ccc66" title="Annule les forces appliquées à un corps.">PE_Body_clearForces()</a></li>
+<li><a class="el" href="group___p_e___body.html#ga78e2909f14be3a3cdcc7a0d542368cbd" title="Définit l&#39;amortissement linéaire d&#39;un corps sur l&#39;axe des abscisses. Ce paramètre permet de réduire l...">PE_Body_setXDamping()</a></li>
+<li><a class="el" href="group___p_e___body.html#ga022e34b5f5d5db663735e18cc728816c" title="Renvoie l&#39;amortissement linéaire d&#39;un corps sur l&#39;axe des abscisses.">PE_Body_getXDamping()</a></li>
+<li><a class="el" href="group___p_e___body.html#ga243b68d68344443dd29b541bb60ed285" title="Définit l&#39;amortissement linéaire d&#39;un corps sur l&#39;axe des ordonnées. Ce paramètre permet de réduire l...">PE_Body_setYDamping()</a></li>
+<li><a class="el" href="group___p_e___body.html#ga7dde13f8244478b7471ba5bec98da583" title="Renvoie l&#39;amortissement linéaire d&#39;un corps sur l&#39;axe des ordonnées.">PE_Body_getYDamping()</a></li>
+<li><a class="el" href="group___p_e___body.html#ga9e113d704f38a4ad3279fd96b43bbc9f" title="Définit l&#39;échelle de gravité d&#39;un corps. La force de gravité appliquée à un corps est égale au vecteu...">PE_Body_setGravityScale()</a></li>
+<li><a class="el" href="group___p_e___body.html#ga7b2b57cbd7679d2240485eb940a48b87" title="Renvoie l&#39;échelle de gravité d&#39;un corps.">PE_Body_getGravityScale()</a></li>
+<li><a class="el" href="group___p_e___body.html#ga5937ec81e9386f1f49bffd05521dd132" title="Définit les données de l&#39;utilisateur d&#39;un corps. Ce pointeur sert à stocker les données spécifiques d...">PE_Body_setUserData()</a></li>
+<li><a class="el" href="group___p_e___body.html#gaef3fc2cc507150ba948c7b0cca804f7a" title="Renvoie les données de l&#39;utilisateur affectées à un corps.">PE_Body_getUserData()</a></li>
+<li><a class="el" href="group___p_e___body.html#gafe8c2249b8eeec21b04d68f5da6b3414" title="Renvoie le monde parent d&#39;un corps.">PE_Body_getWorld()</a></li>
+</ul>
+<h2><a class="anchor" id="autotoc_md9"></a>
+Enumération des colliders affectés à un corps</h2>
+<ul>
+<li><a class="el" href="group___p_e___body.html#ga099250d6c227e91317dbc1e3613683bf" title="Renvoie le nombre de colliders attachés à un corps.">PE_Body_getNbColliders()</a></li>
+<li><a class="el" href="group___p_e___body.html#ga5629d233922335518610b5e3510ef454" title="Renvoie un itérateur sur la collection des colliders attaché à un corps dans le monde.">PE_Body_getColliderIterator()</a></li>
+<li><a class="el" href="group___p_e___body.html#ga5bb0fe437c867ffaf16f1bb9f7a023f0" title="Avance l&#39;itérateur pour qu&#39;il pointe sur le prochain élément de la collection.">PE_ColliderIterator_moveNext()</a></li>
+<li><a class="el" href="group___p_e___body.html#ga500cb71e7dc934738dee40aded7999f0" title="Renvoie un pointeur vers l&#39;élément de la collection à la position courante de l&#39;itérateur.">PE_ColliderIterator_current()</a> </li>
+</ul>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.18
+</small></address>
+</body>
+</html>

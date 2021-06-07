@@ -1,0 +1,583 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.18"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Rendering Engine (RE): Fonctions relatives au renderer</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Rendering Engine (RE)
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.18 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Structures de données</a> &#124;
+<a href="#typedef-members">Définitions de type</a> &#124;
+<a href="#func-members">Fonctions</a>  </div>
+  <div class="headertitle">
+<div class="title">Fonctions relatives au renderer</div>  </div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Structures de données</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_e___color__s.html">RE_Color_s</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure représentant une couleur au format RGBA.  <a href="struct_r_e___color__s.html#details">Plus de détails...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_e___renderer__s.html">RE_Renderer_s</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure représentant le moteur de rendu.  <a href="struct_r_e___renderer__s.html#details">Plus de détails...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Définitions de type</h2></td></tr>
+<tr class="memitem:ga4cb2ca9818c0a610efca09b2af42dd50"><td class="memItemLeft" align="right" valign="top"><a id="ga4cb2ca9818c0a610efca09b2af42dd50"></a>
+typedef struct <a class="el" href="struct_r_e___color__s.html">RE_Color_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___renderer.html#ga4cb2ca9818c0a610efca09b2af42dd50">RE_Color</a></td></tr>
+<tr class="memdesc:ga4cb2ca9818c0a610efca09b2af42dd50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure représentant une couleur au format RGBA. <br /></td></tr>
+<tr class="separator:ga4cb2ca9818c0a610efca09b2af42dd50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaebac3571aa15ff9abf32cf6128a29237"><td class="memItemLeft" align="right" valign="top"><a id="gaebac3571aa15ff9abf32cf6128a29237"></a>
+typedef struct <a class="el" href="struct_r_e___renderer__s.html">RE_Renderer_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___renderer.html#gaebac3571aa15ff9abf32cf6128a29237">RE_Renderer</a></td></tr>
+<tr class="memdesc:gaebac3571aa15ff9abf32cf6128a29237"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure représentant le moteur de rendu. <br /></td></tr>
+<tr class="separator:gaebac3571aa15ff9abf32cf6128a29237"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:ga98ca947eb751d1fcd4b3af6d9434c03a"><td class="memItemLeft" align="right" valign="top">RE_API <a class="el" href="group___r_e___renderer.html#ga4cb2ca9818c0a610efca09b2af42dd50">RE_Color</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___renderer.html#ga98ca947eb751d1fcd4b3af6d9434c03a">RE_Color_set</a> (int r, int g, int b, int a)</td></tr>
+<tr class="memdesc:ga98ca947eb751d1fcd4b3af6d9434c03a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construit une couleur à partir de ses composantes [R,V,B,A] chacune entre 0 et 255.  <a href="group___r_e___renderer.html#ga98ca947eb751d1fcd4b3af6d9434c03a">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga98ca947eb751d1fcd4b3af6d9434c03a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga926ac19de9bcfc1ebea9051902778fb8"><td class="memItemLeft" align="right" valign="top">RE_API int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___renderer.html#ga926ac19de9bcfc1ebea9051902778fb8">RE_Renderer_getWidth</a> (<a class="el" href="group___r_e___renderer.html#gaebac3571aa15ff9abf32cf6128a29237">RE_Renderer</a> *renderer)</td></tr>
+<tr class="memdesc:ga926ac19de9bcfc1ebea9051902778fb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie la largeur du moteur de rendu.  <a href="group___r_e___renderer.html#ga926ac19de9bcfc1ebea9051902778fb8">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga926ac19de9bcfc1ebea9051902778fb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaec06eeaefdc52cadd9344fea7f8f3a44"><td class="memItemLeft" align="right" valign="top">RE_API int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___renderer.html#gaec06eeaefdc52cadd9344fea7f8f3a44">RE_Renderer_getHeight</a> (<a class="el" href="group___r_e___renderer.html#gaebac3571aa15ff9abf32cf6128a29237">RE_Renderer</a> *renderer)</td></tr>
+<tr class="memdesc:gaec06eeaefdc52cadd9344fea7f8f3a44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie la hauteur du moteur de rendu.  <a href="group___r_e___renderer.html#gaec06eeaefdc52cadd9344fea7f8f3a44">Plus de détails...</a><br /></td></tr>
+<tr class="separator:gaec06eeaefdc52cadd9344fea7f8f3a44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8222cbca87a383abb71846b1fac965ef"><td class="memItemLeft" align="right" valign="top">RE_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___renderer.html#ga8222cbca87a383abb71846b1fac965ef">RE_Renderer_update</a> (<a class="el" href="group___r_e___renderer.html#gaebac3571aa15ff9abf32cf6128a29237">RE_Renderer</a> *renderer)</td></tr>
+<tr class="memdesc:ga8222cbca87a383abb71846b1fac965ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Met à jour le moteur de rendu. Cette fonction permet de d'afficher à l'écran la dernière image rendue.  <a href="group___r_e___renderer.html#ga8222cbca87a383abb71846b1fac965ef">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga8222cbca87a383abb71846b1fac965ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5a8f762484ecced755de820ca6151817"><td class="memItemLeft" align="right" valign="top">RE_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___renderer.html#ga5a8f762484ecced755de820ca6151817">RE_Renderer_clear</a> (<a class="el" href="group___r_e___renderer.html#gaebac3571aa15ff9abf32cf6128a29237">RE_Renderer</a> *renderer)</td></tr>
+<tr class="memdesc:ga5a8f762484ecced755de820ca6151817"><td class="mdescLeft">&#160;</td><td class="mdescRight">Efface le rendu précédent. Le rendu devient entièrement noir.  <a href="group___r_e___renderer.html#ga5a8f762484ecced755de820ca6151817">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga5a8f762484ecced755de820ca6151817"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8ef49041e0dae116f2f8a253f9ada9f2"><td class="memItemLeft" align="right" valign="top">RE_API int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___renderer.html#ga8ef49041e0dae116f2f8a253f9ada9f2">RE_Renderer_setLogicalSize</a> (<a class="el" href="group___r_e___renderer.html#gaebac3571aa15ff9abf32cf6128a29237">RE_Renderer</a> *renderer, int width, int height)</td></tr>
+<tr class="memdesc:ga8ef49041e0dae116f2f8a253f9ada9f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Définit la taille logique du moteur de rendu. Si les dimensions données sont différentes de la résolution de la fenêtre, le rendu est redimensionné.  <a href="group___r_e___renderer.html#ga8ef49041e0dae116f2f8a253f9ada9f2">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga8ef49041e0dae116f2f8a253f9ada9f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga84dbd5929d6d6fe45719e90d322c1682"><td class="memItemLeft" align="right" valign="top">RE_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___renderer.html#ga84dbd5929d6d6fe45719e90d322c1682">RE_Renderer_fill</a> (<a class="el" href="group___r_e___renderer.html#gaebac3571aa15ff9abf32cf6128a29237">RE_Renderer</a> *renderer, <a class="el" href="group___r_e___renderer.html#ga4cb2ca9818c0a610efca09b2af42dd50">RE_Color</a> color)</td></tr>
+<tr class="memdesc:ga84dbd5929d6d6fe45719e90d322c1682"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remplit le rendu avec une couleur donnée.  <a href="group___r_e___renderer.html#ga84dbd5929d6d6fe45719e90d322c1682">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga84dbd5929d6d6fe45719e90d322c1682"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga22beffe43362bc5d7d3580c319a6f86f"><td class="memItemLeft" align="right" valign="top">RE_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___renderer.html#ga22beffe43362bc5d7d3580c319a6f86f">RE_Renderer_drawLine</a> (<a class="el" href="group___r_e___renderer.html#gaebac3571aa15ff9abf32cf6128a29237">RE_Renderer</a> *renderer, int x1, int y1, int x2, int y2, <a class="el" href="group___r_e___renderer.html#ga4cb2ca9818c0a610efca09b2af42dd50">RE_Color</a> color)</td></tr>
+<tr class="memdesc:ga22beffe43362bc5d7d3580c319a6f86f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dessine un segment spécifié par deux points sur le rendu.  <a href="group___r_e___renderer.html#ga22beffe43362bc5d7d3580c319a6f86f">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga22beffe43362bc5d7d3580c319a6f86f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gade6b40d7ff9bf88b4cf9db66ba6112a5"><td class="memItemLeft" align="right" valign="top">RE_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___renderer.html#gade6b40d7ff9bf88b4cf9db66ba6112a5">RE_Renderer_drawPoint</a> (<a class="el" href="group___r_e___renderer.html#gaebac3571aa15ff9abf32cf6128a29237">RE_Renderer</a> *renderer, int x, int y, <a class="el" href="group___r_e___renderer.html#ga4cb2ca9818c0a610efca09b2af42dd50">RE_Color</a> color)</td></tr>
+<tr class="memdesc:gade6b40d7ff9bf88b4cf9db66ba6112a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dessine un point sur le rendu.  <a href="group___r_e___renderer.html#gade6b40d7ff9bf88b4cf9db66ba6112a5">Plus de détails...</a><br /></td></tr>
+<tr class="separator:gade6b40d7ff9bf88b4cf9db66ba6112a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab1d9cc6344a6d475b1d60519d76f4745"><td class="memItemLeft" align="right" valign="top">RE_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___renderer.html#gab1d9cc6344a6d475b1d60519d76f4745">RE_Renderer_drawRect</a> (<a class="el" href="group___r_e___renderer.html#gaebac3571aa15ff9abf32cf6128a29237">RE_Renderer</a> *renderer, <a class="el" href="group___r_e___utils.html#gaa8cadcded7ae946572f5e28afbf373eb">Rect</a> *rect, <a class="el" href="group___r_e___renderer.html#ga4cb2ca9818c0a610efca09b2af42dd50">RE_Color</a> color)</td></tr>
+<tr class="memdesc:gab1d9cc6344a6d475b1d60519d76f4745"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dessine un rectangle sur le rendu.  <a href="group___r_e___renderer.html#gab1d9cc6344a6d475b1d60519d76f4745">Plus de détails...</a><br /></td></tr>
+<tr class="separator:gab1d9cc6344a6d475b1d60519d76f4745"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6b46cfbee332d80e8439158e39cb997d"><td class="memItemLeft" align="right" valign="top">RE_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___renderer.html#ga6b46cfbee332d80e8439158e39cb997d">RE_Renderer_fillRect</a> (<a class="el" href="group___r_e___renderer.html#gaebac3571aa15ff9abf32cf6128a29237">RE_Renderer</a> *renderer, <a class="el" href="group___r_e___utils.html#gaa8cadcded7ae946572f5e28afbf373eb">Rect</a> *rect, <a class="el" href="group___r_e___renderer.html#ga4cb2ca9818c0a610efca09b2af42dd50">RE_Color</a> color)</td></tr>
+<tr class="memdesc:ga6b46cfbee332d80e8439158e39cb997d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dessine un rectangle plein sur le rendu.  <a href="group___r_e___renderer.html#ga6b46cfbee332d80e8439158e39cb997d">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga6b46cfbee332d80e8439158e39cb997d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<h2 class="groupheader">Documentation des fonctions</h2>
+<a id="ga98ca947eb751d1fcd4b3af6d9434c03a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga98ca947eb751d1fcd4b3af6d9434c03a">&#9670;&nbsp;</a></span>RE_Color_set()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RE_API <a class="el" href="group___r_e___renderer.html#ga4cb2ca9818c0a610efca09b2af42dd50">RE_Color</a> RE_Color_set </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>r</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>g</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>a</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construit une couleur à partir de ses composantes [R,V,B,A] chacune entre 0 et 255. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">r</td><td>l'intensité du rouge. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">g</td><td>l'intensité du vert. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">b</td><td>l'intensité du bleu. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>la composante alpha (transparence) de la couleur. La couleur est parfaitement transparante quand elle vaut 0 et elle est opaque quand elle vaut 255. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>La couleur spécifiée. </dd></dl>
+
+</div>
+</div>
+<a id="ga5a8f762484ecced755de820ca6151817"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5a8f762484ecced755de820ca6151817">&#9670;&nbsp;</a></span>RE_Renderer_clear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RE_API void RE_Renderer_clear </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___r_e___renderer.html#gaebac3571aa15ff9abf32cf6128a29237">RE_Renderer</a> *&#160;</td>
+          <td class="paramname"><em>renderer</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Efface le rendu précédent. Le rendu devient entièrement noir. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">renderer</td><td>le moteur de rendu. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga22beffe43362bc5d7d3580c319a6f86f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga22beffe43362bc5d7d3580c319a6f86f">&#9670;&nbsp;</a></span>RE_Renderer_drawLine()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RE_API void RE_Renderer_drawLine </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___r_e___renderer.html#gaebac3571aa15ff9abf32cf6128a29237">RE_Renderer</a> *&#160;</td>
+          <td class="paramname"><em>renderer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group___r_e___renderer.html#ga4cb2ca9818c0a610efca09b2af42dd50">RE_Color</a>&#160;</td>
+          <td class="paramname"><em>color</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Dessine un segment spécifié par deux points sur le rendu. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">renderer</td><td>le moteur de rendu. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">x1</td><td>abscisse du premier point (en pixels). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">y1</td><td>ordonnée du premier point (en pixels). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">x2</td><td>abscisse du second point (en pixels). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">y2</td><td>ordonnée du second point (en pixels). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">color</td><td>la couleur de la ligne. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gade6b40d7ff9bf88b4cf9db66ba6112a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gade6b40d7ff9bf88b4cf9db66ba6112a5">&#9670;&nbsp;</a></span>RE_Renderer_drawPoint()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RE_API void RE_Renderer_drawPoint </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___r_e___renderer.html#gaebac3571aa15ff9abf32cf6128a29237">RE_Renderer</a> *&#160;</td>
+          <td class="paramname"><em>renderer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group___r_e___renderer.html#ga4cb2ca9818c0a610efca09b2af42dd50">RE_Color</a>&#160;</td>
+          <td class="paramname"><em>color</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Dessine un point sur le rendu. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">renderer</td><td>le moteur de rendu. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>abscisse du point (en pixels). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>ordonnée du point (en pixels). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">color</td><td>la couleur du point. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gab1d9cc6344a6d475b1d60519d76f4745"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab1d9cc6344a6d475b1d60519d76f4745">&#9670;&nbsp;</a></span>RE_Renderer_drawRect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RE_API void RE_Renderer_drawRect </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___r_e___renderer.html#gaebac3571aa15ff9abf32cf6128a29237">RE_Renderer</a> *&#160;</td>
+          <td class="paramname"><em>renderer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group___r_e___utils.html#gaa8cadcded7ae946572f5e28afbf373eb">Rect</a> *&#160;</td>
+          <td class="paramname"><em>rect</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group___r_e___renderer.html#ga4cb2ca9818c0a610efca09b2af42dd50">RE_Color</a>&#160;</td>
+          <td class="paramname"><em>color</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Dessine un rectangle sur le rendu. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">renderer</td><td>le moteur de rendu. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">rect</td><td>la spécification du rectangle à dessiner. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">color</td><td>la couleur du point. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga84dbd5929d6d6fe45719e90d322c1682"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga84dbd5929d6d6fe45719e90d322c1682">&#9670;&nbsp;</a></span>RE_Renderer_fill()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RE_API void RE_Renderer_fill </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___r_e___renderer.html#gaebac3571aa15ff9abf32cf6128a29237">RE_Renderer</a> *&#160;</td>
+          <td class="paramname"><em>renderer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group___r_e___renderer.html#ga4cb2ca9818c0a610efca09b2af42dd50">RE_Color</a>&#160;</td>
+          <td class="paramname"><em>color</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Remplit le rendu avec une couleur donnée. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">renderer</td><td>le moteur de rendu. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">color</td><td>la couleur de remplissage. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga6b46cfbee332d80e8439158e39cb997d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6b46cfbee332d80e8439158e39cb997d">&#9670;&nbsp;</a></span>RE_Renderer_fillRect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RE_API void RE_Renderer_fillRect </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___r_e___renderer.html#gaebac3571aa15ff9abf32cf6128a29237">RE_Renderer</a> *&#160;</td>
+          <td class="paramname"><em>renderer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group___r_e___utils.html#gaa8cadcded7ae946572f5e28afbf373eb">Rect</a> *&#160;</td>
+          <td class="paramname"><em>rect</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group___r_e___renderer.html#ga4cb2ca9818c0a610efca09b2af42dd50">RE_Color</a>&#160;</td>
+          <td class="paramname"><em>color</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Dessine un rectangle plein sur le rendu. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">renderer</td><td>le moteur de rendu. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">rect</td><td>la spécification du rectangle à dessiner. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">color</td><td>la couleur du point. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gaec06eeaefdc52cadd9344fea7f8f3a44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaec06eeaefdc52cadd9344fea7f8f3a44">&#9670;&nbsp;</a></span>RE_Renderer_getHeight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RE_API int RE_Renderer_getHeight </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___r_e___renderer.html#gaebac3571aa15ff9abf32cf6128a29237">RE_Renderer</a> *&#160;</td>
+          <td class="paramname"><em>renderer</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Renvoie la hauteur du moteur de rendu. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">renderer</td><td>le moteur de rendu. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>La hauteur du moteur de rendu. </dd></dl>
+
+</div>
+</div>
+<a id="ga926ac19de9bcfc1ebea9051902778fb8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga926ac19de9bcfc1ebea9051902778fb8">&#9670;&nbsp;</a></span>RE_Renderer_getWidth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RE_API int RE_Renderer_getWidth </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___r_e___renderer.html#gaebac3571aa15ff9abf32cf6128a29237">RE_Renderer</a> *&#160;</td>
+          <td class="paramname"><em>renderer</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Renvoie la largeur du moteur de rendu. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">renderer</td><td>le moteur de rendu. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>La largeur du moteur de rendu. </dd></dl>
+
+</div>
+</div>
+<a id="ga8ef49041e0dae116f2f8a253f9ada9f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8ef49041e0dae116f2f8a253f9ada9f2">&#9670;&nbsp;</a></span>RE_Renderer_setLogicalSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RE_API int RE_Renderer_setLogicalSize </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___r_e___renderer.html#gaebac3571aa15ff9abf32cf6128a29237">RE_Renderer</a> *&#160;</td>
+          <td class="paramname"><em>renderer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>height</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définit la taille logique du moteur de rendu. Si les dimensions données sont différentes de la résolution de la fenêtre, le rendu est redimensionné. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">renderer</td><td>le moteur de rendu. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">width</td><td>la largeur logique du moteur de rendu. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">height</td><td>la hauteur logique du moteur de rendu. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>EXIT_SUCCESS ou EXIT_FAILURE. </dd></dl>
+
+</div>
+</div>
+<a id="ga8222cbca87a383abb71846b1fac965ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8222cbca87a383abb71846b1fac965ef">&#9670;&nbsp;</a></span>RE_Renderer_update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RE_API void RE_Renderer_update </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___r_e___renderer.html#gaebac3571aa15ff9abf32cf6128a29237">RE_Renderer</a> *&#160;</td>
+          <td class="paramname"><em>renderer</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Met à jour le moteur de rendu. Cette fonction permet de d'afficher à l'écran la dernière image rendue. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">renderer</td><td>le moteur de rendu. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.18
+</small></address>
+</body>
+</html>

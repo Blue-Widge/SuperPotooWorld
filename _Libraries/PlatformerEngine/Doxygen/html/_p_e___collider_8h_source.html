@@ -1,0 +1,466 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.18"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Plateformer Engine (PE):  Fichier source de C:/Users/arnau/Documents/Data/Dev/PlatformerEngine/PlatformerEngine/PE_Collider.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Plateformer Engine (PE)
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.18 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_3f1c63d08f7153bd10045ebe80d8e823.html">PlatformerEngine</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">PE_Collider.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#ifndef _PE_COLLIDER_H_</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#define _PE_COLLIDER_H_</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;PE_Settings.h&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;PE_Shape.h&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;PE_Math.h&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;PE_List.h&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;PE_Allocator.h&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct_p_e___body__s.html">PE_Body_s</a> <a class="code" href="struct_p_e___body__s.html">PE_Body</a>;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>PE_BPID_s PE_BPID;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>PE_BroadPhase_s PE_BroadPhase;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct_p_e___collision__s.html">PE_Collision_s</a> <a class="code" href="struct_p_e___collision__s.html">PE_Collision</a>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct_p_e___trigger__s.html">PE_Trigger_s</a> <a class="code" href="struct_p_e___trigger__s.html">PE_Trigger</a>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>PE_CollisionDetector_s PE_CollisionDetector;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct_p_e___world__s.html">PE_World_s</a> <a class="code" href="struct_p_e___world__s.html">PE_World</a>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">void</span> PE_CollisionCallback(<a class="code" href="struct_p_e___collision__s.html">PE_Collision</a> *);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">void</span> PE_TriggerCallback(<a class="code" href="struct_p_e___trigger__s.html">PE_Trigger</a> *);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="struct_p_e___filter__s.html">   27</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct_p_e___filter__s.html">PE_Filter_s</a></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;{</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="struct_p_e___filter__s.html#a650b484c69794da645f203f51e2875bb">   31</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="struct_p_e___filter__s.html#a650b484c69794da645f203f51e2875bb">categoryBits</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="struct_p_e___filter__s.html#aa8c6c4f25f48de7ffc5b9c5d6fee332e">   35</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="struct_p_e___filter__s.html#aa8c6c4f25f48de7ffc5b9c5d6fee332e">maskBits</a>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="group___p_e___collider.html#gab8cb2b37613f327d407aac97f8071775">   36</a></span>&#160;} <a class="code" href="group___p_e___collider.html#gab8cb2b37613f327d407aac97f8071775">PE_Filter</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;PE_INLINE Bool PE_Filter_shouldCollide(<a class="code" href="struct_p_e___filter__s.html">PE_Filter</a> *filterA, <a class="code" href="struct_p_e___filter__s.html">PE_Filter</a> *filterB)</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;{</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">return</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        (filterA-&gt;<a class="code" href="struct_p_e___filter__s.html#a650b484c69794da645f203f51e2875bb">categoryBits</a> &amp; filterB-&gt;<a class="code" href="struct_p_e___filter__s.html#aa8c6c4f25f48de7ffc5b9c5d6fee332e">maskBits</a>) &amp;&amp;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        (filterB-&gt;<a class="code" href="struct_p_e___filter__s.html#a650b484c69794da645f203f51e2875bb">categoryBits</a> &amp; filterA-&gt;<a class="code" href="struct_p_e___filter__s.html#aa8c6c4f25f48de7ffc5b9c5d6fee332e">maskBits</a>);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="struct_p_e___collider_def__s.html">   48</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct_p_e___collider_def__s.html">PE_ColliderDef_s</a></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;{</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="struct_p_e___collider_def__s.html#a0cb0b1e8a9131f9f6762556035d04602">   51</a></span>&#160;    <a class="code" href="struct_p_e___shape__s.html">PE_Shape</a> <a class="code" href="struct_p_e___collider_def__s.html#a0cb0b1e8a9131f9f6762556035d04602">shape</a>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="struct_p_e___collider_def__s.html#a4fff59a1e407ce0a870cd1b98dc80736">   54</a></span>&#160;    Bool <a class="code" href="struct_p_e___collider_def__s.html#a4fff59a1e407ce0a870cd1b98dc80736">isTrigger</a>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    </div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="struct_p_e___collider_def__s.html#aaed456b714475269d9bfcd1a81cb60f5">   58</a></span>&#160;    Bool <a class="code" href="struct_p_e___collider_def__s.html#aaed456b714475269d9bfcd1a81cb60f5">isOneWay</a>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="struct_p_e___collider_def__s.html#a0423408d3ad60dfb5c4e17e49a23cfc9">   61</a></span>&#160;    <a class="code" href="struct_p_e___filter__s.html">PE_Filter</a> <a class="code" href="struct_p_e___collider_def__s.html#a0423408d3ad60dfb5c4e17e49a23cfc9">filter</a>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="struct_p_e___collider_def__s.html#a2e294dd14122c554baa0665072b4ca7a">   65</a></span>&#160;    <span class="keywordtype">void</span> *<a class="code" href="struct_p_e___collider_def__s.html#a2e294dd14122c554baa0665072b4ca7a">userData</a>;</div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="group___p_e___collider.html#ga48b853610c2c4ec83747d6bf59dd154d">   66</a></span>&#160;} <a class="code" href="group___p_e___collider.html#ga48b853610c2c4ec83747d6bf59dd154d">PE_ColliderDef</a>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="group___p_e___collider.html#gaefd2623f1be90fd3cc44f1655e70f948">   71</a></span>&#160;<span class="keyword">extern</span> PE_API <span class="keywordtype">void</span> <a class="code" href="group___p_e___collider.html#gaefd2623f1be90fd3cc44f1655e70f948">PE_ColliderDef_setDefault</a>(<a class="code" href="struct_p_e___collider_def__s.html">PE_ColliderDef</a> *def);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> PE_ColliderFlag_e</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;{</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    PE_COLLIDER_TRIGGER = 1 &lt;&lt; 0,</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    PE_COLLIDER_ACTIVE  = 1 &lt;&lt; 1,</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    PE_COLLIDER_ONE_WAY = 1 &lt;&lt; 2,</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;} PE_ColliderFlag;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="struct_p_e___collider__s.html">   84</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct_p_e___collider__s.html">PE_Collider_s</a></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;{</div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="struct_p_e___collider__s.html#a500884820bc9f77419653da88a13fa8a">   89</a></span>&#160;    PE_Node <a class="code" href="struct_p_e___collider__s.html#a500884820bc9f77419653da88a13fa8a">m_bodyNode</a>;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="struct_p_e___collider__s.html#a9658426edc6dad2298e697bc812bbb23">   93</a></span>&#160;    uint32 <a class="code" href="struct_p_e___collider__s.html#a9658426edc6dad2298e697bc812bbb23">m_bpBoxID</a>;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="struct_p_e___collider__s.html#acf88a9269a6bde0e77d6d64102d824ad">   97</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="struct_p_e___collider__s.html#acf88a9269a6bde0e77d6d64102d824ad">m_flags</a>;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="struct_p_e___collider__s.html#af7b0b05bdcde0a4582cf53fb72c8dcc7">  101</a></span>&#160;    <a class="code" href="struct_p_e___shape__s.html">PE_Shape</a> <a class="code" href="struct_p_e___collider__s.html#af7b0b05bdcde0a4582cf53fb72c8dcc7">m_shape</a>;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="struct_p_e___collider__s.html#a31f0c03f11b991c90b558d37a3814aa6">  106</a></span>&#160;    <a class="code" href="struct_p_e___a_a_b_b__s.html">PE_AABB</a> <a class="code" href="struct_p_e___collider__s.html#a31f0c03f11b991c90b558d37a3814aa6">m_aabb</a>;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="struct_p_e___collider__s.html#acac826b3384bf3901e8eddcd597bc974">  110</a></span>&#160;    <a class="code" href="struct_p_e___filter__s.html">PE_Filter</a> <a class="code" href="struct_p_e___collider__s.html#acac826b3384bf3901e8eddcd597bc974">m_filter</a>;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
+<div class="line"><a name="l00114"></a><span class="lineno"><a class="line" href="struct_p_e___collider__s.html#a441c74d5cd1bc851f869ecf2d9dfd494">  114</a></span>&#160;    PE_List <a class="code" href="struct_p_e___collider__s.html#a441c74d5cd1bc851f869ecf2d9dfd494">m_collisionList</a>;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
+<div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="struct_p_e___collider__s.html#ac6fe06057701d9a7840e6c84a5f792f6">  118</a></span>&#160;    PE_List <a class="code" href="struct_p_e___collider__s.html#ac6fe06057701d9a7840e6c84a5f792f6">m_triggerList</a>;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
+<div class="line"><a name="l00122"></a><span class="lineno"><a class="line" href="struct_p_e___collider__s.html#a59e684ccd6d6e2697dab588ee36b8417">  122</a></span>&#160;    <a class="code" href="struct_p_e___body__s.html">PE_Body</a> *<a class="code" href="struct_p_e___collider__s.html#a59e684ccd6d6e2697dab588ee36b8417">m_body</a>;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
+<div class="line"><a name="l00126"></a><span class="lineno"><a class="line" href="struct_p_e___collider__s.html#adfe744b52aaed38ebe6077f682b9fb5f">  126</a></span>&#160;    PE_CollisionCallback *<a class="code" href="struct_p_e___collider__s.html#adfe744b52aaed38ebe6077f682b9fb5f">m_onCollisionEnter</a>;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
+<div class="line"><a name="l00130"></a><span class="lineno"><a class="line" href="struct_p_e___collider__s.html#ab48cafbe13c585f0be00e137d28c366f">  130</a></span>&#160;    PE_CollisionCallback *<a class="code" href="struct_p_e___collider__s.html#ab48cafbe13c585f0be00e137d28c366f">m_onCollisionStay</a>;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
+<div class="line"><a name="l00134"></a><span class="lineno"><a class="line" href="struct_p_e___collider__s.html#a27d8d01157c2694765ae44c3199c89c4">  134</a></span>&#160;    PE_CollisionCallback *<a class="code" href="struct_p_e___collider__s.html#a27d8d01157c2694765ae44c3199c89c4">m_onCollisionExit</a>;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
+<div class="line"><a name="l00138"></a><span class="lineno"><a class="line" href="struct_p_e___collider__s.html#a20fd619ab6413c75cf6659b86b407908">  138</a></span>&#160;    PE_TriggerCallback *<a class="code" href="struct_p_e___collider__s.html#a20fd619ab6413c75cf6659b86b407908">m_onTriggerEnter</a>;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; </div>
+<div class="line"><a name="l00142"></a><span class="lineno"><a class="line" href="struct_p_e___collider__s.html#ae3c801ef62165a616853b7a9db00d7c0">  142</a></span>&#160;    PE_TriggerCallback *<a class="code" href="struct_p_e___collider__s.html#ae3c801ef62165a616853b7a9db00d7c0">m_onTriggerStay</a>;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160; </div>
+<div class="line"><a name="l00146"></a><span class="lineno"><a class="line" href="struct_p_e___collider__s.html#acf651de0049f70c766dbad2fd0e99aa8">  146</a></span>&#160;    PE_TriggerCallback *<a class="code" href="struct_p_e___collider__s.html#acf651de0049f70c766dbad2fd0e99aa8">m_onTriggerExit</a>;</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160; </div>
+<div class="line"><a name="l00151"></a><span class="lineno"><a class="line" href="struct_p_e___collider__s.html#ab972ec6645c6660351589f90843bf50e">  151</a></span>&#160;    <span class="keywordtype">void</span> *<a class="code" href="struct_p_e___collider__s.html#ab972ec6645c6660351589f90843bf50e">m_userData</a>;</div>
+<div class="line"><a name="l00152"></a><span class="lineno"><a class="line" href="group___p_e___collider.html#ga695d80a931ceacd9b4daa2250537ab10">  152</a></span>&#160;} <a class="code" href="group___p_e___collider.html#ga695d80a931ceacd9b4daa2250537ab10">PE_Collider</a>;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<a class="code" href="struct_p_e___collider__s.html">PE_Collider</a> *PE_Collider_new(<a class="code" href="struct_p_e___collider_def__s.html">PE_ColliderDef</a> *def, PE_Allocator *allocator);</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="keywordtype">void</span> PE_Collider_free(<a class="code" href="struct_p_e___collider__s.html">PE_Collider</a> *collider, PE_Allocator *allocator);</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;<span class="comment">//extern PE_API void PE_Collider_setFilter(PE_Collider *collider, PE_Filter *filter);</span></div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; </div>
+<div class="line"><a name="l00175"></a><span class="lineno"><a class="line" href="group___p_e___collider.html#gac3bc225ae4db91aff248f540b1a28258">  175</a></span>&#160;<span class="keyword">extern</span> PE_API <a class="code" href="struct_p_e___filter__s.html">PE_Filter</a> <a class="code" href="group___p_e___collider.html#gac3bc225ae4db91aff248f540b1a28258">PE_Collider_getFilter</a>(<a class="code" href="struct_p_e___collider__s.html">PE_Collider</a> *collider);</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160; </div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;PE_INLINE <span class="keywordtype">void</span> PE_Collider_addFlags(<a class="code" href="struct_p_e___collider__s.html">PE_Collider</a> *collider, <span class="keywordtype">int</span> flags)</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;{</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    collider-&gt;<a class="code" href="struct_p_e___collider__s.html#acf88a9269a6bde0e77d6d64102d824ad">m_flags</a> |= flags;</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;}</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160; </div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;PE_INLINE <span class="keywordtype">void</span> PE_Collider_removeFlags(<a class="code" href="struct_p_e___collider__s.html">PE_Collider</a> *collider, <span class="keywordtype">int</span> flags)</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;{</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    collider-&gt;<a class="code" href="struct_p_e___collider__s.html#acf88a9269a6bde0e77d6d64102d824ad">m_flags</a> &amp;= ~flags;</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;}</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160; </div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;PE_INLINE Bool PE_Collider_hasOneFlag(<a class="code" href="struct_p_e___collider__s.html">PE_Collider</a> *collider, <span class="keywordtype">int</span> flags)</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;{</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="keywordflow">return</span> (collider-&gt;<a class="code" href="struct_p_e___collider__s.html#acf88a9269a6bde0e77d6d64102d824ad">m_flags</a> &amp; flags);</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;}</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160; </div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;PE_INLINE Bool PE_Collider_hasAllFlags(<a class="code" href="struct_p_e___collider__s.html">PE_Collider</a> *collider, <span class="keywordtype">int</span> flags)</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;{</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <span class="keywordflow">return</span> ((collider-&gt;<a class="code" href="struct_p_e___collider__s.html#acf88a9269a6bde0e77d6d64102d824ad">m_flags</a> &amp; flags) == flags);</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;}</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
+<div class="line"><a name="l00201"></a><span class="lineno"><a class="line" href="group___p_e___collider.html#gabeeeaeb7f9724b90405cc10c2e65c8c9">  201</a></span>&#160;PE_API PE_INLINE <span class="keywordtype">void</span> <a class="code" href="group___p_e___collider.html#gabeeeaeb7f9724b90405cc10c2e65c8c9">PE_Collider_setTrigger</a>(<a class="code" href="struct_p_e___collider__s.html">PE_Collider</a> *collider, Bool trigger)</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;{</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    <span class="keywordflow">if</span> (trigger)</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        PE_Collider_addFlags(collider, PE_COLLIDER_TRIGGER);</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        PE_Collider_removeFlags(collider, PE_COLLIDER_TRIGGER);</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;}</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160; </div>
+<div class="line"><a name="l00213"></a><span class="lineno"><a class="line" href="group___p_e___collider.html#gacb05272073c09fb183a4e5ca97bcbcbd">  213</a></span>&#160;PE_API PE_INLINE Bool <a class="code" href="group___p_e___collider.html#gacb05272073c09fb183a4e5ca97bcbcbd">PE_Collider_isTrigger</a>(<a class="code" href="struct_p_e___collider__s.html">PE_Collider</a> *collider)</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;{</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    <span class="keywordflow">return</span> PE_Collider_hasOneFlag(collider, PE_COLLIDER_TRIGGER);</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;}</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160; </div>
+<div class="line"><a name="l00222"></a><span class="lineno"><a class="line" href="group___p_e___collider.html#gaf3037578fa2052281e9481f7bc8389dc">  222</a></span>&#160;<span class="keyword">extern</span> PE_API <a class="code" href="struct_p_e___body__s.html">PE_Body</a> *<a class="code" href="group___p_e___collider.html#gaf3037578fa2052281e9481f7bc8389dc">PE_Collider_getBody</a>(<a class="code" href="struct_p_e___collider__s.html">PE_Collider</a> *collider);</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160; </div>
+<div class="line"><a name="l00228"></a><span class="lineno"><a class="line" href="group___p_e___collider.html#ga60103c105f3600f290708ddaaaedd2fe">  228</a></span>&#160;PE_API PE_INLINE <a class="code" href="struct_p_e___shape__s.html">PE_Shape</a> *<a class="code" href="group___p_e___collider.html#ga60103c105f3600f290708ddaaaedd2fe">PE_Collider_getShape</a>(<a class="code" href="struct_p_e___collider__s.html">PE_Collider</a> *collider)</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;{</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    <span class="keywordflow">return</span> &amp;collider-&gt;<a class="code" href="struct_p_e___collider__s.html#af7b0b05bdcde0a4582cf53fb72c8dcc7">m_shape</a>;</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;}</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160; </div>
+<div class="line"><a name="l00237"></a><span class="lineno"><a class="line" href="group___p_e___collider.html#ga1512ea80c3a0398ad88e686e08deb481">  237</a></span>&#160;<span class="keyword">extern</span> PE_API <a class="code" href="struct_p_e___a_a_b_b__s.html">PE_AABB</a> *<a class="code" href="group___p_e___collider.html#ga1512ea80c3a0398ad88e686e08deb481">PE_Collider_getAABB</a>(<a class="code" href="struct_p_e___collider__s.html">PE_Collider</a> *collider);</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160; </div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160; </div>
+<div class="line"><a name="l00246"></a><span class="lineno"><a class="line" href="group___p_e___collider.html#ga5976bfdfe88e17dbb3c7812176a64f46">  246</a></span>&#160;<span class="keyword">extern</span> PE_API <span class="keywordtype">void</span> <a class="code" href="group___p_e___collider.html#ga5976bfdfe88e17dbb3c7812176a64f46">PE_Collider_setUserData</a>(<a class="code" href="struct_p_e___collider__s.html">PE_Collider</a> *collider, <span class="keywordtype">void</span> *data);</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160; </div>
+<div class="line"><a name="l00252"></a><span class="lineno"><a class="line" href="group___p_e___collider.html#ga9b31acff6d72bb2ffdab824d6d72b517">  252</a></span>&#160;<span class="keyword">extern</span> PE_API <span class="keywordtype">void</span> *<a class="code" href="group___p_e___collider.html#ga9b31acff6d72bb2ffdab824d6d72b517">PE_Collider_getUserData</a>(<a class="code" href="struct_p_e___collider__s.html">PE_Collider</a> *collider);</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160; </div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;<span class="comment">//  entre en collision avec un autre collider.</span></div>
+<div class="line"><a name="l00261"></a><span class="lineno"><a class="line" href="group___p_e___collider.html#ga1ccba7afb54b88125d4c335104d3abaf">  261</a></span>&#160;<span class="comment"></span>PE_API PE_INLINE <span class="keywordtype">void</span> <a class="code" href="group___p_e___collider.html#ga1ccba7afb54b88125d4c335104d3abaf">PE_Collider_setOnCollisionEnter</a>(</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    <a class="code" href="struct_p_e___collider__s.html">PE_Collider</a> *collider,</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    PE_CollisionCallback *onCollisionEnter)</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;{</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    collider-&gt;<a class="code" href="struct_p_e___collider__s.html#adfe744b52aaed38ebe6077f682b9fb5f">m_onCollisionEnter</a> = onCollisionEnter;</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;}</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160; </div>
+<div class="line"><a name="l00275"></a><span class="lineno"><a class="line" href="group___p_e___collider.html#gaa332dfd7cd104222aaa944332ba67859">  275</a></span>&#160;PE_API PE_INLINE <span class="keywordtype">void</span> <a class="code" href="group___p_e___collider.html#gaa332dfd7cd104222aaa944332ba67859">PE_Collider_setOnCollisionStay</a>(</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    <a class="code" href="struct_p_e___collider__s.html">PE_Collider</a> *collider,</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    PE_CollisionCallback *onCollisionStay)</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;{</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    collider-&gt;<a class="code" href="struct_p_e___collider__s.html#ab48cafbe13c585f0be00e137d28c366f">m_onCollisionStay</a> = onCollisionStay;</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;}</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160; </div>
+<div class="line"><a name="l00289"></a><span class="lineno"><a class="line" href="group___p_e___collider.html#gaee4c27bf9e65a4431a5f70108ea5db22">  289</a></span>&#160;PE_API PE_INLINE <span class="keywordtype">void</span> <a class="code" href="group___p_e___collider.html#gaee4c27bf9e65a4431a5f70108ea5db22">PE_Collider_setOnCollisionExit</a>(</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    <a class="code" href="struct_p_e___collider__s.html">PE_Collider</a> *collider,</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    PE_CollisionCallback *onCollisionExit)</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;{</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    collider-&gt;<a class="code" href="struct_p_e___collider__s.html#a27d8d01157c2694765ae44c3199c89c4">m_onCollisionExit</a> = onCollisionExit;</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;}</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160; </div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;<span class="comment">//  commence à détecter ou à être détecté par un autre collider.</span></div>
+<div class="line"><a name="l00303"></a><span class="lineno"><a class="line" href="group___p_e___collider.html#ga4c164412db9dbd0094468551cd7df686">  303</a></span>&#160;<span class="comment"></span>PE_API PE_INLINE <span class="keywordtype">void</span> <a class="code" href="group___p_e___collider.html#ga4c164412db9dbd0094468551cd7df686">PE_Collider_setOnTriggerEnter</a>(</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    <a class="code" href="struct_p_e___collider__s.html">PE_Collider</a> *collider,</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    PE_TriggerCallback *onTriggerEnter)</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;{</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    collider-&gt;<a class="code" href="struct_p_e___collider__s.html#a20fd619ab6413c75cf6659b86b407908">m_onTriggerEnter</a> = onTriggerEnter;</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;}</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160; </div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;<span class="comment">//  commence détecte ou est détecté par un autre collider.</span></div>
+<div class="line"><a name="l00317"></a><span class="lineno"><a class="line" href="group___p_e___collider.html#ga9a5d161091e3be0c9d632635e8ea4420">  317</a></span>&#160;<span class="comment"></span>PE_API PE_INLINE <span class="keywordtype">void</span> <a class="code" href="group___p_e___collider.html#ga9a5d161091e3be0c9d632635e8ea4420">PE_Collider_setOnTriggerStay</a>(</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    <a class="code" href="struct_p_e___collider__s.html">PE_Collider</a> *collider,</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    PE_TriggerCallback *onTriggerStay)</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;{</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    collider-&gt;<a class="code" href="struct_p_e___collider__s.html#ae3c801ef62165a616853b7a9db00d7c0">m_onTriggerStay</a> = onTriggerStay;</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;}</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160; </div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;<span class="comment">//  cesse de détecter ou d&#39;être détecté par un autre collider.</span></div>
+<div class="line"><a name="l00331"></a><span class="lineno"><a class="line" href="group___p_e___collider.html#ga35649026628c6f612587d9843e7e83f1">  331</a></span>&#160;<span class="comment"></span>PE_API PE_INLINE <span class="keywordtype">void</span> <a class="code" href="group___p_e___collider.html#ga35649026628c6f612587d9843e7e83f1">PE_Collider_setOnTriggerExit</a>(</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    <a class="code" href="struct_p_e___collider__s.html">PE_Collider</a> *collider,</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    PE_TriggerCallback *onTriggerExit)</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;{</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    collider-&gt;<a class="code" href="struct_p_e___collider__s.html#acf651de0049f70c766dbad2fd0e99aa8">m_onTriggerExit</a> = onTriggerExit;</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;}</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160; </div>
+<div class="line"><a name="l00342"></a><span class="lineno"><a class="line" href="group___p_e___collider.html#gaade9f93647bad9e09bbf6c067d5594fd">  342</a></span>&#160;PE_API PE_INLINE PE_CollisionCallback *<a class="code" href="group___p_e___collider.html#gaade9f93647bad9e09bbf6c067d5594fd">PE_Collider_getOnCollisionEnter</a>(<a class="code" href="struct_p_e___collider__s.html">PE_Collider</a> *collider)</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;{</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    <span class="keywordflow">return</span> collider-&gt;<a class="code" href="struct_p_e___collider__s.html#adfe744b52aaed38ebe6077f682b9fb5f">m_onCollisionEnter</a>;</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;}</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160; </div>
+<div class="line"><a name="l00351"></a><span class="lineno"><a class="line" href="group___p_e___collider.html#ga3fe82847cc2483c8e71dc34ede91a305">  351</a></span>&#160;PE_API PE_INLINE PE_CollisionCallback *<a class="code" href="group___p_e___collider.html#ga3fe82847cc2483c8e71dc34ede91a305">PE_Collider_getOnCollisionStay</a>(<a class="code" href="struct_p_e___collider__s.html">PE_Collider</a> *collider)</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;{</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;    <span class="keywordflow">return</span> collider-&gt;<a class="code" href="struct_p_e___collider__s.html#ab48cafbe13c585f0be00e137d28c366f">m_onCollisionStay</a>;</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;}</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160; </div>
+<div class="line"><a name="l00360"></a><span class="lineno"><a class="line" href="group___p_e___collider.html#ga9b646411e1a6a0110f42c4de88b4ac17">  360</a></span>&#160;PE_API PE_INLINE PE_CollisionCallback *<a class="code" href="group___p_e___collider.html#ga9b646411e1a6a0110f42c4de88b4ac17">PE_Collider_getOnCollisionExit</a>(<a class="code" href="struct_p_e___collider__s.html">PE_Collider</a> *collider)</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;{</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;    <span class="keywordflow">return</span> collider-&gt;<a class="code" href="struct_p_e___collider__s.html#a27d8d01157c2694765ae44c3199c89c4">m_onCollisionExit</a>;</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;}</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160; </div>
+<div class="line"><a name="l00369"></a><span class="lineno"><a class="line" href="group___p_e___collider.html#ga0e0b4063d9bd298fdc2cd2e5a8690f0f">  369</a></span>&#160;PE_API PE_INLINE PE_TriggerCallback *<a class="code" href="group___p_e___collider.html#ga0e0b4063d9bd298fdc2cd2e5a8690f0f">PE_Collider_getOnTriggerEnter</a>(<a class="code" href="struct_p_e___collider__s.html">PE_Collider</a> *collider)</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;{</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;    <span class="keywordflow">return</span> collider-&gt;<a class="code" href="struct_p_e___collider__s.html#a20fd619ab6413c75cf6659b86b407908">m_onTriggerEnter</a>;</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;}</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160; </div>
+<div class="line"><a name="l00378"></a><span class="lineno"><a class="line" href="group___p_e___collider.html#gab1e4d578217d439020031a3334fca7d2">  378</a></span>&#160;PE_API PE_INLINE PE_TriggerCallback *<a class="code" href="group___p_e___collider.html#gab1e4d578217d439020031a3334fca7d2">PE_Collider_getOnTriggerStay</a>(<a class="code" href="struct_p_e___collider__s.html">PE_Collider</a> *collider)</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;{</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;    <span class="keywordflow">return</span> collider-&gt;<a class="code" href="struct_p_e___collider__s.html#ae3c801ef62165a616853b7a9db00d7c0">m_onTriggerStay</a>;</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;}</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160; </div>
+<div class="line"><a name="l00387"></a><span class="lineno"><a class="line" href="group___p_e___collider.html#ga093223d8574333e820c1aec5d35bbc6c">  387</a></span>&#160;PE_API PE_INLINE PE_TriggerCallback *<a class="code" href="group___p_e___collider.html#ga093223d8574333e820c1aec5d35bbc6c">PE_Collider_getOnTriggerExit</a>(<a class="code" href="struct_p_e___collider__s.html">PE_Collider</a> *collider)</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;{</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;    <span class="keywordflow">return</span> collider-&gt;<a class="code" href="struct_p_e___collider__s.html#acf651de0049f70c766dbad2fd0e99aa8">m_onTriggerExit</a>;</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;}</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160; </div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;PE_INLINE <span class="keywordtype">void</span> PE_Collider_onCollisionEnter(<a class="code" href="struct_p_e___collider__s.html">PE_Collider</a> *collider, <a class="code" href="struct_p_e___collision__s.html">PE_Collision</a> *collision)</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;{</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;    <span class="keywordflow">if</span> (collider-&gt;<a class="code" href="struct_p_e___collider__s.html#adfe744b52aaed38ebe6077f682b9fb5f">m_onCollisionEnter</a>)</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;        collider-&gt;<a class="code" href="struct_p_e___collider__s.html#adfe744b52aaed38ebe6077f682b9fb5f">m_onCollisionEnter</a>(collision);</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;}</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160; </div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;PE_INLINE <span class="keywordtype">void</span> PE_Collider_onCollisionStay(<a class="code" href="struct_p_e___collider__s.html">PE_Collider</a> *collider, <a class="code" href="struct_p_e___collision__s.html">PE_Collision</a> *collision)</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;{</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;    <span class="keywordflow">if</span> (collider-&gt;<a class="code" href="struct_p_e___collider__s.html#ab48cafbe13c585f0be00e137d28c366f">m_onCollisionStay</a>)</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;        collider-&gt;<a class="code" href="struct_p_e___collider__s.html#ab48cafbe13c585f0be00e137d28c366f">m_onCollisionStay</a>(collision);</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;}</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160; </div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;PE_INLINE <span class="keywordtype">void</span> PE_Collider_onCollisionExit(<a class="code" href="struct_p_e___collider__s.html">PE_Collider</a> *collider, <a class="code" href="struct_p_e___collision__s.html">PE_Collision</a> *collision)</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;{</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;    <span class="keywordflow">if</span> (collider-&gt;<a class="code" href="struct_p_e___collider__s.html#a27d8d01157c2694765ae44c3199c89c4">m_onCollisionExit</a>)</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;        collider-&gt;<a class="code" href="struct_p_e___collider__s.html#a27d8d01157c2694765ae44c3199c89c4">m_onCollisionExit</a>(collision);</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;}</div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160; </div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;PE_INLINE <span class="keywordtype">void</span> PE_Collider_onTriggerEnter(<a class="code" href="struct_p_e___collider__s.html">PE_Collider</a> *collider, <a class="code" href="struct_p_e___trigger__s.html">PE_Trigger</a> *trigger)</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;{</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;    <span class="keywordflow">if</span> (collider-&gt;<a class="code" href="struct_p_e___collider__s.html#a20fd619ab6413c75cf6659b86b407908">m_onTriggerEnter</a>)</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;        collider-&gt;<a class="code" href="struct_p_e___collider__s.html#a20fd619ab6413c75cf6659b86b407908">m_onTriggerEnter</a>(trigger);</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;}</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160; </div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;PE_INLINE <span class="keywordtype">void</span> PE_Collider_onTriggerStay(<a class="code" href="struct_p_e___collider__s.html">PE_Collider</a> *collider, <a class="code" href="struct_p_e___trigger__s.html">PE_Trigger</a> *trigger)</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;{</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;    <span class="keywordflow">if</span> (collider-&gt;<a class="code" href="struct_p_e___collider__s.html#ae3c801ef62165a616853b7a9db00d7c0">m_onTriggerStay</a>)</div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;        collider-&gt;<a class="code" href="struct_p_e___collider__s.html#ae3c801ef62165a616853b7a9db00d7c0">m_onTriggerStay</a>(trigger);</div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;}</div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160; </div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;PE_INLINE <span class="keywordtype">void</span> PE_Collider_onTriggerExit(<a class="code" href="struct_p_e___collider__s.html">PE_Collider</a> *collider, <a class="code" href="struct_p_e___trigger__s.html">PE_Trigger</a> *trigger)</div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;{</div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;    <span class="keywordflow">if</span> (collider-&gt;<a class="code" href="struct_p_e___collider__s.html#acf651de0049f70c766dbad2fd0e99aa8">m_onTriggerExit</a>)</div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;        collider-&gt;<a class="code" href="struct_p_e___collider__s.html#acf651de0049f70c766dbad2fd0e99aa8">m_onTriggerExit</a>(trigger);</div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;}</div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160; </div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;<span class="keywordtype">int</span> PE_Collider_synchronize(</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;    <a class="code" href="struct_p_e___collider__s.html">PE_Collider</a> *collider, PE_CollisionDetector *collisionDetector,</div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;    <a class="code" href="struct_p_e___vec2__s.html">PE_Vec2</a> *transform0, <a class="code" href="struct_p_e___vec2__s.html">PE_Vec2</a> *transform1);</div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160; </div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;PE_INLINE Bool PE_Collider_shouldCollide(<a class="code" href="struct_p_e___collider__s.html">PE_Collider</a> *colliderA, <a class="code" href="struct_p_e___collider__s.html">PE_Collider</a> *colliderB)</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;{</div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;    <span class="keywordflow">return</span> PE_Filter_shouldCollide(&amp;colliderA-&gt;<a class="code" href="struct_p_e___collider__s.html#acac826b3384bf3901e8eddcd597bc974">m_filter</a>, &amp;colliderB-&gt;<a class="code" href="struct_p_e___collider__s.html#acac826b3384bf3901e8eddcd597bc974">m_filter</a>)</div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;        &amp;&amp; (colliderA-&gt;<a class="code" href="struct_p_e___collider__s.html#a59e684ccd6d6e2697dab588ee36b8417">m_body</a> != colliderB-&gt;<a class="code" href="struct_p_e___collider__s.html#a59e684ccd6d6e2697dab588ee36b8417">m_body</a>);</div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;}</div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160; </div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;<span class="comment">// Iterator</span></div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160; </div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;<span class="keyword">typedef</span> PE_Iterator PE_CollisionIterator;</div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160; </div>
+<div class="line"><a name="l00449"></a><span class="lineno"><a class="line" href="group___p_e___collider.html#ga75dbc26039252b8efa7367ff96bfde31">  449</a></span>&#160;PE_API PE_INLINE <span class="keywordtype">void</span> <a class="code" href="group___p_e___collider.html#ga75dbc26039252b8efa7367ff96bfde31">PE_Collider_getCollisionIterator</a>(<a class="code" href="struct_p_e___collider__s.html">PE_Collider</a> *collider, PE_CollisionIterator *it)</div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;{</div>
+<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;    PE_List_getIterator(&amp;collider-&gt;<a class="code" href="struct_p_e___collider__s.html#a441c74d5cd1bc851f869ecf2d9dfd494">m_collisionList</a>, it);</div>
+<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;}</div>
+<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160; </div>
+<div class="line"><a name="l00458"></a><span class="lineno"><a class="line" href="group___p_e___collider.html#gab39287bebc7825c9ce82406026911ae7">  458</a></span>&#160;PE_API PE_INLINE Bool <a class="code" href="group___p_e___collider.html#gab39287bebc7825c9ce82406026911ae7">PE_CollisionIterator_moveNext</a>(PE_CollisionIterator *it)</div>
+<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;{</div>
+<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;    <span class="keywordflow">return</span> PE_Iterator_moveNext(it);</div>
+<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;}</div>
+<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160; </div>
+<div class="line"><a name="l00467"></a><span class="lineno"><a class="line" href="group___p_e___collider.html#gaf218ee11ed8b0619c9a460cd628f7044">  467</a></span>&#160;PE_API PE_INLINE <a class="code" href="struct_p_e___collision__s.html">PE_Collision</a> *<a class="code" href="group___p_e___collider.html#gaf218ee11ed8b0619c9a460cd628f7044">PE_CollisionIterator_current</a>(PE_CollisionIterator *it)</div>
+<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;{</div>
+<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="struct_p_e___collision__s.html">PE_Collision</a> *)PE_Iterator_current(it);</div>
+<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;}</div>
+<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160; </div>
+<div class="line"><a name="l00476"></a><span class="lineno"><a class="line" href="group___p_e___collider.html#gaf31b8c390aa6cfbc0a3af0b759f229dd">  476</a></span>&#160;PE_API PE_INLINE <span class="keywordtype">int</span> <a class="code" href="group___p_e___collider.html#gaf31b8c390aa6cfbc0a3af0b759f229dd">PE_Collider_getNbCollisions</a>(<a class="code" href="struct_p_e___collider__s.html">PE_Collider</a> *collider)</div>
+<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;{</div>
+<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;    <span class="keywordflow">return</span> PE_List_getSize(&amp;collider-&gt;<a class="code" href="struct_p_e___collider__s.html#a441c74d5cd1bc851f869ecf2d9dfd494">m_collisionList</a>);</div>
+<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;}</div>
+<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160; </div>
+<div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;<span class="comment">//----------------------------</span></div>
+<div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160; </div>
+<div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160; </div>
+<div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;<span class="keyword">typedef</span> PE_Iterator PE_TriggerIterator;</div>
+<div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160; </div>
+<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160; </div>
+<div class="line"><a name="l00494"></a><span class="lineno"><a class="line" href="group___p_e___collider.html#ga33c8190c09fa0f8622db1768cb4a8a64">  494</a></span>&#160;PE_API PE_INLINE <span class="keywordtype">void</span> <a class="code" href="group___p_e___collider.html#ga33c8190c09fa0f8622db1768cb4a8a64">PE_Collider_getTriggerIterator</a>(<a class="code" href="struct_p_e___collider__s.html">PE_Collider</a> *collider, PE_TriggerIterator *it)</div>
+<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;{</div>
+<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;    PE_List_getIterator(&amp;collider-&gt;<a class="code" href="struct_p_e___collider__s.html#ac6fe06057701d9a7840e6c84a5f792f6">m_triggerList</a>, it);</div>
+<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;}</div>
+<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160; </div>
+<div class="line"><a name="l00503"></a><span class="lineno"><a class="line" href="group___p_e___collider.html#ga630056552a6ec9d62b1e3c27bb966c2a">  503</a></span>&#160;PE_API PE_INLINE Bool <a class="code" href="group___p_e___collider.html#ga630056552a6ec9d62b1e3c27bb966c2a">PE_TriggerIterator_moveNext</a>(PE_TriggerIterator *it)</div>
+<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;{</div>
+<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;    <span class="keywordflow">return</span> PE_Iterator_moveNext(it);</div>
+<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;}</div>
+<div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160; </div>
+<div class="line"><a name="l00512"></a><span class="lineno"><a class="line" href="group___p_e___collider.html#gabb88e0aba6fd237bc1d5d8f6b9a55916">  512</a></span>&#160;PE_API PE_INLINE <a class="code" href="struct_p_e___trigger__s.html">PE_Trigger</a> *<a class="code" href="group___p_e___collider.html#gabb88e0aba6fd237bc1d5d8f6b9a55916">PE_TriggerIterator_current</a>(PE_TriggerIterator *it)</div>
+<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;{</div>
+<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="struct_p_e___trigger__s.html">PE_Trigger</a> *)PE_Iterator_current(it);</div>
+<div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;}</div>
+<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160; </div>
+<div class="line"><a name="l00521"></a><span class="lineno"><a class="line" href="group___p_e___collider.html#ga3930db1d622347a7338c8ab62e89f60d">  521</a></span>&#160;PE_API PE_INLINE <span class="keywordtype">int</span> <a class="code" href="group___p_e___collider.html#ga3930db1d622347a7338c8ab62e89f60d">PE_Collider_getNbTriggers</a>(<a class="code" href="struct_p_e___collider__s.html">PE_Collider</a> *collider)</div>
+<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;{</div>
+<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;    <span class="keywordflow">return</span> PE_List_getSize(&amp;collider-&gt;<a class="code" href="struct_p_e___collider__s.html#ac6fe06057701d9a7840e6c84a5f792f6">m_triggerList</a>);</div>
+<div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;}</div>
+<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160; </div>
+<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="astruct_p_e___shape__s_html"><div class="ttname"><a href="struct_p_e___shape__s.html">PE_Shape_s</a></div><div class="ttdoc">Structure représentant la forme d'un collider.</div><div class="ttdef"><b>Definition:</b> PE_Shape.h:60</div></div>
+<div class="ttc" id="astruct_p_e___filter__s_html"><div class="ttname"><a href="struct_p_e___filter__s.html">PE_Filter_s</a></div><div class="ttdoc">Structure permettant de filtrer les collisions.</div><div class="ttdef"><b>Definition:</b> PE_Collider.h:28</div></div>
+<div class="ttc" id="agroup___p_e___collider_html_gaf218ee11ed8b0619c9a460cd628f7044"><div class="ttname"><a href="group___p_e___collider.html#gaf218ee11ed8b0619c9a460cd628f7044">PE_CollisionIterator_current</a></div><div class="ttdeci">PE_API PE_INLINE PE_Collision * PE_CollisionIterator_current(PE_CollisionIterator *it)</div><div class="ttdoc">Renvoie un pointeur vers l'élément de la collection à la position courante de l'itérateur.</div><div class="ttdef"><b>Definition:</b> PE_Collider.h:467</div></div>
+<div class="ttc" id="astruct_p_e___collider_def__s_html_a2e294dd14122c554baa0665072b4ca7a"><div class="ttname"><a href="struct_p_e___collider_def__s.html#a2e294dd14122c554baa0665072b4ca7a">PE_ColliderDef_s::userData</a></div><div class="ttdeci">void * userData</div><div class="ttdoc">Pointeur vers les données de l'utilisateur. La librairie ne le modifie pas. Il est défini à NULL par ...</div><div class="ttdef"><b>Definition:</b> PE_Collider.h:65</div></div>
+<div class="ttc" id="agroup___p_e___collider_html_ga1512ea80c3a0398ad88e686e08deb481"><div class="ttname"><a href="group___p_e___collider.html#ga1512ea80c3a0398ad88e686e08deb481">PE_Collider_getAABB</a></div><div class="ttdeci">PE_API PE_AABB * PE_Collider_getAABB(PE_Collider *collider)</div><div class="ttdoc">Renvoie la boîte englobante d'un collider.</div></div>
+<div class="ttc" id="astruct_p_e___filter__s_html_a650b484c69794da645f203f51e2875bb"><div class="ttname"><a href="struct_p_e___filter__s.html#a650b484c69794da645f203f51e2875bb">PE_Filter_s::categoryBits</a></div><div class="ttdeci">int categoryBits</div><div class="ttdoc">Les bits représentant les catégories d'un collider. Normalement, on ne définit qu'un seul bit à un.</div><div class="ttdef"><b>Definition:</b> PE_Collider.h:31</div></div>
+<div class="ttc" id="agroup___p_e___collider_html_gac3bc225ae4db91aff248f540b1a28258"><div class="ttname"><a href="group___p_e___collider.html#gac3bc225ae4db91aff248f540b1a28258">PE_Collider_getFilter</a></div><div class="ttdeci">PE_API PE_Filter PE_Collider_getFilter(PE_Collider *collider)</div><div class="ttdoc">Renvoie le filtre d'un collider.</div></div>
+<div class="ttc" id="astruct_p_e___body__s_html"><div class="ttname"><a href="struct_p_e___body__s.html">PE_Body_s</a></div><div class="ttdoc">Structure représentant un corps indéformable dans le moteur physique.</div><div class="ttdef"><b>Definition:</b> PE_Body.h:88</div></div>
+<div class="ttc" id="astruct_p_e___a_a_b_b__s_html"><div class="ttname"><a href="struct_p_e___a_a_b_b__s.html">PE_AABB_s</a></div><div class="ttdoc">Structure représentant une boîte englobante (rectangle) dont les côtés sont alignés sur les axes....</div><div class="ttdef"><b>Definition:</b> PE_Math.h:40</div></div>
+<div class="ttc" id="agroup___p_e___collider_html_ga0e0b4063d9bd298fdc2cd2e5a8690f0f"><div class="ttname"><a href="group___p_e___collider.html#ga0e0b4063d9bd298fdc2cd2e5a8690f0f">PE_Collider_getOnTriggerEnter</a></div><div class="ttdeci">PE_API PE_INLINE PE_TriggerCallback * PE_Collider_getOnTriggerEnter(PE_Collider *collider)</div><div class="ttdoc">Renvoie la fonction de rappel &quot;onTriggerEnter&quot; affectée à un collider.</div><div class="ttdef"><b>Definition:</b> PE_Collider.h:369</div></div>
+<div class="ttc" id="agroup___p_e___collider_html_gabeeeaeb7f9724b90405cc10c2e65c8c9"><div class="ttname"><a href="group___p_e___collider.html#gabeeeaeb7f9724b90405cc10c2e65c8c9">PE_Collider_setTrigger</a></div><div class="ttdeci">PE_API PE_INLINE void PE_Collider_setTrigger(PE_Collider *collider, Bool trigger)</div><div class="ttdoc">Définit si un collider est un détecteur.</div><div class="ttdef"><b>Definition:</b> PE_Collider.h:201</div></div>
+<div class="ttc" id="agroup___p_e___collider_html_ga630056552a6ec9d62b1e3c27bb966c2a"><div class="ttname"><a href="group___p_e___collider.html#ga630056552a6ec9d62b1e3c27bb966c2a">PE_TriggerIterator_moveNext</a></div><div class="ttdeci">PE_API PE_INLINE Bool PE_TriggerIterator_moveNext(PE_TriggerIterator *it)</div><div class="ttdoc">Avance l'itérateur pour qu'il pointe sur le prochain élément de la collection.</div><div class="ttdef"><b>Definition:</b> PE_Collider.h:503</div></div>
+<div class="ttc" id="agroup___p_e___collider_html_ga3930db1d622347a7338c8ab62e89f60d"><div class="ttname"><a href="group___p_e___collider.html#ga3930db1d622347a7338c8ab62e89f60d">PE_Collider_getNbTriggers</a></div><div class="ttdeci">PE_API PE_INLINE int PE_Collider_getNbTriggers(PE_Collider *collider)</div><div class="ttdoc">Renvoie le nombre de détections impliquant un collider de type détecteur.</div><div class="ttdef"><b>Definition:</b> PE_Collider.h:521</div></div>
+<div class="ttc" id="astruct_p_e___collider_def__s_html_a0423408d3ad60dfb5c4e17e49a23cfc9"><div class="ttname"><a href="struct_p_e___collider_def__s.html#a0423408d3ad60dfb5c4e17e49a23cfc9">PE_ColliderDef_s::filter</a></div><div class="ttdeci">PE_Filter filter</div><div class="ttdoc">Filtre à appliquer au collider pendant la détection des collisions.</div><div class="ttdef"><b>Definition:</b> PE_Collider.h:61</div></div>
+<div class="ttc" id="astruct_p_e___collision__s_html"><div class="ttname"><a href="struct_p_e___collision__s.html">PE_Collision_s</a></div><div class="ttdoc">Structure contenant les informations sur une collision entre deux colliders.</div><div class="ttdef"><b>Definition:</b> PE_Collision.h:39</div></div>
+<div class="ttc" id="astruct_p_e___collider__s_html_ae3c801ef62165a616853b7a9db00d7c0"><div class="ttname"><a href="struct_p_e___collider__s.html#ae3c801ef62165a616853b7a9db00d7c0">PE_Collider_s::m_onTriggerStay</a></div><div class="ttdeci">PE_TriggerCallback * m_onTriggerStay</div><div class="ttdoc">Pointeur vers la fonction de rappel &quot;onTriggerStay&quot; de ce collider.</div><div class="ttdef"><b>Definition:</b> PE_Collider.h:142</div></div>
+<div class="ttc" id="agroup___p_e___collider_html_gaa332dfd7cd104222aaa944332ba67859"><div class="ttname"><a href="group___p_e___collider.html#gaa332dfd7cd104222aaa944332ba67859">PE_Collider_setOnCollisionStay</a></div><div class="ttdeci">PE_API PE_INLINE void PE_Collider_setOnCollisionStay(PE_Collider *collider, PE_CollisionCallback *onCollisionStay)</div><div class="ttdoc">Définit la fonction de rappel (callback) appelée à chaque fois qu'un collider touche un autre collide...</div><div class="ttdef"><b>Definition:</b> PE_Collider.h:275</div></div>
+<div class="ttc" id="astruct_p_e___collider__s_html_a9658426edc6dad2298e697bc812bbb23"><div class="ttname"><a href="struct_p_e___collider__s.html#a9658426edc6dad2298e697bc812bbb23">PE_Collider_s::m_bpBoxID</a></div><div class="ttdeci">uint32 m_bpBoxID</div><div class="ttdoc">Identifiant du collider dans la broad phase. Ce membre appartient à la broad phase.</div><div class="ttdef"><b>Definition:</b> PE_Collider.h:93</div></div>
+<div class="ttc" id="agroup___p_e___collider_html_ga33c8190c09fa0f8622db1768cb4a8a64"><div class="ttname"><a href="group___p_e___collider.html#ga33c8190c09fa0f8622db1768cb4a8a64">PE_Collider_getTriggerIterator</a></div><div class="ttdeci">PE_API PE_INLINE void PE_Collider_getTriggerIterator(PE_Collider *collider, PE_TriggerIterator *it)</div><div class="ttdoc">Renvoie un itérateur sur la collection des détections (trigger) impliquant un collider de type détect...</div><div class="ttdef"><b>Definition:</b> PE_Collider.h:494</div></div>
+<div class="ttc" id="astruct_p_e___collider__s_html_ab972ec6645c6660351589f90843bf50e"><div class="ttname"><a href="struct_p_e___collider__s.html#ab972ec6645c6660351589f90843bf50e">PE_Collider_s::m_userData</a></div><div class="ttdeci">void * m_userData</div><div class="ttdoc">Pointeur vers les données de l'utilisateur. La librairie ne le modifie pas. Il est défini à NULL par ...</div><div class="ttdef"><b>Definition:</b> PE_Collider.h:151</div></div>
+<div class="ttc" id="astruct_p_e___collider_def__s_html_a0cb0b1e8a9131f9f6762556035d04602"><div class="ttname"><a href="struct_p_e___collider_def__s.html#a0cb0b1e8a9131f9f6762556035d04602">PE_ColliderDef_s::shape</a></div><div class="ttdeci">PE_Shape shape</div><div class="ttdoc">Forme du collider.</div><div class="ttdef"><b>Definition:</b> PE_Collider.h:51</div></div>
+<div class="ttc" id="agroup___p_e___collider_html_ga3fe82847cc2483c8e71dc34ede91a305"><div class="ttname"><a href="group___p_e___collider.html#ga3fe82847cc2483c8e71dc34ede91a305">PE_Collider_getOnCollisionStay</a></div><div class="ttdeci">PE_API PE_INLINE PE_CollisionCallback * PE_Collider_getOnCollisionStay(PE_Collider *collider)</div><div class="ttdoc">Renvoie la fonction de rappel &quot;onCollisionStay&quot; affectée à un collider.</div><div class="ttdef"><b>Definition:</b> PE_Collider.h:351</div></div>
+<div class="ttc" id="astruct_p_e___collider__s_html_acf651de0049f70c766dbad2fd0e99aa8"><div class="ttname"><a href="struct_p_e___collider__s.html#acf651de0049f70c766dbad2fd0e99aa8">PE_Collider_s::m_onTriggerExit</a></div><div class="ttdeci">PE_TriggerCallback * m_onTriggerExit</div><div class="ttdoc">Pointeur vers la fonction de rappel &quot;onTriggerExit&quot; de ce collider.</div><div class="ttdef"><b>Definition:</b> PE_Collider.h:146</div></div>
+<div class="ttc" id="agroup___p_e___collider_html_ga75dbc26039252b8efa7367ff96bfde31"><div class="ttname"><a href="group___p_e___collider.html#ga75dbc26039252b8efa7367ff96bfde31">PE_Collider_getCollisionIterator</a></div><div class="ttdeci">PE_API PE_INLINE void PE_Collider_getCollisionIterator(PE_Collider *collider, PE_CollisionIterator *it)</div><div class="ttdoc">Renvoie un itérateur sur la collection des collisions impliquant un collider.</div><div class="ttdef"><b>Definition:</b> PE_Collider.h:449</div></div>
+<div class="ttc" id="astruct_p_e___collider__s_html_a441c74d5cd1bc851f869ecf2d9dfd494"><div class="ttname"><a href="struct_p_e___collider__s.html#a441c74d5cd1bc851f869ecf2d9dfd494">PE_Collider_s::m_collisionList</a></div><div class="ttdeci">PE_List m_collisionList</div><div class="ttdoc">Liste des collisions impliquant ce collider.</div><div class="ttdef"><b>Definition:</b> PE_Collider.h:114</div></div>
+<div class="ttc" id="astruct_p_e___collider__s_html_ac6fe06057701d9a7840e6c84a5f792f6"><div class="ttname"><a href="struct_p_e___collider__s.html#ac6fe06057701d9a7840e6c84a5f792f6">PE_Collider_s::m_triggerList</a></div><div class="ttdeci">PE_List m_triggerList</div><div class="ttdoc">Liste des détections impliquant ce collider.</div><div class="ttdef"><b>Definition:</b> PE_Collider.h:118</div></div>
+<div class="ttc" id="agroup___p_e___collider_html_gaade9f93647bad9e09bbf6c067d5594fd"><div class="ttname"><a href="group___p_e___collider.html#gaade9f93647bad9e09bbf6c067d5594fd">PE_Collider_getOnCollisionEnter</a></div><div class="ttdeci">PE_API PE_INLINE PE_CollisionCallback * PE_Collider_getOnCollisionEnter(PE_Collider *collider)</div><div class="ttdoc">Renvoie la fonction de rappel &quot;onCollisionEnter&quot; affectée à un collider.</div><div class="ttdef"><b>Definition:</b> PE_Collider.h:342</div></div>
+<div class="ttc" id="astruct_p_e___collider__s_html_a31f0c03f11b991c90b558d37a3814aa6"><div class="ttname"><a href="struct_p_e___collider__s.html#a31f0c03f11b991c90b558d37a3814aa6">PE_Collider_s::m_aabb</a></div><div class="ttdeci">PE_AABB m_aabb</div><div class="ttdoc">Boîte englobante du collider pour le balayage courant. Cette AABB est mise à jour par le corps parent...</div><div class="ttdef"><b>Definition:</b> PE_Collider.h:106</div></div>
+<div class="ttc" id="agroup___p_e___collider_html_gacb05272073c09fb183a4e5ca97bcbcbd"><div class="ttname"><a href="group___p_e___collider.html#gacb05272073c09fb183a4e5ca97bcbcbd">PE_Collider_isTrigger</a></div><div class="ttdeci">PE_API PE_INLINE Bool PE_Collider_isTrigger(PE_Collider *collider)</div><div class="ttdoc">Indique si un collider est un détecteur.</div><div class="ttdef"><b>Definition:</b> PE_Collider.h:213</div></div>
+<div class="ttc" id="astruct_p_e___collider__s_html_a59e684ccd6d6e2697dab588ee36b8417"><div class="ttname"><a href="struct_p_e___collider__s.html#a59e684ccd6d6e2697dab588ee36b8417">PE_Collider_s::m_body</a></div><div class="ttdeci">PE_Body * m_body</div><div class="ttdoc">Pointeur vers le corps parent.</div><div class="ttdef"><b>Definition:</b> PE_Collider.h:122</div></div>
+<div class="ttc" id="agroup___p_e___collider_html_gaefd2623f1be90fd3cc44f1655e70f948"><div class="ttname"><a href="group___p_e___collider.html#gaefd2623f1be90fd3cc44f1655e70f948">PE_ColliderDef_setDefault</a></div><div class="ttdeci">PE_API void PE_ColliderDef_setDefault(PE_ColliderDef *def)</div><div class="ttdoc">Initialise les valeurs par défaut de la définition de colliders.</div></div>
+<div class="ttc" id="astruct_p_e___collider_def__s_html_aaed456b714475269d9bfcd1a81cb60f5"><div class="ttname"><a href="struct_p_e___collider_def__s.html#aaed456b714475269d9bfcd1a81cb60f5">PE_ColliderDef_s::isOneWay</a></div><div class="ttdeci">Bool isOneWay</div><div class="ttdoc">Indique si le collider a un comportement &quot;one-way&quot;. Autrement dit, s'il autorise uniquement les colli...</div><div class="ttdef"><b>Definition:</b> PE_Collider.h:58</div></div>
+<div class="ttc" id="agroup___p_e___collider_html_gabb88e0aba6fd237bc1d5d8f6b9a55916"><div class="ttname"><a href="group___p_e___collider.html#gabb88e0aba6fd237bc1d5d8f6b9a55916">PE_TriggerIterator_current</a></div><div class="ttdeci">PE_API PE_INLINE PE_Trigger * PE_TriggerIterator_current(PE_TriggerIterator *it)</div><div class="ttdoc">Renvoie un pointeur vers l'élément de la collection à la position courante de l'itérateur.</div><div class="ttdef"><b>Definition:</b> PE_Collider.h:512</div></div>
+<div class="ttc" id="agroup___p_e___collider_html_ga093223d8574333e820c1aec5d35bbc6c"><div class="ttname"><a href="group___p_e___collider.html#ga093223d8574333e820c1aec5d35bbc6c">PE_Collider_getOnTriggerExit</a></div><div class="ttdeci">PE_API PE_INLINE PE_TriggerCallback * PE_Collider_getOnTriggerExit(PE_Collider *collider)</div><div class="ttdoc">Renvoie la fonction de rappel &quot;onTriggerExit&quot; affectée à un collider.</div><div class="ttdef"><b>Definition:</b> PE_Collider.h:387</div></div>
+<div class="ttc" id="agroup___p_e___collider_html_gaee4c27bf9e65a4431a5f70108ea5db22"><div class="ttname"><a href="group___p_e___collider.html#gaee4c27bf9e65a4431a5f70108ea5db22">PE_Collider_setOnCollisionExit</a></div><div class="ttdeci">PE_API PE_INLINE void PE_Collider_setOnCollisionExit(PE_Collider *collider, PE_CollisionCallback *onCollisionExit)</div><div class="ttdoc">Définit la fonction de rappel (callback) appelée à chaque fois qu'un collider cesse d'être en collisi...</div><div class="ttdef"><b>Definition:</b> PE_Collider.h:289</div></div>
+<div class="ttc" id="astruct_p_e___trigger__s_html"><div class="ttname"><a href="struct_p_e___trigger__s.html">PE_Trigger_s</a></div><div class="ttdoc">Structure contenant les informations sur une détection entre deux colliders.</div><div class="ttdef"><b>Definition:</b> PE_Trigger.h:17</div></div>
+<div class="ttc" id="agroup___p_e___collider_html_ga5976bfdfe88e17dbb3c7812176a64f46"><div class="ttname"><a href="group___p_e___collider.html#ga5976bfdfe88e17dbb3c7812176a64f46">PE_Collider_setUserData</a></div><div class="ttdeci">PE_API void PE_Collider_setUserData(PE_Collider *collider, void *data)</div><div class="ttdoc">Définit les données de l'utilisateur d'un collider. Ce pointeur sert à stocker les données spécifique...</div></div>
+<div class="ttc" id="astruct_p_e___world__s_html"><div class="ttname"><a href="struct_p_e___world__s.html">PE_World_s</a></div><div class="ttdoc">Le monde gère et crée tous les corps physiques.</div><div class="ttdef"><b>Definition:</b> PE_World.h:25</div></div>
+<div class="ttc" id="agroup___p_e___collider_html_ga9b31acff6d72bb2ffdab824d6d72b517"><div class="ttname"><a href="group___p_e___collider.html#ga9b31acff6d72bb2ffdab824d6d72b517">PE_Collider_getUserData</a></div><div class="ttdeci">PE_API void * PE_Collider_getUserData(PE_Collider *collider)</div><div class="ttdoc">Renvoie les données de l'utilisateur affectées à un collider.</div></div>
+<div class="ttc" id="agroup___p_e___collider_html_gab8cb2b37613f327d407aac97f8071775"><div class="ttname"><a href="group___p_e___collider.html#gab8cb2b37613f327d407aac97f8071775">PE_Filter</a></div><div class="ttdeci">struct PE_Filter_s PE_Filter</div><div class="ttdoc">Structure permettant de filtrer les collisions.</div></div>
+<div class="ttc" id="agroup___p_e___collider_html_ga35649026628c6f612587d9843e7e83f1"><div class="ttname"><a href="group___p_e___collider.html#ga35649026628c6f612587d9843e7e83f1">PE_Collider_setOnTriggerExit</a></div><div class="ttdeci">PE_API PE_INLINE void PE_Collider_setOnTriggerExit(PE_Collider *collider, PE_TriggerCallback *onTriggerExit)</div><div class="ttdoc">Définit la fonction de rappel (callback) appelée à chaque fois qu'un collider.</div><div class="ttdef"><b>Definition:</b> PE_Collider.h:331</div></div>
+<div class="ttc" id="agroup___p_e___collider_html_ga9a5d161091e3be0c9d632635e8ea4420"><div class="ttname"><a href="group___p_e___collider.html#ga9a5d161091e3be0c9d632635e8ea4420">PE_Collider_setOnTriggerStay</a></div><div class="ttdeci">PE_API PE_INLINE void PE_Collider_setOnTriggerStay(PE_Collider *collider, PE_TriggerCallback *onTriggerStay)</div><div class="ttdoc">Définit la fonction de rappel (callback) appelée à chaque fois qu'un collider.</div><div class="ttdef"><b>Definition:</b> PE_Collider.h:317</div></div>
+<div class="ttc" id="astruct_p_e___collider__s_html_a500884820bc9f77419653da88a13fa8a"><div class="ttname"><a href="struct_p_e___collider__s.html#a500884820bc9f77419653da88a13fa8a">PE_Collider_s::m_bodyNode</a></div><div class="ttdeci">PE_Node m_bodyNode</div><div class="ttdoc">Noeud contenant un pointeur vers ce collider dans la listes des collider du corps parent....</div><div class="ttdef"><b>Definition:</b> PE_Collider.h:89</div></div>
+<div class="ttc" id="agroup___p_e___collider_html_gab1e4d578217d439020031a3334fca7d2"><div class="ttname"><a href="group___p_e___collider.html#gab1e4d578217d439020031a3334fca7d2">PE_Collider_getOnTriggerStay</a></div><div class="ttdeci">PE_API PE_INLINE PE_TriggerCallback * PE_Collider_getOnTriggerStay(PE_Collider *collider)</div><div class="ttdoc">Renvoie la fonction de rappel &quot;onTriggerStay&quot; affectée à un collider.</div><div class="ttdef"><b>Definition:</b> PE_Collider.h:378</div></div>
+<div class="ttc" id="agroup___p_e___collider_html_ga4c164412db9dbd0094468551cd7df686"><div class="ttname"><a href="group___p_e___collider.html#ga4c164412db9dbd0094468551cd7df686">PE_Collider_setOnTriggerEnter</a></div><div class="ttdeci">PE_API PE_INLINE void PE_Collider_setOnTriggerEnter(PE_Collider *collider, PE_TriggerCallback *onTriggerEnter)</div><div class="ttdoc">Définit la fonction de rappel (callback) appelée à chaque fois qu'un collider.</div><div class="ttdef"><b>Definition:</b> PE_Collider.h:303</div></div>
+<div class="ttc" id="agroup___p_e___collider_html_gab39287bebc7825c9ce82406026911ae7"><div class="ttname"><a href="group___p_e___collider.html#gab39287bebc7825c9ce82406026911ae7">PE_CollisionIterator_moveNext</a></div><div class="ttdeci">PE_API PE_INLINE Bool PE_CollisionIterator_moveNext(PE_CollisionIterator *it)</div><div class="ttdoc">Avance l'itérateur pour qu'il pointe sur le prochain élément de la collection.</div><div class="ttdef"><b>Definition:</b> PE_Collider.h:458</div></div>
+<div class="ttc" id="astruct_p_e___collider__s_html_af7b0b05bdcde0a4582cf53fb72c8dcc7"><div class="ttname"><a href="struct_p_e___collider__s.html#af7b0b05bdcde0a4582cf53fb72c8dcc7">PE_Collider_s::m_shape</a></div><div class="ttdeci">PE_Shape m_shape</div><div class="ttdoc">Forme du collider.</div><div class="ttdef"><b>Definition:</b> PE_Collider.h:101</div></div>
+<div class="ttc" id="agroup___p_e___collider_html_ga695d80a931ceacd9b4daa2250537ab10"><div class="ttname"><a href="group___p_e___collider.html#ga695d80a931ceacd9b4daa2250537ab10">PE_Collider</a></div><div class="ttdeci">struct PE_Collider_s PE_Collider</div><div class="ttdoc">Structure représentant un collider dans le moteur physique. Un collider peut être affecté à un corps ...</div></div>
+<div class="ttc" id="astruct_p_e___filter__s_html_aa8c6c4f25f48de7ffc5b9c5d6fee332e"><div class="ttname"><a href="struct_p_e___filter__s.html#aa8c6c4f25f48de7ffc5b9c5d6fee332e">PE_Filter_s::maskBits</a></div><div class="ttdeci">int maskBits</div><div class="ttdoc">Les bits servant de masque pour les collisions. Ce membre définit les catégories avec lesquelles le c...</div><div class="ttdef"><b>Definition:</b> PE_Collider.h:35</div></div>
+<div class="ttc" id="astruct_p_e___collider_def__s_html"><div class="ttname"><a href="struct_p_e___collider_def__s.html">PE_ColliderDef_s</a></div><div class="ttdoc">Structure regroupant les informations nécessaires à la création d'un collider. Une même définition pe...</div><div class="ttdef"><b>Definition:</b> PE_Collider.h:49</div></div>
+<div class="ttc" id="astruct_p_e___collider_def__s_html_a4fff59a1e407ce0a870cd1b98dc80736"><div class="ttname"><a href="struct_p_e___collider_def__s.html#a4fff59a1e407ce0a870cd1b98dc80736">PE_ColliderDef_s::isTrigger</a></div><div class="ttdeci">Bool isTrigger</div><div class="ttdoc">Indique si le collider est un déclencheur.</div><div class="ttdef"><b>Definition:</b> PE_Collider.h:54</div></div>
+<div class="ttc" id="astruct_p_e___vec2__s_html"><div class="ttname"><a href="struct_p_e___vec2__s.html">PE_Vec2_s</a></div><div class="ttdoc">Structure représentant un vecteur 2D dont les composantes sont de type float.</div><div class="ttdef"><b>Definition:</b> PE_Math.h:12</div></div>
+<div class="ttc" id="agroup___p_e___collider_html_ga1ccba7afb54b88125d4c335104d3abaf"><div class="ttname"><a href="group___p_e___collider.html#ga1ccba7afb54b88125d4c335104d3abaf">PE_Collider_setOnCollisionEnter</a></div><div class="ttdeci">PE_API PE_INLINE void PE_Collider_setOnCollisionEnter(PE_Collider *collider, PE_CollisionCallback *onCollisionEnter)</div><div class="ttdoc">Définit la fonction de rappel (callback) appelée à chaque fois qu'un collider.</div><div class="ttdef"><b>Definition:</b> PE_Collider.h:261</div></div>
+<div class="ttc" id="astruct_p_e___collider__s_html_adfe744b52aaed38ebe6077f682b9fb5f"><div class="ttname"><a href="struct_p_e___collider__s.html#adfe744b52aaed38ebe6077f682b9fb5f">PE_Collider_s::m_onCollisionEnter</a></div><div class="ttdeci">PE_CollisionCallback * m_onCollisionEnter</div><div class="ttdoc">Pointeur vers la fonction de rappel &quot;onCollisionEnter&quot; de ce collider.</div><div class="ttdef"><b>Definition:</b> PE_Collider.h:126</div></div>
+<div class="ttc" id="agroup___p_e___collider_html_gaf31b8c390aa6cfbc0a3af0b759f229dd"><div class="ttname"><a href="group___p_e___collider.html#gaf31b8c390aa6cfbc0a3af0b759f229dd">PE_Collider_getNbCollisions</a></div><div class="ttdeci">PE_API PE_INLINE int PE_Collider_getNbCollisions(PE_Collider *collider)</div><div class="ttdoc">Renvoie le nombre de collisions impliquant un collider.</div><div class="ttdef"><b>Definition:</b> PE_Collider.h:476</div></div>
+<div class="ttc" id="agroup___p_e___collider_html_gaf3037578fa2052281e9481f7bc8389dc"><div class="ttname"><a href="group___p_e___collider.html#gaf3037578fa2052281e9481f7bc8389dc">PE_Collider_getBody</a></div><div class="ttdeci">PE_API PE_Body * PE_Collider_getBody(PE_Collider *collider)</div><div class="ttdoc">Renvoie le corps parent d'un collider.</div></div>
+<div class="ttc" id="agroup___p_e___collider_html_ga48b853610c2c4ec83747d6bf59dd154d"><div class="ttname"><a href="group___p_e___collider.html#ga48b853610c2c4ec83747d6bf59dd154d">PE_ColliderDef</a></div><div class="ttdeci">struct PE_ColliderDef_s PE_ColliderDef</div><div class="ttdoc">Structure regroupant les informations nécessaires à la création d'un collider. Une même définition pe...</div></div>
+<div class="ttc" id="agroup___p_e___collider_html_ga60103c105f3600f290708ddaaaedd2fe"><div class="ttname"><a href="group___p_e___collider.html#ga60103c105f3600f290708ddaaaedd2fe">PE_Collider_getShape</a></div><div class="ttdeci">PE_API PE_INLINE PE_Shape * PE_Collider_getShape(PE_Collider *collider)</div><div class="ttdoc">Renvoie la forme d'un collider.</div><div class="ttdef"><b>Definition:</b> PE_Collider.h:228</div></div>
+<div class="ttc" id="astruct_p_e___collider__s_html_a27d8d01157c2694765ae44c3199c89c4"><div class="ttname"><a href="struct_p_e___collider__s.html#a27d8d01157c2694765ae44c3199c89c4">PE_Collider_s::m_onCollisionExit</a></div><div class="ttdeci">PE_CollisionCallback * m_onCollisionExit</div><div class="ttdoc">Pointeur vers la fonction de rappel &quot;onCollisionExit&quot; de ce collider.</div><div class="ttdef"><b>Definition:</b> PE_Collider.h:134</div></div>
+<div class="ttc" id="agroup___p_e___collider_html_ga9b646411e1a6a0110f42c4de88b4ac17"><div class="ttname"><a href="group___p_e___collider.html#ga9b646411e1a6a0110f42c4de88b4ac17">PE_Collider_getOnCollisionExit</a></div><div class="ttdeci">PE_API PE_INLINE PE_CollisionCallback * PE_Collider_getOnCollisionExit(PE_Collider *collider)</div><div class="ttdoc">Renvoie la fonction de rappel &quot;onCollisionExit&quot; affectée à un collider.</div><div class="ttdef"><b>Definition:</b> PE_Collider.h:360</div></div>
+<div class="ttc" id="astruct_p_e___collider__s_html_acac826b3384bf3901e8eddcd597bc974"><div class="ttname"><a href="struct_p_e___collider__s.html#acac826b3384bf3901e8eddcd597bc974">PE_Collider_s::m_filter</a></div><div class="ttdeci">PE_Filter m_filter</div><div class="ttdoc">Filtre à appliquer au collider pendant la détection des collisions.</div><div class="ttdef"><b>Definition:</b> PE_Collider.h:110</div></div>
+<div class="ttc" id="astruct_p_e___collider__s_html_a20fd619ab6413c75cf6659b86b407908"><div class="ttname"><a href="struct_p_e___collider__s.html#a20fd619ab6413c75cf6659b86b407908">PE_Collider_s::m_onTriggerEnter</a></div><div class="ttdeci">PE_TriggerCallback * m_onTriggerEnter</div><div class="ttdoc">Pointeur vers la fonction de rappel &quot;onTriggerEnter&quot; de ce collider.</div><div class="ttdef"><b>Definition:</b> PE_Collider.h:138</div></div>
+<div class="ttc" id="astruct_p_e___collider__s_html_ab48cafbe13c585f0be00e137d28c366f"><div class="ttname"><a href="struct_p_e___collider__s.html#ab48cafbe13c585f0be00e137d28c366f">PE_Collider_s::m_onCollisionStay</a></div><div class="ttdeci">PE_CollisionCallback * m_onCollisionStay</div><div class="ttdoc">Pointeur vers la fonction de rappel &quot;onCollisionStay&quot; de ce collider.</div><div class="ttdef"><b>Definition:</b> PE_Collider.h:130</div></div>
+<div class="ttc" id="astruct_p_e___collider__s_html"><div class="ttname"><a href="struct_p_e___collider__s.html">PE_Collider_s</a></div><div class="ttdoc">Structure représentant un collider dans le moteur physique. Un collider peut être affecté à un corps ...</div><div class="ttdef"><b>Definition:</b> PE_Collider.h:85</div></div>
+<div class="ttc" id="astruct_p_e___collider__s_html_acf88a9269a6bde0e77d6d64102d824ad"><div class="ttname"><a href="struct_p_e___collider__s.html#acf88a9269a6bde0e77d6d64102d824ad">PE_Collider_s::m_flags</a></div><div class="ttdeci">int m_flags</div><div class="ttdoc">Flags du collider.</div><div class="ttdef"><b>Definition:</b> PE_Collider.h:97</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.18
+</small></address>
+</body>
+</html>

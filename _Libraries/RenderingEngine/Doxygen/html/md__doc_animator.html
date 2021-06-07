@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.18"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Rendering Engine (RE): Documentation de l&#39;animateur</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Rendering Engine (RE)
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.18 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="PageDoc"><div class="header">
+  <div class="headertitle">
+<div class="title">Documentation de l'animateur </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><h2><a class="anchor" id="autotoc_md2"></a>
+Animateur</h2>
+<p>Création et suppression.</p>
+<ul>
+<li><a class="el" href="group___r_e___animator.html#gafe6af95969093b6f70a1b5d1d68c7fbd" title="Crée un nouvel animateur.">RE_Animator_new()</a></li>
+<li><a class="el" href="group___r_e___animator.html#ga61a48161b8bb219a20c5f9b047831aec" title="Détruit un animateur préalablement créé avec RE_Animator_new(). Détruit également toutes les animatio...">RE_Animator_free()</a></li>
+</ul>
+<p>Mise à jour de l'animateur et rendu.</p>
+<ul>
+<li><a class="el" href="group___r_e___animator.html#gabfd76fd7199f89b1c6bce7eec6e0b472" title="Met à jour l&#39;animateur en fonction du temps écoulé.">RE_Animator_update()</a></li>
+<li><a class="el" href="group___r_e___animator.html#ga1552222af4d053d4d89d88214ad5bf31" title="Dessine l&#39;image courante de l&#39;animation dans son contexte de rendu.">RE_Animator_render()</a></li>
+<li><a class="el" href="group___r_e___animator.html#ga5b170611a7174787d7da3e29fb4dac84" title="Dessine l&#39;image courante de l&#39;animation dans son contexte de rendu. Contrairement à RE_Animator_rende...">RE_Animator_renderF()</a></li>
+</ul>
+<p>Modification et informations sur le rendu.</p>
+<ul>
+<li><a class="el" href="group___r_e___animator.html#gae7f3b47a8f4cbb54d56f4af66dd9ed3a" title="Définit la composante alpha (transparence) du rendu. Ce paramètre est écrasé par une animation de l&#39;o...">RE_Animator_setAlpha()</a></li>
+<li><a class="el" href="group___r_e___animator.html#ga22f344e238e28fe38d1f76f6aa5a177e" title="Définit la transformation à appliquer sur le rendu.">RE_Animator_setTransform()</a></li>
+<li><a class="el" href="group___r_e___animator.html#ga15df7a71fc9b036fff3be45c2665ac8b" title="Renvoie la transformation appliquée sur le rendu.">RE_Animator_getTransform()</a></li>
+</ul>
+<h2><a class="anchor" id="autotoc_md3"></a>
+Texture animée</h2>
+<p>Création, suppression et récupération.</p>
+<ul>
+<li><a class="el" href="group___r_e___animator.html#ga7f8cde9216d94b600fc07a83201d0f15" title="Ajoute une texture animée à un animateur. L&#39;animation est construite à partir d&#39;une texture (ou plus ...">RE_Animator_createTextureAnim()</a></li>
+<li><a class="el" href="group___r_e___animator.html#ga5231c9f222762af9f56fce8e63069f4e" title="Détruit une texture animée d&#39;un animateur. Cette fonction ne libère pas la texture associée.">RE_Animator_destroyTextureAnim()</a></li>
+<li><a class="el" href="group___r_e___animator.html#gaa158e314e4a5395a037c381247d3583f" title="Renvoie un pointeur sur une texture animée d&#39;un animateur à partir de son nom.">RE_Animator_getTextureAnim()</a></li>
+</ul>
+<p>Lancement ou arrêt d'une animation.</p>
+<ul>
+<li><a class="el" href="group___r_e___animator.html#ga70b821dbaa61bb96e9aaba054226165a" title="Lance l&#39;animation d&#39;une texture d&#39;un animateur. Si l&#39;animateur joue déjà une animation,...">RE_Animator_playTextureAnim()</a></li>
+<li><a class="el" href="group___r_e___animator.html#ga6cae9533adc4aa6c3334edef9a24ef69" title="Reprend l&#39;animation d&#39;une texture d&#39;un animateur. Si l&#39;animateur joue déjà une animation,...">RE_Animator_resumeTextureAnim()</a></li>
+<li><a class="el" href="group___r_e___animator.html#gabae9a71b7a8408aa1dc7a53d05b7d14e" title="Arrète l&#39;animation de la texture animée courante d&#39;un animateur.">RE_Animator_stopTextureAnim()</a></li>
+</ul>
+<p>Personnalisation d'une animation.</p>
+<ul>
+<li><a class="el" href="group___r_e___animator.html#ga99d3bc62fc0ccb009de7ab6a25fee6f1" title="Définit la durée d&#39;un cycle de l&#39;animation d&#39;une texture.">RE_TextureAnim_setCycleTime()</a></li>
+<li><a class="el" href="group___r_e___animator.html#gac4d1275fd1249fb773c4a8ede37a97f8" title="Définit le nombre de cycle de l&#39;animation d&#39;une texture. L&#39;animation se répète indéfiniment si le nom...">RE_TextureAnim_setNbCyles()</a></li>
+<li><a class="el" href="group___r_e___animator.html#gaa679ff19aa90c621da99fd37e33f615e" title="Définit le délai avant le début de l&#39;animation d&#39;une texture.">RE_TextureAnim_setDelay()</a></li>
+<li><a class="el" href="group___r_e___animator.html#gab742c80387e9c7f45a6f427a3eefe5a7" title="Définit la vitesse de lecture d&#39;une texture animée. La valeur par défaut est 1.f. Si elle vaut par ex...">RE_TextureAnim_setSpeed()</a></li>
+<li><a class="el" href="group___r_e___animator.html#ga9667aad319dbc5ad54361f60c7b1604e" title="Définit les flags d&#39;une texture animée. Les valeurs possibles des flags sont données dans l&#39;énumérati...">RE_TextureAnim_setFlags()</a></li>
+<li><a class="el" href="group___r_e___animator.html#ga1ab6221626095ef0d487bd5df0214ab7" title="Ajoute des flags à une texture animée. Les valeurs possibles des flags sont données dans l&#39;énumératio...">RE_TextureAnim_addFlags()</a></li>
+<li><a class="el" href="group___r_e___animator.html#ga34b37188cbc14d93821b2fbc096909e0" title="Enlève des flags à une texture animée. Les valeurs possibles des flags sont données dans l&#39;énumératio...">RE_TextureAnim_removeFlags()</a></li>
+</ul>
+<h2><a class="anchor" id="autotoc_md4"></a>
+Paramètre animé</h2>
+<p>Création, suppression et récupération.</p>
+<ul>
+<li><a class="el" href="group___r_e___animator.html#ga2763d73099480532a9c110a29da84fd7" title="Ajoute un paramètre animé à un animateur. La fonction renvoie un pointeur sur l&#39;animation crée pour p...">RE_Animator_createParamAnim()</a></li>
+<li><a class="el" href="group___r_e___animator.html#gab0d4bb00d659f3ea2ebae7f0173257c8" title="Détruit un paramètre animé d&#39;un animateur.">RE_Animator_destroyParamAnim()</a></li>
+<li><a class="el" href="group___r_e___animator.html#gae8ab7915ad9b20d9a10ffc45058abf66" title="Renvoie un pointeur sur un paramètre animé d&#39;un animateur à partir de son nom.">RE_Animator_getParamAnim()</a></li>
+</ul>
+<p>Lancement ou arrêt d'une animation.</p>
+<ul>
+<li><a class="el" href="group___r_e___animator.html#ga10f025ee74c78c11a6bf0d1231cb1d61" title="Lance l&#39;animation d&#39;un paramètre d&#39;un animateur. Le paramètre s&#39;ajoute aux paramètres actifs et ne le...">RE_Animator_playParamAnim()</a></li>
+<li><a class="el" href="group___r_e___animator.html#ga5fee20bb3ad6ced831fe9cdfa8106cb3" title="Reprend l&#39;animation d&#39;un paramètre d&#39;un animateur. Le paramètre s&#39;ajoute aux paramètres actifs et ne ...">RE_Animator_resumeParamAnim()</a></li>
+<li><a class="el" href="group___r_e___animator.html#ga0c24e2cc3b956af3181ef2f10c80654e" title="Arrète l&#39;animation d&#39;un paramètre animé actif d&#39;un animateur.">RE_Animator_stopParamAnim()</a></li>
+<li><a class="el" href="group___r_e___animator.html#ga02462a521d7b3876311c927428a83979" title="Arrète toutes les animations des paramètres animés actifs d&#39;un animateur.">RE_Animator_stopParamAnims()</a></li>
+</ul>
+<p>Définition du paramètre animé.</p>
+<ul>
+<li><a class="el" href="group___r_e___animator.html#ga65288fc23d7729d37d8b5beab6a63c9a" title="Définit le paramètre animé comme étant une variation de position et spécifie ses valeurs initiale et ...">RE_ParamAnim_setShift()</a></li>
+<li><a class="el" href="group___r_e___animator.html#gace5e7288fd4e0a3d1d4f7f97273b5e2a" title="Définit le paramètre animé comme étant une variation d&#39;opacité et spécifie ses valeurs initiale et fi...">RE_ParamAnim_setAlpha()</a></li>
+<li><a class="el" href="group___r_e___animator.html#ga3d29b43cac500e220e51e6485e1ce157" title="Définit le paramètre animé comme étant une variation de l&#39;angle de rotation et spécifie ses valeurs i...">RE_ParamAnim_setAngle()</a></li>
+</ul>
+<p>Personnalisation d'une animation.</p>
+<ul>
+<li><a class="el" href="group___r_e___animator.html#ga88de2e53abbdf5b472543d16a7dee65c" title="Définit la durée d&#39;un cycle de l&#39;animation d&#39;un paramètre.">RE_ParamAnim_setCycleTime()</a></li>
+<li><a class="el" href="group___r_e___animator.html#gaff1e44b8f5cca1155039b2a4c38b3a69" title="Définit le nombre de cycle de l&#39;animation d&#39;un paramètre. L&#39;animation se répète indéfiniment si le no...">RE_ParamAnim_setNbCyles()</a></li>
+<li><a class="el" href="group___r_e___animator.html#ga3b50ce45d12f3d6ef83f17649bcbb07f" title="Définit le délai avant le début de l&#39;animation d&#39;un paramètre.">RE_ParamAnim_setDelay()</a></li>
+<li><a class="el" href="group___r_e___animator.html#ga689d88d4896855d5dfb1fbd250e75129" title="Définit la courbe d&#39;accélération de l&#39;animation d&#39;un paramètre.">RE_ParamAnim_setEasing()</a></li>
+<li><a class="el" href="group___r_e___animator.html#gaf06c77a44e1c575bbeea1955d477dbe2" title="Définit la phase de l&#39;animation d&#39;un paramètre.">RE_ParamAnim_setPhase()</a></li>
+<li><a class="el" href="group___r_e___animator.html#gab9ba79643a9cfe4fef4e43ab66af9f6d" title="Définit la vitesse de lecture d&#39;un paramètre animé. La valeur par défaut est 1.f. Si elle vaut par ex...">RE_ParamAnim_setSpeed()</a></li>
+<li><a class="el" href="group___r_e___animator.html#ga13c9b526b1c04d0aff14eb4a2869c55e" title="Définit les flags d&#39;un paramètre animé. Les valeurs possibles des flags sont données dans l&#39;énumérati...">RE_ParamAnim_setFlags()</a></li>
+<li><a class="el" href="group___r_e___animator.html#ga5e632b272ff8879b798918939470907e" title="Ajoute des flags à un paramètre animé. Les valeurs possibles des flags sont données dans l&#39;énumératio...">RE_ParamAnim_addFlags()</a></li>
+<li><a class="el" href="group___r_e___animator.html#gacf3c854a558000516e6b333f5f612fd3" title="Enlève des flags à un paramètre animé. Les valeurs possibles des flags sont données dans l&#39;énumératio...">RE_ParamAnim_removeFlags()</a></li>
+</ul>
+<h2><a class="anchor" id="autotoc_md5"></a>
+Courbes d'accélération par défaut (Easing functions)</h2>
+<ul>
+<li><a class="el" href="group___r_e___animator.html#ga1367dba43b1573cf85127f541b3a9d99" title="Courbe d&#39;accélération linéaire.">RE_EasingFct_linear()</a></li>
+<li><a class="el" href="group___r_e___animator.html#ga04e652bd1ad59e31fa48e590a5189a32" title="Courbe d&#39;accélération douce en entrée.">RE_EasingFct_in()</a></li>
+<li><a class="el" href="group___r_e___animator.html#gab5f4fbd650eaef4e59c315d8787eccf6" title="Courbe d&#39;accélération douce en sortie.">RE_EasingFct_out()</a></li>
+<li><a class="el" href="group___r_e___animator.html#ga2119ace091cee363aba187b062de8124" title="Courbe d&#39;accélération avec douce en entrée et en sortie.">RE_EasingFct_inOut()</a></li>
+<li><a class="el" href="group___r_e___animator.html#gae3fd5567634e16ea073719009dd3e25f" title="Courbe d&#39;accélération définie à partir du cosinus.">RE_EasingFct_cos()</a> </li>
+</ul>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.18
+</small></address>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.18"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Rendering Engine (RE):  Fichier source de C:/Users/arnau/Documents/Data/Dev/RenderingEngine/RenderingEngine/RE_Utils.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Rendering Engine (RE)
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.18 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_07d9e4503b554f0274c5bfa511a2ed1e.html">RenderingEngine</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">RE_Utils.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#ifndef _RE_UTILS_H_</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#define _RE_UTILS_H_</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;RE_Lib.h&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;string.h&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="struct_rect__s.html">   13</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct_rect__s.html">Rect_s</a></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="struct_rect__s.html#ad0da36b2558901e21e7a30f6c227a45e">   16</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="struct_rect__s.html#ad0da36b2558901e21e7a30f6c227a45e">x</a>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="struct_rect__s.html#aa4f0d3eebc3c443f9be81bf48561a217">   19</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="struct_rect__s.html#aa4f0d3eebc3c443f9be81bf48561a217">y</a>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="struct_rect__s.html#a56eca241e2896b9f57a79589e76fd24b">   22</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="struct_rect__s.html#a56eca241e2896b9f57a79589e76fd24b">w</a>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="struct_rect__s.html#a85f2f1bd58b3b44ffdf3881823393959">   25</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="struct_rect__s.html#a85f2f1bd58b3b44ffdf3881823393959">h</a>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="group___r_e___utils.html#gaa8cadcded7ae946572f5e28afbf373eb">   26</a></span>&#160;} <a class="code" href="group___r_e___utils.html#gaa8cadcded7ae946572f5e28afbf373eb">Rect</a>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="group___r_e___utils.html#ga7574adaaaf84dae74aa43ba1c09a9235">   35</a></span>&#160;<span class="keyword">extern</span> RE_API <a class="code" href="struct_rect__s.html">Rect</a> <a class="code" href="group___r_e___utils.html#ga7574adaaaf84dae74aa43ba1c09a9235">Rect_set</a>(<span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y, <span class="keywordtype">float</span> w, <span class="keywordtype">float</span> h);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="struct_vec2__s.html">   39</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct_vec2__s.html">Vec2_s</a></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;{</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="struct_vec2__s.html#ad0da36b2558901e21e7a30f6c227a45e">   42</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="struct_vec2__s.html#ad0da36b2558901e21e7a30f6c227a45e">x</a>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="struct_vec2__s.html#aa4f0d3eebc3c443f9be81bf48561a217">   45</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="struct_vec2__s.html#aa4f0d3eebc3c443f9be81bf48561a217">y</a>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="group___r_e___utils.html#ga7cabff7b1653385388b2c8a580c3a6c1">   46</a></span>&#160;} <a class="code" href="group___r_e___utils.html#ga7cabff7b1653385388b2c8a580c3a6c1">Vec2</a>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="struct_vec2i__s.html">   50</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct_vec2i__s.html">Vec2i_s</a></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;{</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="struct_vec2i__s.html#a6150e0515f7202e2fb518f7206ed97dc">   53</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="struct_vec2i__s.html#a6150e0515f7202e2fb518f7206ed97dc">x</a>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="struct_vec2i__s.html#a0a2f84ed7838f07779ae24c5a9086d33">   56</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="struct_vec2i__s.html#a0a2f84ed7838f07779ae24c5a9086d33">y</a>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="group___r_e___utils.html#ga5f03d6ecc62b718686aa5bb224f93a4e">   57</a></span>&#160;} <a class="code" href="group___r_e___utils.html#ga5f03d6ecc62b718686aa5bb224f93a4e">Vec2i</a>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="group___r_e___utils.html#ga06849a2180ed4de24a097866b2723691">   64</a></span>&#160;<span class="keyword">extern</span> RE_API <a class="code" href="struct_vec2__s.html">Vec2</a> <a class="code" href="group___r_e___utils.html#ga06849a2180ed4de24a097866b2723691">Vec2_set</a>(<span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="group___r_e___utils.html#gad664c5aa439d633e691cdc35e39f536e">   71</a></span>&#160;RE_API RE_INLINE <span class="keywordtype">int</span> <a class="code" href="group___r_e___utils.html#gad664c5aa439d633e691cdc35e39f536e">Rect_contains</a>(<a class="code" href="struct_rect__s.html">Rect</a> *rect, <a class="code" href="struct_vec2__s.html">Vec2</a> *point)</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;{</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">return</span> (point-&gt;<a class="code" href="struct_vec2__s.html#ad0da36b2558901e21e7a30f6c227a45e">x</a> &gt;= rect-&gt;<a class="code" href="struct_rect__s.html#ad0da36b2558901e21e7a30f6c227a45e">x</a>) &amp;&amp; (point-&gt;<a class="code" href="struct_vec2__s.html#ad0da36b2558901e21e7a30f6c227a45e">x</a> &lt;= rect-&gt;<a class="code" href="struct_rect__s.html#ad0da36b2558901e21e7a30f6c227a45e">x</a> + rect-&gt;<a class="code" href="struct_rect__s.html#a56eca241e2896b9f57a79589e76fd24b">w</a>)</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        &amp;&amp; (point-&gt;<a class="code" href="struct_vec2__s.html#aa4f0d3eebc3c443f9be81bf48561a217">y</a> &gt;= rect-&gt;<a class="code" href="struct_rect__s.html#aa4f0d3eebc3c443f9be81bf48561a217">y</a>) &amp;&amp; (point-&gt;<a class="code" href="struct_vec2__s.html#aa4f0d3eebc3c443f9be81bf48561a217">y</a> &lt;= rect-&gt;<a class="code" href="struct_rect__s.html#aa4f0d3eebc3c443f9be81bf48561a217">y</a> + rect-&gt;<a class="code" href="struct_rect__s.html#a85f2f1bd58b3b44ffdf3881823393959">h</a>);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="astruct_rect__s_html_a56eca241e2896b9f57a79589e76fd24b"><div class="ttname"><a href="struct_rect__s.html#a56eca241e2896b9f57a79589e76fd24b">Rect_s::w</a></div><div class="ttdeci">float w</div><div class="ttdoc">Largeur du rectangle.</div><div class="ttdef"><b>Definition:</b> RE_Utils.h:22</div></div>
+<div class="ttc" id="astruct_vec2i__s_html"><div class="ttname"><a href="struct_vec2i__s.html">Vec2i_s</a></div><div class="ttdoc">Structure représentant un vecteur 2D dont les composantes sont de type int.</div><div class="ttdef"><b>Definition:</b> RE_Utils.h:51</div></div>
+<div class="ttc" id="astruct_rect__s_html_ad0da36b2558901e21e7a30f6c227a45e"><div class="ttname"><a href="struct_rect__s.html#ad0da36b2558901e21e7a30f6c227a45e">Rect_s::x</a></div><div class="ttdeci">float x</div><div class="ttdoc">Abscisse du sommet en bas à gauche du rectangle.</div><div class="ttdef"><b>Definition:</b> RE_Utils.h:16</div></div>
+<div class="ttc" id="astruct_vec2i__s_html_a6150e0515f7202e2fb518f7206ed97dc"><div class="ttname"><a href="struct_vec2i__s.html#a6150e0515f7202e2fb518f7206ed97dc">Vec2i_s::x</a></div><div class="ttdeci">int x</div><div class="ttdoc">Abscisse du vecteur.</div><div class="ttdef"><b>Definition:</b> RE_Utils.h:53</div></div>
+<div class="ttc" id="astruct_vec2__s_html_ad0da36b2558901e21e7a30f6c227a45e"><div class="ttname"><a href="struct_vec2__s.html#ad0da36b2558901e21e7a30f6c227a45e">Vec2_s::x</a></div><div class="ttdeci">float x</div><div class="ttdoc">Abscisse du vecteur.</div><div class="ttdef"><b>Definition:</b> RE_Utils.h:42</div></div>
+<div class="ttc" id="agroup___r_e___utils_html_ga5f03d6ecc62b718686aa5bb224f93a4e"><div class="ttname"><a href="group___r_e___utils.html#ga5f03d6ecc62b718686aa5bb224f93a4e">Vec2i</a></div><div class="ttdeci">struct Vec2i_s Vec2i</div><div class="ttdoc">Structure représentant un vecteur 2D dont les composantes sont de type int.</div></div>
+<div class="ttc" id="astruct_rect__s_html_aa4f0d3eebc3c443f9be81bf48561a217"><div class="ttname"><a href="struct_rect__s.html#aa4f0d3eebc3c443f9be81bf48561a217">Rect_s::y</a></div><div class="ttdeci">float y</div><div class="ttdoc">Ordonnée du sommet en bas à gauche du rectangle.</div><div class="ttdef"><b>Definition:</b> RE_Utils.h:19</div></div>
+<div class="ttc" id="astruct_vec2i__s_html_a0a2f84ed7838f07779ae24c5a9086d33"><div class="ttname"><a href="struct_vec2i__s.html#a0a2f84ed7838f07779ae24c5a9086d33">Vec2i_s::y</a></div><div class="ttdeci">int y</div><div class="ttdoc">Ordonnée du vecteur.</div><div class="ttdef"><b>Definition:</b> RE_Utils.h:56</div></div>
+<div class="ttc" id="astruct_vec2__s_html_aa4f0d3eebc3c443f9be81bf48561a217"><div class="ttname"><a href="struct_vec2__s.html#aa4f0d3eebc3c443f9be81bf48561a217">Vec2_s::y</a></div><div class="ttdeci">float y</div><div class="ttdoc">Ordonnée du vecteur.</div><div class="ttdef"><b>Definition:</b> RE_Utils.h:45</div></div>
+<div class="ttc" id="agroup___r_e___utils_html_gad664c5aa439d633e691cdc35e39f536e"><div class="ttname"><a href="group___r_e___utils.html#gad664c5aa439d633e691cdc35e39f536e">Rect_contains</a></div><div class="ttdeci">RE_API RE_INLINE int Rect_contains(Rect *rect, Vec2 *point)</div><div class="ttdoc">Indique si un rectangle contient un point.</div><div class="ttdef"><b>Definition:</b> RE_Utils.h:71</div></div>
+<div class="ttc" id="agroup___r_e___utils_html_gaa8cadcded7ae946572f5e28afbf373eb"><div class="ttname"><a href="group___r_e___utils.html#gaa8cadcded7ae946572f5e28afbf373eb">Rect</a></div><div class="ttdeci">struct Rect_s Rect</div><div class="ttdoc">Structure représenant un rectangle 2D alligné sur les axes X et Y.</div></div>
+<div class="ttc" id="agroup___r_e___utils_html_ga7cabff7b1653385388b2c8a580c3a6c1"><div class="ttname"><a href="group___r_e___utils.html#ga7cabff7b1653385388b2c8a580c3a6c1">Vec2</a></div><div class="ttdeci">struct Vec2_s Vec2</div><div class="ttdoc">Structure représentant un vecteur 2D dont les composantes sont de type float.</div></div>
+<div class="ttc" id="agroup___r_e___utils_html_ga06849a2180ed4de24a097866b2723691"><div class="ttname"><a href="group___r_e___utils.html#ga06849a2180ed4de24a097866b2723691">Vec2_set</a></div><div class="ttdeci">RE_API Vec2 Vec2_set(float x, float y)</div><div class="ttdoc">Construit un vecteur à partir de ses composantes.</div></div>
+<div class="ttc" id="astruct_rect__s_html_a85f2f1bd58b3b44ffdf3881823393959"><div class="ttname"><a href="struct_rect__s.html#a85f2f1bd58b3b44ffdf3881823393959">Rect_s::h</a></div><div class="ttdeci">float h</div><div class="ttdoc">Hauteur du rectangle.</div><div class="ttdef"><b>Definition:</b> RE_Utils.h:25</div></div>
+<div class="ttc" id="astruct_rect__s_html"><div class="ttname"><a href="struct_rect__s.html">Rect_s</a></div><div class="ttdoc">Structure représenant un rectangle 2D alligné sur les axes X et Y.</div><div class="ttdef"><b>Definition:</b> RE_Utils.h:14</div></div>
+<div class="ttc" id="astruct_vec2__s_html"><div class="ttname"><a href="struct_vec2__s.html">Vec2_s</a></div><div class="ttdoc">Structure représentant un vecteur 2D dont les composantes sont de type float.</div><div class="ttdef"><b>Definition:</b> RE_Utils.h:40</div></div>
+<div class="ttc" id="agroup___r_e___utils_html_ga7574adaaaf84dae74aa43ba1c09a9235"><div class="ttname"><a href="group___r_e___utils.html#ga7574adaaaf84dae74aa43ba1c09a9235">Rect_set</a></div><div class="ttdeci">RE_API Rect Rect_set(float x, float y, float w, float h)</div><div class="ttdoc">Construit un rectangle.</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.18
+</small></address>
+</body>
+</html>

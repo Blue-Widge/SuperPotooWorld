@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.18"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Rendering Engine (RE):  Fichier source de C:/Users/arnau/Documents/Data/Dev/RenderingEngine/RenderingEngine/RE_Window.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Rendering Engine (RE)
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.18 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_07d9e4503b554f0274c5bfa511a2ed1e.html">RenderingEngine</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">RE_Window.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#ifndef _RE_WINDOW_H_</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#define _RE_WINDOW_H_</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;RE_Lib.h&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;RE_Renderer.h&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#ifdef _WIN32</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;SDL.h&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;SDL2/SDL.h&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="struct_r_e___window__s.html">   19</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct_r_e___window__s.html">RE_Window_s</a></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="struct_r_e___window__s.html#a106712b518b00b5531093b2fa8a66a53">   23</a></span>&#160;    SDL_Window  *<a class="code" href="struct_r_e___window__s.html#a106712b518b00b5531093b2fa8a66a53">m_windowSDL</a>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="struct_r_e___window__s.html#a912a717a6319414586bd2623ae586157">   27</a></span>&#160;    <a class="code" href="struct_r_e___renderer__s.html">RE_Renderer</a> *<a class="code" href="struct_r_e___window__s.html#a912a717a6319414586bd2623ae586157">m_renderer</a>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="group___r_e___window.html#ga9d54fab4d51a91edae877344d0b4bca7">   28</a></span>&#160;} <a class="code" href="group___r_e___window.html#ga9d54fab4d51a91edae877344d0b4bca7">RE_Window</a>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="group___r_e___window.html#ga57210755fdc90939d60df67b6f9c0df3">   32</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> <a class="code" href="group___r_e___window.html#ga57210755fdc90939d60df67b6f9c0df3">RE_WindowFlags</a></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;{</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    RE_WINDOW_FULLSCREEN = SDL_WINDOW_FULLSCREEN,</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="group___r_e___window.html#ga8872a8b6fa17f9594013ecbd8a23029d">   35</a></span>&#160;} <a class="code" href="group___r_e___window.html#ga57210755fdc90939d60df67b6f9c0df3">RE_WindowFlags</a>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="group___r_e___window.html#ga4ab365c718c6ee30980d49f4ee0eb87b">   45</a></span>&#160;<span class="keyword">extern</span> RE_API <a class="code" href="struct_r_e___window__s.html">RE_Window</a> *<a class="code" href="group___r_e___window.html#ga4ab365c718c6ee30980d49f4ee0eb87b">RE_Window_new</a>(<span class="keywordtype">char</span> *title, <span class="keywordtype">int</span> width, <span class="keywordtype">int</span> height, <span class="keywordtype">int</span> flags);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="group___r_e___window.html#ga5fb90ab2bbc22b139192718e7be01bcf">   50</a></span>&#160;<span class="keyword">extern</span> RE_API <span class="keywordtype">void</span> <a class="code" href="group___r_e___window.html#ga5fb90ab2bbc22b139192718e7be01bcf">RE_Window_free</a>(<a class="code" href="struct_r_e___window__s.html">RE_Window</a> * window);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="group___r_e___window.html#ga13bcf47a01a9eafb266e7a0abf15f303">   56</a></span>&#160;<span class="keyword">extern</span> RE_API <a class="code" href="struct_r_e___renderer__s.html">RE_Renderer</a> *<a class="code" href="group___r_e___window.html#ga13bcf47a01a9eafb266e7a0abf15f303">RE_Window_getRenderer</a>(<a class="code" href="struct_r_e___window__s.html">RE_Window</a> *window);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="group___r_e___window.html#gaa8c23a37a0ae30b1d744dd1358a95e27">   61</a></span>&#160;<span class="keyword">extern</span> RE_API <span class="keywordtype">int</span> <a class="code" href="group___r_e___window.html#gaa8c23a37a0ae30b1d744dd1358a95e27">RE_init</a>();</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="group___r_e___window.html#ga4ec5d89fe465feb8aad5b98cc905026f">   65</a></span>&#160;<span class="keyword">extern</span> RE_API <span class="keywordtype">void</span> <a class="code" href="group___r_e___window.html#ga4ec5d89fe465feb8aad5b98cc905026f">RE_quit</a>();</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="astruct_r_e___renderer__s_html"><div class="ttname"><a href="struct_r_e___renderer__s.html">RE_Renderer_s</a></div><div class="ttdoc">Structure représentant le moteur de rendu.</div><div class="ttdef"><b>Definition:</b> RE_Renderer.h:49</div></div>
+<div class="ttc" id="agroup___r_e___window_html_ga9d54fab4d51a91edae877344d0b4bca7"><div class="ttname"><a href="group___r_e___window.html#ga9d54fab4d51a91edae877344d0b4bca7">RE_Window</a></div><div class="ttdeci">struct RE_Window_s RE_Window</div><div class="ttdoc">Structure représentant une fenêtre SDL avec son moteur de rendu.</div></div>
+<div class="ttc" id="agroup___r_e___window_html_ga4ec5d89fe465feb8aad5b98cc905026f"><div class="ttname"><a href="group___r_e___window.html#ga4ec5d89fe465feb8aad5b98cc905026f">RE_quit</a></div><div class="ttdeci">RE_API void RE_quit()</div><div class="ttdoc">Quitte la librairie.</div></div>
+<div class="ttc" id="astruct_r_e___window__s_html_a912a717a6319414586bd2623ae586157"><div class="ttname"><a href="struct_r_e___window__s.html#a912a717a6319414586bd2623ae586157">RE_Window_s::m_renderer</a></div><div class="ttdeci">RE_Renderer * m_renderer</div><div class="ttdoc">Le moteur de rendu associé à la fenêtre.</div><div class="ttdef"><b>Definition:</b> RE_Window.h:27</div></div>
+<div class="ttc" id="agroup___r_e___window_html_ga4ab365c718c6ee30980d49f4ee0eb87b"><div class="ttname"><a href="group___r_e___window.html#ga4ab365c718c6ee30980d49f4ee0eb87b">RE_Window_new</a></div><div class="ttdeci">RE_API RE_Window * RE_Window_new(char *title, int width, int height, int flags)</div><div class="ttdoc">Crée une nouvelle fenêtre.</div></div>
+<div class="ttc" id="agroup___r_e___window_html_gaa8c23a37a0ae30b1d744dd1358a95e27"><div class="ttname"><a href="group___r_e___window.html#gaa8c23a37a0ae30b1d744dd1358a95e27">RE_init</a></div><div class="ttdeci">RE_API int RE_init()</div><div class="ttdoc">Initialise la librairie.</div></div>
+<div class="ttc" id="astruct_r_e___window__s_html"><div class="ttname"><a href="struct_r_e___window__s.html">RE_Window_s</a></div><div class="ttdoc">Structure représentant une fenêtre SDL avec son moteur de rendu.</div><div class="ttdef"><b>Definition:</b> RE_Window.h:20</div></div>
+<div class="ttc" id="agroup___r_e___window_html_ga5fb90ab2bbc22b139192718e7be01bcf"><div class="ttname"><a href="group___r_e___window.html#ga5fb90ab2bbc22b139192718e7be01bcf">RE_Window_free</a></div><div class="ttdeci">RE_API void RE_Window_free(RE_Window *window)</div><div class="ttdoc">Détruit une fenêtre préalablement allouée avec RE_Window_new();.</div></div>
+<div class="ttc" id="agroup___r_e___window_html_ga57210755fdc90939d60df67b6f9c0df3"><div class="ttname"><a href="group___r_e___window.html#ga57210755fdc90939d60df67b6f9c0df3">RE_WindowFlags</a></div><div class="ttdeci">RE_WindowFlags</div><div class="ttdoc">Listes des flags utilisés lors de la création d'une fenêtre.</div><div class="ttdef"><b>Definition:</b> RE_Window.h:33</div></div>
+<div class="ttc" id="astruct_r_e___window__s_html_a106712b518b00b5531093b2fa8a66a53"><div class="ttname"><a href="struct_r_e___window__s.html#a106712b518b00b5531093b2fa8a66a53">RE_Window_s::m_windowSDL</a></div><div class="ttdeci">SDL_Window * m_windowSDL</div><div class="ttdoc">La fenêtre SDL.</div><div class="ttdef"><b>Definition:</b> RE_Window.h:23</div></div>
+<div class="ttc" id="agroup___r_e___window_html_ga13bcf47a01a9eafb266e7a0abf15f303"><div class="ttname"><a href="group___r_e___window.html#ga13bcf47a01a9eafb266e7a0abf15f303">RE_Window_getRenderer</a></div><div class="ttdeci">RE_API RE_Renderer * RE_Window_getRenderer(RE_Window *window)</div><div class="ttdoc">Renvoie le moteur de rendu associé à la fenêtre.</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.18
+</small></address>
+</body>
+</html>

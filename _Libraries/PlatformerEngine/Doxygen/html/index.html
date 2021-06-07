@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.18"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Plateformer Engine (PE): Librairie Platformer Engine (PE)</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Plateformer Engine (PE)
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.18 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="PageDoc"><div class="header">
+  <div class="headertitle">
+<div class="title">Librairie Platformer Engine (PE) </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p><a class="anchor" id="md_Doc"></a> La librairie <em>Platformer Engine</em> est un moteur physique léger pour les jeux de plates-formes en 2D. Si vous souhaitez accéder directement aux fonctionnalités de la librairie par thèmes, vous pouvez consulter les pages suivantes :</p>
+<ul>
+<li><a class="el" href="md__doc_world.html">API de PE_World</a></li>
+<li><a class="el" href="md__doc_body.html">API de PE_Body</a></li>
+<li><a class="el" href="md__doc_collider.html">API de PE_Collider</a></li>
+<li><a class="el" href="md__doc_collision.html">API de PE_Collidsion et PE_Trigger</a></li>
+</ul>
+<h1><a class="anchor" id="autotoc_md1"></a>
+Création du monde</h1>
+<p>La structure <a class="el" href="struct_p_e___world__s.html" title="Le monde gère et crée tous les corps physiques.">PE_World_s</a> (accessible via typedef ::PE_World) constitue le point central de la librairie. Le monde s'occupe de gestion de la mémoire, gère tous les objets physique et effectue la simulation physique.</p>
+<p>Pour créer le monde physique, il suffit de définir le vecteur de gravité global ainsi que le pas de temps fixe utilisé pour la simulation. </p><pre class="fragment">PE_World *world = NULL;
+PE_Vec2 gravity;
+float timeStep = 1.f / 50.f;
+
+PE_Vec2_set(&amp;gravity, 0.f, -40.f);
+world = PE_World_new(gravity, timeStep);
+</pre><p>Une fois la simulation terminée, on peut supprimer le monde avec la fonction <a class="el" href="group___p_e___world.html#ga55d9ed87ca052d79f07de1cf6a2e734d" title="Détruit le monde. Chaque entité physique appartenant à ce monde est également détruite....">PE_World_free()</a>. Il n'est pas nécessaire de supprimer les différents objets présents dans le monde, cette fonction libère toute la mémoire allouée pendant la simulation.</p>
+<p>Pour mettre à jour le monde et faire avancer la simulation du pas de temps spécifié lors de sa création, on utilise la fonction <a class="el" href="group___p_e___world.html#ga85616d078ee1a755c33920232272de0c" title="Met à jour les corps présents dans le monde d&#39;un pas de temps. Cette fonction fait met à jour les pos...">PE_World_fixedUpdate()</a>.</p>
+<h1><a class="anchor" id="autotoc_md2"></a>
+Création d'un corps</h1>
+<p>La structure <a class="el" href="struct_p_e___body__s.html" title="Structure représentant un corps indéformable dans le moteur physique.">PE_Body_s</a> (typedef <a class="el" href="group___p_e___body.html#gaa3c8a3304f9406491c0c380d2772d97a" title="Structure représentant un corps indéformable dans le moteur physique.">PE_Body</a>) représente un corps indéformable dans la simulation. La création d'un corps s'effectue avec la structure <a class="el" href="struct_p_e___body_def__s.html" title="Structure regroupant les informations nécessaires à la création d&#39;un corps. Une même définition peut ...">PE_BodyDef_s</a> (typedef <a class="el" href="group___p_e___body.html#ga63c75b18ba6e39e16bed7242673ac427" title="Structure regroupant les informations nécessaires à la création d&#39;un corps. Une même définition peut ...">PE_BodyDef</a>) qui regroupe toutes les informations essentielle du corps. On utilise généralement la fonction <a class="el" href="group___p_e___body.html#gae19d9986188f1c0e6436a335a820ad92" title="Initialise les valeurs par défaut de la définition de corps.">PE_BodyDef_setDefault()</a> pour initialiser la définition avec ses valeurs par défaut, puis on modifie les membres que l'on souhaite. </p><pre class="fragment">PE_BodyDef bodyDef;
+PE_BodyDef_setDefault(&amp;bodyDef);
+bodyDef.type = PE_STATIC_BODY;
+</pre><p>On peut ensuite créer le corps avec la fonction <a class="el" href="group___p_e___world.html#ga9318aed17f7b9ba0698d21ab3bbacbf7" title="Crée un corps indéformable dans le monde. Cette fonction est verrouillée dans les fonctions de rappel...">PE_World_createBody()</a>. </p><pre class="fragment">PE_Body *body = PE_World_createBody(world, &amp;bodyDef);
+</pre><p>Si l'on souhaite supprimer un corps pendant la simulation, il suffit d'appeler la fonction <a class="el" href="group___p_e___world.html#gab71163cb794e3b1da259e3ad8cdc185f" title="Détruit un corps indéformable. Le pointeur world ne doit pas être déréférencé après cet appel....">PE_World_removeBody()</a>. Attention cependant, les fonctions de création et de suppression d'un corps sont verrouillées pendant la mise à jour du monde. Elles ne peuvent donc pas être utilisées au sien d'une fonction de rappel (callback) qui s'exécute lors d'une collision entre deux objets.</p>
+<h1><a class="anchor" id="autotoc_md3"></a>
+Création d'un collider</h1>
+<p>La structure <a class="el" href="struct_p_e___collider__s.html" title="Structure représentant un collider dans le moteur physique. Un collider peut être affecté à un corps ...">PE_Collider_s</a> (typedef <a class="el" href="group___p_e___collider.html#ga695d80a931ceacd9b4daa2250537ab10" title="Structure représentant un collider dans le moteur physique. Un collider peut être affecté à un corps ...">PE_Collider</a>) représente une forme attachée à un corps qui peut détecter ou entrer en collision avec d'autres formes. Un corps à besoin d'au moins un collider pour interagir avec d'autres corps.</p>
+<p>La création d'un collider s'effectue avec la structure <a class="el" href="struct_p_e___collider_def__s.html" title="Structure regroupant les informations nécessaires à la création d&#39;un collider. Une même définition pe...">PE_ColliderDef_s</a> (typedef <a class="el" href="group___p_e___collider.html#ga48b853610c2c4ec83747d6bf59dd154d" title="Structure regroupant les informations nécessaires à la création d&#39;un collider. Une même définition pe...">PE_ColliderDef</a>) qui regroupe toutes les informations essentielle du collider. On utilise généralement la fonction <a class="el" href="group___p_e___collider.html#gaefd2623f1be90fd3cc44f1655e70f948" title="Initialise les valeurs par défaut de la définition de colliders.">PE_ColliderDef_setDefault()</a> pour initialiser la définition avec ses valeurs par défaut, puis on modifie les membres que l'on souhaite. </p><pre class="fragment">PE_ColliderDef colliderDef;
+PE_ColliderDef_setDefault(&amp;colliderDef);
+PE_Shape_setAsBox(&amp;colliderDef.shape, 0.f, 0.f, 1.f, 1.f);
+collider = PE_Body_createCollider(body, &amp;colliderDef);
+</pre><p>Si l'on souhaite supprimer un collider pendant la simulation, il suffit d'appeler la fonction <a class="el" href="group___p_e___body.html#ga415bc9adb45d4fd447eb44f51b766ac7" title="Supprime un collider attaché à un corps. Le pointeur world ne doit pas être déréférencé après cet app...">PE_Body_removeCollider()</a>. Comme pour les corps, la création et la suppressions de colliders sont verrouillées pendant la mise à jour du monde.</p>
+<h1><a class="anchor" id="autotoc_md4"></a>
+Gestion des collisions</h1>
+<p>Quand le moteur physique détecte une collision entre deux colliders, il en informe l'utilisateur en appelant une fonction de rapel (callback).</p>
+<ul>
+<li>Dans le cas d'une collision, c'est à l'utilisateur de définir la réponse (modification de la vitesse) de chacun des corps en utilisant la fonction <a class="el" href="group___p_e___body.html#gade6882ef20ac63f745129a2c6d829591" title="Définit la nouvelle vitesse de l&#39;origine du corps (dans le référentiel monde) en réponse à une collis...">PE_Body_setCollisionResponse()</a>. Le solver du moteur physique empêchera autant que possible les colliders de se superposer.</li>
+<li>Dans le cas d'une détection (trigger), il n'y a aucune modification de la physique des corps et le solver n'entre pas en jeu. </li>
+</ul>
+</div></div><!-- PageDoc -->
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.18
+</small></address>
+</body>
+</html>

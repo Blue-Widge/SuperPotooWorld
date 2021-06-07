@@ -1,0 +1,1920 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.18"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Rendering Engine (RE): Fonctions relatives à un animateur</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Rendering Engine (RE)
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.18 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Structures de données</a> &#124;
+<a href="#typedef-members">Définitions de type</a> &#124;
+<a href="#enum-members">Énumérations</a> &#124;
+<a href="#func-members">Fonctions</a>  </div>
+  <div class="headertitle">
+<div class="title">Fonctions relatives à un animateur</div>  </div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Structures de données</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_e___texture_anim__s.html">RE_TextureAnim_s</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure représentant une texture animée.  <a href="struct_r_e___texture_anim__s.html#details">Plus de détails...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_e___param_anim__s.html">RE_ParamAnim_s</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure représentant un paramètre animé.  <a href="struct_r_e___param_anim__s.html#details">Plus de détails...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_e___animator__s.html">RE_Animator_s</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure représentant un animateur. Cela permet d'animer un ensemble de plusieurs atlas de textures et d'y ajouter des effets comme des variations de position ou d'opacité.  <a href="struct_r_e___animator__s.html#details">Plus de détails...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Définitions de type</h2></td></tr>
+<tr class="memitem:ga48bf56703bfc6dc88d00808157b97549"><td class="memItemLeft" align="right" valign="top"><a id="ga48bf56703bfc6dc88d00808157b97549"></a>
+typedef float(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___animator.html#ga48bf56703bfc6dc88d00808157b97549">RE_EasingFct</a>) (float)</td></tr>
+<tr class="memdesc:ga48bf56703bfc6dc88d00808157b97549"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type d'une courbe d'accélération. Ces fonctions sont définies sur [0,1] et vérifient généralement f(0) = 0 et f(1) = 1. <br /></td></tr>
+<tr class="separator:ga48bf56703bfc6dc88d00808157b97549"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga088656050b3ccf71026b3dbc053a65a1"><td class="memItemLeft" align="right" valign="top"><a id="ga088656050b3ccf71026b3dbc053a65a1"></a>
+typedef enum <a class="el" href="group___r_e___animator.html#ga61b14aa2bd64a93cb478be3cdd446e20">RE_AnimFlags_e</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___animator.html#ga088656050b3ccf71026b3dbc053a65a1">RE_AnimFlags</a></td></tr>
+<tr class="memdesc:ga088656050b3ccf71026b3dbc053a65a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumération contenant les flags pouvant être utilisés pour contrôler l'animation d'une texture ou d'un paramètre. <br /></td></tr>
+<tr class="separator:ga088656050b3ccf71026b3dbc053a65a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3e7a9cd61ab1142c35e461b27f220696"><td class="memItemLeft" align="right" valign="top"><a id="ga3e7a9cd61ab1142c35e461b27f220696"></a>
+typedef struct <a class="el" href="struct_r_e___texture_anim__s.html">RE_TextureAnim_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___animator.html#ga3e7a9cd61ab1142c35e461b27f220696">RE_TextureAnim</a></td></tr>
+<tr class="memdesc:ga3e7a9cd61ab1142c35e461b27f220696"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure représentant une texture animée. <br /></td></tr>
+<tr class="separator:ga3e7a9cd61ab1142c35e461b27f220696"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5aa4eb0c37d795bed7418c4d749b51bf"><td class="memItemLeft" align="right" valign="top"><a id="ga5aa4eb0c37d795bed7418c4d749b51bf"></a>
+typedef enum <a class="el" href="group___r_e___animator.html#ga69d423bcde01a86d528af0b0a98354bf">RE_AnimableParam_e</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___animator.html#ga5aa4eb0c37d795bed7418c4d749b51bf">RE_AnimableParam</a></td></tr>
+<tr class="memdesc:ga5aa4eb0c37d795bed7418c4d749b51bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumération contenant les paramètres pouvant êtres animés par un RE_Animator. <br /></td></tr>
+<tr class="separator:ga5aa4eb0c37d795bed7418c4d749b51bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae19cb799fabf472b5f442aef40fdbec3"><td class="memItemLeft" align="right" valign="top"><a id="gae19cb799fabf472b5f442aef40fdbec3"></a>
+typedef struct <a class="el" href="struct_r_e___param_anim__s.html">RE_ParamAnim_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___animator.html#gae19cb799fabf472b5f442aef40fdbec3">RE_ParamAnim</a></td></tr>
+<tr class="memdesc:gae19cb799fabf472b5f442aef40fdbec3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure représentant un paramètre animé. <br /></td></tr>
+<tr class="separator:gae19cb799fabf472b5f442aef40fdbec3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaaf52d778ee060a34976e54736bee33e5"><td class="memItemLeft" align="right" valign="top"><a id="gaaf52d778ee060a34976e54736bee33e5"></a>
+typedef struct <a class="el" href="struct_r_e___animator__s.html">RE_Animator_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___animator.html#gaaf52d778ee060a34976e54736bee33e5">RE_Animator</a></td></tr>
+<tr class="memdesc:gaaf52d778ee060a34976e54736bee33e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure représentant un animateur. Cela permet d'animer un ensemble de plusieurs atlas de textures et d'y ajouter des effets comme des variations de position ou d'opacité. <br /></td></tr>
+<tr class="separator:gaaf52d778ee060a34976e54736bee33e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Énumérations</h2></td></tr>
+<tr class="memitem:ga61b14aa2bd64a93cb478be3cdd446e20"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___animator.html#ga61b14aa2bd64a93cb478be3cdd446e20">RE_AnimFlags_e</a> { <a class="el" href="group___r_e___animator.html#gga61b14aa2bd64a93cb478be3cdd446e20a6961483b304dfb99a5e6d69239a62166">RE_ANIM_PAUSED</a> = 1 &lt;&lt; 1, 
+<a class="el" href="group___r_e___animator.html#gga61b14aa2bd64a93cb478be3cdd446e20a6e6a2130f7182ec2e9fdd294620fbeb2">RE_ANIM_REVERSED</a> = 1 &lt;&lt; 2, 
+<a class="el" href="group___r_e___animator.html#gga61b14aa2bd64a93cb478be3cdd446e20a1f50119464277eff46c74b1a847f76fa">RE_ANIM_ALTERNATE</a> = 1 &lt;&lt; 3
+ }</td></tr>
+<tr class="memdesc:ga61b14aa2bd64a93cb478be3cdd446e20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumération contenant les flags pouvant être utilisés pour contrôler l'animation d'une texture ou d'un paramètre.  <a href="group___r_e___animator.html#ga61b14aa2bd64a93cb478be3cdd446e20">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga61b14aa2bd64a93cb478be3cdd446e20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga69d423bcde01a86d528af0b0a98354bf"><td class="memItemLeft" align="right" valign="top"><a id="ga69d423bcde01a86d528af0b0a98354bf"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___animator.html#ga69d423bcde01a86d528af0b0a98354bf">RE_AnimableParam_e</a> { <b>RE_PARAM_NONE</b> = 0, 
+<b>RE_PARAM_ALPHA</b>, 
+<b>RE_PARAM_SHIFT</b>, 
+<b>RE_PARAM_ANGLE</b>
+ }</td></tr>
+<tr class="memdesc:ga69d423bcde01a86d528af0b0a98354bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumération contenant les paramètres pouvant êtres animés par un RE_Animator. <br /></td></tr>
+<tr class="separator:ga69d423bcde01a86d528af0b0a98354bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:ga1367dba43b1573cf85127f541b3a9d99"><td class="memItemLeft" align="right" valign="top">RE_API float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___animator.html#ga1367dba43b1573cf85127f541b3a9d99">RE_EasingFct_linear</a> (float x)</td></tr>
+<tr class="memdesc:ga1367dba43b1573cf85127f541b3a9d99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Courbe d'accélération linéaire.  <a href="group___r_e___animator.html#ga1367dba43b1573cf85127f541b3a9d99">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga1367dba43b1573cf85127f541b3a9d99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga04e652bd1ad59e31fa48e590a5189a32"><td class="memItemLeft" align="right" valign="top">RE_API float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___animator.html#ga04e652bd1ad59e31fa48e590a5189a32">RE_EasingFct_in</a> (float x)</td></tr>
+<tr class="memdesc:ga04e652bd1ad59e31fa48e590a5189a32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Courbe d'accélération douce en entrée.  <a href="group___r_e___animator.html#ga04e652bd1ad59e31fa48e590a5189a32">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga04e652bd1ad59e31fa48e590a5189a32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab5f4fbd650eaef4e59c315d8787eccf6"><td class="memItemLeft" align="right" valign="top">RE_API float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___animator.html#gab5f4fbd650eaef4e59c315d8787eccf6">RE_EasingFct_out</a> (float x)</td></tr>
+<tr class="memdesc:gab5f4fbd650eaef4e59c315d8787eccf6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Courbe d'accélération douce en sortie.  <a href="group___r_e___animator.html#gab5f4fbd650eaef4e59c315d8787eccf6">Plus de détails...</a><br /></td></tr>
+<tr class="separator:gab5f4fbd650eaef4e59c315d8787eccf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2119ace091cee363aba187b062de8124"><td class="memItemLeft" align="right" valign="top">RE_API float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___animator.html#ga2119ace091cee363aba187b062de8124">RE_EasingFct_inOut</a> (float x)</td></tr>
+<tr class="memdesc:ga2119ace091cee363aba187b062de8124"><td class="mdescLeft">&#160;</td><td class="mdescRight">Courbe d'accélération avec douce en entrée et en sortie.  <a href="group___r_e___animator.html#ga2119ace091cee363aba187b062de8124">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga2119ace091cee363aba187b062de8124"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae3fd5567634e16ea073719009dd3e25f"><td class="memItemLeft" align="right" valign="top">RE_API float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___animator.html#gae3fd5567634e16ea073719009dd3e25f">RE_EasingFct_cos</a> (float x)</td></tr>
+<tr class="memdesc:gae3fd5567634e16ea073719009dd3e25f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Courbe d'accélération définie à partir du cosinus.  <a href="group___r_e___animator.html#gae3fd5567634e16ea073719009dd3e25f">Plus de détails...</a><br /></td></tr>
+<tr class="separator:gae3fd5567634e16ea073719009dd3e25f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga99d3bc62fc0ccb009de7ab6a25fee6f1"><td class="memItemLeft" align="right" valign="top">RE_API RE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___animator.html#ga99d3bc62fc0ccb009de7ab6a25fee6f1">RE_TextureAnim_setCycleTime</a> (<a class="el" href="group___r_e___animator.html#ga3e7a9cd61ab1142c35e461b27f220696">RE_TextureAnim</a> *textureAnim, float cycleTime)</td></tr>
+<tr class="memdesc:ga99d3bc62fc0ccb009de7ab6a25fee6f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Définit la durée d'un cycle de l'animation d'une texture.  <a href="group___r_e___animator.html#ga99d3bc62fc0ccb009de7ab6a25fee6f1">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga99d3bc62fc0ccb009de7ab6a25fee6f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac4d1275fd1249fb773c4a8ede37a97f8"><td class="memItemLeft" align="right" valign="top">RE_API RE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___animator.html#gac4d1275fd1249fb773c4a8ede37a97f8">RE_TextureAnim_setNbCyles</a> (<a class="el" href="group___r_e___animator.html#ga3e7a9cd61ab1142c35e461b27f220696">RE_TextureAnim</a> *textureAnim, int nbCycles)</td></tr>
+<tr class="memdesc:gac4d1275fd1249fb773c4a8ede37a97f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Définit le nombre de cycle de l'animation d'une texture. L'animation se répète indéfiniment si le nombre de cycle vaut -1.  <a href="group___r_e___animator.html#gac4d1275fd1249fb773c4a8ede37a97f8">Plus de détails...</a><br /></td></tr>
+<tr class="separator:gac4d1275fd1249fb773c4a8ede37a97f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa679ff19aa90c621da99fd37e33f615e"><td class="memItemLeft" align="right" valign="top">RE_API RE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___animator.html#gaa679ff19aa90c621da99fd37e33f615e">RE_TextureAnim_setDelay</a> (<a class="el" href="group___r_e___animator.html#ga3e7a9cd61ab1142c35e461b27f220696">RE_TextureAnim</a> *textureAnim, float delay)</td></tr>
+<tr class="memdesc:gaa679ff19aa90c621da99fd37e33f615e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Définit le délai avant le début de l'animation d'une texture.  <a href="group___r_e___animator.html#gaa679ff19aa90c621da99fd37e33f615e">Plus de détails...</a><br /></td></tr>
+<tr class="separator:gaa679ff19aa90c621da99fd37e33f615e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab742c80387e9c7f45a6f427a3eefe5a7"><td class="memItemLeft" align="right" valign="top">RE_API RE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___animator.html#gab742c80387e9c7f45a6f427a3eefe5a7">RE_TextureAnim_setSpeed</a> (<a class="el" href="group___r_e___animator.html#ga3e7a9cd61ab1142c35e461b27f220696">RE_TextureAnim</a> *textureAnim, float speed)</td></tr>
+<tr class="memdesc:gab742c80387e9c7f45a6f427a3eefe5a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Définit la vitesse de lecture d'une texture animée. La valeur par défaut est 1.f. Si elle vaut par exemple 2.f, l'animation se déroulera deux fois plus vite.  <a href="group___r_e___animator.html#gab742c80387e9c7f45a6f427a3eefe5a7">Plus de détails...</a><br /></td></tr>
+<tr class="separator:gab742c80387e9c7f45a6f427a3eefe5a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9667aad319dbc5ad54361f60c7b1604e"><td class="memItemLeft" align="right" valign="top">RE_API RE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___animator.html#ga9667aad319dbc5ad54361f60c7b1604e">RE_TextureAnim_setFlags</a> (<a class="el" href="group___r_e___animator.html#ga3e7a9cd61ab1142c35e461b27f220696">RE_TextureAnim</a> *textureAnim, int flags)</td></tr>
+<tr class="memdesc:ga9667aad319dbc5ad54361f60c7b1604e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Définit les flags d'une texture animée. Les valeurs possibles des flags sont données dans l'énumération RE_AnimFlags.  <a href="group___r_e___animator.html#ga9667aad319dbc5ad54361f60c7b1604e">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga9667aad319dbc5ad54361f60c7b1604e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1ab6221626095ef0d487bd5df0214ab7"><td class="memItemLeft" align="right" valign="top">RE_API RE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___animator.html#ga1ab6221626095ef0d487bd5df0214ab7">RE_TextureAnim_addFlags</a> (<a class="el" href="group___r_e___animator.html#ga3e7a9cd61ab1142c35e461b27f220696">RE_TextureAnim</a> *textureAnim, int flags)</td></tr>
+<tr class="memdesc:ga1ab6221626095ef0d487bd5df0214ab7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute des flags à une texture animée. Les valeurs possibles des flags sont données dans l'énumération RE_AnimFlags.  <a href="group___r_e___animator.html#ga1ab6221626095ef0d487bd5df0214ab7">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga1ab6221626095ef0d487bd5df0214ab7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga34b37188cbc14d93821b2fbc096909e0"><td class="memItemLeft" align="right" valign="top">RE_API RE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___animator.html#ga34b37188cbc14d93821b2fbc096909e0">RE_TextureAnim_removeFlags</a> (<a class="el" href="group___r_e___animator.html#ga3e7a9cd61ab1142c35e461b27f220696">RE_TextureAnim</a> *textureAnim, int flags)</td></tr>
+<tr class="memdesc:ga34b37188cbc14d93821b2fbc096909e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enlève des flags à une texture animée. Les valeurs possibles des flags sont données dans l'énumération RE_AnimFlags.  <a href="group___r_e___animator.html#ga34b37188cbc14d93821b2fbc096909e0">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga34b37188cbc14d93821b2fbc096909e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga65288fc23d7729d37d8b5beab6a63c9a"><td class="memItemLeft" align="right" valign="top">RE_API RE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___animator.html#ga65288fc23d7729d37d8b5beab6a63c9a">RE_ParamAnim_setShift</a> (<a class="el" href="group___r_e___animator.html#gae19cb799fabf472b5f442aef40fdbec3">RE_ParamAnim</a> *paramAnim, <a class="el" href="group___r_e___utils.html#ga7cabff7b1653385388b2c8a580c3a6c1">Vec2</a> shift0, <a class="el" href="group___r_e___utils.html#ga7cabff7b1653385388b2c8a580c3a6c1">Vec2</a> shift1)</td></tr>
+<tr class="memdesc:ga65288fc23d7729d37d8b5beab6a63c9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Définit le paramètre animé comme étant une variation de position et spécifie ses valeurs initiale et finale.  <a href="group___r_e___animator.html#ga65288fc23d7729d37d8b5beab6a63c9a">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga65288fc23d7729d37d8b5beab6a63c9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gace5e7288fd4e0a3d1d4f7f97273b5e2a"><td class="memItemLeft" align="right" valign="top">RE_API RE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___animator.html#gace5e7288fd4e0a3d1d4f7f97273b5e2a">RE_ParamAnim_setAlpha</a> (<a class="el" href="group___r_e___animator.html#gae19cb799fabf472b5f442aef40fdbec3">RE_ParamAnim</a> *paramAnim, int alpha0, int alpha1)</td></tr>
+<tr class="memdesc:gace5e7288fd4e0a3d1d4f7f97273b5e2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Définit le paramètre animé comme étant une variation d'opacité et spécifie ses valeurs initiale et finale.  <a href="group___r_e___animator.html#gace5e7288fd4e0a3d1d4f7f97273b5e2a">Plus de détails...</a><br /></td></tr>
+<tr class="separator:gace5e7288fd4e0a3d1d4f7f97273b5e2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3d29b43cac500e220e51e6485e1ce157"><td class="memItemLeft" align="right" valign="top">RE_API RE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___animator.html#ga3d29b43cac500e220e51e6485e1ce157">RE_ParamAnim_setAngle</a> (<a class="el" href="group___r_e___animator.html#gae19cb799fabf472b5f442aef40fdbec3">RE_ParamAnim</a> *paramAnim, float angle0, float angle1)</td></tr>
+<tr class="memdesc:ga3d29b43cac500e220e51e6485e1ce157"><td class="mdescLeft">&#160;</td><td class="mdescRight">Définit le paramètre animé comme étant une variation de l'angle de rotation et spécifie ses valeurs initiale et finale.  <a href="group___r_e___animator.html#ga3d29b43cac500e220e51e6485e1ce157">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga3d29b43cac500e220e51e6485e1ce157"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga88de2e53abbdf5b472543d16a7dee65c"><td class="memItemLeft" align="right" valign="top">RE_API RE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___animator.html#ga88de2e53abbdf5b472543d16a7dee65c">RE_ParamAnim_setCycleTime</a> (<a class="el" href="group___r_e___animator.html#gae19cb799fabf472b5f442aef40fdbec3">RE_ParamAnim</a> *paramAnim, float cycleTime)</td></tr>
+<tr class="memdesc:ga88de2e53abbdf5b472543d16a7dee65c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Définit la durée d'un cycle de l'animation d'un paramètre.  <a href="group___r_e___animator.html#ga88de2e53abbdf5b472543d16a7dee65c">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga88de2e53abbdf5b472543d16a7dee65c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaff1e44b8f5cca1155039b2a4c38b3a69"><td class="memItemLeft" align="right" valign="top">RE_API RE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___animator.html#gaff1e44b8f5cca1155039b2a4c38b3a69">RE_ParamAnim_setNbCyles</a> (<a class="el" href="group___r_e___animator.html#gae19cb799fabf472b5f442aef40fdbec3">RE_ParamAnim</a> *paramAnim, int nbCycles)</td></tr>
+<tr class="memdesc:gaff1e44b8f5cca1155039b2a4c38b3a69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Définit le nombre de cycle de l'animation d'un paramètre. L'animation se répète indéfiniment si le nombre de cycle vaut -1.  <a href="group___r_e___animator.html#gaff1e44b8f5cca1155039b2a4c38b3a69">Plus de détails...</a><br /></td></tr>
+<tr class="separator:gaff1e44b8f5cca1155039b2a4c38b3a69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3b50ce45d12f3d6ef83f17649bcbb07f"><td class="memItemLeft" align="right" valign="top">RE_API RE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___animator.html#ga3b50ce45d12f3d6ef83f17649bcbb07f">RE_ParamAnim_setDelay</a> (<a class="el" href="group___r_e___animator.html#gae19cb799fabf472b5f442aef40fdbec3">RE_ParamAnim</a> *paramAnim, float delay)</td></tr>
+<tr class="memdesc:ga3b50ce45d12f3d6ef83f17649bcbb07f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Définit le délai avant le début de l'animation d'un paramètre.  <a href="group___r_e___animator.html#ga3b50ce45d12f3d6ef83f17649bcbb07f">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga3b50ce45d12f3d6ef83f17649bcbb07f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga689d88d4896855d5dfb1fbd250e75129"><td class="memItemLeft" align="right" valign="top">RE_API RE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___animator.html#ga689d88d4896855d5dfb1fbd250e75129">RE_ParamAnim_setEasing</a> (<a class="el" href="group___r_e___animator.html#gae19cb799fabf472b5f442aef40fdbec3">RE_ParamAnim</a> *paramAnim, <a class="el" href="group___r_e___animator.html#ga48bf56703bfc6dc88d00808157b97549">RE_EasingFct</a> easing)</td></tr>
+<tr class="memdesc:ga689d88d4896855d5dfb1fbd250e75129"><td class="mdescLeft">&#160;</td><td class="mdescRight">Définit la courbe d'accélération de l'animation d'un paramètre.  <a href="group___r_e___animator.html#ga689d88d4896855d5dfb1fbd250e75129">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga689d88d4896855d5dfb1fbd250e75129"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf06c77a44e1c575bbeea1955d477dbe2"><td class="memItemLeft" align="right" valign="top">RE_API RE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___animator.html#gaf06c77a44e1c575bbeea1955d477dbe2">RE_ParamAnim_setPhase</a> (<a class="el" href="group___r_e___animator.html#gae19cb799fabf472b5f442aef40fdbec3">RE_ParamAnim</a> *paramAnim, float phase)</td></tr>
+<tr class="memdesc:gaf06c77a44e1c575bbeea1955d477dbe2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Définit la phase de l'animation d'un paramètre.  <a href="group___r_e___animator.html#gaf06c77a44e1c575bbeea1955d477dbe2">Plus de détails...</a><br /></td></tr>
+<tr class="separator:gaf06c77a44e1c575bbeea1955d477dbe2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab9ba79643a9cfe4fef4e43ab66af9f6d"><td class="memItemLeft" align="right" valign="top">RE_API RE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___animator.html#gab9ba79643a9cfe4fef4e43ab66af9f6d">RE_ParamAnim_setSpeed</a> (<a class="el" href="group___r_e___animator.html#gae19cb799fabf472b5f442aef40fdbec3">RE_ParamAnim</a> *paramAnim, float speed)</td></tr>
+<tr class="memdesc:gab9ba79643a9cfe4fef4e43ab66af9f6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Définit la vitesse de lecture d'un paramètre animé. La valeur par défaut est 1.f. Si elle vaut par exemple 2.f, l'animation se déroulera deux fois plus vite.  <a href="group___r_e___animator.html#gab9ba79643a9cfe4fef4e43ab66af9f6d">Plus de détails...</a><br /></td></tr>
+<tr class="separator:gab9ba79643a9cfe4fef4e43ab66af9f6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga13c9b526b1c04d0aff14eb4a2869c55e"><td class="memItemLeft" align="right" valign="top">RE_API RE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___animator.html#ga13c9b526b1c04d0aff14eb4a2869c55e">RE_ParamAnim_setFlags</a> (<a class="el" href="group___r_e___animator.html#gae19cb799fabf472b5f442aef40fdbec3">RE_ParamAnim</a> *paramAnim, int flags)</td></tr>
+<tr class="memdesc:ga13c9b526b1c04d0aff14eb4a2869c55e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Définit les flags d'un paramètre animé. Les valeurs possibles des flags sont données dans l'énumération RE_AnimFlags.  <a href="group___r_e___animator.html#ga13c9b526b1c04d0aff14eb4a2869c55e">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga13c9b526b1c04d0aff14eb4a2869c55e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5e632b272ff8879b798918939470907e"><td class="memItemLeft" align="right" valign="top">RE_API RE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___animator.html#ga5e632b272ff8879b798918939470907e">RE_ParamAnim_addFlags</a> (<a class="el" href="group___r_e___animator.html#gae19cb799fabf472b5f442aef40fdbec3">RE_ParamAnim</a> *paramAnim, int flags)</td></tr>
+<tr class="memdesc:ga5e632b272ff8879b798918939470907e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute des flags à un paramètre animé. Les valeurs possibles des flags sont données dans l'énumération RE_AnimFlags.  <a href="group___r_e___animator.html#ga5e632b272ff8879b798918939470907e">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga5e632b272ff8879b798918939470907e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacf3c854a558000516e6b333f5f612fd3"><td class="memItemLeft" align="right" valign="top">RE_API RE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___animator.html#gacf3c854a558000516e6b333f5f612fd3">RE_ParamAnim_removeFlags</a> (<a class="el" href="group___r_e___animator.html#gae19cb799fabf472b5f442aef40fdbec3">RE_ParamAnim</a> *paramAnim, int flags)</td></tr>
+<tr class="memdesc:gacf3c854a558000516e6b333f5f612fd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enlève des flags à un paramètre animé. Les valeurs possibles des flags sont données dans l'énumération RE_AnimFlags.  <a href="group___r_e___animator.html#gacf3c854a558000516e6b333f5f612fd3">Plus de détails...</a><br /></td></tr>
+<tr class="separator:gacf3c854a558000516e6b333f5f612fd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafe6af95969093b6f70a1b5d1d68c7fbd"><td class="memItemLeft" align="right" valign="top">RE_API <a class="el" href="group___r_e___animator.html#gaaf52d778ee060a34976e54736bee33e5">RE_Animator</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___animator.html#gafe6af95969093b6f70a1b5d1d68c7fbd">RE_Animator_new</a> ()</td></tr>
+<tr class="memdesc:gafe6af95969093b6f70a1b5d1d68c7fbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crée un nouvel animateur.  <a href="group___r_e___animator.html#gafe6af95969093b6f70a1b5d1d68c7fbd">Plus de détails...</a><br /></td></tr>
+<tr class="separator:gafe6af95969093b6f70a1b5d1d68c7fbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga61a48161b8bb219a20c5f9b047831aec"><td class="memItemLeft" align="right" valign="top">RE_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___animator.html#ga61a48161b8bb219a20c5f9b047831aec">RE_Animator_free</a> (<a class="el" href="group___r_e___animator.html#gaaf52d778ee060a34976e54736bee33e5">RE_Animator</a> *animator)</td></tr>
+<tr class="memdesc:ga61a48161b8bb219a20c5f9b047831aec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Détruit un animateur préalablement créé avec <a class="el" href="group___r_e___animator.html#gafe6af95969093b6f70a1b5d1d68c7fbd" title="Crée un nouvel animateur.">RE_Animator_new()</a>. Détruit également toutes les animations contenues dans l'animateur. Ne libère pas les textures associées.  <a href="group___r_e___animator.html#ga61a48161b8bb219a20c5f9b047831aec">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga61a48161b8bb219a20c5f9b047831aec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7f8cde9216d94b600fc07a83201d0f15"><td class="memItemLeft" align="right" valign="top">RE_API <a class="el" href="group___r_e___animator.html#ga3e7a9cd61ab1142c35e461b27f220696">RE_TextureAnim</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___animator.html#ga7f8cde9216d94b600fc07a83201d0f15">RE_Animator_createTextureAnim</a> (<a class="el" href="group___r_e___animator.html#gaaf52d778ee060a34976e54736bee33e5">RE_Animator</a> *animator, <a class="el" href="group___r_e___texture.html#ga4944d62c51444c69c8d7c2e719f77eb2">RE_Texture</a> *texture, char *name)</td></tr>
+<tr class="memdesc:ga7f8cde9216d94b600fc07a83201d0f15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute une texture animée à un animateur. L'animation est construite à partir d'une texture (ou plus généralement un atlas de texture). La fonction renvoie un pointeur sur l'animation crée pour pouvoir la paramétrer. La fonction <a class="el" href="group___r_e___animator.html#ga70b821dbaa61bb96e9aaba054226165a" title="Lance l&#39;animation d&#39;une texture d&#39;un animateur. Si l&#39;animateur joue déjà une animation,...">RE_Animator_playTextureAnim()</a> permet ensuite de lancer l'animation en utilisant son nom.  <a href="group___r_e___animator.html#ga7f8cde9216d94b600fc07a83201d0f15">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga7f8cde9216d94b600fc07a83201d0f15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2763d73099480532a9c110a29da84fd7"><td class="memItemLeft" align="right" valign="top">RE_API <a class="el" href="group___r_e___animator.html#gae19cb799fabf472b5f442aef40fdbec3">RE_ParamAnim</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___animator.html#ga2763d73099480532a9c110a29da84fd7">RE_Animator_createParamAnim</a> (<a class="el" href="group___r_e___animator.html#gaaf52d778ee060a34976e54736bee33e5">RE_Animator</a> *animator, char *name)</td></tr>
+<tr class="memdesc:ga2763d73099480532a9c110a29da84fd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute un paramètre animé à un animateur. La fonction renvoie un pointeur sur l'animation crée pour pouvoir la paramétrer. La fonction <a class="el" href="group___r_e___animator.html#ga10f025ee74c78c11a6bf0d1231cb1d61" title="Lance l&#39;animation d&#39;un paramètre d&#39;un animateur. Le paramètre s&#39;ajoute aux paramètres actifs et ne le...">RE_Animator_playParamAnim()</a> permet ensuite de lancer l'animation en utilisant son nom.  <a href="group___r_e___animator.html#ga2763d73099480532a9c110a29da84fd7">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga2763d73099480532a9c110a29da84fd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa158e314e4a5395a037c381247d3583f"><td class="memItemLeft" align="right" valign="top">RE_API <a class="el" href="group___r_e___animator.html#ga3e7a9cd61ab1142c35e461b27f220696">RE_TextureAnim</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___animator.html#gaa158e314e4a5395a037c381247d3583f">RE_Animator_getTextureAnim</a> (<a class="el" href="group___r_e___animator.html#gaaf52d778ee060a34976e54736bee33e5">RE_Animator</a> *animator, char *name)</td></tr>
+<tr class="memdesc:gaa158e314e4a5395a037c381247d3583f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie un pointeur sur une texture animée d'un animateur à partir de son nom.  <a href="group___r_e___animator.html#gaa158e314e4a5395a037c381247d3583f">Plus de détails...</a><br /></td></tr>
+<tr class="separator:gaa158e314e4a5395a037c381247d3583f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae8ab7915ad9b20d9a10ffc45058abf66"><td class="memItemLeft" align="right" valign="top">RE_API <a class="el" href="group___r_e___animator.html#gae19cb799fabf472b5f442aef40fdbec3">RE_ParamAnim</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___animator.html#gae8ab7915ad9b20d9a10ffc45058abf66">RE_Animator_getParamAnim</a> (<a class="el" href="group___r_e___animator.html#gaaf52d778ee060a34976e54736bee33e5">RE_Animator</a> *animator, char *name)</td></tr>
+<tr class="memdesc:gae8ab7915ad9b20d9a10ffc45058abf66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie un pointeur sur un paramètre animé d'un animateur à partir de son nom.  <a href="group___r_e___animator.html#gae8ab7915ad9b20d9a10ffc45058abf66">Plus de détails...</a><br /></td></tr>
+<tr class="separator:gae8ab7915ad9b20d9a10ffc45058abf66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5231c9f222762af9f56fce8e63069f4e"><td class="memItemLeft" align="right" valign="top">RE_API int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___animator.html#ga5231c9f222762af9f56fce8e63069f4e">RE_Animator_destroyTextureAnim</a> (<a class="el" href="group___r_e___animator.html#gaaf52d778ee060a34976e54736bee33e5">RE_Animator</a> *animator, char *name)</td></tr>
+<tr class="memdesc:ga5231c9f222762af9f56fce8e63069f4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Détruit une texture animée d'un animateur. Cette fonction ne libère pas la texture associée.  <a href="group___r_e___animator.html#ga5231c9f222762af9f56fce8e63069f4e">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga5231c9f222762af9f56fce8e63069f4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab0d4bb00d659f3ea2ebae7f0173257c8"><td class="memItemLeft" align="right" valign="top">RE_API int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___animator.html#gab0d4bb00d659f3ea2ebae7f0173257c8">RE_Animator_destroyParamAnim</a> (<a class="el" href="group___r_e___animator.html#gaaf52d778ee060a34976e54736bee33e5">RE_Animator</a> *animator, char *name)</td></tr>
+<tr class="memdesc:gab0d4bb00d659f3ea2ebae7f0173257c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Détruit un paramètre animé d'un animateur.  <a href="group___r_e___animator.html#gab0d4bb00d659f3ea2ebae7f0173257c8">Plus de détails...</a><br /></td></tr>
+<tr class="separator:gab0d4bb00d659f3ea2ebae7f0173257c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga70b821dbaa61bb96e9aaba054226165a"><td class="memItemLeft" align="right" valign="top">RE_API int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___animator.html#ga70b821dbaa61bb96e9aaba054226165a">RE_Animator_playTextureAnim</a> (<a class="el" href="group___r_e___animator.html#gaaf52d778ee060a34976e54736bee33e5">RE_Animator</a> *animator, char *name)</td></tr>
+<tr class="memdesc:ga70b821dbaa61bb96e9aaba054226165a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lance l'animation d'une texture d'un animateur. Si l'animateur joue déjà une animation, elle est remplacée par la nouvelle.  <a href="group___r_e___animator.html#ga70b821dbaa61bb96e9aaba054226165a">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga70b821dbaa61bb96e9aaba054226165a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga10f025ee74c78c11a6bf0d1231cb1d61"><td class="memItemLeft" align="right" valign="top">RE_API int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___animator.html#ga10f025ee74c78c11a6bf0d1231cb1d61">RE_Animator_playParamAnim</a> (<a class="el" href="group___r_e___animator.html#gaaf52d778ee060a34976e54736bee33e5">RE_Animator</a> *animator, char *name)</td></tr>
+<tr class="memdesc:ga10f025ee74c78c11a6bf0d1231cb1d61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lance l'animation d'un paramètre d'un animateur. Le paramètre s'ajoute aux paramètres actifs et ne les remplace pas.  <a href="group___r_e___animator.html#ga10f025ee74c78c11a6bf0d1231cb1d61">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga10f025ee74c78c11a6bf0d1231cb1d61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6cae9533adc4aa6c3334edef9a24ef69"><td class="memItemLeft" align="right" valign="top">RE_API int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___animator.html#ga6cae9533adc4aa6c3334edef9a24ef69">RE_Animator_resumeTextureAnim</a> (<a class="el" href="group___r_e___animator.html#gaaf52d778ee060a34976e54736bee33e5">RE_Animator</a> *animator, char *name)</td></tr>
+<tr class="memdesc:ga6cae9533adc4aa6c3334edef9a24ef69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reprend l'animation d'une texture d'un animateur. Si l'animateur joue déjà une animation, elle est remplacée par la nouvelle.  <a href="group___r_e___animator.html#ga6cae9533adc4aa6c3334edef9a24ef69">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga6cae9533adc4aa6c3334edef9a24ef69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5fee20bb3ad6ced831fe9cdfa8106cb3"><td class="memItemLeft" align="right" valign="top">RE_API int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___animator.html#ga5fee20bb3ad6ced831fe9cdfa8106cb3">RE_Animator_resumeParamAnim</a> (<a class="el" href="group___r_e___animator.html#gaaf52d778ee060a34976e54736bee33e5">RE_Animator</a> *animator, char *name)</td></tr>
+<tr class="memdesc:ga5fee20bb3ad6ced831fe9cdfa8106cb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reprend l'animation d'un paramètre d'un animateur. Le paramètre s'ajoute aux paramètres actifs et ne les remplace pas.  <a href="group___r_e___animator.html#ga5fee20bb3ad6ced831fe9cdfa8106cb3">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga5fee20bb3ad6ced831fe9cdfa8106cb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabae9a71b7a8408aa1dc7a53d05b7d14e"><td class="memItemLeft" align="right" valign="top">RE_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___animator.html#gabae9a71b7a8408aa1dc7a53d05b7d14e">RE_Animator_stopTextureAnim</a> (<a class="el" href="group___r_e___animator.html#gaaf52d778ee060a34976e54736bee33e5">RE_Animator</a> *animator)</td></tr>
+<tr class="memdesc:gabae9a71b7a8408aa1dc7a53d05b7d14e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Arrète l'animation de la texture animée courante d'un animateur.  <a href="group___r_e___animator.html#gabae9a71b7a8408aa1dc7a53d05b7d14e">Plus de détails...</a><br /></td></tr>
+<tr class="separator:gabae9a71b7a8408aa1dc7a53d05b7d14e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0c24e2cc3b956af3181ef2f10c80654e"><td class="memItemLeft" align="right" valign="top">RE_API int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___animator.html#ga0c24e2cc3b956af3181ef2f10c80654e">RE_Animator_stopParamAnim</a> (<a class="el" href="group___r_e___animator.html#gaaf52d778ee060a34976e54736bee33e5">RE_Animator</a> *animator, char *name)</td></tr>
+<tr class="memdesc:ga0c24e2cc3b956af3181ef2f10c80654e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Arrète l'animation d'un paramètre animé actif d'un animateur.  <a href="group___r_e___animator.html#ga0c24e2cc3b956af3181ef2f10c80654e">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga0c24e2cc3b956af3181ef2f10c80654e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga02462a521d7b3876311c927428a83979"><td class="memItemLeft" align="right" valign="top">RE_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___animator.html#ga02462a521d7b3876311c927428a83979">RE_Animator_stopParamAnims</a> (<a class="el" href="group___r_e___animator.html#gaaf52d778ee060a34976e54736bee33e5">RE_Animator</a> *animator)</td></tr>
+<tr class="memdesc:ga02462a521d7b3876311c927428a83979"><td class="mdescLeft">&#160;</td><td class="mdescRight">Arrète toutes les animations des paramètres animés actifs d'un animateur.  <a href="group___r_e___animator.html#ga02462a521d7b3876311c927428a83979">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga02462a521d7b3876311c927428a83979"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae7f3b47a8f4cbb54d56f4af66dd9ed3a"><td class="memItemLeft" align="right" valign="top">RE_API RE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___animator.html#gae7f3b47a8f4cbb54d56f4af66dd9ed3a">RE_Animator_setAlpha</a> (<a class="el" href="group___r_e___animator.html#gaaf52d778ee060a34976e54736bee33e5">RE_Animator</a> *animator, int alpha)</td></tr>
+<tr class="memdesc:gae7f3b47a8f4cbb54d56f4af66dd9ed3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Définit la composante alpha (transparence) du rendu. Ce paramètre est écrasé par une animation de l'opacité.  <a href="group___r_e___animator.html#gae7f3b47a8f4cbb54d56f4af66dd9ed3a">Plus de détails...</a><br /></td></tr>
+<tr class="separator:gae7f3b47a8f4cbb54d56f4af66dd9ed3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga22f344e238e28fe38d1f76f6aa5a177e"><td class="memItemLeft" align="right" valign="top">RE_API RE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___animator.html#ga22f344e238e28fe38d1f76f6aa5a177e">RE_Animator_setTransform</a> (<a class="el" href="group___r_e___animator.html#gaaf52d778ee060a34976e54736bee33e5">RE_Animator</a> *animator, <a class="el" href="group___r_e___texture.html#gae2e3c48dbca9db49d917c123a764daea">RE_Transform</a> *transform)</td></tr>
+<tr class="memdesc:ga22f344e238e28fe38d1f76f6aa5a177e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Définit la transformation à appliquer sur le rendu.  <a href="group___r_e___animator.html#ga22f344e238e28fe38d1f76f6aa5a177e">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga22f344e238e28fe38d1f76f6aa5a177e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga15df7a71fc9b036fff3be45c2665ac8b"><td class="memItemLeft" align="right" valign="top">RE_API RE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___animator.html#ga15df7a71fc9b036fff3be45c2665ac8b">RE_Animator_getTransform</a> (<a class="el" href="group___r_e___animator.html#gaaf52d778ee060a34976e54736bee33e5">RE_Animator</a> *animator, <a class="el" href="group___r_e___texture.html#gae2e3c48dbca9db49d917c123a764daea">RE_Transform</a> *transform)</td></tr>
+<tr class="memdesc:ga15df7a71fc9b036fff3be45c2665ac8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie la transformation appliquée sur le rendu.  <a href="group___r_e___animator.html#ga15df7a71fc9b036fff3be45c2665ac8b">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga15df7a71fc9b036fff3be45c2665ac8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1552222af4d053d4d89d88214ad5bf31"><td class="memItemLeft" align="right" valign="top">RE_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___animator.html#ga1552222af4d053d4d89d88214ad5bf31">RE_Animator_render</a> (<a class="el" href="group___r_e___animator.html#gaaf52d778ee060a34976e54736bee33e5">RE_Animator</a> *animator, int x, int y)</td></tr>
+<tr class="memdesc:ga1552222af4d053d4d89d88214ad5bf31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dessine l'image courante de l'animation dans son contexte de rendu.  <a href="group___r_e___animator.html#ga1552222af4d053d4d89d88214ad5bf31">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga1552222af4d053d4d89d88214ad5bf31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5b170611a7174787d7da3e29fb4dac84"><td class="memItemLeft" align="right" valign="top">RE_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___animator.html#ga5b170611a7174787d7da3e29fb4dac84">RE_Animator_renderF</a> (<a class="el" href="group___r_e___animator.html#gaaf52d778ee060a34976e54736bee33e5">RE_Animator</a> *animator, float x, float y)</td></tr>
+<tr class="memdesc:ga5b170611a7174787d7da3e29fb4dac84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dessine l'image courante de l'animation dans son contexte de rendu. Contrairement à <a class="el" href="group___r_e___animator.html#ga1552222af4d053d4d89d88214ad5bf31" title="Dessine l&#39;image courante de l&#39;animation dans son contexte de rendu.">RE_Animator_render()</a>, cette fonction effectue le rendu avec une précision en virgule flottante.  <a href="group___r_e___animator.html#ga5b170611a7174787d7da3e29fb4dac84">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga5b170611a7174787d7da3e29fb4dac84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabfd76fd7199f89b1c6bce7eec6e0b472"><td class="memItemLeft" align="right" valign="top">RE_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___animator.html#gabfd76fd7199f89b1c6bce7eec6e0b472">RE_Animator_update</a> (<a class="el" href="group___r_e___animator.html#gaaf52d778ee060a34976e54736bee33e5">RE_Animator</a> *animator, <a class="el" href="group___r_e___timer.html#gac0eba1b0e22df1a9d396e2132026f274">RE_Timer</a> *timer)</td></tr>
+<tr class="memdesc:gabfd76fd7199f89b1c6bce7eec6e0b472"><td class="mdescLeft">&#160;</td><td class="mdescRight">Met à jour l'animateur en fonction du temps écoulé.  <a href="group___r_e___animator.html#gabfd76fd7199f89b1c6bce7eec6e0b472">Plus de détails...</a><br /></td></tr>
+<tr class="separator:gabfd76fd7199f89b1c6bce7eec6e0b472"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<h2 class="groupheader">Documentation du type de l'énumération</h2>
+<a id="ga61b14aa2bd64a93cb478be3cdd446e20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga61b14aa2bd64a93cb478be3cdd446e20">&#9670;&nbsp;</a></span>RE_AnimFlags_e</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group___r_e___animator.html#ga61b14aa2bd64a93cb478be3cdd446e20">RE_AnimFlags_e</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enumération contenant les flags pouvant être utilisés pour contrôler l'animation d'une texture ou d'un paramètre. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Valeurs énumérées</th></tr><tr><td class="fieldname"><a id="gga61b14aa2bd64a93cb478be3cdd446e20a6961483b304dfb99a5e6d69239a62166"></a>RE_ANIM_PAUSED&#160;</td><td class="fielddoc"><p>Met l'animation en pause. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga61b14aa2bd64a93cb478be3cdd446e20a6e6a2130f7182ec2e9fdd294620fbeb2"></a>RE_ANIM_REVERSED&#160;</td><td class="fielddoc"><p>Joue l'animation dans le sens inverse. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga61b14aa2bd64a93cb478be3cdd446e20a1f50119464277eff46c74b1a847f76fa"></a>RE_ANIM_ALTERNATE&#160;</td><td class="fielddoc"><p>Joue l'animation en avant puis en arrière. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des fonctions</h2>
+<a id="ga2763d73099480532a9c110a29da84fd7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2763d73099480532a9c110a29da84fd7">&#9670;&nbsp;</a></span>RE_Animator_createParamAnim()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RE_API <a class="el" href="group___r_e___animator.html#gae19cb799fabf472b5f442aef40fdbec3">RE_ParamAnim</a>* RE_Animator_createParamAnim </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___r_e___animator.html#gaaf52d778ee060a34976e54736bee33e5">RE_Animator</a> *&#160;</td>
+          <td class="paramname"><em>animator</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ajoute un paramètre animé à un animateur. La fonction renvoie un pointeur sur l'animation crée pour pouvoir la paramétrer. La fonction <a class="el" href="group___r_e___animator.html#ga10f025ee74c78c11a6bf0d1231cb1d61" title="Lance l&#39;animation d&#39;un paramètre d&#39;un animateur. Le paramètre s&#39;ajoute aux paramètres actifs et ne le...">RE_Animator_playParamAnim()</a> permet ensuite de lancer l'animation en utilisant son nom. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">animator</td><td>l'animateur. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>le nom de l'animation. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Le paramètre animé créé ou NULL en cas d'erreur. </dd></dl>
+
+</div>
+</div>
+<a id="ga7f8cde9216d94b600fc07a83201d0f15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7f8cde9216d94b600fc07a83201d0f15">&#9670;&nbsp;</a></span>RE_Animator_createTextureAnim()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RE_API <a class="el" href="group___r_e___animator.html#ga3e7a9cd61ab1142c35e461b27f220696">RE_TextureAnim</a>* RE_Animator_createTextureAnim </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___r_e___animator.html#gaaf52d778ee060a34976e54736bee33e5">RE_Animator</a> *&#160;</td>
+          <td class="paramname"><em>animator</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group___r_e___texture.html#ga4944d62c51444c69c8d7c2e719f77eb2">RE_Texture</a> *&#160;</td>
+          <td class="paramname"><em>texture</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ajoute une texture animée à un animateur. L'animation est construite à partir d'une texture (ou plus généralement un atlas de texture). La fonction renvoie un pointeur sur l'animation crée pour pouvoir la paramétrer. La fonction <a class="el" href="group___r_e___animator.html#ga70b821dbaa61bb96e9aaba054226165a" title="Lance l&#39;animation d&#39;une texture d&#39;un animateur. Si l&#39;animateur joue déjà une animation,...">RE_Animator_playTextureAnim()</a> permet ensuite de lancer l'animation en utilisant son nom. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">animator</td><td>l'animateur. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">texture</td><td>la texture contenant les différentes étapes de l'animation. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>le nom de l'animation. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>La texture animée créée ou NULL en cas d'erreur. </dd></dl>
+
+</div>
+</div>
+<a id="gab0d4bb00d659f3ea2ebae7f0173257c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab0d4bb00d659f3ea2ebae7f0173257c8">&#9670;&nbsp;</a></span>RE_Animator_destroyParamAnim()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RE_API int RE_Animator_destroyParamAnim </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___r_e___animator.html#gaaf52d778ee060a34976e54736bee33e5">RE_Animator</a> *&#160;</td>
+          <td class="paramname"><em>animator</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Détruit un paramètre animé d'un animateur. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">animator</td><td>l'animateur. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>le nom de l'animation. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>EXIT_SUCCESS ou EXIT_FAILURE s'il n'y a aucune animation correspondant au nom donné. </dd></dl>
+
+</div>
+</div>
+<a id="ga5231c9f222762af9f56fce8e63069f4e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5231c9f222762af9f56fce8e63069f4e">&#9670;&nbsp;</a></span>RE_Animator_destroyTextureAnim()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RE_API int RE_Animator_destroyTextureAnim </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___r_e___animator.html#gaaf52d778ee060a34976e54736bee33e5">RE_Animator</a> *&#160;</td>
+          <td class="paramname"><em>animator</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Détruit une texture animée d'un animateur. Cette fonction ne libère pas la texture associée. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">animator</td><td>l'animateur. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>le nom de l'animation. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>EXIT_SUCCESS ou EXIT_FAILURE s'il n'y a aucune animation correspondant au nom donné. </dd></dl>
+
+</div>
+</div>
+<a id="ga61a48161b8bb219a20c5f9b047831aec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga61a48161b8bb219a20c5f9b047831aec">&#9670;&nbsp;</a></span>RE_Animator_free()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RE_API void RE_Animator_free </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___r_e___animator.html#gaaf52d778ee060a34976e54736bee33e5">RE_Animator</a> *&#160;</td>
+          <td class="paramname"><em>animator</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Détruit un animateur préalablement créé avec <a class="el" href="group___r_e___animator.html#gafe6af95969093b6f70a1b5d1d68c7fbd" title="Crée un nouvel animateur.">RE_Animator_new()</a>. Détruit également toutes les animations contenues dans l'animateur. Ne libère pas les textures associées. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">animator</td><td>l'animateur à détruire. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gae8ab7915ad9b20d9a10ffc45058abf66"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae8ab7915ad9b20d9a10ffc45058abf66">&#9670;&nbsp;</a></span>RE_Animator_getParamAnim()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RE_API <a class="el" href="group___r_e___animator.html#gae19cb799fabf472b5f442aef40fdbec3">RE_ParamAnim</a>* RE_Animator_getParamAnim </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___r_e___animator.html#gaaf52d778ee060a34976e54736bee33e5">RE_Animator</a> *&#160;</td>
+          <td class="paramname"><em>animator</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Renvoie un pointeur sur un paramètre animé d'un animateur à partir de son nom. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">animator</td><td>l'animateur. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>le nom de l'animation. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Un pointeur vers le paramètre animé ou NULL s'il n'y a aucune animation correspondant au nom donné. </dd></dl>
+
+</div>
+</div>
+<a id="gaa158e314e4a5395a037c381247d3583f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa158e314e4a5395a037c381247d3583f">&#9670;&nbsp;</a></span>RE_Animator_getTextureAnim()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RE_API <a class="el" href="group___r_e___animator.html#ga3e7a9cd61ab1142c35e461b27f220696">RE_TextureAnim</a>* RE_Animator_getTextureAnim </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___r_e___animator.html#gaaf52d778ee060a34976e54736bee33e5">RE_Animator</a> *&#160;</td>
+          <td class="paramname"><em>animator</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Renvoie un pointeur sur une texture animée d'un animateur à partir de son nom. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">animator</td><td>l'animateur. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>le nom de l'animation. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Un pointeur vers la texture animée ou NULL s'il n'y a aucune animation correspondant au nom donné. </dd></dl>
+
+</div>
+</div>
+<a id="ga15df7a71fc9b036fff3be45c2665ac8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga15df7a71fc9b036fff3be45c2665ac8b">&#9670;&nbsp;</a></span>RE_Animator_getTransform()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RE_API RE_INLINE void RE_Animator_getTransform </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___r_e___animator.html#gaaf52d778ee060a34976e54736bee33e5">RE_Animator</a> *&#160;</td>
+          <td class="paramname"><em>animator</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group___r_e___texture.html#gae2e3c48dbca9db49d917c123a764daea">RE_Transform</a> *&#160;</td>
+          <td class="paramname"><em>transform</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Renvoie la transformation appliquée sur le rendu. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">animator</td><td>l'animateur. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">transform</td><td>la transformation appliquée sur le rendu. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gafe6af95969093b6f70a1b5d1d68c7fbd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gafe6af95969093b6f70a1b5d1d68c7fbd">&#9670;&nbsp;</a></span>RE_Animator_new()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RE_API <a class="el" href="group___r_e___animator.html#gaaf52d778ee060a34976e54736bee33e5">RE_Animator</a>* RE_Animator_new </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Crée un nouvel animateur. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>L'animateur créé ou NULL en cas d'erreur. </dd></dl>
+
+</div>
+</div>
+<a id="ga10f025ee74c78c11a6bf0d1231cb1d61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga10f025ee74c78c11a6bf0d1231cb1d61">&#9670;&nbsp;</a></span>RE_Animator_playParamAnim()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RE_API int RE_Animator_playParamAnim </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___r_e___animator.html#gaaf52d778ee060a34976e54736bee33e5">RE_Animator</a> *&#160;</td>
+          <td class="paramname"><em>animator</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Lance l'animation d'un paramètre d'un animateur. Le paramètre s'ajoute aux paramètres actifs et ne les remplace pas. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">animator</td><td>l'animateur. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>le nom de l'animation. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>EXIT_SUCCESS ou EXIT_FAILURE s'il n'y a aucune animation correspondant au nom donné. </dd></dl>
+
+</div>
+</div>
+<a id="ga70b821dbaa61bb96e9aaba054226165a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga70b821dbaa61bb96e9aaba054226165a">&#9670;&nbsp;</a></span>RE_Animator_playTextureAnim()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RE_API int RE_Animator_playTextureAnim </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___r_e___animator.html#gaaf52d778ee060a34976e54736bee33e5">RE_Animator</a> *&#160;</td>
+          <td class="paramname"><em>animator</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Lance l'animation d'une texture d'un animateur. Si l'animateur joue déjà une animation, elle est remplacée par la nouvelle. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">animator</td><td>l'animateur. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>le nom de l'animation. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>EXIT_SUCCESS ou EXIT_FAILURE s'il n'y a aucune animation correspondant au nom donné. </dd></dl>
+
+</div>
+</div>
+<a id="ga1552222af4d053d4d89d88214ad5bf31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1552222af4d053d4d89d88214ad5bf31">&#9670;&nbsp;</a></span>RE_Animator_render()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RE_API void RE_Animator_render </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___r_e___animator.html#gaaf52d778ee060a34976e54736bee33e5">RE_Animator</a> *&#160;</td>
+          <td class="paramname"><em>animator</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Dessine l'image courante de l'animation dans son contexte de rendu. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">animator</td><td>l'animateur. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>abscisse du point (en pixels) où dessiner la texture. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>ordonnée du point (en pixels) où dessiner la texture. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga5b170611a7174787d7da3e29fb4dac84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5b170611a7174787d7da3e29fb4dac84">&#9670;&nbsp;</a></span>RE_Animator_renderF()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RE_API void RE_Animator_renderF </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___r_e___animator.html#gaaf52d778ee060a34976e54736bee33e5">RE_Animator</a> *&#160;</td>
+          <td class="paramname"><em>animator</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Dessine l'image courante de l'animation dans son contexte de rendu. Contrairement à <a class="el" href="group___r_e___animator.html#ga1552222af4d053d4d89d88214ad5bf31" title="Dessine l&#39;image courante de l&#39;animation dans son contexte de rendu.">RE_Animator_render()</a>, cette fonction effectue le rendu avec une précision en virgule flottante. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">animator</td><td>l'animateur. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>abscisse du point (en pixels) où dessiner la texture. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>ordonnée du point (en pixels) où dessiner la texture. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga5fee20bb3ad6ced831fe9cdfa8106cb3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5fee20bb3ad6ced831fe9cdfa8106cb3">&#9670;&nbsp;</a></span>RE_Animator_resumeParamAnim()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RE_API int RE_Animator_resumeParamAnim </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___r_e___animator.html#gaaf52d778ee060a34976e54736bee33e5">RE_Animator</a> *&#160;</td>
+          <td class="paramname"><em>animator</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reprend l'animation d'un paramètre d'un animateur. Le paramètre s'ajoute aux paramètres actifs et ne les remplace pas. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">animator</td><td>l'animateur. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>le nom de l'animation. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>EXIT_SUCCESS ou EXIT_FAILURE s'il n'y a aucune animation correspondant au nom donné. </dd></dl>
+
+</div>
+</div>
+<a id="ga6cae9533adc4aa6c3334edef9a24ef69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6cae9533adc4aa6c3334edef9a24ef69">&#9670;&nbsp;</a></span>RE_Animator_resumeTextureAnim()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RE_API int RE_Animator_resumeTextureAnim </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___r_e___animator.html#gaaf52d778ee060a34976e54736bee33e5">RE_Animator</a> *&#160;</td>
+          <td class="paramname"><em>animator</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reprend l'animation d'une texture d'un animateur. Si l'animateur joue déjà une animation, elle est remplacée par la nouvelle. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">animator</td><td>l'animateur. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>le nom de l'animation. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>EXIT_SUCCESS ou EXIT_FAILURE s'il n'y a aucune animation correspondant au nom donné. </dd></dl>
+
+</div>
+</div>
+<a id="gae7f3b47a8f4cbb54d56f4af66dd9ed3a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae7f3b47a8f4cbb54d56f4af66dd9ed3a">&#9670;&nbsp;</a></span>RE_Animator_setAlpha()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RE_API RE_INLINE void RE_Animator_setAlpha </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___r_e___animator.html#gaaf52d778ee060a34976e54736bee33e5">RE_Animator</a> *&#160;</td>
+          <td class="paramname"><em>animator</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>alpha</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définit la composante alpha (transparence) du rendu. Ce paramètre est écrasé par une animation de l'opacité. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">animator</td><td>l'animateur. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">alpha</td><td>la composante alpha. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga22f344e238e28fe38d1f76f6aa5a177e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga22f344e238e28fe38d1f76f6aa5a177e">&#9670;&nbsp;</a></span>RE_Animator_setTransform()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RE_API RE_INLINE void RE_Animator_setTransform </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___r_e___animator.html#gaaf52d778ee060a34976e54736bee33e5">RE_Animator</a> *&#160;</td>
+          <td class="paramname"><em>animator</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group___r_e___texture.html#gae2e3c48dbca9db49d917c123a764daea">RE_Transform</a> *&#160;</td>
+          <td class="paramname"><em>transform</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définit la transformation à appliquer sur le rendu. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">animator</td><td>l'animateur. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">transform</td><td>la transformation à appliquer. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga0c24e2cc3b956af3181ef2f10c80654e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0c24e2cc3b956af3181ef2f10c80654e">&#9670;&nbsp;</a></span>RE_Animator_stopParamAnim()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RE_API int RE_Animator_stopParamAnim </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___r_e___animator.html#gaaf52d778ee060a34976e54736bee33e5">RE_Animator</a> *&#160;</td>
+          <td class="paramname"><em>animator</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Arrète l'animation d'un paramètre animé actif d'un animateur. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">animator</td><td>l'animateur. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>le nom de l'animation. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>EXIT_SUCCESS ou EXIT_FAILURE s'il n'y a aucune animation active correspondant au nom donné. </dd></dl>
+
+</div>
+</div>
+<a id="ga02462a521d7b3876311c927428a83979"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga02462a521d7b3876311c927428a83979">&#9670;&nbsp;</a></span>RE_Animator_stopParamAnims()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RE_API void RE_Animator_stopParamAnims </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___r_e___animator.html#gaaf52d778ee060a34976e54736bee33e5">RE_Animator</a> *&#160;</td>
+          <td class="paramname"><em>animator</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Arrète toutes les animations des paramètres animés actifs d'un animateur. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">animator</td><td>l'animateur. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gabae9a71b7a8408aa1dc7a53d05b7d14e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabae9a71b7a8408aa1dc7a53d05b7d14e">&#9670;&nbsp;</a></span>RE_Animator_stopTextureAnim()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RE_API void RE_Animator_stopTextureAnim </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___r_e___animator.html#gaaf52d778ee060a34976e54736bee33e5">RE_Animator</a> *&#160;</td>
+          <td class="paramname"><em>animator</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Arrète l'animation de la texture animée courante d'un animateur. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">animator</td><td>l'animateur. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gabfd76fd7199f89b1c6bce7eec6e0b472"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabfd76fd7199f89b1c6bce7eec6e0b472">&#9670;&nbsp;</a></span>RE_Animator_update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RE_API void RE_Animator_update </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___r_e___animator.html#gaaf52d778ee060a34976e54736bee33e5">RE_Animator</a> *&#160;</td>
+          <td class="paramname"><em>animator</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group___r_e___timer.html#gac0eba1b0e22df1a9d396e2132026f274">RE_Timer</a> *&#160;</td>
+          <td class="paramname"><em>timer</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Met à jour l'animateur en fonction du temps écoulé. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">animator</td><td>l'animateur. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">timer</td><td>le timer principal de la boucle de rendu. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gae3fd5567634e16ea073719009dd3e25f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae3fd5567634e16ea073719009dd3e25f">&#9670;&nbsp;</a></span>RE_EasingFct_cos()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RE_API float RE_EasingFct_cos </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Courbe d'accélération définie à partir du cosinus. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>ratio entre 0.f et 1.f. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Le ratio de progression entre 0.f et 1.f. </dd></dl>
+
+</div>
+</div>
+<a id="ga04e652bd1ad59e31fa48e590a5189a32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga04e652bd1ad59e31fa48e590a5189a32">&#9670;&nbsp;</a></span>RE_EasingFct_in()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RE_API float RE_EasingFct_in </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Courbe d'accélération douce en entrée. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>ratio entre 0.f et 1.f. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Le ratio de progression entre 0.f et 1.f. </dd></dl>
+
+</div>
+</div>
+<a id="ga2119ace091cee363aba187b062de8124"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2119ace091cee363aba187b062de8124">&#9670;&nbsp;</a></span>RE_EasingFct_inOut()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RE_API float RE_EasingFct_inOut </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Courbe d'accélération avec douce en entrée et en sortie. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>ratio entre 0.f et 1.f. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Le ratio de progression entre 0.f et 1.f. </dd></dl>
+
+</div>
+</div>
+<a id="ga1367dba43b1573cf85127f541b3a9d99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1367dba43b1573cf85127f541b3a9d99">&#9670;&nbsp;</a></span>RE_EasingFct_linear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RE_API float RE_EasingFct_linear </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Courbe d'accélération linéaire. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>ratio entre 0.f et 1.f. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Le ratio de progression entre 0.f et 1.f. </dd></dl>
+
+</div>
+</div>
+<a id="gab5f4fbd650eaef4e59c315d8787eccf6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab5f4fbd650eaef4e59c315d8787eccf6">&#9670;&nbsp;</a></span>RE_EasingFct_out()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RE_API float RE_EasingFct_out </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Courbe d'accélération douce en sortie. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>ratio entre 0.f et 1.f. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Le ratio de progression entre 0.f et 1.f. </dd></dl>
+
+</div>
+</div>
+<a id="ga5e632b272ff8879b798918939470907e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5e632b272ff8879b798918939470907e">&#9670;&nbsp;</a></span>RE_ParamAnim_addFlags()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RE_API RE_INLINE void RE_ParamAnim_addFlags </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___r_e___animator.html#gae19cb799fabf472b5f442aef40fdbec3">RE_ParamAnim</a> *&#160;</td>
+          <td class="paramname"><em>paramAnim</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>flags</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ajoute des flags à un paramètre animé. Les valeurs possibles des flags sont données dans l'énumération RE_AnimFlags. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">paramAnim</td><td>le paramètre animé. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">flags</td><td>les flags à ajouter. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gacf3c854a558000516e6b333f5f612fd3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gacf3c854a558000516e6b333f5f612fd3">&#9670;&nbsp;</a></span>RE_ParamAnim_removeFlags()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RE_API RE_INLINE void RE_ParamAnim_removeFlags </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___r_e___animator.html#gae19cb799fabf472b5f442aef40fdbec3">RE_ParamAnim</a> *&#160;</td>
+          <td class="paramname"><em>paramAnim</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>flags</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enlève des flags à un paramètre animé. Les valeurs possibles des flags sont données dans l'énumération RE_AnimFlags. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">paramAnim</td><td>le paramètre animé. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">flags</td><td>les flags à enlever. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gace5e7288fd4e0a3d1d4f7f97273b5e2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gace5e7288fd4e0a3d1d4f7f97273b5e2a">&#9670;&nbsp;</a></span>RE_ParamAnim_setAlpha()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RE_API RE_INLINE void RE_ParamAnim_setAlpha </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___r_e___animator.html#gae19cb799fabf472b5f442aef40fdbec3">RE_ParamAnim</a> *&#160;</td>
+          <td class="paramname"><em>paramAnim</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>alpha0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>alpha1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définit le paramètre animé comme étant une variation d'opacité et spécifie ses valeurs initiale et finale. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">paramAnim</td><td>la paramètre animé. </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">alpha0</td><td>la valeur initiale de l'opacité. </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">alpha1</td><td>la valeur finale de l'opacité. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga3d29b43cac500e220e51e6485e1ce157"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3d29b43cac500e220e51e6485e1ce157">&#9670;&nbsp;</a></span>RE_ParamAnim_setAngle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RE_API RE_INLINE void RE_ParamAnim_setAngle </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___r_e___animator.html#gae19cb799fabf472b5f442aef40fdbec3">RE_ParamAnim</a> *&#160;</td>
+          <td class="paramname"><em>paramAnim</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>angle0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>angle1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définit le paramètre animé comme étant une variation de l'angle de rotation et spécifie ses valeurs initiale et finale. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">paramAnim</td><td>la paramètre animé. </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">angle0</td><td>la valeur initiale de l'angle de rotation. </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">angle1</td><td>la valeur finale de l'angle de rotation. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga88de2e53abbdf5b472543d16a7dee65c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga88de2e53abbdf5b472543d16a7dee65c">&#9670;&nbsp;</a></span>RE_ParamAnim_setCycleTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RE_API RE_INLINE void RE_ParamAnim_setCycleTime </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___r_e___animator.html#gae19cb799fabf472b5f442aef40fdbec3">RE_ParamAnim</a> *&#160;</td>
+          <td class="paramname"><em>paramAnim</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>cycleTime</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définit la durée d'un cycle de l'animation d'un paramètre. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">paramAnim</td><td>le paramètre animé. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cycleTime</td><td>la durée d'un cycle. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga3b50ce45d12f3d6ef83f17649bcbb07f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3b50ce45d12f3d6ef83f17649bcbb07f">&#9670;&nbsp;</a></span>RE_ParamAnim_setDelay()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RE_API RE_INLINE void RE_ParamAnim_setDelay </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___r_e___animator.html#gae19cb799fabf472b5f442aef40fdbec3">RE_ParamAnim</a> *&#160;</td>
+          <td class="paramname"><em>paramAnim</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>delay</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définit le délai avant le début de l'animation d'un paramètre. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">paramAnim</td><td>le paramètre animé. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">delay</td><td>le délai de l'animation. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga689d88d4896855d5dfb1fbd250e75129"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga689d88d4896855d5dfb1fbd250e75129">&#9670;&nbsp;</a></span>RE_ParamAnim_setEasing()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RE_API RE_INLINE void RE_ParamAnim_setEasing </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___r_e___animator.html#gae19cb799fabf472b5f442aef40fdbec3">RE_ParamAnim</a> *&#160;</td>
+          <td class="paramname"><em>paramAnim</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group___r_e___animator.html#ga48bf56703bfc6dc88d00808157b97549">RE_EasingFct</a>&#160;</td>
+          <td class="paramname"><em>easing</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définit la courbe d'accélération de l'animation d'un paramètre. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">paramAnim</td><td>le paramètre animé. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">easing</td><td>la courbe d'accélération. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga13c9b526b1c04d0aff14eb4a2869c55e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga13c9b526b1c04d0aff14eb4a2869c55e">&#9670;&nbsp;</a></span>RE_ParamAnim_setFlags()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RE_API RE_INLINE void RE_ParamAnim_setFlags </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___r_e___animator.html#gae19cb799fabf472b5f442aef40fdbec3">RE_ParamAnim</a> *&#160;</td>
+          <td class="paramname"><em>paramAnim</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>flags</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définit les flags d'un paramètre animé. Les valeurs possibles des flags sont données dans l'énumération RE_AnimFlags. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">paramAnim</td><td>le paramètre animé. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">flags</td><td>les flags de l'animation. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gaff1e44b8f5cca1155039b2a4c38b3a69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaff1e44b8f5cca1155039b2a4c38b3a69">&#9670;&nbsp;</a></span>RE_ParamAnim_setNbCyles()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RE_API RE_INLINE void RE_ParamAnim_setNbCyles </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___r_e___animator.html#gae19cb799fabf472b5f442aef40fdbec3">RE_ParamAnim</a> *&#160;</td>
+          <td class="paramname"><em>paramAnim</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nbCycles</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définit le nombre de cycle de l'animation d'un paramètre. L'animation se répète indéfiniment si le nombre de cycle vaut -1. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">paramAnim</td><td>le paramètre animé. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">nbCycles</td><td>le nombre de cycle de l'animation. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gaf06c77a44e1c575bbeea1955d477dbe2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf06c77a44e1c575bbeea1955d477dbe2">&#9670;&nbsp;</a></span>RE_ParamAnim_setPhase()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RE_API RE_INLINE void RE_ParamAnim_setPhase </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___r_e___animator.html#gae19cb799fabf472b5f442aef40fdbec3">RE_ParamAnim</a> *&#160;</td>
+          <td class="paramname"><em>paramAnim</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>phase</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définit la phase de l'animation d'un paramètre. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">paramAnim</td><td>le paramètre animé. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">phase</td><td>la phase (dans l'interval [0,1]). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga65288fc23d7729d37d8b5beab6a63c9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga65288fc23d7729d37d8b5beab6a63c9a">&#9670;&nbsp;</a></span>RE_ParamAnim_setShift()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RE_API RE_INLINE void RE_ParamAnim_setShift </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___r_e___animator.html#gae19cb799fabf472b5f442aef40fdbec3">RE_ParamAnim</a> *&#160;</td>
+          <td class="paramname"><em>paramAnim</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group___r_e___utils.html#ga7cabff7b1653385388b2c8a580c3a6c1">Vec2</a>&#160;</td>
+          <td class="paramname"><em>shift0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group___r_e___utils.html#ga7cabff7b1653385388b2c8a580c3a6c1">Vec2</a>&#160;</td>
+          <td class="paramname"><em>shift1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définit le paramètre animé comme étant une variation de position et spécifie ses valeurs initiale et finale. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">paramAnim</td><td>la paramètre animé. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">shift0</td><td>la valeur initiale du décalage. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">shift1</td><td>la valeur finale du décalage. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gab9ba79643a9cfe4fef4e43ab66af9f6d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab9ba79643a9cfe4fef4e43ab66af9f6d">&#9670;&nbsp;</a></span>RE_ParamAnim_setSpeed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RE_API RE_INLINE void RE_ParamAnim_setSpeed </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___r_e___animator.html#gae19cb799fabf472b5f442aef40fdbec3">RE_ParamAnim</a> *&#160;</td>
+          <td class="paramname"><em>paramAnim</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>speed</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définit la vitesse de lecture d'un paramètre animé. La valeur par défaut est 1.f. Si elle vaut par exemple 2.f, l'animation se déroulera deux fois plus vite. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">paramAnim</td><td>le paramètre animé. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">speed</td><td>coefficient multiplicateur de la vitesse de lecture. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga1ab6221626095ef0d487bd5df0214ab7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1ab6221626095ef0d487bd5df0214ab7">&#9670;&nbsp;</a></span>RE_TextureAnim_addFlags()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RE_API RE_INLINE void RE_TextureAnim_addFlags </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___r_e___animator.html#ga3e7a9cd61ab1142c35e461b27f220696">RE_TextureAnim</a> *&#160;</td>
+          <td class="paramname"><em>textureAnim</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>flags</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ajoute des flags à une texture animée. Les valeurs possibles des flags sont données dans l'énumération RE_AnimFlags. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">textureAnim</td><td>la texture animée. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">flags</td><td>les flags à ajouter. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga34b37188cbc14d93821b2fbc096909e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga34b37188cbc14d93821b2fbc096909e0">&#9670;&nbsp;</a></span>RE_TextureAnim_removeFlags()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RE_API RE_INLINE void RE_TextureAnim_removeFlags </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___r_e___animator.html#ga3e7a9cd61ab1142c35e461b27f220696">RE_TextureAnim</a> *&#160;</td>
+          <td class="paramname"><em>textureAnim</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>flags</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enlève des flags à une texture animée. Les valeurs possibles des flags sont données dans l'énumération RE_AnimFlags. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">textureAnim</td><td>la texture animée. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">flags</td><td>les flags à enlever. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga99d3bc62fc0ccb009de7ab6a25fee6f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga99d3bc62fc0ccb009de7ab6a25fee6f1">&#9670;&nbsp;</a></span>RE_TextureAnim_setCycleTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RE_API RE_INLINE void RE_TextureAnim_setCycleTime </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___r_e___animator.html#ga3e7a9cd61ab1142c35e461b27f220696">RE_TextureAnim</a> *&#160;</td>
+          <td class="paramname"><em>textureAnim</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>cycleTime</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définit la durée d'un cycle de l'animation d'une texture. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">textureAnim</td><td>la texture animée. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cycleTime</td><td>la durée d'un cycle. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gaa679ff19aa90c621da99fd37e33f615e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa679ff19aa90c621da99fd37e33f615e">&#9670;&nbsp;</a></span>RE_TextureAnim_setDelay()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RE_API RE_INLINE void RE_TextureAnim_setDelay </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___r_e___animator.html#ga3e7a9cd61ab1142c35e461b27f220696">RE_TextureAnim</a> *&#160;</td>
+          <td class="paramname"><em>textureAnim</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>delay</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définit le délai avant le début de l'animation d'une texture. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">textureAnim</td><td>la texture animée. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">delay</td><td>le délai de l'animation. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga9667aad319dbc5ad54361f60c7b1604e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9667aad319dbc5ad54361f60c7b1604e">&#9670;&nbsp;</a></span>RE_TextureAnim_setFlags()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RE_API RE_INLINE void RE_TextureAnim_setFlags </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___r_e___animator.html#ga3e7a9cd61ab1142c35e461b27f220696">RE_TextureAnim</a> *&#160;</td>
+          <td class="paramname"><em>textureAnim</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>flags</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définit les flags d'une texture animée. Les valeurs possibles des flags sont données dans l'énumération RE_AnimFlags. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">textureAnim</td><td>la texture animée. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">flags</td><td>les flags de l'animation. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gac4d1275fd1249fb773c4a8ede37a97f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac4d1275fd1249fb773c4a8ede37a97f8">&#9670;&nbsp;</a></span>RE_TextureAnim_setNbCyles()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RE_API RE_INLINE void RE_TextureAnim_setNbCyles </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___r_e___animator.html#ga3e7a9cd61ab1142c35e461b27f220696">RE_TextureAnim</a> *&#160;</td>
+          <td class="paramname"><em>textureAnim</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nbCycles</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définit le nombre de cycle de l'animation d'une texture. L'animation se répète indéfiniment si le nombre de cycle vaut -1. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">textureAnim</td><td>la texture animée. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">nbCycles</td><td>le nombre de cycle de l'animation. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gab742c80387e9c7f45a6f427a3eefe5a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab742c80387e9c7f45a6f427a3eefe5a7">&#9670;&nbsp;</a></span>RE_TextureAnim_setSpeed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RE_API RE_INLINE void RE_TextureAnim_setSpeed </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___r_e___animator.html#ga3e7a9cd61ab1142c35e461b27f220696">RE_TextureAnim</a> *&#160;</td>
+          <td class="paramname"><em>textureAnim</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>speed</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définit la vitesse de lecture d'une texture animée. La valeur par défaut est 1.f. Si elle vaut par exemple 2.f, l'animation se déroulera deux fois plus vite. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">textureAnim</td><td>la texture animée. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">speed</td><td>coefficient multiplicateur de la vitesse de lecture. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.18
+</small></address>
+</body>
+</html>

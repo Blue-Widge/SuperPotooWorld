@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.18"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Plateformer Engine (PE): Documentation de PE_Collider</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Plateformer Engine (PE)
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.18 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="PageDoc"><div class="header">
+  <div class="headertitle">
+<div class="title">Documentation de PE_Collider </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><h2><a class="anchor" id="autotoc_md11"></a>
+Création / suppression d'un collider</h2>
+<ul>
+<li><a class="el" href="group___p_e___body.html#gab20c3f1822797b9091198a184be89e54" title="Crée un nouveau collider et l&#39;attache à un corps. La forme du collider est décrite dans le référentie...">PE_Body_createCollider()</a></li>
+<li><a class="el" href="group___p_e___body.html#ga415bc9adb45d4fd447eb44f51b766ac7" title="Supprime un collider attaché à un corps. Le pointeur world ne doit pas être déréférencé après cet app...">PE_Body_removeCollider()</a></li>
+</ul>
+<h2><a class="anchor" id="autotoc_md12"></a>
+Définition de la forme du collider</h2>
+<ul>
+<li><a class="el" href="group___p_e___shape.html#ga23f947da8024dacde52a98fe66edca34" title="Définit une forme comme étant une boîte alignée sur les axes.">PE_Shape_setAsBox()</a></li>
+<li><a class="el" href="group___p_e___shape.html#gaefa1ef444e6c8e12bfe3b4b8310c6147" title="Définit une forme comme étant un triangle rectangle aligné sur les axes.">PE_Shape_setAsTriangle()</a></li>
+</ul>
+<h2><a class="anchor" id="autotoc_md13"></a>
+Informations sur le collider et modification</h2>
+<ul>
+<li><a class="el" href="group___p_e___collider.html#gac3bc225ae4db91aff248f540b1a28258" title="Renvoie le filtre d&#39;un collider.">PE_Collider_getFilter()</a></li>
+<li><a class="el" href="group___p_e___collider.html#gabeeeaeb7f9724b90405cc10c2e65c8c9" title="Définit si un collider est un détecteur.">PE_Collider_setTrigger()</a></li>
+<li><a class="el" href="group___p_e___collider.html#gacb05272073c09fb183a4e5ca97bcbcbd" title="Indique si un collider est un détecteur.">PE_Collider_isTrigger()</a></li>
+<li><a class="el" href="group___p_e___collider.html#gaf3037578fa2052281e9481f7bc8389dc" title="Renvoie le corps parent d&#39;un collider.">PE_Collider_getBody()</a></li>
+<li><a class="el" href="group___p_e___collider.html#ga60103c105f3600f290708ddaaaedd2fe" title="Renvoie la forme d&#39;un collider.">PE_Collider_getShape()</a></li>
+<li><a class="el" href="group___p_e___collider.html#ga1512ea80c3a0398ad88e686e08deb481" title="Renvoie la boîte englobante d&#39;un collider.">PE_Collider_getAABB()</a></li>
+<li><a class="el" href="group___p_e___collider.html#ga5976bfdfe88e17dbb3c7812176a64f46" title="Définit les données de l&#39;utilisateur d&#39;un collider. Ce pointeur sert à stocker les données spécifique...">PE_Collider_setUserData()</a></li>
+<li><a class="el" href="group___p_e___collider.html#ga9b31acff6d72bb2ffdab824d6d72b517" title="Renvoie les données de l&#39;utilisateur affectées à un collider.">PE_Collider_getUserData()</a></li>
+</ul>
+<h2><a class="anchor" id="autotoc_md14"></a>
+Fonctions de rappel (callback) du collider</h2>
+<ul>
+<li><a class="el" href="group___p_e___collider.html#ga1ccba7afb54b88125d4c335104d3abaf" title="Définit la fonction de rappel (callback) appelée à chaque fois qu&#39;un collider.">PE_Collider_setOnCollisionEnter()</a></li>
+<li><a class="el" href="group___p_e___collider.html#gaa332dfd7cd104222aaa944332ba67859" title="Définit la fonction de rappel (callback) appelée à chaque fois qu&#39;un collider touche un autre collide...">PE_Collider_setOnCollisionStay()</a></li>
+<li><a class="el" href="group___p_e___collider.html#gaee4c27bf9e65a4431a5f70108ea5db22" title="Définit la fonction de rappel (callback) appelée à chaque fois qu&#39;un collider cesse d&#39;être en collisi...">PE_Collider_setOnCollisionExit()</a></li>
+<li><a class="el" href="group___p_e___collider.html#ga4c164412db9dbd0094468551cd7df686" title="Définit la fonction de rappel (callback) appelée à chaque fois qu&#39;un collider.">PE_Collider_setOnTriggerEnter()</a></li>
+<li><a class="el" href="group___p_e___collider.html#ga9a5d161091e3be0c9d632635e8ea4420" title="Définit la fonction de rappel (callback) appelée à chaque fois qu&#39;un collider.">PE_Collider_setOnTriggerStay()</a></li>
+<li><a class="el" href="group___p_e___collider.html#ga35649026628c6f612587d9843e7e83f1" title="Définit la fonction de rappel (callback) appelée à chaque fois qu&#39;un collider.">PE_Collider_setOnTriggerExit()</a></li>
+<li><a class="el" href="group___p_e___collider.html#gaade9f93647bad9e09bbf6c067d5594fd" title="Renvoie la fonction de rappel &quot;onCollisionEnter&quot; affectée à un collider.">PE_Collider_getOnCollisionEnter()</a></li>
+<li><a class="el" href="group___p_e___collider.html#ga3fe82847cc2483c8e71dc34ede91a305" title="Renvoie la fonction de rappel &quot;onCollisionStay&quot; affectée à un collider.">PE_Collider_getOnCollisionStay()</a></li>
+<li><a class="el" href="group___p_e___collider.html#ga9b646411e1a6a0110f42c4de88b4ac17" title="Renvoie la fonction de rappel &quot;onCollisionExit&quot; affectée à un collider.">PE_Collider_getOnCollisionExit()</a></li>
+<li><a class="el" href="group___p_e___collider.html#ga0e0b4063d9bd298fdc2cd2e5a8690f0f" title="Renvoie la fonction de rappel &quot;onTriggerEnter&quot; affectée à un collider.">PE_Collider_getOnTriggerEnter()</a></li>
+<li><a class="el" href="group___p_e___collider.html#gab1e4d578217d439020031a3334fca7d2" title="Renvoie la fonction de rappel &quot;onTriggerStay&quot; affectée à un collider.">PE_Collider_getOnTriggerStay()</a></li>
+<li><a class="el" href="group___p_e___collider.html#ga093223d8574333e820c1aec5d35bbc6c" title="Renvoie la fonction de rappel &quot;onTriggerExit&quot; affectée à un collider.">PE_Collider_getOnTriggerExit()</a></li>
+</ul>
+<h2><a class="anchor" id="autotoc_md15"></a>
+Enumération des collisions impliquant le collider</h2>
+<ul>
+<li><a class="el" href="group___p_e___collider.html#gaf31b8c390aa6cfbc0a3af0b759f229dd" title="Renvoie le nombre de collisions impliquant un collider.">PE_Collider_getNbCollisions()</a></li>
+<li><a class="el" href="group___p_e___collider.html#ga75dbc26039252b8efa7367ff96bfde31" title="Renvoie un itérateur sur la collection des collisions impliquant un collider.">PE_Collider_getCollisionIterator()</a></li>
+<li><a class="el" href="group___p_e___collider.html#gab39287bebc7825c9ce82406026911ae7" title="Avance l&#39;itérateur pour qu&#39;il pointe sur le prochain élément de la collection.">PE_CollisionIterator_moveNext()</a></li>
+<li><a class="el" href="group___p_e___collider.html#gaf218ee11ed8b0619c9a460cd628f7044" title="Renvoie un pointeur vers l&#39;élément de la collection à la position courante de l&#39;itérateur.">PE_CollisionIterator_current()</a> </li>
+</ul>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.18
+</small></address>
+</body>
+</html>

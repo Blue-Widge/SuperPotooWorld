@@ -1,0 +1,593 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.18"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Plateformer Engine (PE): Fonctions relatives au monde</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Plateformer Engine (PE)
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.18 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Structures de données</a> &#124;
+<a href="#func-members">Fonctions</a>  </div>
+  <div class="headertitle">
+<div class="title">Fonctions relatives au monde</div>  </div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Structures de données</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_p_e___world__s.html">PE_World_s</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Le monde gère et crée tous les corps physiques.  <a href="struct_p_e___world__s.html#details">Plus de détails...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:gac3d7e271215a3b25fe0f2baacffaaed1"><td class="memItemLeft" align="right" valign="top">PE_API <a class="el" href="struct_p_e___world__s.html">PE_World</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_e___world.html#gac3d7e271215a3b25fe0f2baacffaaed1">PE_World_new</a> (<a class="el" href="group___p_e___math.html#gaceb0961b58165e028b9f21091df6af6f">PE_Vec2</a> gravity, float timeStep)</td></tr>
+<tr class="memdesc:gac3d7e271215a3b25fe0f2baacffaaed1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crée un nouveau monde.  <a href="group___p_e___world.html#gac3d7e271215a3b25fe0f2baacffaaed1">Plus de détails...</a><br /></td></tr>
+<tr class="separator:gac3d7e271215a3b25fe0f2baacffaaed1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga55d9ed87ca052d79f07de1cf6a2e734d"><td class="memItemLeft" align="right" valign="top">PE_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_e___world.html#ga55d9ed87ca052d79f07de1cf6a2e734d">PE_World_free</a> (<a class="el" href="struct_p_e___world__s.html">PE_World</a> *world)</td></tr>
+<tr class="memdesc:ga55d9ed87ca052d79f07de1cf6a2e734d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Détruit le monde. Chaque entité physique appartenant à ce monde est également détruite. Le pointeur world ne doit pas être déréférencé après cet appel. Il est conseillé de l'affecter ensuite à NULL.  <a href="group___p_e___world.html#ga55d9ed87ca052d79f07de1cf6a2e734d">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga55d9ed87ca052d79f07de1cf6a2e734d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9318aed17f7b9ba0698d21ab3bbacbf7"><td class="memItemLeft" align="right" valign="top">PE_API <a class="el" href="struct_p_e___body__s.html">PE_Body</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_e___world.html#ga9318aed17f7b9ba0698d21ab3bbacbf7">PE_World_createBody</a> (<a class="el" href="struct_p_e___world__s.html">PE_World</a> *world, <a class="el" href="struct_p_e___body_def__s.html">PE_BodyDef</a> *def)</td></tr>
+<tr class="memdesc:ga9318aed17f7b9ba0698d21ab3bbacbf7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crée un corps indéformable dans le monde. Cette fonction est verrouillée dans les fonctions de rappels (callback).  <a href="group___p_e___world.html#ga9318aed17f7b9ba0698d21ab3bbacbf7">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga9318aed17f7b9ba0698d21ab3bbacbf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab71163cb794e3b1da259e3ad8cdc185f"><td class="memItemLeft" align="right" valign="top">PE_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_e___world.html#gab71163cb794e3b1da259e3ad8cdc185f">PE_World_removeBody</a> (<a class="el" href="struct_p_e___world__s.html">PE_World</a> *world, <a class="el" href="struct_p_e___body__s.html">PE_Body</a> *body)</td></tr>
+<tr class="memdesc:gab71163cb794e3b1da259e3ad8cdc185f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Détruit un corps indéformable. Le pointeur world ne doit pas être déréférencé après cet appel. Il est conseillé de l'affecter ensuite à NULL. Cette fonction est verrouillée dans les fonctions de rappels (callback).  <a href="group___p_e___world.html#gab71163cb794e3b1da259e3ad8cdc185f">Plus de détails...</a><br /></td></tr>
+<tr class="separator:gab71163cb794e3b1da259e3ad8cdc185f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacda1310c229f2a71fffd4b88fe9af5c9"><td class="memItemLeft" align="right" valign="top">PE_API int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_e___world.html#gacda1310c229f2a71fffd4b88fe9af5c9">PE_World_getNbBodies</a> (<a class="el" href="struct_p_e___world__s.html">PE_World</a> *world)</td></tr>
+<tr class="memdesc:gacda1310c229f2a71fffd4b88fe9af5c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie le nombre de corps présents dans le monde.  <a href="group___p_e___world.html#gacda1310c229f2a71fffd4b88fe9af5c9">Plus de détails...</a><br /></td></tr>
+<tr class="separator:gacda1310c229f2a71fffd4b88fe9af5c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa3eac1b0972627dd52d9c8f6c79f21cc"><td class="memItemLeft" align="right" valign="top">PE_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_e___world.html#gaa3eac1b0972627dd52d9c8f6c79f21cc">PE_World_setGravity</a> (<a class="el" href="struct_p_e___world__s.html">PE_World</a> *world, <a class="el" href="group___p_e___math.html#gaceb0961b58165e028b9f21091df6af6f">PE_Vec2</a> *gravity)</td></tr>
+<tr class="memdesc:gaa3eac1b0972627dd52d9c8f6c79f21cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Définit le vecteur de gravité global appliqué à tous les corps dynamiques du monde.  <a href="group___p_e___world.html#gaa3eac1b0972627dd52d9c8f6c79f21cc">Plus de détails...</a><br /></td></tr>
+<tr class="separator:gaa3eac1b0972627dd52d9c8f6c79f21cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabfe401b4f1071c55054ea976ddecfe42"><td class="memItemLeft" align="right" valign="top">PE_API <a class="el" href="group___p_e___math.html#gaceb0961b58165e028b9f21091df6af6f">PE_Vec2</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_e___world.html#gabfe401b4f1071c55054ea976ddecfe42">PE_World_getGravity</a> (<a class="el" href="struct_p_e___world__s.html">PE_World</a> *world)</td></tr>
+<tr class="memdesc:gabfe401b4f1071c55054ea976ddecfe42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie le vecteur de gravité global appliqué dans le monde.  <a href="group___p_e___world.html#gabfe401b4f1071c55054ea976ddecfe42">Plus de détails...</a><br /></td></tr>
+<tr class="separator:gabfe401b4f1071c55054ea976ddecfe42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga85616d078ee1a755c33920232272de0c"><td class="memItemLeft" align="right" valign="top">PE_API int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_e___world.html#ga85616d078ee1a755c33920232272de0c">PE_World_fixedUpdate</a> (<a class="el" href="struct_p_e___world__s.html">PE_World</a> *world)</td></tr>
+<tr class="memdesc:ga85616d078ee1a755c33920232272de0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Met à jour les corps présents dans le monde d'un pas de temps. Cette fonction fait met à jour les positions et effectue la détection des collisions.  <a href="group___p_e___world.html#ga85616d078ee1a755c33920232272de0c">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga85616d078ee1a755c33920232272de0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac19e2dbc094a79d16a795dea38878035"><td class="memItemLeft" align="right" valign="top">PE_API PE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_e___world.html#gac19e2dbc094a79d16a795dea38878035">PE_World_setOnCollisionEnter</a> (<a class="el" href="struct_p_e___world__s.html">PE_World</a> *world, PE_CollisionCallback *onCollisionEnter)</td></tr>
+<tr class="memdesc:gac19e2dbc094a79d16a795dea38878035"><td class="mdescLeft">&#160;</td><td class="mdescRight">Définit la fonction de rappel (callback) appelée à chaque fois que deux objets entrent en collision.  <a href="group___p_e___world.html#gac19e2dbc094a79d16a795dea38878035">Plus de détails...</a><br /></td></tr>
+<tr class="separator:gac19e2dbc094a79d16a795dea38878035"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadd4e48effd764b4e4487cc2481a38d19"><td class="memItemLeft" align="right" valign="top">PE_API PE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_e___world.html#gadd4e48effd764b4e4487cc2481a38d19">PE_World_setOnCollisionStay</a> (<a class="el" href="struct_p_e___world__s.html">PE_World</a> *world, PE_CollisionCallback *onCollisionStay)</td></tr>
+<tr class="memdesc:gadd4e48effd764b4e4487cc2481a38d19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Définit la fonction de rappel (callback) appelée à chaque fois que deux objets se touchent.  <a href="group___p_e___world.html#gadd4e48effd764b4e4487cc2481a38d19">Plus de détails...</a><br /></td></tr>
+<tr class="separator:gadd4e48effd764b4e4487cc2481a38d19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6c415b0d6cff674e3913889a445697ad"><td class="memItemLeft" align="right" valign="top">PE_API PE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_e___world.html#ga6c415b0d6cff674e3913889a445697ad">PE_World_setOnCollisionExit</a> (<a class="el" href="struct_p_e___world__s.html">PE_World</a> *world, PE_CollisionCallback *onCollisionExit)</td></tr>
+<tr class="memdesc:ga6c415b0d6cff674e3913889a445697ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Définit la fonction de rappel (callback) appelée à chaque fois que deux objets cessent d'être en collision.  <a href="group___p_e___world.html#ga6c415b0d6cff674e3913889a445697ad">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga6c415b0d6cff674e3913889a445697ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga113bf9d86395887f7e88ccb8c16fb6a1"><td class="memItemLeft" align="right" valign="top">PE_API PE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_e___world.html#ga113bf9d86395887f7e88ccb8c16fb6a1">PE_World_getBodyIterator</a> (<a class="el" href="struct_p_e___world__s.html">PE_World</a> *world, PE_BodyIterator *it)</td></tr>
+<tr class="memdesc:ga113bf9d86395887f7e88ccb8c16fb6a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie un itérateur sur la collection des corps présents dans le monde.  <a href="group___p_e___world.html#ga113bf9d86395887f7e88ccb8c16fb6a1">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga113bf9d86395887f7e88ccb8c16fb6a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3bc4d331c30fcc9c5f2088afc9465c3f"><td class="memItemLeft" align="right" valign="top">PE_API PE_INLINE Bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_e___world.html#ga3bc4d331c30fcc9c5f2088afc9465c3f">PE_BodyIterator_moveNext</a> (PE_BodyIterator *it)</td></tr>
+<tr class="memdesc:ga3bc4d331c30fcc9c5f2088afc9465c3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Avance l'itérateur pour qu'il pointe sur le prochain élément de la collection.  <a href="group___p_e___world.html#ga3bc4d331c30fcc9c5f2088afc9465c3f">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga3bc4d331c30fcc9c5f2088afc9465c3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga45d78b7947c59da931ae0e9d40b0d112"><td class="memItemLeft" align="right" valign="top">PE_API PE_INLINE <a class="el" href="struct_p_e___body__s.html">PE_Body</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___p_e___world.html#ga45d78b7947c59da931ae0e9d40b0d112">PE_BodyIterator_current</a> (PE_BodyIterator *it)</td></tr>
+<tr class="memdesc:ga45d78b7947c59da931ae0e9d40b0d112"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie un pointeur vers l'élément de la collection à la position courante de l'itérateur.  <a href="group___p_e___world.html#ga45d78b7947c59da931ae0e9d40b0d112">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga45d78b7947c59da931ae0e9d40b0d112"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<h2 class="groupheader">Documentation des fonctions</h2>
+<a id="ga45d78b7947c59da931ae0e9d40b0d112"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga45d78b7947c59da931ae0e9d40b0d112">&#9670;&nbsp;</a></span>PE_BodyIterator_current()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PE_API PE_INLINE <a class="el" href="struct_p_e___body__s.html">PE_Body</a>* PE_BodyIterator_current </td>
+          <td>(</td>
+          <td class="paramtype">PE_BodyIterator *&#160;</td>
+          <td class="paramname"><em>it</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Renvoie un pointeur vers l'élément de la collection à la position courante de l'itérateur. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">it</td><td>l'itérateur. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>L'élément de la collection à la position courante de l'itérateur. </dd></dl>
+
+</div>
+</div>
+<a id="ga3bc4d331c30fcc9c5f2088afc9465c3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3bc4d331c30fcc9c5f2088afc9465c3f">&#9670;&nbsp;</a></span>PE_BodyIterator_moveNext()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PE_API PE_INLINE Bool PE_BodyIterator_moveNext </td>
+          <td>(</td>
+          <td class="paramtype">PE_BodyIterator *&#160;</td>
+          <td class="paramname"><em>it</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Avance l'itérateur pour qu'il pointe sur le prochain élément de la collection. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">it</td><td>l'itérateur. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>FALSE si l'itérateur pointe sur le dernier élément de la collection, TRUE sinon. </dd></dl>
+
+</div>
+</div>
+<a id="ga9318aed17f7b9ba0698d21ab3bbacbf7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9318aed17f7b9ba0698d21ab3bbacbf7">&#9670;&nbsp;</a></span>PE_World_createBody()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PE_API <a class="el" href="struct_p_e___body__s.html">PE_Body</a>* PE_World_createBody </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_p_e___world__s.html">PE_World</a> *&#160;</td>
+          <td class="paramname"><em>world</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_p_e___body_def__s.html">PE_BodyDef</a> *&#160;</td>
+          <td class="paramname"><em>def</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Crée un corps indéformable dans le monde. Cette fonction est verrouillée dans les fonctions de rappels (callback). </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">world</td><td>le monde. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">def</td><td>la définition du corps. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Un pointeur vers le corps créé ou NULL en cas d'erreur. </dd></dl>
+
+</div>
+</div>
+<a id="ga85616d078ee1a755c33920232272de0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga85616d078ee1a755c33920232272de0c">&#9670;&nbsp;</a></span>PE_World_fixedUpdate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PE_API int PE_World_fixedUpdate </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_p_e___world__s.html">PE_World</a> *&#160;</td>
+          <td class="paramname"><em>world</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Met à jour les corps présents dans le monde d'un pas de temps. Cette fonction fait met à jour les positions et effectue la détection des collisions. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">world</td><td>le monde. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>EXIT_SUCCESS ou EXIT_FAILURE. </dd></dl>
+
+</div>
+</div>
+<a id="ga55d9ed87ca052d79f07de1cf6a2e734d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga55d9ed87ca052d79f07de1cf6a2e734d">&#9670;&nbsp;</a></span>PE_World_free()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PE_API void PE_World_free </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_p_e___world__s.html">PE_World</a> *&#160;</td>
+          <td class="paramname"><em>world</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Détruit le monde. Chaque entité physique appartenant à ce monde est également détruite. Le pointeur world ne doit pas être déréférencé après cet appel. Il est conseillé de l'affecter ensuite à NULL. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">world</td><td>le monde à détruire. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga113bf9d86395887f7e88ccb8c16fb6a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga113bf9d86395887f7e88ccb8c16fb6a1">&#9670;&nbsp;</a></span>PE_World_getBodyIterator()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PE_API PE_INLINE void PE_World_getBodyIterator </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_p_e___world__s.html">PE_World</a> *&#160;</td>
+          <td class="paramname"><em>world</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">PE_BodyIterator *&#160;</td>
+          <td class="paramname"><em>it</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Renvoie un itérateur sur la collection des corps présents dans le monde. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">world</td><td>le monde. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">it</td><td>pointeur vers l'itérateur à initialiser.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>Voir également</dt><dd><a class="el" href="group___p_e___world.html#ga3bc4d331c30fcc9c5f2088afc9465c3f" title="Avance l&#39;itérateur pour qu&#39;il pointe sur le prochain élément de la collection.">PE_BodyIterator_moveNext()</a>, <a class="el" href="group___p_e___world.html#ga45d78b7947c59da931ae0e9d40b0d112" title="Renvoie un pointeur vers l&#39;élément de la collection à la position courante de l&#39;itérateur.">PE_BodyIterator_current()</a> </dd></dl>
+
+</div>
+</div>
+<a id="gabfe401b4f1071c55054ea976ddecfe42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabfe401b4f1071c55054ea976ddecfe42">&#9670;&nbsp;</a></span>PE_World_getGravity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PE_API <a class="el" href="group___p_e___math.html#gaceb0961b58165e028b9f21091df6af6f">PE_Vec2</a>* PE_World_getGravity </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_p_e___world__s.html">PE_World</a> *&#160;</td>
+          <td class="paramname"><em>world</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Renvoie le vecteur de gravité global appliqué dans le monde. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">world</td><td>le monde. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Le vecteur de gravité global. </dd></dl>
+
+</div>
+</div>
+<a id="gacda1310c229f2a71fffd4b88fe9af5c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gacda1310c229f2a71fffd4b88fe9af5c9">&#9670;&nbsp;</a></span>PE_World_getNbBodies()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PE_API int PE_World_getNbBodies </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_p_e___world__s.html">PE_World</a> *&#160;</td>
+          <td class="paramname"><em>world</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Renvoie le nombre de corps présents dans le monde. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">world</td><td>le monde. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Le nombre de corps. </dd></dl>
+
+</div>
+</div>
+<a id="gac3d7e271215a3b25fe0f2baacffaaed1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac3d7e271215a3b25fe0f2baacffaaed1">&#9670;&nbsp;</a></span>PE_World_new()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PE_API <a class="el" href="struct_p_e___world__s.html">PE_World</a>* PE_World_new </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___p_e___math.html#gaceb0961b58165e028b9f21091df6af6f">PE_Vec2</a>&#160;</td>
+          <td class="paramname"><em>gravity</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>timeStep</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Crée un nouveau monde. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">gravity</td><td>le vecteur de gravité du monde. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">timeStep</td><td>le pas de temps utilisé pour chaque mise à jour du monde. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Le monde créé ou NULL en cas d'erreur. </dd></dl>
+
+</div>
+</div>
+<a id="gab71163cb794e3b1da259e3ad8cdc185f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab71163cb794e3b1da259e3ad8cdc185f">&#9670;&nbsp;</a></span>PE_World_removeBody()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PE_API void PE_World_removeBody </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_p_e___world__s.html">PE_World</a> *&#160;</td>
+          <td class="paramname"><em>world</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_p_e___body__s.html">PE_Body</a> *&#160;</td>
+          <td class="paramname"><em>body</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Détruit un corps indéformable. Le pointeur world ne doit pas être déréférencé après cet appel. Il est conseillé de l'affecter ensuite à NULL. Cette fonction est verrouillée dans les fonctions de rappels (callback). </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">world</td><td>le monde. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">body</td><td>le corps à détruire. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gaa3eac1b0972627dd52d9c8f6c79f21cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa3eac1b0972627dd52d9c8f6c79f21cc">&#9670;&nbsp;</a></span>PE_World_setGravity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PE_API void PE_World_setGravity </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_p_e___world__s.html">PE_World</a> *&#160;</td>
+          <td class="paramname"><em>world</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group___p_e___math.html#gaceb0961b58165e028b9f21091df6af6f">PE_Vec2</a> *&#160;</td>
+          <td class="paramname"><em>gravity</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définit le vecteur de gravité global appliqué à tous les corps dynamiques du monde. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">world</td><td>le monde. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">gravity</td><td>le nouveau vecteur de gravité. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gac19e2dbc094a79d16a795dea38878035"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac19e2dbc094a79d16a795dea38878035">&#9670;&nbsp;</a></span>PE_World_setOnCollisionEnter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PE_API PE_INLINE void PE_World_setOnCollisionEnter </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_p_e___world__s.html">PE_World</a> *&#160;</td>
+          <td class="paramname"><em>world</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">PE_CollisionCallback *&#160;</td>
+          <td class="paramname"><em>onCollisionEnter</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définit la fonction de rappel (callback) appelée à chaque fois que deux objets entrent en collision. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">world</td><td>le monde. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">onCollisionEnter</td><td>la fonction de rappel. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga6c415b0d6cff674e3913889a445697ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6c415b0d6cff674e3913889a445697ad">&#9670;&nbsp;</a></span>PE_World_setOnCollisionExit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PE_API PE_INLINE void PE_World_setOnCollisionExit </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_p_e___world__s.html">PE_World</a> *&#160;</td>
+          <td class="paramname"><em>world</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">PE_CollisionCallback *&#160;</td>
+          <td class="paramname"><em>onCollisionExit</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définit la fonction de rappel (callback) appelée à chaque fois que deux objets cessent d'être en collision. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">world</td><td>le monde. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">onCollisionExit</td><td>la fonction de rappel. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gadd4e48effd764b4e4487cc2481a38d19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadd4e48effd764b4e4487cc2481a38d19">&#9670;&nbsp;</a></span>PE_World_setOnCollisionStay()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PE_API PE_INLINE void PE_World_setOnCollisionStay </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_p_e___world__s.html">PE_World</a> *&#160;</td>
+          <td class="paramname"><em>world</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">PE_CollisionCallback *&#160;</td>
+          <td class="paramname"><em>onCollisionStay</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définit la fonction de rappel (callback) appelée à chaque fois que deux objets se touchent. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">world</td><td>le monde. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">onCollisionStay</td><td>la fonction de rappel. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.18
+</small></address>
+</body>
+</html>

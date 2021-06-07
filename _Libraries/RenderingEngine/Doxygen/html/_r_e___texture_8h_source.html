@@ -1,0 +1,233 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.18"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Rendering Engine (RE):  Fichier source de C:/Users/arnau/Documents/Data/Dev/RenderingEngine/RenderingEngine/RE_Texture.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Rendering Engine (RE)
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.18 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_07d9e4503b554f0274c5bfa511a2ed1e.html">RenderingEngine</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">RE_Texture.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#ifndef _RE_TEXTURE_H_</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#define _RE_TEXTURE_H_</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;RE_Lib.h&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;RE_Renderer.h&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;RE_Utils.h&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#ifdef _WIN32</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;SDL.h&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;SDL_image.h&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;SDL2/SDL.h&gt;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;SDL2/SDL_image.h&gt;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="struct_r_e___texture__s.html">   25</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct_r_e___texture__s.html">RE_Texture_s</a></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="struct_r_e___texture__s.html#a912a717a6319414586bd2623ae586157">   29</a></span>&#160;    <a class="code" href="struct_r_e___renderer__s.html">RE_Renderer</a> *<a class="code" href="struct_r_e___texture__s.html#a912a717a6319414586bd2623ae586157">m_renderer</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="struct_r_e___texture__s.html#aaa1970dc71e6376a83c6bd882e8f4576">   33</a></span>&#160;    SDL_Texture *<a class="code" href="struct_r_e___texture__s.html#aaa1970dc71e6376a83c6bd882e8f4576">m_textureSDL</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="struct_r_e___texture__s.html#a226b54ebc937470a33ab6d4e01382371">   37</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="struct_r_e___texture__s.html#a226b54ebc937470a33ab6d4e01382371">m_width</a>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="struct_r_e___texture__s.html#ac6a72ba5cf510cdb179f3b1ae815bc65">   41</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="struct_r_e___texture__s.html#ac6a72ba5cf510cdb179f3b1ae815bc65">m_height</a>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="struct_r_e___texture__s.html#a9d113992152d0c4611aea7e694a46a35">   45</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="struct_r_e___texture__s.html#a9d113992152d0c4611aea7e694a46a35">m_nbRows</a>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="struct_r_e___texture__s.html#a83da66aa4f03d8528e9fd47195f7f6db">   49</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="struct_r_e___texture__s.html#a83da66aa4f03d8528e9fd47195f7f6db">m_nbCols</a>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="struct_r_e___texture__s.html#a1684f08ea84a87a18f9c394e3e688552">   54</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="struct_r_e___texture__s.html#a1684f08ea84a87a18f9c394e3e688552">m_nbParts</a>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="struct_r_e___texture__s.html#a5361fa91e581aa0ef25d92275322768e">   58</a></span>&#160;    SDL_Rect *<a class="code" href="struct_r_e___texture__s.html#a5361fa91e581aa0ef25d92275322768e">m_parts</a>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="group___r_e___texture.html#ga4944d62c51444c69c8d7c2e719f77eb2">   59</a></span>&#160;} <a class="code" href="group___r_e___texture.html#ga4944d62c51444c69c8d7c2e719f77eb2">RE_Texture</a>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="group___r_e___texture.html#gacc0821af105a85a80b36579c7f55e0fc">   63</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> <a class="code" href="group___r_e___texture.html#gacc0821af105a85a80b36579c7f55e0fc">RE_TextureFlip_e</a></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;{</div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="group___r_e___texture.html#ggacc0821af105a85a80b36579c7f55e0fca516d394fa04ac692e5457321b8ecf83e">   66</a></span>&#160;    <a class="code" href="group___r_e___texture.html#ggacc0821af105a85a80b36579c7f55e0fca516d394fa04ac692e5457321b8ecf83e">RE_FLIP_NONE</a>       = SDL_FLIP_NONE,</div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="group___r_e___texture.html#ggacc0821af105a85a80b36579c7f55e0fcab6ea97e2ccb78645a667e03c77d0951d">   68</a></span>&#160;    <a class="code" href="group___r_e___texture.html#ggacc0821af105a85a80b36579c7f55e0fcab6ea97e2ccb78645a667e03c77d0951d">RE_FLIP_HORIZONTAL</a> = SDL_FLIP_HORIZONTAL,</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <a class="code" href="group___r_e___texture.html#ggacc0821af105a85a80b36579c7f55e0fca407a85c5871c6b9c469c8726a0ad112f">RE_FLIP_VERTICAL</a>   = SDL_FLIP_VERTICAL</div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="group___r_e___texture.html#gaccb1d43ce76b0e473b073856eb51e495">   71</a></span>&#160;} <a class="code" href="group___r_e___texture.html#gaccb1d43ce76b0e473b073856eb51e495">RE_TextureFlip</a>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="struct_r_e___transform__s.html">   75</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct_r_e___transform__s.html">RE_Transform_s</a></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;{</div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="struct_r_e___transform__s.html#ab8ef1bf8a70cc07c6d55823c390a7e76">   78</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="struct_r_e___transform__s.html#ab8ef1bf8a70cc07c6d55823c390a7e76">angle</a>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="struct_r_e___transform__s.html#a0daf080d22fb345192ece245fbe23dda">   80</a></span>&#160;    <a class="code" href="struct_vec2__s.html">Vec2</a> *<a class="code" href="struct_r_e___transform__s.html#a0daf080d22fb345192ece245fbe23dda">center</a>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="struct_r_e___transform__s.html#a9cb9bc5218d3d908136798c6b922808e">   83</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="struct_r_e___transform__s.html#a9cb9bc5218d3d908136798c6b922808e">flipFlags</a>;</div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="group___r_e___texture.html#gae2e3c48dbca9db49d917c123a764daea">   84</a></span>&#160;} <a class="code" href="group___r_e___texture.html#gae2e3c48dbca9db49d917c123a764daea">RE_Transform</a>;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="group___r_e___texture.html#ga3d81589a6f55e80e5de704d2f256589a">   90</a></span>&#160;<span class="keyword">extern</span> RE_API <a class="code" href="struct_r_e___transform__s.html">RE_Transform</a> <a class="code" href="group___r_e___texture.html#ga3d81589a6f55e80e5de704d2f256589a">RE_Transform_getDefault</a>();</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="group___r_e___texture.html#ga3e4c62d75f47a85951bc4f358b19cc5e">   97</a></span>&#160;<span class="keyword">extern</span> RE_API <a class="code" href="struct_r_e___texture__s.html">RE_Texture</a> *<a class="code" href="group___r_e___texture.html#ga3e4c62d75f47a85951bc4f358b19cc5e">RE_Texture_new</a>(<span class="keywordtype">char</span> *path, <a class="code" href="struct_r_e___renderer__s.html">RE_Renderer</a> *renderer);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno"><a class="line" href="group___r_e___texture.html#gaa162e86e55699d3be567c3d5989dbf48">  107</a></span>&#160;<span class="keyword">extern</span> RE_API <a class="code" href="struct_r_e___texture__s.html">RE_Texture</a> *<a class="code" href="group___r_e___texture.html#gaa162e86e55699d3be567c3d5989dbf48">RE_Texture_newSet</a>(<span class="keywordtype">char</span> *path, <a class="code" href="struct_r_e___renderer__s.html">RE_Renderer</a> *renderer, <span class="keywordtype">int</span> nbRows, <span class="keywordtype">int</span> nbCols);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
+<div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="group___r_e___texture.html#ga71d4e47b8b09194a8b2574d378379822">  112</a></span>&#160;<span class="keyword">extern</span> RE_API <span class="keywordtype">void</span> <a class="code" href="group___r_e___texture.html#ga71d4e47b8b09194a8b2574d378379822">RE_Texture_free</a>(<a class="code" href="struct_r_e___texture__s.html">RE_Texture</a> *texture);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
+<div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="group___r_e___texture.html#ga44f1e7811347082dc9bd51aa9d8f2f35">  118</a></span>&#160;RE_API RE_INLINE <span class="keywordtype">int</span> <a class="code" href="group___r_e___texture.html#ga44f1e7811347082dc9bd51aa9d8f2f35">RE_Texture_getWidth</a>(<a class="code" href="struct_r_e___texture__s.html">RE_Texture</a> *texture)</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;{</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keywordflow">return</span> texture-&gt;<a class="code" href="struct_r_e___texture__s.html#a226b54ebc937470a33ab6d4e01382371">m_width</a>;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;}</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
+<div class="line"><a name="l00127"></a><span class="lineno"><a class="line" href="group___r_e___texture.html#ga6c854cc1c10b377dae40808b4353b229">  127</a></span>&#160;RE_API RE_INLINE <span class="keywordtype">int</span> <a class="code" href="group___r_e___texture.html#ga6c854cc1c10b377dae40808b4353b229">RE_Texture_getHeight</a>(<a class="code" href="struct_r_e___texture__s.html">RE_Texture</a> *texture)</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;{</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keywordflow">return</span> texture-&gt;<a class="code" href="struct_r_e___texture__s.html#ac6a72ba5cf510cdb179f3b1ae815bc65">m_height</a>;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;}</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
+<div class="line"><a name="l00137"></a><span class="lineno"><a class="line" href="group___r_e___texture.html#ga6094d904584e4bcec23ce18a8334e2ee">  137</a></span>&#160;RE_API RE_INLINE <span class="keywordtype">int</span> <a class="code" href="group___r_e___texture.html#ga6094d904584e4bcec23ce18a8334e2ee">RE_Texture_getNbParts</a>(<a class="code" href="struct_r_e___texture__s.html">RE_Texture</a> *texture)</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;{</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <span class="keywordflow">return</span> texture-&gt;<a class="code" href="struct_r_e___texture__s.html#a1684f08ea84a87a18f9c394e3e688552">m_nbParts</a>;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;}</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160; </div>
+<div class="line"><a name="l00148"></a><span class="lineno"><a class="line" href="group___r_e___texture.html#gab5eeffa0f23b81b934e37836ee466beb">  148</a></span>&#160;RE_API RE_INLINE <span class="keywordtype">int</span> <a class="code" href="group___r_e___texture.html#gab5eeffa0f23b81b934e37836ee466beb">RE_Texture_getPartWidth</a>(<a class="code" href="struct_r_e___texture__s.html">RE_Texture</a> *texture, <span class="keywordtype">int</span> partIdx)</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;{</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <span class="keywordflow">return</span> (texture-&gt;<a class="code" href="struct_r_e___texture__s.html#a5361fa91e581aa0ef25d92275322768e">m_parts</a>[partIdx]).w;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;}</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
+<div class="line"><a name="l00159"></a><span class="lineno"><a class="line" href="group___r_e___texture.html#gaf8b17771ead78d241eca4cc615ea8939">  159</a></span>&#160;RE_API RE_INLINE <span class="keywordtype">int</span> <a class="code" href="group___r_e___texture.html#gaf8b17771ead78d241eca4cc615ea8939">RE_Texture_getPartHeight</a>(<a class="code" href="struct_r_e___texture__s.html">RE_Texture</a> *texture, <span class="keywordtype">int</span> partIdx)</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;{</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="keywordflow">return</span> (texture-&gt;<a class="code" href="struct_r_e___texture__s.html#a5361fa91e581aa0ef25d92275322768e">m_parts</a>[partIdx]).h;</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;}</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160; </div>
+<div class="line"><a name="l00168"></a><span class="lineno"><a class="line" href="group___r_e___texture.html#ga5b273fec32406c1ab6dc6b5bad891b9b">  168</a></span>&#160;RE_API RE_INLINE <span class="keywordtype">void</span> <a class="code" href="group___r_e___texture.html#ga5b273fec32406c1ab6dc6b5bad891b9b">RE_Texture_setAlpha</a>(<a class="code" href="struct_r_e___texture__s.html">RE_Texture</a> *texture, <span class="keywordtype">int</span> alpha)</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;{</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    SDL_SetTextureAlphaMod(texture-&gt;<a class="code" href="struct_r_e___texture__s.html#aaa1970dc71e6376a83c6bd882e8f4576">m_textureSDL</a>, (Uint8)alpha);</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;}</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160; </div>
+<div class="line"><a name="l00177"></a><span class="lineno"><a class="line" href="group___r_e___texture.html#ga5f6f88cbc573c643af33212145d9c628">  177</a></span>&#160;RE_API RE_INLINE <span class="keywordtype">int</span> <a class="code" href="group___r_e___texture.html#ga5f6f88cbc573c643af33212145d9c628">RE_Texture_getAlpha</a>(<a class="code" href="struct_r_e___texture__s.html">RE_Texture</a> *texture)</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;{</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    Uint8 alpha;</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    SDL_GetTextureAlphaMod(texture-&gt;<a class="code" href="struct_r_e___texture__s.html#aaa1970dc71e6376a83c6bd882e8f4576">m_textureSDL</a>, &amp;alpha);</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <span class="keywordflow">return</span> (<span class="keywordtype">int</span>)alpha;</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;}</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160; </div>
+<div class="line"><a name="l00190"></a><span class="lineno"><a class="line" href="group___r_e___texture.html#ga07caadafe61e019ae9ebdb2e4cd16c95">  190</a></span>&#160;<span class="keyword">extern</span> RE_API <span class="keywordtype">void</span> <a class="code" href="group___r_e___texture.html#ga07caadafe61e019ae9ebdb2e4cd16c95">RE_Texture_render</a>(<a class="code" href="struct_r_e___texture__s.html">RE_Texture</a> *texture, <span class="keywordtype">int</span> partIdx, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y);</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160; </div>
+<div class="line"><a name="l00200"></a><span class="lineno"><a class="line" href="group___r_e___texture.html#gaf6a7d4c4c32595b092b834899664fd6c">  200</a></span>&#160;<span class="keyword">extern</span> RE_API <span class="keywordtype">void</span> <a class="code" href="group___r_e___texture.html#gaf6a7d4c4c32595b092b834899664fd6c">RE_Texture_renderFlip</a>(<a class="code" href="struct_r_e___texture__s.html">RE_Texture</a> *texture, <span class="keywordtype">int</span> partIdx, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">int</span> flipFlags);</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160; </div>
+<div class="line"><a name="l00210"></a><span class="lineno"><a class="line" href="group___r_e___texture.html#ga5195223392e7b2f3be40629a6919c75a">  210</a></span>&#160;<span class="keyword">extern</span> RE_API <span class="keywordtype">void</span> <a class="code" href="group___r_e___texture.html#ga5195223392e7b2f3be40629a6919c75a">RE_Texture_renderRotate</a>(<a class="code" href="struct_r_e___texture__s.html">RE_Texture</a> *texture, <span class="keywordtype">int</span> partIdx, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">float</span> angle, <a class="code" href="struct_vec2__s.html">Vec2</a> *center);</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160; </div>
+<div class="line"><a name="l00219"></a><span class="lineno"><a class="line" href="group___r_e___texture.html#ga2e8b267811c968ed647baa9e189a51f1">  219</a></span>&#160;<span class="keyword">extern</span> RE_API <span class="keywordtype">void</span> <a class="code" href="group___r_e___texture.html#ga2e8b267811c968ed647baa9e189a51f1">RE_Texture_renderTransform</a>(<a class="code" href="struct_r_e___texture__s.html">RE_Texture</a> *texture, <span class="keywordtype">int</span> partIdx, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <a class="code" href="struct_r_e___transform__s.html">RE_Transform</a> *transform);</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160; </div>
+<div class="line"><a name="l00228"></a><span class="lineno"><a class="line" href="group___r_e___texture.html#gae57cb1ddc14dc299d594aab3ea97a939">  228</a></span>&#160;<span class="keyword">extern</span> RE_API <span class="keywordtype">void</span> <a class="code" href="group___r_e___texture.html#gae57cb1ddc14dc299d594aab3ea97a939">RE_Texture_renderF</a>(<a class="code" href="struct_r_e___texture__s.html">RE_Texture</a> *texture, <span class="keywordtype">int</span> partIdx, <span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y);</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160; </div>
+<div class="line"><a name="l00239"></a><span class="lineno"><a class="line" href="group___r_e___texture.html#ga6a73faa4f8736d3589c0236befb6bf1c">  239</a></span>&#160;<span class="keyword">extern</span> RE_API <span class="keywordtype">void</span> <a class="code" href="group___r_e___texture.html#ga6a73faa4f8736d3589c0236befb6bf1c">RE_Texture_renderFlipF</a>(<a class="code" href="struct_r_e___texture__s.html">RE_Texture</a> *texture, <span class="keywordtype">int</span> partIdx, <span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y, <span class="keywordtype">int</span> flipFlags);</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160; </div>
+<div class="line"><a name="l00250"></a><span class="lineno"><a class="line" href="group___r_e___texture.html#gade18bbd3259e7d72c17d96b6c155fab6">  250</a></span>&#160;<span class="keyword">extern</span> RE_API <span class="keywordtype">void</span> <a class="code" href="group___r_e___texture.html#gade18bbd3259e7d72c17d96b6c155fab6">RE_Texture_renderRotateF</a>(<a class="code" href="struct_r_e___texture__s.html">RE_Texture</a> *texture, <span class="keywordtype">int</span> partIdx, <span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y, <span class="keywordtype">float</span> angle, <a class="code" href="struct_vec2__s.html">Vec2</a> *center);</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160; </div>
+<div class="line"><a name="l00260"></a><span class="lineno"><a class="line" href="group___r_e___texture.html#ga17f3f0f91ff0549efe7a8e40ae2c42b3">  260</a></span>&#160;<span class="keyword">extern</span> RE_API <span class="keywordtype">void</span> <a class="code" href="group___r_e___texture.html#ga17f3f0f91ff0549efe7a8e40ae2c42b3">RE_Texture_renderTransformF</a>(<a class="code" href="struct_r_e___texture__s.html">RE_Texture</a> *texture, <span class="keywordtype">int</span> partIdx, <span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y, <a class="code" href="struct_r_e___transform__s.html">RE_Transform</a> *transform);</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160; </div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="astruct_r_e___texture__s_html_a83da66aa4f03d8528e9fd47195f7f6db"><div class="ttname"><a href="struct_r_e___texture__s.html#a83da66aa4f03d8528e9fd47195f7f6db">RE_Texture_s::m_nbCols</a></div><div class="ttdeci">int m_nbCols</div><div class="ttdoc">Nombre de colonnes de l'atlas de texture.</div><div class="ttdef"><b>Definition:</b> RE_Texture.h:49</div></div>
+<div class="ttc" id="astruct_r_e___renderer__s_html"><div class="ttname"><a href="struct_r_e___renderer__s.html">RE_Renderer_s</a></div><div class="ttdoc">Structure représentant le moteur de rendu.</div><div class="ttdef"><b>Definition:</b> RE_Renderer.h:49</div></div>
+<div class="ttc" id="agroup___r_e___texture_html_ggacc0821af105a85a80b36579c7f55e0fca407a85c5871c6b9c469c8726a0ad112f"><div class="ttname"><a href="group___r_e___texture.html#ggacc0821af105a85a80b36579c7f55e0fca407a85c5871c6b9c469c8726a0ad112f">RE_FLIP_VERTICAL</a></div><div class="ttdeci">@ RE_FLIP_VERTICAL</div><div class="ttdoc">Retournement Vertical.</div><div class="ttdef"><b>Definition:</b> RE_Texture.h:70</div></div>
+<div class="ttc" id="agroup___r_e___texture_html_ga07caadafe61e019ae9ebdb2e4cd16c95"><div class="ttname"><a href="group___r_e___texture.html#ga07caadafe61e019ae9ebdb2e4cd16c95">RE_Texture_render</a></div><div class="ttdeci">RE_API void RE_Texture_render(RE_Texture *texture, int partIdx, int x, int y)</div><div class="ttdoc">Dessine une partie d'une texture dans son contexte de rendu.</div></div>
+<div class="ttc" id="astruct_r_e___transform__s_html_a9cb9bc5218d3d908136798c6b922808e"><div class="ttname"><a href="struct_r_e___transform__s.html#a9cb9bc5218d3d908136798c6b922808e">RE_Transform_s::flipFlags</a></div><div class="ttdeci">int flipFlags</div><div class="ttdoc">Les flags de retournement. Les valeurs possibles des flags sont données dans l'énumération RE_Texture...</div><div class="ttdef"><b>Definition:</b> RE_Texture.h:83</div></div>
+<div class="ttc" id="agroup___r_e___texture_html_ga17f3f0f91ff0549efe7a8e40ae2c42b3"><div class="ttname"><a href="group___r_e___texture.html#ga17f3f0f91ff0549efe7a8e40ae2c42b3">RE_Texture_renderTransformF</a></div><div class="ttdeci">RE_API void RE_Texture_renderTransformF(RE_Texture *texture, int partIdx, float x, float y, RE_Transform *transform)</div><div class="ttdoc">Dessine une partie d'une texture dans son contexte de rendu avec la possibilité de lui appliquer une ...</div></div>
+<div class="ttc" id="agroup___r_e___texture_html_gacc0821af105a85a80b36579c7f55e0fc"><div class="ttname"><a href="group___r_e___texture.html#gacc0821af105a85a80b36579c7f55e0fc">RE_TextureFlip_e</a></div><div class="ttdeci">RE_TextureFlip_e</div><div class="ttdoc">Enumération contenant les flags pouvant être utilisés pour retourner un texture au moment du rendu.</div><div class="ttdef"><b>Definition:</b> RE_Texture.h:64</div></div>
+<div class="ttc" id="agroup___r_e___texture_html_gab5eeffa0f23b81b934e37836ee466beb"><div class="ttname"><a href="group___r_e___texture.html#gab5eeffa0f23b81b934e37836ee466beb">RE_Texture_getPartWidth</a></div><div class="ttdeci">RE_API RE_INLINE int RE_Texture_getPartWidth(RE_Texture *texture, int partIdx)</div><div class="ttdoc">Renvoie la largeur d'une sous-image d'un atlas de texture. Dans le cas d'une texture simple en conten...</div><div class="ttdef"><b>Definition:</b> RE_Texture.h:148</div></div>
+<div class="ttc" id="agroup___r_e___texture_html_gaccb1d43ce76b0e473b073856eb51e495"><div class="ttname"><a href="group___r_e___texture.html#gaccb1d43ce76b0e473b073856eb51e495">RE_TextureFlip</a></div><div class="ttdeci">enum RE_TextureFlip_e RE_TextureFlip</div><div class="ttdoc">Enumération contenant les flags pouvant être utilisés pour retourner un texture au moment du rendu.</div></div>
+<div class="ttc" id="astruct_r_e___texture__s_html_ac6a72ba5cf510cdb179f3b1ae815bc65"><div class="ttname"><a href="struct_r_e___texture__s.html#ac6a72ba5cf510cdb179f3b1ae815bc65">RE_Texture_s::m_height</a></div><div class="ttdeci">int m_height</div><div class="ttdoc">La hauteur en pixels de la texture.</div><div class="ttdef"><b>Definition:</b> RE_Texture.h:41</div></div>
+<div class="ttc" id="agroup___r_e___texture_html_ga3d81589a6f55e80e5de704d2f256589a"><div class="ttname"><a href="group___r_e___texture.html#ga3d81589a6f55e80e5de704d2f256589a">RE_Transform_getDefault</a></div><div class="ttdeci">RE_API RE_Transform RE_Transform_getDefault()</div><div class="ttdoc">Renvoie la transformation par défaut. Elle est paramétrée pour qu'aucun changement ne soit appliqué à...</div></div>
+<div class="ttc" id="astruct_r_e___transform__s_html_ab8ef1bf8a70cc07c6d55823c390a7e76"><div class="ttname"><a href="struct_r_e___transform__s.html#ab8ef1bf8a70cc07c6d55823c390a7e76">RE_Transform_s::angle</a></div><div class="ttdeci">float angle</div><div class="ttdoc">L'angle de la rotation.</div><div class="ttdef"><b>Definition:</b> RE_Texture.h:78</div></div>
+<div class="ttc" id="astruct_r_e___texture__s_html_a5361fa91e581aa0ef25d92275322768e"><div class="ttname"><a href="struct_r_e___texture__s.html#a5361fa91e581aa0ef25d92275322768e">RE_Texture_s::m_parts</a></div><div class="ttdeci">SDL_Rect * m_parts</div><div class="ttdoc">Tableau contenant les coordonnées de texture des différentes partie de l'atlas de texture.</div><div class="ttdef"><b>Definition:</b> RE_Texture.h:58</div></div>
+<div class="ttc" id="astruct_r_e___texture__s_html_a1684f08ea84a87a18f9c394e3e688552"><div class="ttname"><a href="struct_r_e___texture__s.html#a1684f08ea84a87a18f9c394e3e688552">RE_Texture_s::m_nbParts</a></div><div class="ttdeci">int m_nbParts</div><div class="ttdoc">Nombre de sous-images dans l'atlas de texture. Correspond à m_nbRows * m_nbCols.</div><div class="ttdef"><b>Definition:</b> RE_Texture.h:54</div></div>
+<div class="ttc" id="agroup___r_e___texture_html_ga6c854cc1c10b377dae40808b4353b229"><div class="ttname"><a href="group___r_e___texture.html#ga6c854cc1c10b377dae40808b4353b229">RE_Texture_getHeight</a></div><div class="ttdeci">RE_API RE_INLINE int RE_Texture_getHeight(RE_Texture *texture)</div><div class="ttdoc">Renvoie la hauteur totale d'une texture.</div><div class="ttdef"><b>Definition:</b> RE_Texture.h:127</div></div>
+<div class="ttc" id="agroup___r_e___texture_html_ga6a73faa4f8736d3589c0236befb6bf1c"><div class="ttname"><a href="group___r_e___texture.html#ga6a73faa4f8736d3589c0236befb6bf1c">RE_Texture_renderFlipF</a></div><div class="ttdeci">RE_API void RE_Texture_renderFlipF(RE_Texture *texture, int partIdx, float x, float y, int flipFlags)</div><div class="ttdoc">Dessine une partie d'une texture dans son contexte de rendu avec la possibilité de la retourner....</div></div>
+<div class="ttc" id="agroup___r_e___texture_html_ga6094d904584e4bcec23ce18a8334e2ee"><div class="ttname"><a href="group___r_e___texture.html#ga6094d904584e4bcec23ce18a8334e2ee">RE_Texture_getNbParts</a></div><div class="ttdeci">RE_API RE_INLINE int RE_Texture_getNbParts(RE_Texture *texture)</div><div class="ttdoc">Renvoie le nombre de sous-images dans l'atlas de texture. Dans le cas d'une texture simple en contena...</div><div class="ttdef"><b>Definition:</b> RE_Texture.h:137</div></div>
+<div class="ttc" id="astruct_r_e___texture__s_html_a9d113992152d0c4611aea7e694a46a35"><div class="ttname"><a href="struct_r_e___texture__s.html#a9d113992152d0c4611aea7e694a46a35">RE_Texture_s::m_nbRows</a></div><div class="ttdeci">int m_nbRows</div><div class="ttdoc">Nombre de lignes de l'atlas de texture.</div><div class="ttdef"><b>Definition:</b> RE_Texture.h:45</div></div>
+<div class="ttc" id="astruct_r_e___texture__s_html_aaa1970dc71e6376a83c6bd882e8f4576"><div class="ttname"><a href="struct_r_e___texture__s.html#aaa1970dc71e6376a83c6bd882e8f4576">RE_Texture_s::m_textureSDL</a></div><div class="ttdeci">SDL_Texture * m_textureSDL</div><div class="ttdoc">La texture SDL.</div><div class="ttdef"><b>Definition:</b> RE_Texture.h:33</div></div>
+<div class="ttc" id="agroup___r_e___texture_html_ga3e4c62d75f47a85951bc4f358b19cc5e"><div class="ttname"><a href="group___r_e___texture.html#ga3e4c62d75f47a85951bc4f358b19cc5e">RE_Texture_new</a></div><div class="ttdeci">RE_API RE_Texture * RE_Texture_new(char *path, RE_Renderer *renderer)</div><div class="ttdoc">Crée une nouvelle texture.</div></div>
+<div class="ttc" id="agroup___r_e___texture_html_gae57cb1ddc14dc299d594aab3ea97a939"><div class="ttname"><a href="group___r_e___texture.html#gae57cb1ddc14dc299d594aab3ea97a939">RE_Texture_renderF</a></div><div class="ttdeci">RE_API void RE_Texture_renderF(RE_Texture *texture, int partIdx, float x, float y)</div><div class="ttdoc">Dessine une partie d'une texture dans son contexte de rendu. Contrairement à RE_Texture_render(),...</div></div>
+<div class="ttc" id="agroup___r_e___texture_html_gaf8b17771ead78d241eca4cc615ea8939"><div class="ttname"><a href="group___r_e___texture.html#gaf8b17771ead78d241eca4cc615ea8939">RE_Texture_getPartHeight</a></div><div class="ttdeci">RE_API RE_INLINE int RE_Texture_getPartHeight(RE_Texture *texture, int partIdx)</div><div class="ttdoc">Renvoie la hauteur d'une sous-image d'un atlas de texture. Dans le cas d'une texture simple en conten...</div><div class="ttdef"><b>Definition:</b> RE_Texture.h:159</div></div>
+<div class="ttc" id="agroup___r_e___texture_html_ga4944d62c51444c69c8d7c2e719f77eb2"><div class="ttname"><a href="group___r_e___texture.html#ga4944d62c51444c69c8d7c2e719f77eb2">RE_Texture</a></div><div class="ttdeci">struct RE_Texture_s RE_Texture</div><div class="ttdoc">Structure représentant une image optimisée pour un moteur de rendu. La texture peut contenir plusieur...</div></div>
+<div class="ttc" id="astruct_r_e___texture__s_html_a912a717a6319414586bd2623ae586157"><div class="ttname"><a href="struct_r_e___texture__s.html#a912a717a6319414586bd2623ae586157">RE_Texture_s::m_renderer</a></div><div class="ttdeci">RE_Renderer * m_renderer</div><div class="ttdoc">Le moteur de rendu associé à la texture.</div><div class="ttdef"><b>Definition:</b> RE_Texture.h:29</div></div>
+<div class="ttc" id="agroup___r_e___texture_html_ga71d4e47b8b09194a8b2574d378379822"><div class="ttname"><a href="group___r_e___texture.html#ga71d4e47b8b09194a8b2574d378379822">RE_Texture_free</a></div><div class="ttdeci">RE_API void RE_Texture_free(RE_Texture *texture)</div><div class="ttdoc">Détruit une texture préalablement créée avec RE_Texture_new() ou RE_Texture_newSet().</div></div>
+<div class="ttc" id="agroup___r_e___texture_html_ga44f1e7811347082dc9bd51aa9d8f2f35"><div class="ttname"><a href="group___r_e___texture.html#ga44f1e7811347082dc9bd51aa9d8f2f35">RE_Texture_getWidth</a></div><div class="ttdeci">RE_API RE_INLINE int RE_Texture_getWidth(RE_Texture *texture)</div><div class="ttdoc">Renvoie la largeur totale d'une texture.</div><div class="ttdef"><b>Definition:</b> RE_Texture.h:118</div></div>
+<div class="ttc" id="agroup___r_e___texture_html_ga2e8b267811c968ed647baa9e189a51f1"><div class="ttname"><a href="group___r_e___texture.html#ga2e8b267811c968ed647baa9e189a51f1">RE_Texture_renderTransform</a></div><div class="ttdeci">RE_API void RE_Texture_renderTransform(RE_Texture *texture, int partIdx, int x, int y, RE_Transform *transform)</div><div class="ttdoc">Dessine une partie d'une texture dans son contexte de rendu avec la possibilité de lui appliquer une ...</div></div>
+<div class="ttc" id="agroup___r_e___texture_html_gaf6a7d4c4c32595b092b834899664fd6c"><div class="ttname"><a href="group___r_e___texture.html#gaf6a7d4c4c32595b092b834899664fd6c">RE_Texture_renderFlip</a></div><div class="ttdeci">RE_API void RE_Texture_renderFlip(RE_Texture *texture, int partIdx, int x, int y, int flipFlags)</div><div class="ttdoc">Dessine une partie d'une texture dans son contexte de rendu avec la possibilité de la retourner.</div></div>
+<div class="ttc" id="astruct_r_e___texture__s_html"><div class="ttname"><a href="struct_r_e___texture__s.html">RE_Texture_s</a></div><div class="ttdoc">Structure représentant une image optimisée pour un moteur de rendu. La texture peut contenir plusieur...</div><div class="ttdef"><b>Definition:</b> RE_Texture.h:26</div></div>
+<div class="ttc" id="agroup___r_e___texture_html_ggacc0821af105a85a80b36579c7f55e0fca516d394fa04ac692e5457321b8ecf83e"><div class="ttname"><a href="group___r_e___texture.html#ggacc0821af105a85a80b36579c7f55e0fca516d394fa04ac692e5457321b8ecf83e">RE_FLIP_NONE</a></div><div class="ttdeci">@ RE_FLIP_NONE</div><div class="ttdoc">Aucun retournement.</div><div class="ttdef"><b>Definition:</b> RE_Texture.h:66</div></div>
+<div class="ttc" id="agroup___r_e___texture_html_gae2e3c48dbca9db49d917c123a764daea"><div class="ttname"><a href="group___r_e___texture.html#gae2e3c48dbca9db49d917c123a764daea">RE_Transform</a></div><div class="ttdeci">struct RE_Transform_s RE_Transform</div><div class="ttdoc">Structure représentant la transformation à appliquer à une texture au moment du rendu.</div></div>
+<div class="ttc" id="astruct_r_e___transform__s_html_a0daf080d22fb345192ece245fbe23dda"><div class="ttname"><a href="struct_r_e___transform__s.html#a0daf080d22fb345192ece245fbe23dda">RE_Transform_s::center</a></div><div class="ttdeci">Vec2 * center</div><div class="ttdoc">Le centre de la rotation en coordonnées de texture.</div><div class="ttdef"><b>Definition:</b> RE_Texture.h:80</div></div>
+<div class="ttc" id="agroup___r_e___texture_html_ga5b273fec32406c1ab6dc6b5bad891b9b"><div class="ttname"><a href="group___r_e___texture.html#ga5b273fec32406c1ab6dc6b5bad891b9b">RE_Texture_setAlpha</a></div><div class="ttdeci">RE_API RE_INLINE void RE_Texture_setAlpha(RE_Texture *texture, int alpha)</div><div class="ttdoc">Définit la composante alpha (transparence) d'une texture.</div><div class="ttdef"><b>Definition:</b> RE_Texture.h:168</div></div>
+<div class="ttc" id="astruct_vec2__s_html"><div class="ttname"><a href="struct_vec2__s.html">Vec2_s</a></div><div class="ttdoc">Structure représentant un vecteur 2D dont les composantes sont de type float.</div><div class="ttdef"><b>Definition:</b> RE_Utils.h:40</div></div>
+<div class="ttc" id="agroup___r_e___texture_html_ggacc0821af105a85a80b36579c7f55e0fcab6ea97e2ccb78645a667e03c77d0951d"><div class="ttname"><a href="group___r_e___texture.html#ggacc0821af105a85a80b36579c7f55e0fcab6ea97e2ccb78645a667e03c77d0951d">RE_FLIP_HORIZONTAL</a></div><div class="ttdeci">@ RE_FLIP_HORIZONTAL</div><div class="ttdoc">Retournement horizontal.</div><div class="ttdef"><b>Definition:</b> RE_Texture.h:68</div></div>
+<div class="ttc" id="agroup___r_e___texture_html_gaa162e86e55699d3be567c3d5989dbf48"><div class="ttname"><a href="group___r_e___texture.html#gaa162e86e55699d3be567c3d5989dbf48">RE_Texture_newSet</a></div><div class="ttdeci">RE_API RE_Texture * RE_Texture_newSet(char *path, RE_Renderer *renderer, int nbRows, int nbCols)</div><div class="ttdoc">Crée un nouvel atlas de texture composé de plusieurs sous-images de mêmes dimensions organisées sous ...</div></div>
+<div class="ttc" id="astruct_r_e___transform__s_html"><div class="ttname"><a href="struct_r_e___transform__s.html">RE_Transform_s</a></div><div class="ttdoc">Structure représentant la transformation à appliquer à une texture au moment du rendu.</div><div class="ttdef"><b>Definition:</b> RE_Texture.h:76</div></div>
+<div class="ttc" id="agroup___r_e___texture_html_gade18bbd3259e7d72c17d96b6c155fab6"><div class="ttname"><a href="group___r_e___texture.html#gade18bbd3259e7d72c17d96b6c155fab6">RE_Texture_renderRotateF</a></div><div class="ttdeci">RE_API void RE_Texture_renderRotateF(RE_Texture *texture, int partIdx, float x, float y, float angle, Vec2 *center)</div><div class="ttdoc">Dessine une partie d'une texture dans son contexte de rendu avec la possibilité de lui appliquer une ...</div></div>
+<div class="ttc" id="astruct_r_e___texture__s_html_a226b54ebc937470a33ab6d4e01382371"><div class="ttname"><a href="struct_r_e___texture__s.html#a226b54ebc937470a33ab6d4e01382371">RE_Texture_s::m_width</a></div><div class="ttdeci">int m_width</div><div class="ttdoc">La largeur en pixels de la texture.</div><div class="ttdef"><b>Definition:</b> RE_Texture.h:37</div></div>
+<div class="ttc" id="agroup___r_e___texture_html_ga5f6f88cbc573c643af33212145d9c628"><div class="ttname"><a href="group___r_e___texture.html#ga5f6f88cbc573c643af33212145d9c628">RE_Texture_getAlpha</a></div><div class="ttdeci">RE_API RE_INLINE int RE_Texture_getAlpha(RE_Texture *texture)</div><div class="ttdoc">Renvoie la composante alpha (transparence) d'une texture.</div><div class="ttdef"><b>Definition:</b> RE_Texture.h:177</div></div>
+<div class="ttc" id="agroup___r_e___texture_html_ga5195223392e7b2f3be40629a6919c75a"><div class="ttname"><a href="group___r_e___texture.html#ga5195223392e7b2f3be40629a6919c75a">RE_Texture_renderRotate</a></div><div class="ttdeci">RE_API void RE_Texture_renderRotate(RE_Texture *texture, int partIdx, int x, int y, float angle, Vec2 *center)</div><div class="ttdoc">Dessine une partie d'une texture dans son contexte de rendu avec la possibilité de lui appliquer une ...</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.18
+</small></address>
+</body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.18"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Plateformer Engine (PE):  Fichier source de C:/Users/arnau/Documents/Data/Dev/PlatformerEngine/PlatformerEngine/PE_World.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Plateformer Engine (PE)
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.18 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_3f1c63d08f7153bd10045ebe80d8e823.html">PlatformerEngine</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">PE_World.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#ifndef _PE_WORLD_H_</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#define _PE_WORLD_H_</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;PE_Lib.h&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;PE_Settings.h&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;PE_Math.h&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;PE_List.h&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;PE_CollisionDetector.h&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;PE_BroadPhase.h&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;PE_Allocator.h&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;PE_Profile.h&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct_p_e___body__s.html">PE_Body_s</a> <a class="code" href="struct_p_e___body__s.html">PE_Body</a>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct_p_e___body_def__s.html">PE_BodyDef_s</a> <a class="code" href="struct_p_e___body_def__s.html">PE_BodyDef</a>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>PE_Solver_s PE_Solver;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="struct_p_e___world__s.html">   24</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct_p_e___world__s.html">PE_World_s</a></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="struct_p_e___world__s.html#a50bc03c2a7dead6e3a291aec59827b63">   28</a></span>&#160;    PE_Allocator *<a class="code" href="struct_p_e___world__s.html#a50bc03c2a7dead6e3a291aec59827b63">m_allocator</a>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="struct_p_e___world__s.html#a13365cd834d2a251ba3d61d05e2b8f2d">   33</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="struct_p_e___world__s.html#a13365cd834d2a251ba3d61d05e2b8f2d">m_timeStep</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="struct_p_e___world__s.html#a86151b8e5970dc73ba3c29cfe47ea414">   38</a></span>&#160;    <a class="code" href="struct_p_e___vec2__s.html">PE_Vec2</a> <a class="code" href="struct_p_e___world__s.html#a86151b8e5970dc73ba3c29cfe47ea414">m_gravity</a>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="struct_p_e___world__s.html#a52c7ec1266a8486e8dd758f943c3aeff">   42</a></span>&#160;    PE_List <a class="code" href="struct_p_e___world__s.html#a52c7ec1266a8486e8dd758f943c3aeff">m_bodyList</a>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="struct_p_e___world__s.html#a5ef66e99789a42c813cb796944a3db31">   46</a></span>&#160;    PE_CollisionDetector *<a class="code" href="struct_p_e___world__s.html#a5ef66e99789a42c813cb796944a3db31">m_collisionDetector</a>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="struct_p_e___world__s.html#a4ec1066cec6e79726187ded76ee46d62">   50</a></span>&#160;    PE_Solver *<a class="code" href="struct_p_e___world__s.html#a4ec1066cec6e79726187ded76ee46d62">m_solver</a>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="struct_p_e___world__s.html#aa3b277b42f8f1f33a812f27b41cb9aa5">   54</a></span>&#160;    Bool <a class="code" href="struct_p_e___world__s.html#aa3b277b42f8f1f33a812f27b41cb9aa5">m_locked</a>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;} <a class="code" href="struct_p_e___world__s.html">PE_World</a>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="group___p_e___world.html#gac3d7e271215a3b25fe0f2baacffaaed1">   62</a></span>&#160;<span class="keyword">extern</span> PE_API <a class="code" href="struct_p_e___world__s.html">PE_World</a> *<a class="code" href="group___p_e___world.html#gac3d7e271215a3b25fe0f2baacffaaed1">PE_World_new</a>(<a class="code" href="struct_p_e___vec2__s.html">PE_Vec2</a> gravity, <span class="keywordtype">float</span> timeStep);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="group___p_e___world.html#ga55d9ed87ca052d79f07de1cf6a2e734d">   70</a></span>&#160;<span class="keyword">extern</span> PE_API <span class="keywordtype">void</span> <a class="code" href="group___p_e___world.html#ga55d9ed87ca052d79f07de1cf6a2e734d">PE_World_free</a>(<a class="code" href="struct_p_e___world__s.html">PE_World</a> *world);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="group___p_e___world.html#ga9318aed17f7b9ba0698d21ab3bbacbf7">   78</a></span>&#160;<span class="keyword">extern</span> PE_API <a class="code" href="struct_p_e___body__s.html">PE_Body</a> *<a class="code" href="group___p_e___world.html#ga9318aed17f7b9ba0698d21ab3bbacbf7">PE_World_createBody</a>(<a class="code" href="struct_p_e___world__s.html">PE_World</a> *world, <a class="code" href="struct_p_e___body_def__s.html">PE_BodyDef</a> *def);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="group___p_e___world.html#gab71163cb794e3b1da259e3ad8cdc185f">   87</a></span>&#160;<span class="keyword">extern</span> PE_API <span class="keywordtype">void</span> <a class="code" href="group___p_e___world.html#gab71163cb794e3b1da259e3ad8cdc185f">PE_World_removeBody</a>(<a class="code" href="struct_p_e___world__s.html">PE_World</a> *world, <a class="code" href="struct_p_e___body__s.html">PE_Body</a> *body);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="group___p_e___world.html#gacda1310c229f2a71fffd4b88fe9af5c9">   93</a></span>&#160;<span class="keyword">extern</span> PE_API <span class="keywordtype">int</span> <a class="code" href="group___p_e___world.html#gacda1310c229f2a71fffd4b88fe9af5c9">PE_World_getNbBodies</a>(<a class="code" href="struct_p_e___world__s.html">PE_World</a> *world);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="group___p_e___world.html#gaa3eac1b0972627dd52d9c8f6c79f21cc">   99</a></span>&#160;<span class="keyword">extern</span> PE_API <span class="keywordtype">void</span> <a class="code" href="group___p_e___world.html#gaa3eac1b0972627dd52d9c8f6c79f21cc">PE_World_setGravity</a>(<a class="code" href="struct_p_e___world__s.html">PE_World</a> *world, <a class="code" href="struct_p_e___vec2__s.html">PE_Vec2</a> *gravity);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="group___p_e___world.html#gabfe401b4f1071c55054ea976ddecfe42">  105</a></span>&#160;<span class="keyword">extern</span> PE_API <a class="code" href="struct_p_e___vec2__s.html">PE_Vec2</a> *<a class="code" href="group___p_e___world.html#gabfe401b4f1071c55054ea976ddecfe42">PE_World_getGravity</a>(<a class="code" href="struct_p_e___world__s.html">PE_World</a> *world);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="group___p_e___world.html#ga85616d078ee1a755c33920232272de0c">  112</a></span>&#160;<span class="keyword">extern</span> PE_API <span class="keywordtype">int</span> <a class="code" href="group___p_e___world.html#ga85616d078ee1a755c33920232272de0c">PE_World_fixedUpdate</a>(<a class="code" href="struct_p_e___world__s.html">PE_World</a> *world);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="comment">//.................................................................................................</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="comment">// Fonctions de rappel globales</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
+<div class="line"><a name="l00121"></a><span class="lineno"><a class="line" href="group___p_e___world.html#gac19e2dbc094a79d16a795dea38878035">  121</a></span>&#160;PE_API PE_INLINE <span class="keywordtype">void</span> <a class="code" href="group___p_e___world.html#gac19e2dbc094a79d16a795dea38878035">PE_World_setOnCollisionEnter</a>(<a class="code" href="struct_p_e___world__s.html">PE_World</a> *world, PE_CollisionCallback *onCollisionEnter)</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;{</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    PE_CollisionDetector_setOnCollisionEnter(world-&gt;<a class="code" href="struct_p_e___world__s.html#a5ef66e99789a42c813cb796944a3db31">m_collisionDetector</a>, onCollisionEnter);</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;}</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
+<div class="line"><a name="l00130"></a><span class="lineno"><a class="line" href="group___p_e___world.html#gadd4e48effd764b4e4487cc2481a38d19">  130</a></span>&#160;PE_API PE_INLINE <span class="keywordtype">void</span> <a class="code" href="group___p_e___world.html#gadd4e48effd764b4e4487cc2481a38d19">PE_World_setOnCollisionStay</a>(<a class="code" href="struct_p_e___world__s.html">PE_World</a> *world, PE_CollisionCallback *onCollisionStay)</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;{</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    PE_CollisionDetector_setOnCollisionStay(world-&gt;<a class="code" href="struct_p_e___world__s.html#a5ef66e99789a42c813cb796944a3db31">m_collisionDetector</a>, onCollisionStay);</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;}</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
+<div class="line"><a name="l00139"></a><span class="lineno"><a class="line" href="group___p_e___world.html#ga6c415b0d6cff674e3913889a445697ad">  139</a></span>&#160;PE_API PE_INLINE <span class="keywordtype">void</span> <a class="code" href="group___p_e___world.html#ga6c415b0d6cff674e3913889a445697ad">PE_World_setOnCollisionExit</a>(<a class="code" href="struct_p_e___world__s.html">PE_World</a> *world, PE_CollisionCallback *onCollisionExit)</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;{</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    PE_CollisionDetector_setOnCollisionExit(world-&gt;<a class="code" href="struct_p_e___world__s.html#a5ef66e99789a42c813cb796944a3db31">m_collisionDetector</a>, onCollisionExit);</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;}</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160; </div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="comment">//.................................................................................................</span></div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;<span class="comment">// Itérateur sur les corps présents dans le monde</span></div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="keyword">typedef</span> PE_Iterator PE_BodyIterator;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
+<div class="line"><a name="l00155"></a><span class="lineno"><a class="line" href="group___p_e___world.html#ga113bf9d86395887f7e88ccb8c16fb6a1">  155</a></span>&#160;PE_API PE_INLINE <span class="keywordtype">void</span> <a class="code" href="group___p_e___world.html#ga113bf9d86395887f7e88ccb8c16fb6a1">PE_World_getBodyIterator</a>(<a class="code" href="struct_p_e___world__s.html">PE_World</a> *world, PE_BodyIterator *it)</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;{</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    PE_List_getIterator(&amp;world-&gt;<a class="code" href="struct_p_e___world__s.html#a52c7ec1266a8486e8dd758f943c3aeff">m_bodyList</a>, it);</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;}</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
+<div class="line"><a name="l00164"></a><span class="lineno"><a class="line" href="group___p_e___world.html#ga3bc4d331c30fcc9c5f2088afc9465c3f">  164</a></span>&#160;PE_API PE_INLINE Bool <a class="code" href="group___p_e___world.html#ga3bc4d331c30fcc9c5f2088afc9465c3f">PE_BodyIterator_moveNext</a>(PE_BodyIterator *it)</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;{</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <span class="keywordflow">return</span> PE_Iterator_moveNext(it);</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;}</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
+<div class="line"><a name="l00173"></a><span class="lineno"><a class="line" href="group___p_e___world.html#ga45d78b7947c59da931ae0e9d40b0d112">  173</a></span>&#160;PE_API PE_INLINE <a class="code" href="struct_p_e___body__s.html">PE_Body</a> *<a class="code" href="group___p_e___world.html#ga45d78b7947c59da931ae0e9d40b0d112">PE_BodyIterator_current</a>(PE_BodyIterator *it)</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;{</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="struct_p_e___body__s.html">PE_Body</a> *)PE_Iterator_current(it);</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;}</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160; </div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="comment">// ................................................................................................</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;<span class="comment">// Méthodes internes</span></div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160; </div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;PE_INLINE PE_Allocator *PE_World_getAllocator(<a class="code" href="struct_p_e___world__s.html">PE_World</a> *world)</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;{</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    <span class="keywordflow">return</span> world-&gt;<a class="code" href="struct_p_e___world__s.html#a50bc03c2a7dead6e3a291aec59827b63">m_allocator</a>;</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;}</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160; </div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;PE_INLINE PE_CollisionDetector *PE_World_getCollisionDetector(<a class="code" href="struct_p_e___world__s.html">PE_World</a> *world)</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;{</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <span class="keywordflow">return</span> world-&gt;<a class="code" href="struct_p_e___world__s.html#a5ef66e99789a42c813cb796944a3db31">m_collisionDetector</a>;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;}</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;PE_INLINE Bool PE_World_isLocked(<a class="code" href="struct_p_e___world__s.html">PE_World</a> *world)</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;{</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    <span class="keywordflow">return</span> world-&gt;<a class="code" href="struct_p_e___world__s.html#aa3b277b42f8f1f33a812f27b41cb9aa5">m_locked</a>;</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;}</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160; </div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160; </div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="agroup___p_e___world_html_ga113bf9d86395887f7e88ccb8c16fb6a1"><div class="ttname"><a href="group___p_e___world.html#ga113bf9d86395887f7e88ccb8c16fb6a1">PE_World_getBodyIterator</a></div><div class="ttdeci">PE_API PE_INLINE void PE_World_getBodyIterator(PE_World *world, PE_BodyIterator *it)</div><div class="ttdoc">Renvoie un itérateur sur la collection des corps présents dans le monde.</div><div class="ttdef"><b>Definition:</b> PE_World.h:155</div></div>
+<div class="ttc" id="agroup___p_e___world_html_gacda1310c229f2a71fffd4b88fe9af5c9"><div class="ttname"><a href="group___p_e___world.html#gacda1310c229f2a71fffd4b88fe9af5c9">PE_World_getNbBodies</a></div><div class="ttdeci">PE_API int PE_World_getNbBodies(PE_World *world)</div><div class="ttdoc">Renvoie le nombre de corps présents dans le monde.</div></div>
+<div class="ttc" id="agroup___p_e___world_html_ga6c415b0d6cff674e3913889a445697ad"><div class="ttname"><a href="group___p_e___world.html#ga6c415b0d6cff674e3913889a445697ad">PE_World_setOnCollisionExit</a></div><div class="ttdeci">PE_API PE_INLINE void PE_World_setOnCollisionExit(PE_World *world, PE_CollisionCallback *onCollisionExit)</div><div class="ttdoc">Définit la fonction de rappel (callback) appelée à chaque fois que deux objets cessent d'être en coll...</div><div class="ttdef"><b>Definition:</b> PE_World.h:139</div></div>
+<div class="ttc" id="agroup___p_e___world_html_gac19e2dbc094a79d16a795dea38878035"><div class="ttname"><a href="group___p_e___world.html#gac19e2dbc094a79d16a795dea38878035">PE_World_setOnCollisionEnter</a></div><div class="ttdeci">PE_API PE_INLINE void PE_World_setOnCollisionEnter(PE_World *world, PE_CollisionCallback *onCollisionEnter)</div><div class="ttdoc">Définit la fonction de rappel (callback) appelée à chaque fois que deux objets entrent en collision.</div><div class="ttdef"><b>Definition:</b> PE_World.h:121</div></div>
+<div class="ttc" id="astruct_p_e___world__s_html_aa3b277b42f8f1f33a812f27b41cb9aa5"><div class="ttname"><a href="struct_p_e___world__s.html#aa3b277b42f8f1f33a812f27b41cb9aa5">PE_World_s::m_locked</a></div><div class="ttdeci">Bool m_locked</div><div class="ttdoc">Booléen permettant de bloquer l'accès à certaines fonctions lors de callback.</div><div class="ttdef"><b>Definition:</b> PE_World.h:54</div></div>
+<div class="ttc" id="astruct_p_e___body__s_html"><div class="ttname"><a href="struct_p_e___body__s.html">PE_Body_s</a></div><div class="ttdoc">Structure représentant un corps indéformable dans le moteur physique.</div><div class="ttdef"><b>Definition:</b> PE_Body.h:88</div></div>
+<div class="ttc" id="agroup___p_e___world_html_gadd4e48effd764b4e4487cc2481a38d19"><div class="ttname"><a href="group___p_e___world.html#gadd4e48effd764b4e4487cc2481a38d19">PE_World_setOnCollisionStay</a></div><div class="ttdeci">PE_API PE_INLINE void PE_World_setOnCollisionStay(PE_World *world, PE_CollisionCallback *onCollisionStay)</div><div class="ttdoc">Définit la fonction de rappel (callback) appelée à chaque fois que deux objets se touchent.</div><div class="ttdef"><b>Definition:</b> PE_World.h:130</div></div>
+<div class="ttc" id="astruct_p_e___world__s_html_a4ec1066cec6e79726187ded76ee46d62"><div class="ttname"><a href="struct_p_e___world__s.html#a4ec1066cec6e79726187ded76ee46d62">PE_World_s::m_solver</a></div><div class="ttdeci">PE_Solver * m_solver</div><div class="ttdoc">Solver utilisé pour résoudre toutes les collisions dans ce monde.</div><div class="ttdef"><b>Definition:</b> PE_World.h:50</div></div>
+<div class="ttc" id="agroup___p_e___world_html_gaa3eac1b0972627dd52d9c8f6c79f21cc"><div class="ttname"><a href="group___p_e___world.html#gaa3eac1b0972627dd52d9c8f6c79f21cc">PE_World_setGravity</a></div><div class="ttdeci">PE_API void PE_World_setGravity(PE_World *world, PE_Vec2 *gravity)</div><div class="ttdoc">Définit le vecteur de gravité global appliqué à tous les corps dynamiques du monde.</div></div>
+<div class="ttc" id="agroup___p_e___world_html_gac3d7e271215a3b25fe0f2baacffaaed1"><div class="ttname"><a href="group___p_e___world.html#gac3d7e271215a3b25fe0f2baacffaaed1">PE_World_new</a></div><div class="ttdeci">PE_API PE_World * PE_World_new(PE_Vec2 gravity, float timeStep)</div><div class="ttdoc">Crée un nouveau monde.</div></div>
+<div class="ttc" id="agroup___p_e___world_html_ga3bc4d331c30fcc9c5f2088afc9465c3f"><div class="ttname"><a href="group___p_e___world.html#ga3bc4d331c30fcc9c5f2088afc9465c3f">PE_BodyIterator_moveNext</a></div><div class="ttdeci">PE_API PE_INLINE Bool PE_BodyIterator_moveNext(PE_BodyIterator *it)</div><div class="ttdoc">Avance l'itérateur pour qu'il pointe sur le prochain élément de la collection.</div><div class="ttdef"><b>Definition:</b> PE_World.h:164</div></div>
+<div class="ttc" id="agroup___p_e___world_html_gab71163cb794e3b1da259e3ad8cdc185f"><div class="ttname"><a href="group___p_e___world.html#gab71163cb794e3b1da259e3ad8cdc185f">PE_World_removeBody</a></div><div class="ttdeci">PE_API void PE_World_removeBody(PE_World *world, PE_Body *body)</div><div class="ttdoc">Détruit un corps indéformable. Le pointeur world ne doit pas être déréférencé après cet appel....</div></div>
+<div class="ttc" id="agroup___p_e___world_html_gabfe401b4f1071c55054ea976ddecfe42"><div class="ttname"><a href="group___p_e___world.html#gabfe401b4f1071c55054ea976ddecfe42">PE_World_getGravity</a></div><div class="ttdeci">PE_API PE_Vec2 * PE_World_getGravity(PE_World *world)</div><div class="ttdoc">Renvoie le vecteur de gravité global appliqué dans le monde.</div></div>
+<div class="ttc" id="astruct_p_e___world__s_html"><div class="ttname"><a href="struct_p_e___world__s.html">PE_World_s</a></div><div class="ttdoc">Le monde gère et crée tous les corps physiques.</div><div class="ttdef"><b>Definition:</b> PE_World.h:25</div></div>
+<div class="ttc" id="astruct_p_e___world__s_html_a50bc03c2a7dead6e3a291aec59827b63"><div class="ttname"><a href="struct_p_e___world__s.html#a50bc03c2a7dead6e3a291aec59827b63">PE_World_s::m_allocator</a></div><div class="ttdeci">PE_Allocator * m_allocator</div><div class="ttdoc">Allocateur principal utilisé pour toutes les allocations mémoire dans le monde.</div><div class="ttdef"><b>Definition:</b> PE_World.h:28</div></div>
+<div class="ttc" id="astruct_p_e___world__s_html_a52c7ec1266a8486e8dd758f943c3aeff"><div class="ttname"><a href="struct_p_e___world__s.html#a52c7ec1266a8486e8dd758f943c3aeff">PE_World_s::m_bodyList</a></div><div class="ttdeci">PE_List m_bodyList</div><div class="ttdoc">Liste des corps du monde.</div><div class="ttdef"><b>Definition:</b> PE_World.h:42</div></div>
+<div class="ttc" id="agroup___p_e___world_html_ga45d78b7947c59da931ae0e9d40b0d112"><div class="ttname"><a href="group___p_e___world.html#ga45d78b7947c59da931ae0e9d40b0d112">PE_BodyIterator_current</a></div><div class="ttdeci">PE_API PE_INLINE PE_Body * PE_BodyIterator_current(PE_BodyIterator *it)</div><div class="ttdoc">Renvoie un pointeur vers l'élément de la collection à la position courante de l'itérateur.</div><div class="ttdef"><b>Definition:</b> PE_World.h:173</div></div>
+<div class="ttc" id="astruct_p_e___vec2__s_html"><div class="ttname"><a href="struct_p_e___vec2__s.html">PE_Vec2_s</a></div><div class="ttdoc">Structure représentant un vecteur 2D dont les composantes sont de type float.</div><div class="ttdef"><b>Definition:</b> PE_Math.h:12</div></div>
+<div class="ttc" id="astruct_p_e___body_def__s_html"><div class="ttname"><a href="struct_p_e___body_def__s.html">PE_BodyDef_s</a></div><div class="ttdoc">Structure regroupant les informations nécessaires à la création d'un corps. Une même définition peut ...</div><div class="ttdef"><b>Definition:</b> PE_Body.h:42</div></div>
+<div class="ttc" id="agroup___p_e___world_html_ga9318aed17f7b9ba0698d21ab3bbacbf7"><div class="ttname"><a href="group___p_e___world.html#ga9318aed17f7b9ba0698d21ab3bbacbf7">PE_World_createBody</a></div><div class="ttdeci">PE_API PE_Body * PE_World_createBody(PE_World *world, PE_BodyDef *def)</div><div class="ttdoc">Crée un corps indéformable dans le monde. Cette fonction est verrouillée dans les fonctions de rappel...</div></div>
+<div class="ttc" id="agroup___p_e___world_html_ga55d9ed87ca052d79f07de1cf6a2e734d"><div class="ttname"><a href="group___p_e___world.html#ga55d9ed87ca052d79f07de1cf6a2e734d">PE_World_free</a></div><div class="ttdeci">PE_API void PE_World_free(PE_World *world)</div><div class="ttdoc">Détruit le monde. Chaque entité physique appartenant à ce monde est également détruite....</div></div>
+<div class="ttc" id="astruct_p_e___world__s_html_a86151b8e5970dc73ba3c29cfe47ea414"><div class="ttname"><a href="struct_p_e___world__s.html#a86151b8e5970dc73ba3c29cfe47ea414">PE_World_s::m_gravity</a></div><div class="ttdeci">PE_Vec2 m_gravity</div><div class="ttdoc">Vecteur de gravité global du monde. Note that the gravity of a body can be scaled.</div><div class="ttdef"><b>Definition:</b> PE_World.h:38</div></div>
+<div class="ttc" id="agroup___p_e___world_html_ga85616d078ee1a755c33920232272de0c"><div class="ttname"><a href="group___p_e___world.html#ga85616d078ee1a755c33920232272de0c">PE_World_fixedUpdate</a></div><div class="ttdeci">PE_API int PE_World_fixedUpdate(PE_World *world)</div><div class="ttdoc">Met à jour les corps présents dans le monde d'un pas de temps. Cette fonction fait met à jour les pos...</div></div>
+<div class="ttc" id="astruct_p_e___world__s_html_a5ef66e99789a42c813cb796944a3db31"><div class="ttname"><a href="struct_p_e___world__s.html#a5ef66e99789a42c813cb796944a3db31">PE_World_s::m_collisionDetector</a></div><div class="ttdeci">PE_CollisionDetector * m_collisionDetector</div><div class="ttdoc">Détecteur de collisions.</div><div class="ttdef"><b>Definition:</b> PE_World.h:46</div></div>
+<div class="ttc" id="astruct_p_e___world__s_html_a13365cd834d2a251ba3d61d05e2b8f2d"><div class="ttname"><a href="struct_p_e___world__s.html#a13365cd834d2a251ba3d61d05e2b8f2d">PE_World_s::m_timeStep</a></div><div class="ttdeci">float m_timeStep</div><div class="ttdoc">Pas de temps utilisé pour chaque mise à jour du monde. Le pas de temps est fixe et varie typiquement ...</div><div class="ttdef"><b>Definition:</b> PE_World.h:33</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.18
+</small></address>
+</body>
+</html>

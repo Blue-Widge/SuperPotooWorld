@@ -1,0 +1,267 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Fichiers sources">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Fichiers de ressources">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Fichiers sources\Scene">
+      <UniqueIdentifier>{37af86df-56ce-435e-8254-1e9b26fe1010}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\Scene">
+      <UniqueIdentifier>{b9f0fe70-f270-4072-b7b5-f1ebe5fc7f40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\Scene\Object">
+      <UniqueIdentifier>{44bf4ea4-9399-49f4-9b01-d73a0a845969}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\Scene\Object\Enemy">
+      <UniqueIdentifier>{8f68d122-df95-4c58-9dc9-869d396001cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\Scene\Object\Collectable">
+      <UniqueIdentifier>{ca8a0094-8724-4043-b22f-b0e8a33d3627}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\Scene\Object\Block">
+      <UniqueIdentifier>{ed41184c-8735-41cd-b9f9-3310fe6d09d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Scene\Object">
+      <UniqueIdentifier>{4357a611-5e37-4855-83ea-48f3084d5627}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Scene\Object\Block">
+      <UniqueIdentifier>{bf338ab7-81ba-4822-8630-2bf8ba1c061e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Scene\Object\Enemy">
+      <UniqueIdentifier>{7c4ca3c1-bdd4-4211-8fae-7a51fa10f308}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Scene\Object\Collectable">
+      <UniqueIdentifier>{51264fcb-741d-4c2f-a069-c5dd4b111a7f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\Scene\Object\Tool">
+      <UniqueIdentifier>{74cccda6-8b07-4a51-b627-1e03c4939eed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Scene\Object\Tool">
+      <UniqueIdentifier>{49a04fee-2140-4150-8c2e-fdc27eae7b57}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\DataStructure">
+      <UniqueIdentifier>{11c378a2-7769-46f4-874c-45cbea32222f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\DataStructure">
+      <UniqueIdentifier>{10d8fa3e-47b2-4ebe-a937-59304c93dbe9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Menu">
+      <UniqueIdentifier>{a9d32602-2595-461c-a84e-f9ce1e3bbe95}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\Menu">
+      <UniqueIdentifier>{b4a7b006-76af-4f1f-8c47-b9a559114219}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.c">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Menu\Menu.c">
+      <Filter>Fichiers sources\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="Menu\MenuInput.c">
+      <Filter>Fichiers sources\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="Menu\MenuTextures.c">
+      <Filter>Fichiers sources\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="DataStructure\PHT.c">
+      <Filter>Fichiers sources\DataStructure</Filter>
+    </ClCompile>
+    <ClCompile Include="DataStructure\PVector.c">
+      <Filter>Fichiers sources\DataStructure</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\Object\Block\Block.c">
+      <Filter>Fichiers sources\Scene\Object\Block</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\Object\Block\Block_Bonus.c">
+      <Filter>Fichiers sources\Scene\Object\Block</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\Object\Block\Block_Brick.c">
+      <Filter>Fichiers sources\Scene\Object\Block</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\Object\Block\Block_Ground.c">
+      <Filter>Fichiers sources\Scene\Object\Block</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\Object\Block\Block_OneWay.c">
+      <Filter>Fichiers sources\Scene\Object\Block</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\Object\Collectable\Collectable.c">
+      <Filter>Fichiers sources\Scene\Object\Collectable</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\Object\Collectable\Collectable_Firefly.c">
+      <Filter>Fichiers sources\Scene\Object\Collectable</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\Object\Collectable\Collectable_Heart.c">
+      <Filter>Fichiers sources\Scene\Object\Collectable</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\Object\Enemy\Enemy.c">
+      <Filter>Fichiers sources\Scene\Object\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\Object\Enemy\Enemy_Nut.c">
+      <Filter>Fichiers sources\Scene\Object\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\Object\Tool\Tool.c">
+      <Filter>Fichiers sources\Scene\Object\Tool</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\Object\Tool\Tool_Bound.c">
+      <Filter>Fichiers sources\Scene\Object\Tool</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\Object\Tool\Tool_Checkpoint.c">
+      <Filter>Fichiers sources\Scene\Object\Tool</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\Object\Tool\Tool_Finish.c">
+      <Filter>Fichiers sources\Scene\Object\Tool</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\Object\Tool\Tool_Hazard.c">
+      <Filter>Fichiers sources\Scene\Object\Tool</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\Object\Camera.c">
+      <Filter>Fichiers sources\Scene\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\Object\GameObject.c">
+      <Filter>Fichiers sources\Scene\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\Object\Player.c">
+      <Filter>Fichiers sources\Scene\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\GameAnimators.c">
+      <Filter>Fichiers sources\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\GameInput.c">
+      <Filter>Fichiers sources\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\GameTextures.c">
+      <Filter>Fichiers sources\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\GameUI.c">
+      <Filter>Fichiers sources\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\Gizmos.c">
+      <Filter>Fichiers sources\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\ObjectManager.c">
+      <Filter>Fichiers sources\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\Parallax.c">
+      <Filter>Fichiers sources\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\Scene.c">
+      <Filter>Fichiers sources\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\Tilemap.c">
+      <Filter>Fichiers sources\Scene</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Settings.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="Menu\Menu.h">
+      <Filter>Fichiers d%27en-tête\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="Menu\MenuInput.h">
+      <Filter>Fichiers d%27en-tête\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="Menu\MenuTextures.h">
+      <Filter>Fichiers d%27en-tête\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="DataStructure\PHT.h">
+      <Filter>Fichiers d%27en-tête\DataStructure</Filter>
+    </ClInclude>
+    <ClInclude Include="DataStructure\PVector.h">
+      <Filter>Fichiers d%27en-tête\DataStructure</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\Object\Block\Block.h">
+      <Filter>Fichiers d%27en-tête\Scene\Object\Block</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\Object\Block\Block_Bonus.h">
+      <Filter>Fichiers d%27en-tête\Scene\Object\Block</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\Object\Block\Block_Brick.h">
+      <Filter>Fichiers d%27en-tête\Scene\Object\Block</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\Object\Block\Block_Ground.h">
+      <Filter>Fichiers d%27en-tête\Scene\Object\Block</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\Object\Block\Block_OneWay.h">
+      <Filter>Fichiers d%27en-tête\Scene\Object\Block</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\Object\Collectable\Collectable.h">
+      <Filter>Fichiers d%27en-tête\Scene\Object\Collectable</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\Object\Collectable\Collectable_Firefly.h">
+      <Filter>Fichiers d%27en-tête\Scene\Object\Collectable</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\Object\Collectable\Collectable_Heart.h">
+      <Filter>Fichiers d%27en-tête\Scene\Object\Collectable</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\Object\Enemy\Enemy.h">
+      <Filter>Fichiers d%27en-tête\Scene\Object\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\Object\Enemy\Enemy_Nut.h">
+      <Filter>Fichiers d%27en-tête\Scene\Object\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\Object\Tool\Tool.h">
+      <Filter>Fichiers d%27en-tête\Scene\Object\Tool</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\Object\Tool\Tool_Bound.h">
+      <Filter>Fichiers d%27en-tête\Scene\Object\Tool</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\Object\Tool\Tool_Checkpoint.h">
+      <Filter>Fichiers d%27en-tête\Scene\Object\Tool</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\Object\Tool\Tool_Finish.h">
+      <Filter>Fichiers d%27en-tête\Scene\Object\Tool</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\Object\Tool\Tool_Hazard.h">
+      <Filter>Fichiers d%27en-tête\Scene\Object\Tool</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\Object\Camera.h">
+      <Filter>Fichiers d%27en-tête\Scene\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\Object\GameObject.h">
+      <Filter>Fichiers d%27en-tête\Scene\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\Object\Player.h">
+      <Filter>Fichiers d%27en-tête\Scene\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\GameAnimators.h">
+      <Filter>Fichiers d%27en-tête\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\GameInput.h">
+      <Filter>Fichiers d%27en-tête\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\GameTextures.h">
+      <Filter>Fichiers d%27en-tête\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\GameUI.h">
+      <Filter>Fichiers d%27en-tête\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\Gizmos.h">
+      <Filter>Fichiers d%27en-tête\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\ObjectManager.h">
+      <Filter>Fichiers d%27en-tête\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\Parallax.h">
+      <Filter>Fichiers d%27en-tête\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\Scene.h">
+      <Filter>Fichiers d%27en-tête\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\Tilemap.h">
+      <Filter>Fichiers d%27en-tête\Scene</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

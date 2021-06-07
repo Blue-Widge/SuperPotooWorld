@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.18"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Plateformer Engine (PE): Documentation de PE_World</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Plateformer Engine (PE)
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.18 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="PageDoc"><div class="header">
+  <div class="headertitle">
+<div class="title">Documentation de PE_World </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><h2><a class="anchor" id="autotoc_md21"></a>
+Création / suppression du monde</h2>
+<ul>
+<li><a class="el" href="group___p_e___world.html#gac3d7e271215a3b25fe0f2baacffaaed1" title="Crée un nouveau monde.">PE_World_new()</a></li>
+<li><a class="el" href="group___p_e___world.html#ga55d9ed87ca052d79f07de1cf6a2e734d" title="Détruit le monde. Chaque entité physique appartenant à ce monde est également détruite....">PE_World_free()</a></li>
+</ul>
+<h2><a class="anchor" id="autotoc_md22"></a>
+Création / suppression de corps dans un monde</h2>
+<ul>
+<li><a class="el" href="group___p_e___world.html#ga9318aed17f7b9ba0698d21ab3bbacbf7" title="Crée un corps indéformable dans le monde. Cette fonction est verrouillée dans les fonctions de rappel...">PE_World_createBody()</a></li>
+<li><a class="el" href="group___p_e___world.html#gab71163cb794e3b1da259e3ad8cdc185f" title="Détruit un corps indéformable. Le pointeur world ne doit pas être déréférencé après cet appel....">PE_World_removeBody()</a></li>
+</ul>
+<h2><a class="anchor" id="autotoc_md23"></a>
+Informations sur le monde et modification</h2>
+<ul>
+<li><a class="el" href="group___p_e___world.html#gaa3eac1b0972627dd52d9c8f6c79f21cc" title="Définit le vecteur de gravité global appliqué à tous les corps dynamiques du monde.">PE_World_setGravity()</a></li>
+<li><a class="el" href="group___p_e___world.html#gabfe401b4f1071c55054ea976ddecfe42" title="Renvoie le vecteur de gravité global appliqué dans le monde.">PE_World_getGravity()</a></li>
+<li><a class="el" href="group___p_e___world.html#ga85616d078ee1a755c33920232272de0c" title="Met à jour les corps présents dans le monde d&#39;un pas de temps. Cette fonction fait met à jour les pos...">PE_World_fixedUpdate()</a></li>
+</ul>
+<h2><a class="anchor" id="autotoc_md24"></a>
+Fonctions de rappel (callback) globales</h2>
+<ul>
+<li><a class="el" href="group___p_e___world.html#gac19e2dbc094a79d16a795dea38878035" title="Définit la fonction de rappel (callback) appelée à chaque fois que deux objets entrent en collision.">PE_World_setOnCollisionEnter()</a></li>
+<li><a class="el" href="group___p_e___world.html#gadd4e48effd764b4e4487cc2481a38d19" title="Définit la fonction de rappel (callback) appelée à chaque fois que deux objets se touchent.">PE_World_setOnCollisionStay()</a></li>
+<li><a class="el" href="group___p_e___world.html#ga6c415b0d6cff674e3913889a445697ad" title="Définit la fonction de rappel (callback) appelée à chaque fois que deux objets cessent d&#39;être en coll...">PE_World_setOnCollisionExit()</a></li>
+</ul>
+<h2><a class="anchor" id="autotoc_md25"></a>
+Enumération des corps présents dans le monde</h2>
+<ul>
+<li><a class="el" href="group___p_e___world.html#gacda1310c229f2a71fffd4b88fe9af5c9" title="Renvoie le nombre de corps présents dans le monde.">PE_World_getNbBodies()</a></li>
+<li><a class="el" href="group___p_e___world.html#ga113bf9d86395887f7e88ccb8c16fb6a1" title="Renvoie un itérateur sur la collection des corps présents dans le monde.">PE_World_getBodyIterator()</a></li>
+<li><a class="el" href="group___p_e___world.html#ga3bc4d331c30fcc9c5f2088afc9465c3f" title="Avance l&#39;itérateur pour qu&#39;il pointe sur le prochain élément de la collection.">PE_BodyIterator_moveNext()</a></li>
+<li><a class="el" href="group___p_e___world.html#ga45d78b7947c59da931ae0e9d40b0d112" title="Renvoie un pointeur vers l&#39;élément de la collection à la position courante de l&#39;itérateur.">PE_BodyIterator_current()</a> </li>
+</ul>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.18
+</small></address>
+</body>
+</html>

@@ -1,0 +1,1021 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.18"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Rendering Engine (RE): Fonctions relatives à une texture</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Rendering Engine (RE)
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.18 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Structures de données</a> &#124;
+<a href="#typedef-members">Définitions de type</a> &#124;
+<a href="#enum-members">Énumérations</a> &#124;
+<a href="#func-members">Fonctions</a>  </div>
+  <div class="headertitle">
+<div class="title">Fonctions relatives à une texture</div>  </div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Structures de données</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_e___texture__s.html">RE_Texture_s</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure représentant une image optimisée pour un moteur de rendu. La texture peut contenir plusieurs sous-images organisées sous forme d'un tableau 2D, il s'agit alors d'un atlas de texture. Les différentes parties d'un atlas sont indicées à partir de 0 et dans l'ordre naturel de lecture.  <a href="struct_r_e___texture__s.html#details">Plus de détails...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_e___transform__s.html">RE_Transform_s</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure représentant la transformation à appliquer à une texture au moment du rendu.  <a href="struct_r_e___transform__s.html#details">Plus de détails...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Définitions de type</h2></td></tr>
+<tr class="memitem:ga4944d62c51444c69c8d7c2e719f77eb2"><td class="memItemLeft" align="right" valign="top"><a id="ga4944d62c51444c69c8d7c2e719f77eb2"></a>
+typedef struct <a class="el" href="struct_r_e___texture__s.html">RE_Texture_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___texture.html#ga4944d62c51444c69c8d7c2e719f77eb2">RE_Texture</a></td></tr>
+<tr class="memdesc:ga4944d62c51444c69c8d7c2e719f77eb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure représentant une image optimisée pour un moteur de rendu. La texture peut contenir plusieurs sous-images organisées sous forme d'un tableau 2D, il s'agit alors d'un atlas de texture. Les différentes parties d'un atlas sont indicées à partir de 0 et dans l'ordre naturel de lecture. <br /></td></tr>
+<tr class="separator:ga4944d62c51444c69c8d7c2e719f77eb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaccb1d43ce76b0e473b073856eb51e495"><td class="memItemLeft" align="right" valign="top"><a id="gaccb1d43ce76b0e473b073856eb51e495"></a>
+typedef enum <a class="el" href="group___r_e___texture.html#gacc0821af105a85a80b36579c7f55e0fc">RE_TextureFlip_e</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___texture.html#gaccb1d43ce76b0e473b073856eb51e495">RE_TextureFlip</a></td></tr>
+<tr class="memdesc:gaccb1d43ce76b0e473b073856eb51e495"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumération contenant les flags pouvant être utilisés pour retourner un texture au moment du rendu. <br /></td></tr>
+<tr class="separator:gaccb1d43ce76b0e473b073856eb51e495"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae2e3c48dbca9db49d917c123a764daea"><td class="memItemLeft" align="right" valign="top"><a id="gae2e3c48dbca9db49d917c123a764daea"></a>
+typedef struct <a class="el" href="struct_r_e___transform__s.html">RE_Transform_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___texture.html#gae2e3c48dbca9db49d917c123a764daea">RE_Transform</a></td></tr>
+<tr class="memdesc:gae2e3c48dbca9db49d917c123a764daea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure représentant la transformation à appliquer à une texture au moment du rendu. <br /></td></tr>
+<tr class="separator:gae2e3c48dbca9db49d917c123a764daea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Énumérations</h2></td></tr>
+<tr class="memitem:gacc0821af105a85a80b36579c7f55e0fc"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___texture.html#gacc0821af105a85a80b36579c7f55e0fc">RE_TextureFlip_e</a> { <a class="el" href="group___r_e___texture.html#ggacc0821af105a85a80b36579c7f55e0fca516d394fa04ac692e5457321b8ecf83e">RE_FLIP_NONE</a> = SDL_FLIP_NONE, 
+<a class="el" href="group___r_e___texture.html#ggacc0821af105a85a80b36579c7f55e0fcab6ea97e2ccb78645a667e03c77d0951d">RE_FLIP_HORIZONTAL</a> = SDL_FLIP_HORIZONTAL, 
+<a class="el" href="group___r_e___texture.html#ggacc0821af105a85a80b36579c7f55e0fca407a85c5871c6b9c469c8726a0ad112f">RE_FLIP_VERTICAL</a> = SDL_FLIP_VERTICAL
+ }</td></tr>
+<tr class="memdesc:gacc0821af105a85a80b36579c7f55e0fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumération contenant les flags pouvant être utilisés pour retourner un texture au moment du rendu.  <a href="group___r_e___texture.html#gacc0821af105a85a80b36579c7f55e0fc">Plus de détails...</a><br /></td></tr>
+<tr class="separator:gacc0821af105a85a80b36579c7f55e0fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:ga3d81589a6f55e80e5de704d2f256589a"><td class="memItemLeft" align="right" valign="top">RE_API <a class="el" href="group___r_e___texture.html#gae2e3c48dbca9db49d917c123a764daea">RE_Transform</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___texture.html#ga3d81589a6f55e80e5de704d2f256589a">RE_Transform_getDefault</a> ()</td></tr>
+<tr class="memdesc:ga3d81589a6f55e80e5de704d2f256589a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie la transformation par défaut. Elle est paramétrée pour qu'aucun changement ne soit appliqué à l'image.  <a href="group___r_e___texture.html#ga3d81589a6f55e80e5de704d2f256589a">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga3d81589a6f55e80e5de704d2f256589a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3e4c62d75f47a85951bc4f358b19cc5e"><td class="memItemLeft" align="right" valign="top">RE_API <a class="el" href="group___r_e___texture.html#ga4944d62c51444c69c8d7c2e719f77eb2">RE_Texture</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___texture.html#ga3e4c62d75f47a85951bc4f358b19cc5e">RE_Texture_new</a> (char *path, <a class="el" href="group___r_e___renderer.html#gaebac3571aa15ff9abf32cf6128a29237">RE_Renderer</a> *renderer)</td></tr>
+<tr class="memdesc:ga3e4c62d75f47a85951bc4f358b19cc5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crée une nouvelle texture.  <a href="group___r_e___texture.html#ga3e4c62d75f47a85951bc4f358b19cc5e">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga3e4c62d75f47a85951bc4f358b19cc5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa162e86e55699d3be567c3d5989dbf48"><td class="memItemLeft" align="right" valign="top">RE_API <a class="el" href="group___r_e___texture.html#ga4944d62c51444c69c8d7c2e719f77eb2">RE_Texture</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___texture.html#gaa162e86e55699d3be567c3d5989dbf48">RE_Texture_newSet</a> (char *path, <a class="el" href="group___r_e___renderer.html#gaebac3571aa15ff9abf32cf6128a29237">RE_Renderer</a> *renderer, int nbRows, int nbCols)</td></tr>
+<tr class="memdesc:gaa162e86e55699d3be567c3d5989dbf48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crée un nouvel atlas de texture composé de plusieurs sous-images de mêmes dimensions organisées sous forme d'un tableau 2D.  <a href="group___r_e___texture.html#gaa162e86e55699d3be567c3d5989dbf48">Plus de détails...</a><br /></td></tr>
+<tr class="separator:gaa162e86e55699d3be567c3d5989dbf48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga71d4e47b8b09194a8b2574d378379822"><td class="memItemLeft" align="right" valign="top">RE_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___texture.html#ga71d4e47b8b09194a8b2574d378379822">RE_Texture_free</a> (<a class="el" href="group___r_e___texture.html#ga4944d62c51444c69c8d7c2e719f77eb2">RE_Texture</a> *texture)</td></tr>
+<tr class="memdesc:ga71d4e47b8b09194a8b2574d378379822"><td class="mdescLeft">&#160;</td><td class="mdescRight">Détruit une texture préalablement créée avec <a class="el" href="group___r_e___texture.html#ga3e4c62d75f47a85951bc4f358b19cc5e" title="Crée une nouvelle texture.">RE_Texture_new()</a> ou <a class="el" href="group___r_e___texture.html#gaa162e86e55699d3be567c3d5989dbf48" title="Crée un nouvel atlas de texture composé de plusieurs sous-images de mêmes dimensions organisées sous ...">RE_Texture_newSet()</a>.  <a href="group___r_e___texture.html#ga71d4e47b8b09194a8b2574d378379822">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga71d4e47b8b09194a8b2574d378379822"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga44f1e7811347082dc9bd51aa9d8f2f35"><td class="memItemLeft" align="right" valign="top">RE_API RE_INLINE int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___texture.html#ga44f1e7811347082dc9bd51aa9d8f2f35">RE_Texture_getWidth</a> (<a class="el" href="group___r_e___texture.html#ga4944d62c51444c69c8d7c2e719f77eb2">RE_Texture</a> *texture)</td></tr>
+<tr class="memdesc:ga44f1e7811347082dc9bd51aa9d8f2f35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie la largeur totale d'une texture.  <a href="group___r_e___texture.html#ga44f1e7811347082dc9bd51aa9d8f2f35">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga44f1e7811347082dc9bd51aa9d8f2f35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6c854cc1c10b377dae40808b4353b229"><td class="memItemLeft" align="right" valign="top">RE_API RE_INLINE int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___texture.html#ga6c854cc1c10b377dae40808b4353b229">RE_Texture_getHeight</a> (<a class="el" href="group___r_e___texture.html#ga4944d62c51444c69c8d7c2e719f77eb2">RE_Texture</a> *texture)</td></tr>
+<tr class="memdesc:ga6c854cc1c10b377dae40808b4353b229"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie la hauteur totale d'une texture.  <a href="group___r_e___texture.html#ga6c854cc1c10b377dae40808b4353b229">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga6c854cc1c10b377dae40808b4353b229"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6094d904584e4bcec23ce18a8334e2ee"><td class="memItemLeft" align="right" valign="top">RE_API RE_INLINE int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___texture.html#ga6094d904584e4bcec23ce18a8334e2ee">RE_Texture_getNbParts</a> (<a class="el" href="group___r_e___texture.html#ga4944d62c51444c69c8d7c2e719f77eb2">RE_Texture</a> *texture)</td></tr>
+<tr class="memdesc:ga6094d904584e4bcec23ce18a8334e2ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie le nombre de sous-images dans l'atlas de texture. Dans le cas d'une texture simple en contenant pas de sous-images, cette fonction renvoie 1.  <a href="group___r_e___texture.html#ga6094d904584e4bcec23ce18a8334e2ee">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga6094d904584e4bcec23ce18a8334e2ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab5eeffa0f23b81b934e37836ee466beb"><td class="memItemLeft" align="right" valign="top">RE_API RE_INLINE int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___texture.html#gab5eeffa0f23b81b934e37836ee466beb">RE_Texture_getPartWidth</a> (<a class="el" href="group___r_e___texture.html#ga4944d62c51444c69c8d7c2e719f77eb2">RE_Texture</a> *texture, int partIdx)</td></tr>
+<tr class="memdesc:gab5eeffa0f23b81b934e37836ee466beb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie la largeur d'une sous-image d'un atlas de texture. Dans le cas d'une texture simple en contenant pas de sous-images, cette fonction est identique à <a class="el" href="group___r_e___texture.html#ga44f1e7811347082dc9bd51aa9d8f2f35" title="Renvoie la largeur totale d&#39;une texture.">RE_Texture_getWidth()</a>  <a href="group___r_e___texture.html#gab5eeffa0f23b81b934e37836ee466beb">Plus de détails...</a><br /></td></tr>
+<tr class="separator:gab5eeffa0f23b81b934e37836ee466beb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf8b17771ead78d241eca4cc615ea8939"><td class="memItemLeft" align="right" valign="top">RE_API RE_INLINE int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___texture.html#gaf8b17771ead78d241eca4cc615ea8939">RE_Texture_getPartHeight</a> (<a class="el" href="group___r_e___texture.html#ga4944d62c51444c69c8d7c2e719f77eb2">RE_Texture</a> *texture, int partIdx)</td></tr>
+<tr class="memdesc:gaf8b17771ead78d241eca4cc615ea8939"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie la hauteur d'une sous-image d'un atlas de texture. Dans le cas d'une texture simple en contenant pas de sous-images, cette fonction est identique à <a class="el" href="group___r_e___texture.html#ga6c854cc1c10b377dae40808b4353b229" title="Renvoie la hauteur totale d&#39;une texture.">RE_Texture_getHeight()</a>  <a href="group___r_e___texture.html#gaf8b17771ead78d241eca4cc615ea8939">Plus de détails...</a><br /></td></tr>
+<tr class="separator:gaf8b17771ead78d241eca4cc615ea8939"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5b273fec32406c1ab6dc6b5bad891b9b"><td class="memItemLeft" align="right" valign="top">RE_API RE_INLINE void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___texture.html#ga5b273fec32406c1ab6dc6b5bad891b9b">RE_Texture_setAlpha</a> (<a class="el" href="group___r_e___texture.html#ga4944d62c51444c69c8d7c2e719f77eb2">RE_Texture</a> *texture, int alpha)</td></tr>
+<tr class="memdesc:ga5b273fec32406c1ab6dc6b5bad891b9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Définit la composante alpha (transparence) d'une texture.  <a href="group___r_e___texture.html#ga5b273fec32406c1ab6dc6b5bad891b9b">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga5b273fec32406c1ab6dc6b5bad891b9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5f6f88cbc573c643af33212145d9c628"><td class="memItemLeft" align="right" valign="top">RE_API RE_INLINE int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___texture.html#ga5f6f88cbc573c643af33212145d9c628">RE_Texture_getAlpha</a> (<a class="el" href="group___r_e___texture.html#ga4944d62c51444c69c8d7c2e719f77eb2">RE_Texture</a> *texture)</td></tr>
+<tr class="memdesc:ga5f6f88cbc573c643af33212145d9c628"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie la composante alpha (transparence) d'une texture.  <a href="group___r_e___texture.html#ga5f6f88cbc573c643af33212145d9c628">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga5f6f88cbc573c643af33212145d9c628"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga07caadafe61e019ae9ebdb2e4cd16c95"><td class="memItemLeft" align="right" valign="top">RE_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___texture.html#ga07caadafe61e019ae9ebdb2e4cd16c95">RE_Texture_render</a> (<a class="el" href="group___r_e___texture.html#ga4944d62c51444c69c8d7c2e719f77eb2">RE_Texture</a> *texture, int partIdx, int x, int y)</td></tr>
+<tr class="memdesc:ga07caadafe61e019ae9ebdb2e4cd16c95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dessine une partie d'une texture dans son contexte de rendu.  <a href="group___r_e___texture.html#ga07caadafe61e019ae9ebdb2e4cd16c95">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga07caadafe61e019ae9ebdb2e4cd16c95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf6a7d4c4c32595b092b834899664fd6c"><td class="memItemLeft" align="right" valign="top">RE_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___texture.html#gaf6a7d4c4c32595b092b834899664fd6c">RE_Texture_renderFlip</a> (<a class="el" href="group___r_e___texture.html#ga4944d62c51444c69c8d7c2e719f77eb2">RE_Texture</a> *texture, int partIdx, int x, int y, int flipFlags)</td></tr>
+<tr class="memdesc:gaf6a7d4c4c32595b092b834899664fd6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dessine une partie d'une texture dans son contexte de rendu avec la possibilité de la retourner.  <a href="group___r_e___texture.html#gaf6a7d4c4c32595b092b834899664fd6c">Plus de détails...</a><br /></td></tr>
+<tr class="separator:gaf6a7d4c4c32595b092b834899664fd6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5195223392e7b2f3be40629a6919c75a"><td class="memItemLeft" align="right" valign="top">RE_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___texture.html#ga5195223392e7b2f3be40629a6919c75a">RE_Texture_renderRotate</a> (<a class="el" href="group___r_e___texture.html#ga4944d62c51444c69c8d7c2e719f77eb2">RE_Texture</a> *texture, int partIdx, int x, int y, float angle, <a class="el" href="group___r_e___utils.html#ga7cabff7b1653385388b2c8a580c3a6c1">Vec2</a> *center)</td></tr>
+<tr class="memdesc:ga5195223392e7b2f3be40629a6919c75a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dessine une partie d'une texture dans son contexte de rendu avec la possibilité de lui appliquer une rotation.  <a href="group___r_e___texture.html#ga5195223392e7b2f3be40629a6919c75a">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga5195223392e7b2f3be40629a6919c75a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2e8b267811c968ed647baa9e189a51f1"><td class="memItemLeft" align="right" valign="top">RE_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___texture.html#ga2e8b267811c968ed647baa9e189a51f1">RE_Texture_renderTransform</a> (<a class="el" href="group___r_e___texture.html#ga4944d62c51444c69c8d7c2e719f77eb2">RE_Texture</a> *texture, int partIdx, int x, int y, <a class="el" href="group___r_e___texture.html#gae2e3c48dbca9db49d917c123a764daea">RE_Transform</a> *transform)</td></tr>
+<tr class="memdesc:ga2e8b267811c968ed647baa9e189a51f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dessine une partie d'une texture dans son contexte de rendu avec la possibilité de lui appliquer une transformation.  <a href="group___r_e___texture.html#ga2e8b267811c968ed647baa9e189a51f1">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga2e8b267811c968ed647baa9e189a51f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae57cb1ddc14dc299d594aab3ea97a939"><td class="memItemLeft" align="right" valign="top">RE_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___texture.html#gae57cb1ddc14dc299d594aab3ea97a939">RE_Texture_renderF</a> (<a class="el" href="group___r_e___texture.html#ga4944d62c51444c69c8d7c2e719f77eb2">RE_Texture</a> *texture, int partIdx, float x, float y)</td></tr>
+<tr class="memdesc:gae57cb1ddc14dc299d594aab3ea97a939"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dessine une partie d'une texture dans son contexte de rendu. Contrairement à <a class="el" href="group___r_e___texture.html#ga07caadafe61e019ae9ebdb2e4cd16c95" title="Dessine une partie d&#39;une texture dans son contexte de rendu.">RE_Texture_render()</a>, cette fonction effectue le rendu avec une précision en virgule flottante.  <a href="group___r_e___texture.html#gae57cb1ddc14dc299d594aab3ea97a939">Plus de détails...</a><br /></td></tr>
+<tr class="separator:gae57cb1ddc14dc299d594aab3ea97a939"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6a73faa4f8736d3589c0236befb6bf1c"><td class="memItemLeft" align="right" valign="top">RE_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___texture.html#ga6a73faa4f8736d3589c0236befb6bf1c">RE_Texture_renderFlipF</a> (<a class="el" href="group___r_e___texture.html#ga4944d62c51444c69c8d7c2e719f77eb2">RE_Texture</a> *texture, int partIdx, float x, float y, int flipFlags)</td></tr>
+<tr class="memdesc:ga6a73faa4f8736d3589c0236befb6bf1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dessine une partie d'une texture dans son contexte de rendu avec la possibilité de la retourner. Contrairement à <a class="el" href="group___r_e___texture.html#gaf6a7d4c4c32595b092b834899664fd6c" title="Dessine une partie d&#39;une texture dans son contexte de rendu avec la possibilité de la retourner.">RE_Texture_renderFlip()</a>, cette fonction effectue le rendu avec une précision en virgule flottante.  <a href="group___r_e___texture.html#ga6a73faa4f8736d3589c0236befb6bf1c">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga6a73faa4f8736d3589c0236befb6bf1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gade18bbd3259e7d72c17d96b6c155fab6"><td class="memItemLeft" align="right" valign="top">RE_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___texture.html#gade18bbd3259e7d72c17d96b6c155fab6">RE_Texture_renderRotateF</a> (<a class="el" href="group___r_e___texture.html#ga4944d62c51444c69c8d7c2e719f77eb2">RE_Texture</a> *texture, int partIdx, float x, float y, float angle, <a class="el" href="group___r_e___utils.html#ga7cabff7b1653385388b2c8a580c3a6c1">Vec2</a> *center)</td></tr>
+<tr class="memdesc:gade18bbd3259e7d72c17d96b6c155fab6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dessine une partie d'une texture dans son contexte de rendu avec la possibilité de lui appliquer une rotation. Contrairement à <a class="el" href="group___r_e___texture.html#ga5195223392e7b2f3be40629a6919c75a" title="Dessine une partie d&#39;une texture dans son contexte de rendu avec la possibilité de lui appliquer une ...">RE_Texture_renderRotate()</a>, cette fonction effectue le rendu avec une précision en virgule flottante.  <a href="group___r_e___texture.html#gade18bbd3259e7d72c17d96b6c155fab6">Plus de détails...</a><br /></td></tr>
+<tr class="separator:gade18bbd3259e7d72c17d96b6c155fab6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga17f3f0f91ff0549efe7a8e40ae2c42b3"><td class="memItemLeft" align="right" valign="top">RE_API void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___r_e___texture.html#ga17f3f0f91ff0549efe7a8e40ae2c42b3">RE_Texture_renderTransformF</a> (<a class="el" href="group___r_e___texture.html#ga4944d62c51444c69c8d7c2e719f77eb2">RE_Texture</a> *texture, int partIdx, float x, float y, <a class="el" href="group___r_e___texture.html#gae2e3c48dbca9db49d917c123a764daea">RE_Transform</a> *transform)</td></tr>
+<tr class="memdesc:ga17f3f0f91ff0549efe7a8e40ae2c42b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dessine une partie d'une texture dans son contexte de rendu avec la possibilité de lui appliquer une transformation. Contrairement à <a class="el" href="group___r_e___texture.html#ga2e8b267811c968ed647baa9e189a51f1" title="Dessine une partie d&#39;une texture dans son contexte de rendu avec la possibilité de lui appliquer une ...">RE_Texture_renderTransform()</a>, cette fonction effectue le rendu avec une précision en virgule flottante.  <a href="group___r_e___texture.html#ga17f3f0f91ff0549efe7a8e40ae2c42b3">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ga17f3f0f91ff0549efe7a8e40ae2c42b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<h2 class="groupheader">Documentation du type de l'énumération</h2>
+<a id="gacc0821af105a85a80b36579c7f55e0fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gacc0821af105a85a80b36579c7f55e0fc">&#9670;&nbsp;</a></span>RE_TextureFlip_e</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group___r_e___texture.html#gacc0821af105a85a80b36579c7f55e0fc">RE_TextureFlip_e</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enumération contenant les flags pouvant être utilisés pour retourner un texture au moment du rendu. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Valeurs énumérées</th></tr><tr><td class="fieldname"><a id="ggacc0821af105a85a80b36579c7f55e0fca516d394fa04ac692e5457321b8ecf83e"></a>RE_FLIP_NONE&#160;</td><td class="fielddoc"><p>Aucun retournement. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggacc0821af105a85a80b36579c7f55e0fcab6ea97e2ccb78645a667e03c77d0951d"></a>RE_FLIP_HORIZONTAL&#160;</td><td class="fielddoc"><p>Retournement horizontal. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggacc0821af105a85a80b36579c7f55e0fca407a85c5871c6b9c469c8726a0ad112f"></a>RE_FLIP_VERTICAL&#160;</td><td class="fielddoc"><p>Retournement Vertical. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des fonctions</h2>
+<a id="ga71d4e47b8b09194a8b2574d378379822"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga71d4e47b8b09194a8b2574d378379822">&#9670;&nbsp;</a></span>RE_Texture_free()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RE_API void RE_Texture_free </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___r_e___texture.html#ga4944d62c51444c69c8d7c2e719f77eb2">RE_Texture</a> *&#160;</td>
+          <td class="paramname"><em>texture</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Détruit une texture préalablement créée avec <a class="el" href="group___r_e___texture.html#ga3e4c62d75f47a85951bc4f358b19cc5e" title="Crée une nouvelle texture.">RE_Texture_new()</a> ou <a class="el" href="group___r_e___texture.html#gaa162e86e55699d3be567c3d5989dbf48" title="Crée un nouvel atlas de texture composé de plusieurs sous-images de mêmes dimensions organisées sous ...">RE_Texture_newSet()</a>. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">texture</td><td>la texture à détruire. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga5f6f88cbc573c643af33212145d9c628"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5f6f88cbc573c643af33212145d9c628">&#9670;&nbsp;</a></span>RE_Texture_getAlpha()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RE_API RE_INLINE int RE_Texture_getAlpha </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___r_e___texture.html#ga4944d62c51444c69c8d7c2e719f77eb2">RE_Texture</a> *&#160;</td>
+          <td class="paramname"><em>texture</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Renvoie la composante alpha (transparence) d'une texture. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">texture</td><td>la texture. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>La composante alpha de la texture. </dd></dl>
+
+</div>
+</div>
+<a id="ga6c854cc1c10b377dae40808b4353b229"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6c854cc1c10b377dae40808b4353b229">&#9670;&nbsp;</a></span>RE_Texture_getHeight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RE_API RE_INLINE int RE_Texture_getHeight </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___r_e___texture.html#ga4944d62c51444c69c8d7c2e719f77eb2">RE_Texture</a> *&#160;</td>
+          <td class="paramname"><em>texture</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Renvoie la hauteur totale d'une texture. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">texture</td><td>la texture. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>La hauteur totale de la texture. </dd></dl>
+
+</div>
+</div>
+<a id="ga6094d904584e4bcec23ce18a8334e2ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6094d904584e4bcec23ce18a8334e2ee">&#9670;&nbsp;</a></span>RE_Texture_getNbParts()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RE_API RE_INLINE int RE_Texture_getNbParts </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___r_e___texture.html#ga4944d62c51444c69c8d7c2e719f77eb2">RE_Texture</a> *&#160;</td>
+          <td class="paramname"><em>texture</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Renvoie le nombre de sous-images dans l'atlas de texture. Dans le cas d'une texture simple en contenant pas de sous-images, cette fonction renvoie 1. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">texture</td><td>la texture. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Le nombre de sous-images dans l'atlas de texture. </dd></dl>
+
+</div>
+</div>
+<a id="gaf8b17771ead78d241eca4cc615ea8939"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf8b17771ead78d241eca4cc615ea8939">&#9670;&nbsp;</a></span>RE_Texture_getPartHeight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RE_API RE_INLINE int RE_Texture_getPartHeight </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___r_e___texture.html#ga4944d62c51444c69c8d7c2e719f77eb2">RE_Texture</a> *&#160;</td>
+          <td class="paramname"><em>texture</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>partIdx</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Renvoie la hauteur d'une sous-image d'un atlas de texture. Dans le cas d'une texture simple en contenant pas de sous-images, cette fonction est identique à <a class="el" href="group___r_e___texture.html#ga6c854cc1c10b377dae40808b4353b229" title="Renvoie la hauteur totale d&#39;une texture.">RE_Texture_getHeight()</a> </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">texture</td><td>la texture. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>La hauteur d'une sous-image de l'atlas de texture. </dd></dl>
+
+</div>
+</div>
+<a id="gab5eeffa0f23b81b934e37836ee466beb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab5eeffa0f23b81b934e37836ee466beb">&#9670;&nbsp;</a></span>RE_Texture_getPartWidth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RE_API RE_INLINE int RE_Texture_getPartWidth </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___r_e___texture.html#ga4944d62c51444c69c8d7c2e719f77eb2">RE_Texture</a> *&#160;</td>
+          <td class="paramname"><em>texture</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>partIdx</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Renvoie la largeur d'une sous-image d'un atlas de texture. Dans le cas d'une texture simple en contenant pas de sous-images, cette fonction est identique à <a class="el" href="group___r_e___texture.html#ga44f1e7811347082dc9bd51aa9d8f2f35" title="Renvoie la largeur totale d&#39;une texture.">RE_Texture_getWidth()</a> </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">texture</td><td>la texture. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>La largeur d'une sous-image de l'atlas de texture. </dd></dl>
+
+</div>
+</div>
+<a id="ga44f1e7811347082dc9bd51aa9d8f2f35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga44f1e7811347082dc9bd51aa9d8f2f35">&#9670;&nbsp;</a></span>RE_Texture_getWidth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RE_API RE_INLINE int RE_Texture_getWidth </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___r_e___texture.html#ga4944d62c51444c69c8d7c2e719f77eb2">RE_Texture</a> *&#160;</td>
+          <td class="paramname"><em>texture</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Renvoie la largeur totale d'une texture. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">texture</td><td>la texture. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>La largeur totale de la texture. </dd></dl>
+
+</div>
+</div>
+<a id="ga3e4c62d75f47a85951bc4f358b19cc5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3e4c62d75f47a85951bc4f358b19cc5e">&#9670;&nbsp;</a></span>RE_Texture_new()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RE_API <a class="el" href="group___r_e___texture.html#ga4944d62c51444c69c8d7c2e719f77eb2">RE_Texture</a>* RE_Texture_new </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group___r_e___renderer.html#gaebac3571aa15ff9abf32cf6128a29237">RE_Renderer</a> *&#160;</td>
+          <td class="paramname"><em>renderer</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Crée une nouvelle texture. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">path</td><td>le chemin d'accès à la texture. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">renderer</td><td>le moteur de rendu. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>La texture créée ou NULL en cas d'erreur. </dd></dl>
+
+</div>
+</div>
+<a id="gaa162e86e55699d3be567c3d5989dbf48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa162e86e55699d3be567c3d5989dbf48">&#9670;&nbsp;</a></span>RE_Texture_newSet()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RE_API <a class="el" href="group___r_e___texture.html#ga4944d62c51444c69c8d7c2e719f77eb2">RE_Texture</a>* RE_Texture_newSet </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group___r_e___renderer.html#gaebac3571aa15ff9abf32cf6128a29237">RE_Renderer</a> *&#160;</td>
+          <td class="paramname"><em>renderer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nbRows</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nbCols</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Crée un nouvel atlas de texture composé de plusieurs sous-images de mêmes dimensions organisées sous forme d'un tableau 2D. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">path</td><td>le chemin d'accès à la texture. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">renderer</td><td>le moteur de rendu. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">nbRows</td><td>le nombre de lignes de l'atlas. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">nbCols</td><td>le nombre de colonnes de l'atlas. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>La texture créée ou NULL en cas d'erreur. </dd></dl>
+
+</div>
+</div>
+<a id="ga07caadafe61e019ae9ebdb2e4cd16c95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga07caadafe61e019ae9ebdb2e4cd16c95">&#9670;&nbsp;</a></span>RE_Texture_render()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RE_API void RE_Texture_render </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___r_e___texture.html#ga4944d62c51444c69c8d7c2e719f77eb2">RE_Texture</a> *&#160;</td>
+          <td class="paramname"><em>texture</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>partIdx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Dessine une partie d'une texture dans son contexte de rendu. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">texture</td><td>la texture ou l'atlas de texture. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">partIdx</td><td>l'indice de la partie à dessiner. Cet argument doit être égal à 0 dans le cas d'une texture simple. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>abscisse du point (en pixels) où dessiner la texture. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>ordonnée du point (en pixels) où dessiner la texture. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gae57cb1ddc14dc299d594aab3ea97a939"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae57cb1ddc14dc299d594aab3ea97a939">&#9670;&nbsp;</a></span>RE_Texture_renderF()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RE_API void RE_Texture_renderF </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___r_e___texture.html#ga4944d62c51444c69c8d7c2e719f77eb2">RE_Texture</a> *&#160;</td>
+          <td class="paramname"><em>texture</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>partIdx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Dessine une partie d'une texture dans son contexte de rendu. Contrairement à <a class="el" href="group___r_e___texture.html#ga07caadafe61e019ae9ebdb2e4cd16c95" title="Dessine une partie d&#39;une texture dans son contexte de rendu.">RE_Texture_render()</a>, cette fonction effectue le rendu avec une précision en virgule flottante. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">texture</td><td>la texture ou l'atlas de texture. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">partIdx</td><td>l'indice de la partie à dessiner. Cet argument doit être égal à 0 dans le cas d'une texture simple. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>abscisse du point (en pixels) où dessiner la texture. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>ordonnée du point (en pixels) où dessiner la texture. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gaf6a7d4c4c32595b092b834899664fd6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf6a7d4c4c32595b092b834899664fd6c">&#9670;&nbsp;</a></span>RE_Texture_renderFlip()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RE_API void RE_Texture_renderFlip </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___r_e___texture.html#ga4944d62c51444c69c8d7c2e719f77eb2">RE_Texture</a> *&#160;</td>
+          <td class="paramname"><em>texture</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>partIdx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>flipFlags</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Dessine une partie d'une texture dans son contexte de rendu avec la possibilité de la retourner. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">texture</td><td>la texture ou l'atlas de texture. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">partIdx</td><td>l'indice de la partie à dessiner. Cet argument doit être égal à 0 dans le cas d'une texture simple. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>abscisse du point (en pixels) où dessiner la texture. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>ordonnée du point (en pixels) où dessiner la texture. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">flipFlags</td><td>les flags spécifiant le retournement à appliquer. Les valeurs possibles des flags sont données dans l'énumération RE_TextureFlip. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga6a73faa4f8736d3589c0236befb6bf1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6a73faa4f8736d3589c0236befb6bf1c">&#9670;&nbsp;</a></span>RE_Texture_renderFlipF()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RE_API void RE_Texture_renderFlipF </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___r_e___texture.html#ga4944d62c51444c69c8d7c2e719f77eb2">RE_Texture</a> *&#160;</td>
+          <td class="paramname"><em>texture</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>partIdx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>flipFlags</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Dessine une partie d'une texture dans son contexte de rendu avec la possibilité de la retourner. Contrairement à <a class="el" href="group___r_e___texture.html#gaf6a7d4c4c32595b092b834899664fd6c" title="Dessine une partie d&#39;une texture dans son contexte de rendu avec la possibilité de la retourner.">RE_Texture_renderFlip()</a>, cette fonction effectue le rendu avec une précision en virgule flottante. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">texture</td><td>la texture ou l'atlas de texture. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">partIdx</td><td>l'indice de la partie à dessiner. Cet argument doit être égal à 0 dans le cas d'une texture simple. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>abscisse du point (en pixels) où dessiner la texture. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>ordonnée du point (en pixels) où dessiner la texture. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">flipFlags</td><td>les flags spécifiant le retournement à appliquer. Les valeurs possibles des flags sont données dans l'énumération RE_TextureFlip. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga5195223392e7b2f3be40629a6919c75a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5195223392e7b2f3be40629a6919c75a">&#9670;&nbsp;</a></span>RE_Texture_renderRotate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RE_API void RE_Texture_renderRotate </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___r_e___texture.html#ga4944d62c51444c69c8d7c2e719f77eb2">RE_Texture</a> *&#160;</td>
+          <td class="paramname"><em>texture</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>partIdx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>angle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group___r_e___utils.html#ga7cabff7b1653385388b2c8a580c3a6c1">Vec2</a> *&#160;</td>
+          <td class="paramname"><em>center</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Dessine une partie d'une texture dans son contexte de rendu avec la possibilité de lui appliquer une rotation. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">texture</td><td>la texture ou l'atlas de texture. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">partIdx</td><td>l'indice de la partie à dessiner. Cet argument doit être égal à 0 dans le cas d'une texture simple. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>abscisse du point (en pixels) où dessiner la texture. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>ordonnée du point (en pixels) où dessiner la texture. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">angle</td><td>l'angle de la rotation à appliquer. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">center</td><td>le centre de la rotation à appliquer. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gade18bbd3259e7d72c17d96b6c155fab6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gade18bbd3259e7d72c17d96b6c155fab6">&#9670;&nbsp;</a></span>RE_Texture_renderRotateF()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RE_API void RE_Texture_renderRotateF </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___r_e___texture.html#ga4944d62c51444c69c8d7c2e719f77eb2">RE_Texture</a> *&#160;</td>
+          <td class="paramname"><em>texture</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>partIdx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>angle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group___r_e___utils.html#ga7cabff7b1653385388b2c8a580c3a6c1">Vec2</a> *&#160;</td>
+          <td class="paramname"><em>center</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Dessine une partie d'une texture dans son contexte de rendu avec la possibilité de lui appliquer une rotation. Contrairement à <a class="el" href="group___r_e___texture.html#ga5195223392e7b2f3be40629a6919c75a" title="Dessine une partie d&#39;une texture dans son contexte de rendu avec la possibilité de lui appliquer une ...">RE_Texture_renderRotate()</a>, cette fonction effectue le rendu avec une précision en virgule flottante. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">texture</td><td>la texture ou l'atlas de texture. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">partIdx</td><td>l'indice de la partie à dessiner. Cet argument doit être égal à 0 dans le cas d'une texture simple. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>abscisse du point (en pixels) où dessiner la texture. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>ordonnée du point (en pixels) où dessiner la texture. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">angle</td><td>l'angle de la rotation à appliquer. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">center</td><td>le centre de la rotation à appliquer. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga2e8b267811c968ed647baa9e189a51f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2e8b267811c968ed647baa9e189a51f1">&#9670;&nbsp;</a></span>RE_Texture_renderTransform()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RE_API void RE_Texture_renderTransform </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___r_e___texture.html#ga4944d62c51444c69c8d7c2e719f77eb2">RE_Texture</a> *&#160;</td>
+          <td class="paramname"><em>texture</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>partIdx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group___r_e___texture.html#gae2e3c48dbca9db49d917c123a764daea">RE_Transform</a> *&#160;</td>
+          <td class="paramname"><em>transform</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Dessine une partie d'une texture dans son contexte de rendu avec la possibilité de lui appliquer une transformation. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">texture</td><td>la texture ou l'atlas de texture. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">partIdx</td><td>l'indice de la partie à dessiner. Cet argument doit être égal à 0 dans le cas d'une texture simple. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>abscisse du point (en pixels) où dessiner la texture. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>ordonnée du point (en pixels) où dessiner la texture. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">transform</td><td>la transformation à appliquer. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga17f3f0f91ff0549efe7a8e40ae2c42b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga17f3f0f91ff0549efe7a8e40ae2c42b3">&#9670;&nbsp;</a></span>RE_Texture_renderTransformF()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RE_API void RE_Texture_renderTransformF </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___r_e___texture.html#ga4944d62c51444c69c8d7c2e719f77eb2">RE_Texture</a> *&#160;</td>
+          <td class="paramname"><em>texture</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>partIdx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group___r_e___texture.html#gae2e3c48dbca9db49d917c123a764daea">RE_Transform</a> *&#160;</td>
+          <td class="paramname"><em>transform</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Dessine une partie d'une texture dans son contexte de rendu avec la possibilité de lui appliquer une transformation. Contrairement à <a class="el" href="group___r_e___texture.html#ga2e8b267811c968ed647baa9e189a51f1" title="Dessine une partie d&#39;une texture dans son contexte de rendu avec la possibilité de lui appliquer une ...">RE_Texture_renderTransform()</a>, cette fonction effectue le rendu avec une précision en virgule flottante. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">texture</td><td>la texture ou l'atlas de texture. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">partIdx</td><td>l'indice de la partie à dessiner. Cet argument doit être égal à 0 dans le cas d'une texture simple. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>abscisse du point (en pixels) où dessiner la texture. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>ordonnée du point (en pixels) où dessiner la texture. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">transform</td><td>la transformation à appliquer. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga5b273fec32406c1ab6dc6b5bad891b9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5b273fec32406c1ab6dc6b5bad891b9b">&#9670;&nbsp;</a></span>RE_Texture_setAlpha()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RE_API RE_INLINE void RE_Texture_setAlpha </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___r_e___texture.html#ga4944d62c51444c69c8d7c2e719f77eb2">RE_Texture</a> *&#160;</td>
+          <td class="paramname"><em>texture</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>alpha</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définit la composante alpha (transparence) d'une texture. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">texture</td><td>la texture. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">alpha</td><td>la composante alpha. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga3d81589a6f55e80e5de704d2f256589a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3d81589a6f55e80e5de704d2f256589a">&#9670;&nbsp;</a></span>RE_Transform_getDefault()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RE_API <a class="el" href="group___r_e___texture.html#gae2e3c48dbca9db49d917c123a764daea">RE_Transform</a> RE_Transform_getDefault </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Renvoie la transformation par défaut. Elle est paramétrée pour qu'aucun changement ne soit appliqué à l'image. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>La tranformation par défaut. </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.18
+</small></address>
+</body>
+</html>

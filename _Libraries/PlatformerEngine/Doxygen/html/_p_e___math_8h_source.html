@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.18"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Plateformer Engine (PE):  Fichier source de C:/Users/arnau/Documents/Data/Dev/PlatformerEngine/PlatformerEngine/PE_Math.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Plateformer Engine (PE)
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.18 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_3f1c63d08f7153bd10045ebe80d8e823.html">PlatformerEngine</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">PE_Math.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#ifndef _PE_MATH_H_</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#define _PE_MATH_H_</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;PE_Settings.h&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;string.h&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="struct_p_e___vec2__s.html">   12</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct_p_e___vec2__s.html">PE_Vec2_s</a> {</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="struct_p_e___vec2__s.html#ad0da36b2558901e21e7a30f6c227a45e">   15</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="struct_p_e___vec2__s.html#ad0da36b2558901e21e7a30f6c227a45e">x</a>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="struct_p_e___vec2__s.html#aa4f0d3eebc3c443f9be81bf48561a217">   18</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="struct_p_e___vec2__s.html#aa4f0d3eebc3c443f9be81bf48561a217">y</a>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="group___p_e___math.html#gaceb0961b58165e028b9f21091df6af6f">   19</a></span>&#160;} <a class="code" href="group___p_e___math.html#gaceb0961b58165e028b9f21091df6af6f">PE_Vec2</a>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="group___p_e___math.html#ga7cc35e6a117418e464746c0cef8c006f">   26</a></span>&#160;<span class="keyword">extern</span> PE_API <span class="keywordtype">void</span> <a class="code" href="group___p_e___math.html#ga7cc35e6a117418e464746c0cef8c006f">PE_Vec2_set</a>(<a class="code" href="struct_p_e___vec2__s.html">PE_Vec2</a> *v, <span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;PE_API PE_INLINE <span class="keywordtype">void</span> PE_Vec2_copy(<a class="code" href="struct_p_e___vec2__s.html">PE_Vec2</a> *destination, <a class="code" href="struct_p_e___vec2__s.html">PE_Vec2</a> *source)</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    PE_Memcpy(destination, <span class="keyword">sizeof</span>(<a class="code" href="struct_p_e___vec2__s.html">PE_Vec2</a>), source, <span class="keyword">sizeof</span>(<a class="code" href="struct_p_e___vec2__s.html">PE_Vec2</a>));</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">extern</span> PE_API <span class="keywordtype">void</span> PE_Vec2_addTo(<a class="code" href="struct_p_e___vec2__s.html">PE_Vec2</a> *v, <a class="code" href="struct_p_e___vec2__s.html">PE_Vec2</a> *add);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">extern</span> PE_API <span class="keywordtype">void</span> PE_Vec2_multiplyBy(<a class="code" href="struct_p_e___vec2__s.html">PE_Vec2</a> *v, <span class="keywordtype">float</span> lambda);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">extern</span> PE_API <span class="keywordtype">float</span> PE_Vec2_dot(<a class="code" href="struct_p_e___vec2__s.html">PE_Vec2</a> *v1, <a class="code" href="struct_p_e___vec2__s.html">PE_Vec2</a> *v2);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="struct_p_e___a_a_b_b__s.html">   40</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct_p_e___a_a_b_b__s.html">PE_AABB_s</a> {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="struct_p_e___a_a_b_b__s.html#a38d94ad3cc7bc426ba806e3639b603b2">   43</a></span>&#160;    <a class="code" href="struct_p_e___vec2__s.html">PE_Vec2</a> <a class="code" href="struct_p_e___a_a_b_b__s.html#a38d94ad3cc7bc426ba806e3639b603b2">lower</a>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="struct_p_e___a_a_b_b__s.html#ac3df703ac9c6c4629ca7d62fbe341ad3">   46</a></span>&#160;    <a class="code" href="struct_p_e___vec2__s.html">PE_Vec2</a> <a class="code" href="struct_p_e___a_a_b_b__s.html#ac3df703ac9c6c4629ca7d62fbe341ad3">upper</a>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="group___p_e___math.html#ga0df6f78c1447c2325892b2789a52515f">   47</a></span>&#160;} <a class="code" href="group___p_e___math.html#ga0df6f78c1447c2325892b2789a52515f">PE_AABB</a>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="group___p_e___math.html#gaf71aaed7fcd2fb397b55b864ae907075">   56</a></span>&#160;<span class="keyword">extern</span> PE_API <span class="keywordtype">void</span> <a class="code" href="group___p_e___math.html#gaf71aaed7fcd2fb397b55b864ae907075">PE_AABB_set</a>(<a class="code" href="struct_p_e___a_a_b_b__s.html">PE_AABB</a> *aabb, <span class="keywordtype">float</span> xLower, <span class="keywordtype">float</span> yLower, <span class="keywordtype">float</span> xUpper, <span class="keywordtype">float</span> yUpper);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keyword">extern</span> PE_API Bool PE_AABB_overlap(<a class="code" href="struct_p_e___a_a_b_b__s.html">PE_AABB</a> *aabb1, <a class="code" href="struct_p_e___a_a_b_b__s.html">PE_AABB</a> *aabb2);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keyword">extern</span> PE_API <span class="keywordtype">void</span> PE_AABB_combine(<a class="code" href="struct_p_e___a_a_b_b__s.html">PE_AABB</a> *aabb1, <a class="code" href="struct_p_e___a_a_b_b__s.html">PE_AABB</a> *aabb2, <a class="code" href="struct_p_e___a_a_b_b__s.html">PE_AABB</a> *res);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keyword">extern</span> PE_API <span class="keywordtype">void</span> PE_AABB_translate(<a class="code" href="struct_p_e___a_a_b_b__s.html">PE_AABB</a> *aabb, <a class="code" href="struct_p_e___vec2__s.html">PE_Vec2</a> *transform);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keyword">extern</span> PE_API <span class="keywordtype">float</span> PE_AABB_distance(<a class="code" href="struct_p_e___a_a_b_b__s.html">PE_AABB</a> *aabb1, <a class="code" href="struct_p_e___a_a_b_b__s.html">PE_AABB</a> *aabb2);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="struct_p_e___sweep__s.html">   67</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct_p_e___sweep__s.html">PE_Sweep_s</a></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;{</div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="struct_p_e___sweep__s.html#a67d854953fc87a71050ef9bcba4eb6fb">   70</a></span>&#160;    <a class="code" href="struct_p_e___vec2__s.html">PE_Vec2</a> <a class="code" href="struct_p_e___sweep__s.html#a67d854953fc87a71050ef9bcba4eb6fb">position0</a>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="struct_p_e___sweep__s.html#ac3a86648785bd88ae57ce66c1f52cac0">   73</a></span>&#160;    <a class="code" href="struct_p_e___vec2__s.html">PE_Vec2</a> <a class="code" href="struct_p_e___sweep__s.html#ac3a86648785bd88ae57ce66c1f52cac0">position1</a>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="struct_p_e___sweep__s.html#aa8da352965468e67f67372b8b1375757">   76</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="struct_p_e___sweep__s.html#aa8da352965468e67f67372b8b1375757">alpha0</a>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;} <a class="code" href="struct_p_e___sweep__s.html">PE_Sweep</a>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;PE_INLINE <span class="keywordtype">void</span> PE_Sweep_copy(<a class="code" href="struct_p_e___sweep__s.html">PE_Sweep</a> *destination, <a class="code" href="struct_p_e___sweep__s.html">PE_Sweep</a> *source)</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;{</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    PE_Memcpy(destination, <span class="keyword">sizeof</span>(<a class="code" href="struct_p_e___sweep__s.html">PE_Sweep</a>), source, <span class="keyword">sizeof</span>(<a class="code" href="struct_p_e___sweep__s.html">PE_Sweep</a>));</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="keywordtype">void</span> PE_Sweep_getTransform(<a class="code" href="struct_p_e___sweep__s.html">PE_Sweep</a> *sweep, <span class="keywordtype">float</span> alpha, <a class="code" href="struct_p_e___vec2__s.html">PE_Vec2</a> *transform);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="astruct_p_e___vec2__s_html_aa4f0d3eebc3c443f9be81bf48561a217"><div class="ttname"><a href="struct_p_e___vec2__s.html#aa4f0d3eebc3c443f9be81bf48561a217">PE_Vec2_s::y</a></div><div class="ttdeci">float y</div><div class="ttdoc">Ordonnée du vecteur.</div><div class="ttdef"><b>Definition:</b> PE_Math.h:18</div></div>
+<div class="ttc" id="astruct_p_e___a_a_b_b__s_html"><div class="ttname"><a href="struct_p_e___a_a_b_b__s.html">PE_AABB_s</a></div><div class="ttdoc">Structure représentant une boîte englobante (rectangle) dont les côtés sont alignés sur les axes....</div><div class="ttdef"><b>Definition:</b> PE_Math.h:40</div></div>
+<div class="ttc" id="agroup___p_e___math_html_ga0df6f78c1447c2325892b2789a52515f"><div class="ttname"><a href="group___p_e___math.html#ga0df6f78c1447c2325892b2789a52515f">PE_AABB</a></div><div class="ttdeci">struct PE_AABB_s PE_AABB</div><div class="ttdoc">Structure représentant une boîte englobante (rectangle) dont les côtés sont alignés sur les axes....</div></div>
+<div class="ttc" id="agroup___p_e___math_html_gaceb0961b58165e028b9f21091df6af6f"><div class="ttname"><a href="group___p_e___math.html#gaceb0961b58165e028b9f21091df6af6f">PE_Vec2</a></div><div class="ttdeci">struct PE_Vec2_s PE_Vec2</div><div class="ttdoc">Structure représentant un vecteur 2D dont les composantes sont de type float.</div></div>
+<div class="ttc" id="astruct_p_e___sweep__s_html"><div class="ttname"><a href="struct_p_e___sweep__s.html">PE_Sweep_s</a></div><div class="ttdoc">Structure décrivant le mouvement d'un point pendant la mise à jour du monde.</div><div class="ttdef"><b>Definition:</b> PE_Math.h:68</div></div>
+<div class="ttc" id="agroup___p_e___math_html_gaf71aaed7fcd2fb397b55b864ae907075"><div class="ttname"><a href="group___p_e___math.html#gaf71aaed7fcd2fb397b55b864ae907075">PE_AABB_set</a></div><div class="ttdeci">PE_API void PE_AABB_set(PE_AABB *aabb, float xLower, float yLower, float xUpper, float yUpper)</div><div class="ttdoc">Initialise une AABB.</div></div>
+<div class="ttc" id="astruct_p_e___sweep__s_html_a67d854953fc87a71050ef9bcba4eb6fb"><div class="ttname"><a href="struct_p_e___sweep__s.html#a67d854953fc87a71050ef9bcba4eb6fb">PE_Sweep_s::position0</a></div><div class="ttdeci">PE_Vec2 position0</div><div class="ttdoc">Position au ratio alpha0.</div><div class="ttdef"><b>Definition:</b> PE_Math.h:70</div></div>
+<div class="ttc" id="astruct_p_e___sweep__s_html_ac3a86648785bd88ae57ce66c1f52cac0"><div class="ttname"><a href="struct_p_e___sweep__s.html#ac3a86648785bd88ae57ce66c1f52cac0">PE_Sweep_s::position1</a></div><div class="ttdeci">PE_Vec2 position1</div><div class="ttdoc">Position finale.</div><div class="ttdef"><b>Definition:</b> PE_Math.h:73</div></div>
+<div class="ttc" id="astruct_p_e___a_a_b_b__s_html_ac3df703ac9c6c4629ca7d62fbe341ad3"><div class="ttname"><a href="struct_p_e___a_a_b_b__s.html#ac3df703ac9c6c4629ca7d62fbe341ad3">PE_AABB_s::upper</a></div><div class="ttdeci">PE_Vec2 upper</div><div class="ttdoc">Coordonnées du coin supérieur droit de la boîte.</div><div class="ttdef"><b>Definition:</b> PE_Math.h:46</div></div>
+<div class="ttc" id="astruct_p_e___vec2__s_html"><div class="ttname"><a href="struct_p_e___vec2__s.html">PE_Vec2_s</a></div><div class="ttdoc">Structure représentant un vecteur 2D dont les composantes sont de type float.</div><div class="ttdef"><b>Definition:</b> PE_Math.h:12</div></div>
+<div class="ttc" id="agroup___p_e___math_html_ga7cc35e6a117418e464746c0cef8c006f"><div class="ttname"><a href="group___p_e___math.html#ga7cc35e6a117418e464746c0cef8c006f">PE_Vec2_set</a></div><div class="ttdeci">PE_API void PE_Vec2_set(PE_Vec2 *v, float x, float y)</div><div class="ttdoc">Initialise les coordonnées d'un vecteur.</div></div>
+<div class="ttc" id="astruct_p_e___vec2__s_html_ad0da36b2558901e21e7a30f6c227a45e"><div class="ttname"><a href="struct_p_e___vec2__s.html#ad0da36b2558901e21e7a30f6c227a45e">PE_Vec2_s::x</a></div><div class="ttdeci">float x</div><div class="ttdoc">Abscisse du vecteur.</div><div class="ttdef"><b>Definition:</b> PE_Math.h:15</div></div>
+<div class="ttc" id="astruct_p_e___a_a_b_b__s_html_a38d94ad3cc7bc426ba806e3639b603b2"><div class="ttname"><a href="struct_p_e___a_a_b_b__s.html#a38d94ad3cc7bc426ba806e3639b603b2">PE_AABB_s::lower</a></div><div class="ttdeci">PE_Vec2 lower</div><div class="ttdoc">Coordonnées du coin inférieur gauche de la boîte.</div><div class="ttdef"><b>Definition:</b> PE_Math.h:43</div></div>
+<div class="ttc" id="astruct_p_e___sweep__s_html_aa8da352965468e67f67372b8b1375757"><div class="ttname"><a href="struct_p_e___sweep__s.html#aa8da352965468e67f67372b8b1375757">PE_Sweep_s::alpha0</a></div><div class="ttdeci">float alpha0</div><div class="ttdoc">Ratio entre la position avant et après la mise à jour du monde.</div><div class="ttdef"><b>Definition:</b> PE_Math.h:76</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.18
+</small></address>
+</body>
+</html>

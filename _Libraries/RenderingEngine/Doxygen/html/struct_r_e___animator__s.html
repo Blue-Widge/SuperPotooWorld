@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.18"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Rendering Engine (RE): Référence de la structure RE_Animator_s</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Rendering Engine (RE)
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.18 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pro-attribs">Attributs protégés</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence de la structure RE_Animator_s<div class="ingroups"><a class="el" href="group___r_e___animator.html">Fonctions relatives à un animateur</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Structure représentant un animateur. Cela permet d'animer un ensemble de plusieurs atlas de textures et d'y ajouter des effets comme des variations de position ou d'opacité.  
+ <a href="struct_r_e___animator__s.html#details">Plus de détails...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_r_e___animator_8h_source.html">RE_Animator.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Attributs protégés</h2></td></tr>
+<tr class="memitem:a0f680ec3e65f91e0964d97d9b31132d2"><td class="memItemLeft" align="right" valign="top"><a id="a0f680ec3e65f91e0964d97d9b31132d2"></a>
+RE_HashTable *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_e___animator__s.html#a0f680ec3e65f91e0964d97d9b31132d2">m_texAnimsHT</a></td></tr>
+<tr class="memdesc:a0f680ec3e65f91e0964d97d9b31132d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Table de hachage contenant les textures animées. <br /></td></tr>
+<tr class="separator:a0f680ec3e65f91e0964d97d9b31132d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad741fc891982977e1e0ae68db1a29b6d"><td class="memItemLeft" align="right" valign="top"><a id="ad741fc891982977e1e0ae68db1a29b6d"></a>
+RE_HashTable *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_e___animator__s.html#ad741fc891982977e1e0ae68db1a29b6d">m_parAnimsHT</a></td></tr>
+<tr class="memdesc:ad741fc891982977e1e0ae68db1a29b6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Table de hachage contenant les paramètres animés. <br /></td></tr>
+<tr class="separator:ad741fc891982977e1e0ae68db1a29b6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8172eccc44a7cb9ff1476e68bd39c20f"><td class="memItemLeft" align="right" valign="top"><a id="a8172eccc44a7cb9ff1476e68bd39c20f"></a>
+RE_HashTable *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_e___animator__s.html#a8172eccc44a7cb9ff1476e68bd39c20f">m_activeParAnimsHT</a></td></tr>
+<tr class="memdesc:a8172eccc44a7cb9ff1476e68bd39c20f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Table de hachage contenant les paramètres animés actifs. <br /></td></tr>
+<tr class="separator:a8172eccc44a7cb9ff1476e68bd39c20f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a9cfd18ed91b6b47e5fa235d0af8793"><td class="memItemLeft" align="right" valign="top"><a id="a6a9cfd18ed91b6b47e5fa235d0af8793"></a>
+<a class="el" href="group___r_e___animator.html#ga3e7a9cd61ab1142c35e461b27f220696">RE_TextureAnim</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_e___animator__s.html#a6a9cfd18ed91b6b47e5fa235d0af8793">m_activeTexAnim</a></td></tr>
+<tr class="memdesc:a6a9cfd18ed91b6b47e5fa235d0af8793"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointeur vers la texture animée active. <br /></td></tr>
+<tr class="separator:a6a9cfd18ed91b6b47e5fa235d0af8793"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf73fa35625b88d0a4112b21cce963b0"><td class="memItemLeft" align="right" valign="top"><a id="adf73fa35625b88d0a4112b21cce963b0"></a>
+<a class="el" href="group___r_e___texture.html#gae2e3c48dbca9db49d917c123a764daea">RE_Transform</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_e___animator__s.html#adf73fa35625b88d0a4112b21cce963b0">m_transform</a></td></tr>
+<tr class="memdesc:adf73fa35625b88d0a4112b21cce963b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transformation à appliquer à la texture au moment du rendu. <br /></td></tr>
+<tr class="separator:adf73fa35625b88d0a4112b21cce963b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbbe9e1b6c6beb771c47081af4375ec2"><td class="memItemLeft" align="right" valign="top"><a id="adbbe9e1b6c6beb771c47081af4375ec2"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_e___animator__s.html#adbbe9e1b6c6beb771c47081af4375ec2">m_partIdx</a></td></tr>
+<tr class="memdesc:adbbe9e1b6c6beb771c47081af4375ec2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indice de la partie à rendre dans l'atlas de texture actif. <br /></td></tr>
+<tr class="separator:adbbe9e1b6c6beb771c47081af4375ec2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee12c96e5ac5d3d9eb3fcff31d791e75"><td class="memItemLeft" align="right" valign="top"><a id="aee12c96e5ac5d3d9eb3fcff31d791e75"></a>
+<a class="el" href="group___r_e___utils.html#ga7cabff7b1653385388b2c8a580c3a6c1">Vec2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_e___animator__s.html#aee12c96e5ac5d3d9eb3fcff31d791e75">m_shift</a></td></tr>
+<tr class="memdesc:aee12c96e5ac5d3d9eb3fcff31d791e75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Décalage de la position du rendu. <br /></td></tr>
+<tr class="separator:aee12c96e5ac5d3d9eb3fcff31d791e75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45130bbb19b1345403595078f2810a22"><td class="memItemLeft" align="right" valign="top"><a id="a45130bbb19b1345403595078f2810a22"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_e___animator__s.html#a45130bbb19b1345403595078f2810a22">m_alpha</a></td></tr>
+<tr class="memdesc:a45130bbb19b1345403595078f2810a22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opacité du rendu. <br /></td></tr>
+<tr class="separator:a45130bbb19b1345403595078f2810a22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>Structure représentant un animateur. Cela permet d'animer un ensemble de plusieurs atlas de textures et d'y ajouter des effets comme des variations de position ou d'opacité. </p>
+</div></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.18
+</small></address>
+</body>
+</html>

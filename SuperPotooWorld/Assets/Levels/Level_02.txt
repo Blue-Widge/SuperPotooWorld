@@ -1,0 +1,27 @@
+.......................F
+...ooooooooooooooooooooW
+...oooooooooooooooooooo.
+...oooooooooooooooooooo.
+...XXXXXXXXXXXXXXXXXXXX.
+...oooooooooooooooooooo.
+...oooooooooooooooooooo.
+...oooooooooooooooooooo.
+...XXXXXXXXXXXXXXXXXXXX.
+...oooooooooooooooooooo.
+...oooooooooooooooooooo.
+S..oooooooooooooooooooo.
+#######################.
+#######################.
+
+LEGENDE :
+  [.] = case vide
+  [S] = point de départ du monde
+  [F] = Arrivee
+  [C] = check point
+  [#] = sol
+  [X] = bloc cassable
+  [?] = bonus
+  [W] = bloc (buche de bois)
+  [=] = bloc avec collision en haut
+  [o] = pièce (luciolle)
+  [e] = enemie (noisette magique)

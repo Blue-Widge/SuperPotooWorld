@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.18"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Rendering Engine (RE):  Fichier source de C:/Users/arnau/Documents/Data/Dev/RenderingEngine/RenderingEngine/RE_Timer.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Rendering Engine (RE)
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.18 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_07d9e4503b554f0274c5bfa511a2ed1e.html">RenderingEngine</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">RE_Timer.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#ifndef _RE_TIMER_H_</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#define _RE_TIMER_H_</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;RE_Lib.h&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="struct_r_e___timer__s.html">   12</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct_r_e___timer__s.html">RE_Timer_s</a></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="struct_r_e___timer__s.html#a665b6d96db8e1a71fb41687a63e34da8">   16</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="struct_r_e___timer__s.html#a665b6d96db8e1a71fb41687a63e34da8">m_startTime</a>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="struct_r_e___timer__s.html#acc6f0a0b4ba267d7a7e7ec5843104f6b">   20</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="struct_r_e___timer__s.html#acc6f0a0b4ba267d7a7e7ec5843104f6b">m_currentTime</a>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="struct_r_e___timer__s.html#a5786f41d904c5e709007c306eb1eb888">   24</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="struct_r_e___timer__s.html#a5786f41d904c5e709007c306eb1eb888">m_previousTime</a>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="struct_r_e___timer__s.html#a0ff6bdaebef534f2239c3602fff57428">   28</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="struct_r_e___timer__s.html#a0ff6bdaebef534f2239c3602fff57428">m_delta</a>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="group___r_e___timer.html#gac0eba1b0e22df1a9d396e2132026f274">   29</a></span>&#160;} <a class="code" href="group___r_e___timer.html#gac0eba1b0e22df1a9d396e2132026f274">RE_Timer</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="group___r_e___timer.html#ga5f662bf5e44b2eba8cce79d507b81acd">   34</a></span>&#160;<span class="keyword">extern</span> RE_API <a class="code" href="struct_r_e___timer__s.html">RE_Timer</a>* <a class="code" href="group___r_e___timer.html#ga5f662bf5e44b2eba8cce79d507b81acd">RE_Timer_new</a>();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="group___r_e___timer.html#gacc2663f9a318e5c94775ba9eea1a31af">   39</a></span>&#160;<span class="keyword">extern</span> RE_API <span class="keywordtype">void</span> <a class="code" href="group___r_e___timer.html#gacc2663f9a318e5c94775ba9eea1a31af">RE_Timer_free</a>(<a class="code" href="struct_r_e___timer__s.html">RE_Timer</a>* timer);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="group___r_e___timer.html#ga1934e749ade241b9e8c219974a709837">   44</a></span>&#160;<span class="keyword">extern</span> RE_API <span class="keywordtype">void</span> <a class="code" href="group___r_e___timer.html#ga1934e749ade241b9e8c219974a709837">RE_Timer_start</a>(<a class="code" href="struct_r_e___timer__s.html">RE_Timer</a>* timer);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="group___r_e___timer.html#ga4255cacac09e427d53fa98beac6004ce">   50</a></span>&#160;<span class="keyword">extern</span> RE_API <span class="keywordtype">void</span> <a class="code" href="group___r_e___timer.html#ga4255cacac09e427d53fa98beac6004ce">RE_Timer_update</a>(<a class="code" href="struct_r_e___timer__s.html">RE_Timer</a>* timer);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="group___r_e___timer.html#ga3690e26ecad71274e4c5663752f1d2e0">   57</a></span>&#160;<span class="keyword">extern</span> RE_API <span class="keywordtype">float</span> <a class="code" href="group___r_e___timer.html#ga3690e26ecad71274e4c5663752f1d2e0">RE_Timer_getDelta</a>(<a class="code" href="struct_r_e___timer__s.html">RE_Timer</a> *timer);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="group___r_e___timer.html#gade9b6544b79bdc223a15c1d5b1ebcbbd">   64</a></span>&#160;<span class="keyword">extern</span> RE_API <span class="keywordtype">float</span> <a class="code" href="group___r_e___timer.html#gade9b6544b79bdc223a15c1d5b1ebcbbd">RE_Timer_getElapsed</a>(<a class="code" href="struct_r_e___timer__s.html">RE_Timer</a> *timer);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="agroup___r_e___timer_html_ga5f662bf5e44b2eba8cce79d507b81acd"><div class="ttname"><a href="group___r_e___timer.html#ga5f662bf5e44b2eba8cce79d507b81acd">RE_Timer_new</a></div><div class="ttdeci">RE_API RE_Timer * RE_Timer_new()</div><div class="ttdoc">Crée un nouveau timer.</div></div>
+<div class="ttc" id="astruct_r_e___timer__s_html_a665b6d96db8e1a71fb41687a63e34da8"><div class="ttname"><a href="struct_r_e___timer__s.html#a665b6d96db8e1a71fb41687a63e34da8">RE_Timer_s::m_startTime</a></div><div class="ttdeci">float m_startTime</div><div class="ttdoc">Temps de départ.</div><div class="ttdef"><b>Definition:</b> RE_Timer.h:16</div></div>
+<div class="ttc" id="agroup___r_e___timer_html_gade9b6544b79bdc223a15c1d5b1ebcbbd"><div class="ttname"><a href="group___r_e___timer.html#gade9b6544b79bdc223a15c1d5b1ebcbbd">RE_Timer_getElapsed</a></div><div class="ttdeci">RE_API float RE_Timer_getElapsed(RE_Timer *timer)</div><div class="ttdoc">Renvoie l'écart de temps (en secondes) entre le lancement du timer avec la fonction RE_Timer_start() ...</div></div>
+<div class="ttc" id="agroup___r_e___timer_html_gac0eba1b0e22df1a9d396e2132026f274"><div class="ttname"><a href="group___r_e___timer.html#gac0eba1b0e22df1a9d396e2132026f274">RE_Timer</a></div><div class="ttdeci">struct RE_Timer_s RE_Timer</div><div class="ttdoc">Structure représentant un chronomètre.</div></div>
+<div class="ttc" id="astruct_r_e___timer__s_html_a0ff6bdaebef534f2239c3602fff57428"><div class="ttname"><a href="struct_r_e___timer__s.html#a0ff6bdaebef534f2239c3602fff57428">RE_Timer_s::m_delta</a></div><div class="ttdeci">float m_delta</div><div class="ttdoc">Ecart entre les deux derniers appels à RE_Timer_update().</div><div class="ttdef"><b>Definition:</b> RE_Timer.h:28</div></div>
+<div class="ttc" id="astruct_r_e___timer__s_html"><div class="ttname"><a href="struct_r_e___timer__s.html">RE_Timer_s</a></div><div class="ttdoc">Structure représentant un chronomètre.</div><div class="ttdef"><b>Definition:</b> RE_Timer.h:13</div></div>
+<div class="ttc" id="agroup___r_e___timer_html_gacc2663f9a318e5c94775ba9eea1a31af"><div class="ttname"><a href="group___r_e___timer.html#gacc2663f9a318e5c94775ba9eea1a31af">RE_Timer_free</a></div><div class="ttdeci">RE_API void RE_Timer_free(RE_Timer *timer)</div><div class="ttdoc">Détruit un timer préalablement alloué avec RE_Timer_new().</div></div>
+<div class="ttc" id="agroup___r_e___timer_html_ga3690e26ecad71274e4c5663752f1d2e0"><div class="ttname"><a href="group___r_e___timer.html#ga3690e26ecad71274e4c5663752f1d2e0">RE_Timer_getDelta</a></div><div class="ttdeci">RE_API float RE_Timer_getDelta(RE_Timer *timer)</div><div class="ttdoc">Renvoie l'écart de temps (en secondes) entre les deux derniers appels à la fonction RE_Timer_update()...</div></div>
+<div class="ttc" id="agroup___r_e___timer_html_ga4255cacac09e427d53fa98beac6004ce"><div class="ttname"><a href="group___r_e___timer.html#ga4255cacac09e427d53fa98beac6004ce">RE_Timer_update</a></div><div class="ttdeci">RE_API void RE_Timer_update(RE_Timer *timer)</div><div class="ttdoc">Met à jour le timer en fonction du temps actuel. Cette fonction est typiquement appelée à chaque tour...</div></div>
+<div class="ttc" id="astruct_r_e___timer__s_html_a5786f41d904c5e709007c306eb1eb888"><div class="ttname"><a href="struct_r_e___timer__s.html#a5786f41d904c5e709007c306eb1eb888">RE_Timer_s::m_previousTime</a></div><div class="ttdeci">float m_previousTime</div><div class="ttdoc">Temps de l'avant dernier appel à RE_Timer_update().</div><div class="ttdef"><b>Definition:</b> RE_Timer.h:24</div></div>
+<div class="ttc" id="agroup___r_e___timer_html_ga1934e749ade241b9e8c219974a709837"><div class="ttname"><a href="group___r_e___timer.html#ga1934e749ade241b9e8c219974a709837">RE_Timer_start</a></div><div class="ttdeci">RE_API void RE_Timer_start(RE_Timer *timer)</div><div class="ttdoc">Lance le timer.</div></div>
+<div class="ttc" id="astruct_r_e___timer__s_html_acc6f0a0b4ba267d7a7e7ec5843104f6b"><div class="ttname"><a href="struct_r_e___timer__s.html#acc6f0a0b4ba267d7a7e7ec5843104f6b">RE_Timer_s::m_currentTime</a></div><div class="ttdeci">float m_currentTime</div><div class="ttdoc">Temps du dernier appel à RE_Timer_update().</div><div class="ttdef"><b>Definition:</b> RE_Timer.h:20</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.18
+</small></address>
+</body>
+</html>

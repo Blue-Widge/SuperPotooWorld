@@ -1,0 +1,218 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.18"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Plateformer Engine (PE):  Fichier source de C:/Users/arnau/Documents/Data/Dev/PlatformerEngine/PlatformerEngine/PE_Trigger.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Plateformer Engine (PE)
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.18 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_3f1c63d08f7153bd10045ebe80d8e823.html">PlatformerEngine</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">PE_Trigger.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#ifndef _PE_TRIGGER_H_</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#define _PE_TRIGGER_H_</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;PE_Lib.h&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;PE_List.h&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;PE_Collider.h&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct_p_e___trigger_pair__s.html">PE_TriggerPair_s</a> <a class="code" href="struct_p_e___trigger_pair__s.html">PE_TriggerPair</a>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="struct_p_e___trigger__s.html">   16</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct_p_e___trigger__s.html">PE_Trigger_s</a></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="struct_p_e___trigger__s.html#ae6f66237d3f592a0be8dcc2cb7641331">   21</a></span>&#160;    PE_Node <a class="code" href="struct_p_e___trigger__s.html#ae6f66237d3f592a0be8dcc2cb7641331">m_colliderNode</a>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="struct_p_e___trigger__s.html#afc6212b5fbb0f97361c4b10616ca28b8">   25</a></span>&#160;    <a class="code" href="struct_p_e___collider__s.html">PE_Collider</a> *<a class="code" href="struct_p_e___trigger__s.html#afc6212b5fbb0f97361c4b10616ca28b8">m_collider</a>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="struct_p_e___trigger__s.html#afc8c780aff8ba9e778e4a7d7885dcef1">   29</a></span>&#160;    <a class="code" href="struct_p_e___collider__s.html">PE_Collider</a> *<a class="code" href="struct_p_e___trigger__s.html#afc8c780aff8ba9e778e4a7d7885dcef1">m_otherCollider</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="struct_p_e___trigger__s.html#a18b517a5eea688404e094202da946ca3">   34</a></span>&#160;    <a class="code" href="struct_p_e___trigger_pair__s.html">PE_TriggerPair</a> *<a class="code" href="struct_p_e___trigger__s.html#a18b517a5eea688404e094202da946ca3">m_triggerPair</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="group___p_e___trigger.html#gaa344491d17c2548ced8250a32bc851b5">   36</a></span>&#160;} <a class="code" href="group___p_e___trigger.html#gaa344491d17c2548ced8250a32bc851b5">PE_Trigger</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;PE_INLINE <a class="code" href="struct_p_e___trigger_pair__s.html">PE_TriggerPair</a> *PE_Trigger_getTriggerPair(<a class="code" href="struct_p_e___trigger__s.html">PE_Trigger</a> *trigger)</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;{</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">return</span> trigger-&gt;<a class="code" href="struct_p_e___trigger__s.html#a18b517a5eea688404e094202da946ca3">m_triggerPair</a>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> PE_TriggerFlags_e</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;{</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    PE_TRIGGER_OVERLAPPING = 1 &lt;&lt; 0,</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    PE_TRIGGER_TO_UPDATE   = 1 &lt;&lt; 1,</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    PE_TRIGGER_TO_REMOVE   = 1 &lt;&lt; 2,</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    PE_TRIGGER_CHECKED     = 1 &lt;&lt; 3,</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    PE_TRIGGER_STAY        = 1 &lt;&lt; 4,</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;} PE_TriggerFlags;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="struct_p_e___trigger_pair__s.html">   52</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct_p_e___trigger_pair__s.html">PE_TriggerPair_s</a></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;{</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="struct_p_e___trigger_pair__s.html#afe27126cdacc61e64efc94e2da6a2fd8">   56</a></span>&#160;    PE_Node <a class="code" href="struct_p_e___trigger_pair__s.html#afe27126cdacc61e64efc94e2da6a2fd8">m_collisionDetectorNode</a>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">int</span> m_flags;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">float</span> m_timeLeft;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="struct_p_e___trigger_pair__s.html#afdf73f39272352d30541de06e67c8550">   64</a></span>&#160;    <a class="code" href="struct_p_e___collider__s.html">PE_Collider</a> *<a class="code" href="struct_p_e___trigger_pair__s.html#afdf73f39272352d30541de06e67c8550">m_colliderA</a>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="struct_p_e___trigger_pair__s.html#ae4949b0df1dadf99e2447d0e90793eda">   68</a></span>&#160;    <a class="code" href="struct_p_e___collider__s.html">PE_Collider</a> *<a class="code" href="struct_p_e___trigger_pair__s.html#ae4949b0df1dadf99e2447d0e90793eda">m_colliderB</a>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="struct_p_e___trigger_pair__s.html#abf9017c5eb85854a6a74123cebff64e3">   72</a></span>&#160;    <a class="code" href="struct_p_e___trigger__s.html">PE_Trigger</a> <a class="code" href="struct_p_e___trigger_pair__s.html#abf9017c5eb85854a6a74123cebff64e3">m_triggerA</a>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="struct_p_e___trigger_pair__s.html#a11bd9eed21bda171449e0e04ad3bdf8a">   76</a></span>&#160;    <a class="code" href="struct_p_e___trigger__s.html">PE_Trigger</a> <a class="code" href="struct_p_e___trigger_pair__s.html#a11bd9eed21bda171449e0e04ad3bdf8a">m_triggerB</a>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;} <a class="code" href="struct_p_e___trigger_pair__s.html">PE_TriggerPair</a>;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<a class="code" href="struct_p_e___trigger_pair__s.html">PE_TriggerPair</a> *PE_TriggerPair_new(<a class="code" href="struct_p_e___collider__s.html">PE_Collider</a> *colliderA, <a class="code" href="struct_p_e___collider__s.html">PE_Collider</a> *colliderB, PE_Allocator *allocator);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="keywordtype">void</span> PE_TriggerPair_free(<a class="code" href="struct_p_e___trigger_pair__s.html">PE_TriggerPair</a> *triggerPair, PE_Allocator *allocator);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;PE_INLINE <span class="keywordtype">int</span> PE_TriggerPair_getFlags(<a class="code" href="struct_p_e___trigger_pair__s.html">PE_TriggerPair</a> *triggerPair)</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;{</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordflow">return</span> triggerPair-&gt;m_flags;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;}</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;PE_INLINE Bool PE_TriggerPair_hasOneFlag(<a class="code" href="struct_p_e___trigger_pair__s.html">PE_TriggerPair</a> *triggerPair, <span class="keywordtype">int</span> flags)</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;{</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordflow">return</span> (triggerPair-&gt;m_flags &amp; flags);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;}</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;PE_INLINE <span class="keywordtype">void</span> PE_TriggerPair_addFlags(<a class="code" href="struct_p_e___trigger_pair__s.html">PE_TriggerPair</a> *triggerPair, <span class="keywordtype">int</span> flags)</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;{</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    triggerPair-&gt;m_flags |= flags;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;}</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;PE_INLINE <span class="keywordtype">void</span> PE_TriggerPair_removeFlags(<a class="code" href="struct_p_e___trigger_pair__s.html">PE_TriggerPair</a> *triggerPair, <span class="keywordtype">int</span> flags)</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;{</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    triggerPair-&gt;m_flags &amp;= ~flags;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;}</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;PE_INLINE <span class="keywordtype">void</span> PE_TriggerPair_setTimeLeft(<a class="code" href="struct_p_e___trigger_pair__s.html">PE_TriggerPair</a> *triggerPair, <span class="keywordtype">float</span> timeLeft)</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;{</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    triggerPair-&gt;m_timeLeft = timeLeft;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;}</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;PE_INLINE <span class="keywordtype">float</span> PE_TriggerPair_getTimeLeft(<a class="code" href="struct_p_e___trigger_pair__s.html">PE_TriggerPair</a> *triggerPair)</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;{</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordflow">return</span> triggerPair-&gt;m_timeLeft;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;}</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;PE_INLINE <span class="keywordtype">float</span> PE_TriggerPair_addToTimeLeft(<a class="code" href="struct_p_e___trigger_pair__s.html">PE_TriggerPair</a> *triggerPair, <span class="keywordtype">float</span> delta)</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;{</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keywordflow">return</span> triggerPair-&gt;m_timeLeft += delta;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;}</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="keywordtype">void</span> PE_TriggerPair_update(<a class="code" href="struct_p_e___trigger_pair__s.html">PE_TriggerPair</a> *triggerPair);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="comment">// TRIGGER USER METHODS</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
+<div class="line"><a name="l00127"></a><span class="lineno"><a class="line" href="group___p_e___trigger.html#gada07ae775f2e354f85496637b6fb476b">  127</a></span>&#160;PE_API PE_INLINE <a class="code" href="struct_p_e___collider__s.html">PE_Collider</a> *<a class="code" href="group___p_e___trigger.html#gada07ae775f2e354f85496637b6fb476b">PE_Trigger_getCollider</a>(<a class="code" href="struct_p_e___trigger__s.html">PE_Trigger</a> *trigger)</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;{</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keywordflow">return</span> trigger-&gt;<a class="code" href="struct_p_e___trigger__s.html#afc6212b5fbb0f97361c4b10616ca28b8">m_collider</a>;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;}</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
+<div class="line"><a name="l00136"></a><span class="lineno"><a class="line" href="group___p_e___trigger.html#ga2ce8d1f50e361ae4365b646be2588157">  136</a></span>&#160;PE_API PE_INLINE <a class="code" href="struct_p_e___collider__s.html">PE_Collider</a> *<a class="code" href="group___p_e___trigger.html#ga2ce8d1f50e361ae4365b646be2588157">PE_Trigger_getOtherCollider</a>(<a class="code" href="struct_p_e___trigger__s.html">PE_Trigger</a> *trigger)</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;{</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="keywordflow">return</span> trigger-&gt;<a class="code" href="struct_p_e___trigger__s.html#afc8c780aff8ba9e778e4a7d7885dcef1">m_otherCollider</a>;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;}</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
+<div class="line"><a name="l00145"></a><span class="lineno"><a class="line" href="group___p_e___trigger.html#ga285a15486c915a17a7660bed44c82d1c">  145</a></span>&#160;PE_API PE_INLINE <a class="code" href="struct_p_e___body__s.html">PE_Body</a> *<a class="code" href="group___p_e___trigger.html#ga285a15486c915a17a7660bed44c82d1c">PE_Trigger_getBody</a>(<a class="code" href="struct_p_e___trigger__s.html">PE_Trigger</a> *trigger)</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;{</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="group___p_e___collider.html#gaf3037578fa2052281e9481f7bc8389dc">PE_Collider_getBody</a>(trigger-&gt;<a class="code" href="struct_p_e___trigger__s.html#afc6212b5fbb0f97361c4b10616ca28b8">m_collider</a>);</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;}</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160; </div>
+<div class="line"><a name="l00154"></a><span class="lineno"><a class="line" href="group___p_e___trigger.html#ga254eb96c06f300bbb3b07a7eae01a74d">  154</a></span>&#160;PE_API PE_INLINE <a class="code" href="struct_p_e___body__s.html">PE_Body</a> *<a class="code" href="group___p_e___trigger.html#ga254eb96c06f300bbb3b07a7eae01a74d">PE_Trigger_getOtherBody</a>(<a class="code" href="struct_p_e___trigger__s.html">PE_Trigger</a> *trigger)</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;{</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="group___p_e___collider.html#gaf3037578fa2052281e9481f7bc8389dc">PE_Collider_getBody</a>(trigger-&gt;<a class="code" href="struct_p_e___trigger__s.html#afc8c780aff8ba9e778e4a7d7885dcef1">m_otherCollider</a>);</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;}</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="astruct_p_e___trigger__s_html_afc6212b5fbb0f97361c4b10616ca28b8"><div class="ttname"><a href="struct_p_e___trigger__s.html#afc6212b5fbb0f97361c4b10616ca28b8">PE_Trigger_s::m_collider</a></div><div class="ttdeci">PE_Collider * m_collider</div><div class="ttdoc">Pointeur vers le collider principal impliqué dans la détection.</div><div class="ttdef"><b>Definition:</b> PE_Trigger.h:25</div></div>
+<div class="ttc" id="astruct_p_e___trigger__s_html_afc8c780aff8ba9e778e4a7d7885dcef1"><div class="ttname"><a href="struct_p_e___trigger__s.html#afc8c780aff8ba9e778e4a7d7885dcef1">PE_Trigger_s::m_otherCollider</a></div><div class="ttdeci">PE_Collider * m_otherCollider</div><div class="ttdoc">Pointeur vers le second collider impliqué dans la détection.</div><div class="ttdef"><b>Definition:</b> PE_Trigger.h:29</div></div>
+<div class="ttc" id="astruct_p_e___trigger_pair__s_html_a11bd9eed21bda171449e0e04ad3bdf8a"><div class="ttname"><a href="struct_p_e___trigger_pair__s.html#a11bd9eed21bda171449e0e04ad3bdf8a">PE_TriggerPair_s::m_triggerB</a></div><div class="ttdeci">PE_Trigger m_triggerB</div><div class="ttdoc">Trigger for the second collider.</div><div class="ttdef"><b>Definition:</b> PE_Trigger.h:76</div></div>
+<div class="ttc" id="astruct_p_e___body__s_html"><div class="ttname"><a href="struct_p_e___body__s.html">PE_Body_s</a></div><div class="ttdoc">Structure représentant un corps indéformable dans le moteur physique.</div><div class="ttdef"><b>Definition:</b> PE_Body.h:88</div></div>
+<div class="ttc" id="astruct_p_e___trigger__s_html_a18b517a5eea688404e094202da946ca3"><div class="ttname"><a href="struct_p_e___trigger__s.html#a18b517a5eea688404e094202da946ca3">PE_Trigger_s::m_triggerPair</a></div><div class="ttdeci">PE_TriggerPair * m_triggerPair</div><div class="ttdoc">Pointeur vers la paire de détection. Il s'agit de la structure contenant cette détection dans le déte...</div><div class="ttdef"><b>Definition:</b> PE_Trigger.h:34</div></div>
+<div class="ttc" id="astruct_p_e___trigger_pair__s_html"><div class="ttname"><a href="struct_p_e___trigger_pair__s.html">PE_TriggerPair_s</a></div><div class="ttdef"><b>Definition:</b> PE_Trigger.h:53</div></div>
+<div class="ttc" id="agroup___p_e___trigger_html_gaa344491d17c2548ced8250a32bc851b5"><div class="ttname"><a href="group___p_e___trigger.html#gaa344491d17c2548ced8250a32bc851b5">PE_Trigger</a></div><div class="ttdeci">struct PE_Trigger_s PE_Trigger</div><div class="ttdoc">Structure contenant les informations sur une détection entre deux colliders.</div></div>
+<div class="ttc" id="agroup___p_e___trigger_html_ga254eb96c06f300bbb3b07a7eae01a74d"><div class="ttname"><a href="group___p_e___trigger.html#ga254eb96c06f300bbb3b07a7eae01a74d">PE_Trigger_getOtherBody</a></div><div class="ttdeci">PE_API PE_INLINE PE_Body * PE_Trigger_getOtherBody(PE_Trigger *trigger)</div><div class="ttdoc">Renvoie le second corps impliqué dans une détection.</div><div class="ttdef"><b>Definition:</b> PE_Trigger.h:154</div></div>
+<div class="ttc" id="astruct_p_e___trigger_pair__s_html_ae4949b0df1dadf99e2447d0e90793eda"><div class="ttname"><a href="struct_p_e___trigger_pair__s.html#ae4949b0df1dadf99e2447d0e90793eda">PE_TriggerPair_s::m_colliderB</a></div><div class="ttdeci">PE_Collider * m_colliderB</div><div class="ttdoc">Pointer to the second collider in collision.</div><div class="ttdef"><b>Definition:</b> PE_Trigger.h:68</div></div>
+<div class="ttc" id="astruct_p_e___trigger__s_html"><div class="ttname"><a href="struct_p_e___trigger__s.html">PE_Trigger_s</a></div><div class="ttdoc">Structure contenant les informations sur une détection entre deux colliders.</div><div class="ttdef"><b>Definition:</b> PE_Trigger.h:17</div></div>
+<div class="ttc" id="astruct_p_e___trigger_pair__s_html_afe27126cdacc61e64efc94e2da6a2fd8"><div class="ttname"><a href="struct_p_e___trigger_pair__s.html#afe27126cdacc61e64efc94e2da6a2fd8">PE_TriggerPair_s::m_collisionDetectorNode</a></div><div class="ttdeci">PE_Node m_collisionDetectorNode</div><div class="ttdoc">The node which contains this trigger pair in the trigger list of the collision detector.</div><div class="ttdef"><b>Definition:</b> PE_Trigger.h:56</div></div>
+<div class="ttc" id="astruct_p_e___trigger_pair__s_html_abf9017c5eb85854a6a74123cebff64e3"><div class="ttname"><a href="struct_p_e___trigger_pair__s.html#abf9017c5eb85854a6a74123cebff64e3">PE_TriggerPair_s::m_triggerA</a></div><div class="ttdeci">PE_Trigger m_triggerA</div><div class="ttdoc">Trigger for the first collider.</div><div class="ttdef"><b>Definition:</b> PE_Trigger.h:72</div></div>
+<div class="ttc" id="agroup___p_e___trigger_html_gada07ae775f2e354f85496637b6fb476b"><div class="ttname"><a href="group___p_e___trigger.html#gada07ae775f2e354f85496637b6fb476b">PE_Trigger_getCollider</a></div><div class="ttdeci">PE_API PE_INLINE PE_Collider * PE_Trigger_getCollider(PE_Trigger *trigger)</div><div class="ttdoc">Renvoie le collider principal impliqué dans une détection.</div><div class="ttdef"><b>Definition:</b> PE_Trigger.h:127</div></div>
+<div class="ttc" id="agroup___p_e___trigger_html_ga2ce8d1f50e361ae4365b646be2588157"><div class="ttname"><a href="group___p_e___trigger.html#ga2ce8d1f50e361ae4365b646be2588157">PE_Trigger_getOtherCollider</a></div><div class="ttdeci">PE_API PE_INLINE PE_Collider * PE_Trigger_getOtherCollider(PE_Trigger *trigger)</div><div class="ttdoc">Renvoie le second collider impliqué dans une détection.</div><div class="ttdef"><b>Definition:</b> PE_Trigger.h:136</div></div>
+<div class="ttc" id="agroup___p_e___collider_html_gaf3037578fa2052281e9481f7bc8389dc"><div class="ttname"><a href="group___p_e___collider.html#gaf3037578fa2052281e9481f7bc8389dc">PE_Collider_getBody</a></div><div class="ttdeci">PE_API PE_Body * PE_Collider_getBody(PE_Collider *collider)</div><div class="ttdoc">Renvoie le corps parent d'un collider.</div></div>
+<div class="ttc" id="agroup___p_e___trigger_html_ga285a15486c915a17a7660bed44c82d1c"><div class="ttname"><a href="group___p_e___trigger.html#ga285a15486c915a17a7660bed44c82d1c">PE_Trigger_getBody</a></div><div class="ttdeci">PE_API PE_INLINE PE_Body * PE_Trigger_getBody(PE_Trigger *trigger)</div><div class="ttdoc">Renvoie le corps principal impliqué dans une détection.</div><div class="ttdef"><b>Definition:</b> PE_Trigger.h:145</div></div>
+<div class="ttc" id="astruct_p_e___trigger__s_html_ae6f66237d3f592a0be8dcc2cb7641331"><div class="ttname"><a href="struct_p_e___trigger__s.html#ae6f66237d3f592a0be8dcc2cb7641331">PE_Trigger_s::m_colliderNode</a></div><div class="ttdeci">PE_Node m_colliderNode</div><div class="ttdoc">Noeud contenant un pointeur vers cette détection dans la listes des détections du collider parent....</div><div class="ttdef"><b>Definition:</b> PE_Trigger.h:21</div></div>
+<div class="ttc" id="astruct_p_e___trigger_pair__s_html_afdf73f39272352d30541de06e67c8550"><div class="ttname"><a href="struct_p_e___trigger_pair__s.html#afdf73f39272352d30541de06e67c8550">PE_TriggerPair_s::m_colliderA</a></div><div class="ttdeci">PE_Collider * m_colliderA</div><div class="ttdoc">Pointer to the first collider in collision.</div><div class="ttdef"><b>Definition:</b> PE_Trigger.h:64</div></div>
+<div class="ttc" id="astruct_p_e___collider__s_html"><div class="ttname"><a href="struct_p_e___collider__s.html">PE_Collider_s</a></div><div class="ttdoc">Structure représentant un collider dans le moteur physique. Un collider peut être affecté à un corps ...</div><div class="ttdef"><b>Definition:</b> PE_Collider.h:85</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.18
+</small></address>
+</body>
+</html>

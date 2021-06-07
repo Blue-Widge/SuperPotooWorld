@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.18"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Plateformer Engine (PE):  Fichier source de C:/Users/arnau/Documents/Data/Dev/PlatformerEngine/PlatformerEngine/PE_Shape.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Plateformer Engine (PE)
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.18 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_3f1c63d08f7153bd10045ebe80d8e823.html">PlatformerEngine</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">PE_Shape.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="group___p_e___shape.html#gac3fe7c0276def13cbea2632ab0f7aa3c">    1</a></span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#ifndef _PE_SHAPE_H_</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#define _PE_SHAPE_H_</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;PE_Settings.h&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;PE_Allocator.h&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;PE_Math.h&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> <a class="code" href="group___p_e___shape.html#ga6589031eb9c1da48ce44e0cacb2a3e6f">PE_ShapeType_e</a> <a class="code" href="group___p_e___shape.html#gac3fe7c0276def13cbea2632ab0f7aa3c">PE_ShapeType</a>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="group___p_e___shape.html#ga6589031eb9c1da48ce44e0cacb2a3e6f">   17</a></span>&#160;<span class="keyword">enum</span> <a class="code" href="group___p_e___shape.html#ga6589031eb9c1da48ce44e0cacb2a3e6f">PE_ShapeType_e</a></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    PE_SHAPE_BOX = 0,</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    PE_SHAPE_TRIANGLE = 1,</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;};</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="struct_p_e___box_shape__s.html">   23</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct_p_e___box_shape__s.html">PE_BoxShape_s</a></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="struct_p_e___vec2__s.html">PE_Vec2</a> m_lower;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="struct_p_e___vec2__s.html">PE_Vec2</a> m_upper;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;} <a class="code" href="struct_p_e___box_shape__s.html">PE_BoxShape</a>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keywordtype">void</span> PE_BoxShape_getAABB(<a class="code" href="struct_p_e___box_shape__s.html">PE_BoxShape</a> *boxShape, <a class="code" href="struct_p_e___vec2__s.html">PE_Vec2</a> *transform, <a class="code" href="struct_p_e___a_a_b_b__s.html">PE_AABB</a> *aabb);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">extern</span> PE_API <span class="keywordtype">void</span> PE_BoxShape_set(<a class="code" href="struct_p_e___box_shape__s.html">PE_BoxShape</a> *boxShape, <span class="keywordtype">float</span> xLower, <span class="keywordtype">float</span> yLower, <span class="keywordtype">float</span> xUpper, <span class="keywordtype">float</span> yUpper);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> PE_TriangleType_s</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;{</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    PE_RIGHT_TRIANGLE_SW,</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    PE_RIGHT_TRIANGLE_SE,</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    PE_RIGHT_TRIANGLE_NW,</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    PE_RIGHT_TRIANGLE_NE</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;} PE_TriangleType;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="struct_p_e___triangle_shape__s.html">   40</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct_p_e___triangle_shape__s.html">PE_TriangleShape_s</a></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;{</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="struct_p_e___vec2__s.html">PE_Vec2</a> m_lower;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="struct_p_e___vec2__s.html">PE_Vec2</a> m_upper;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="struct_p_e___vec2__s.html">PE_Vec2</a> m_normal;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">int</span> m_type;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;} <a class="code" href="struct_p_e___triangle_shape__s.html">PE_TriangleShape</a>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keywordtype">void</span> PE_TriangleShape_getAABB(<a class="code" href="struct_p_e___triangle_shape__s.html">PE_TriangleShape</a> *triangleShape, <a class="code" href="struct_p_e___vec2__s.html">PE_Vec2</a> *transform, <a class="code" href="struct_p_e___a_a_b_b__s.html">PE_AABB</a> *aabb);</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="group___p_e___shape.html#gae8b3a44a8ee5cc24d83173836ec4bfd8">   49</a></span>&#160;<span class="keyword">extern</span> PE_API <span class="keywordtype">void</span> PE_TriangleShape_set(</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <a class="code" href="struct_p_e___triangle_shape__s.html">PE_TriangleShape</a> *triangleShape, <span class="keywordtype">int</span> type,</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">float</span> xLower, <span class="keywordtype">float</span> yLower, <span class="keywordtype">float</span> xUpper, <span class="keywordtype">float</span> yUpper);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct_p_e___shape__s.html">PE_Shape_s</a> <a class="code" href="struct_p_e___shape__s.html">PE_Shape</a>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="struct_p_e___shape__s.html">   59</a></span>&#160;<span class="keyword">struct </span><a class="code" href="struct_p_e___shape__s.html">PE_Shape_s</a></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;{</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">int</span> m_type;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">float</span> m_skin;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keyword">union </span>{</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <a class="code" href="struct_p_e___box_shape__s.html">PE_BoxShape</a> box;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <a class="code" href="struct_p_e___triangle_shape__s.html">PE_TriangleShape</a> triangle;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    } m_data;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;};</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="keyword">extern</span> PE_API <span class="keywordtype">void</span> PE_Shape_getAABB(<a class="code" href="struct_p_e___shape__s.html">PE_Shape</a> *shape, <a class="code" href="struct_p_e___vec2__s.html">PE_Vec2</a> *transform, <a class="code" href="struct_p_e___a_a_b_b__s.html">PE_AABB</a> *aabb);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;PE_API PE_INLINE <span class="keywordtype">int</span> PE_Shape_getType(<a class="code" href="struct_p_e___shape__s.html">PE_Shape</a> *shape)</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;{</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordflow">return</span> shape-&gt;m_type;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;}</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="group___p_e___shape.html#ga23f947da8024dacde52a98fe66edca34">   87</a></span>&#160;PE_API PE_INLINE <span class="keywordtype">void</span> <a class="code" href="group___p_e___shape.html#ga23f947da8024dacde52a98fe66edca34">PE_Shape_setAsBox</a>(</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <a class="code" href="struct_p_e___shape__s.html">PE_Shape</a> *shape, <span class="keywordtype">float</span> xLower, <span class="keywordtype">float</span> yLower, <span class="keywordtype">float</span> xUpper, <span class="keywordtype">float</span> yUpper)</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;{</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    shape-&gt;m_type = PE_SHAPE_BOX;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    shape-&gt;m_skin = PE_SKIN_RADIUS;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    PE_BoxShape_set(&amp;(shape-&gt;m_data.box), xLower, yLower, xUpper, yUpper);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;}</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="group___p_e___shape.html#gaefa1ef444e6c8e12bfe3b4b8310c6147">  103</a></span>&#160;PE_API PE_INLINE <span class="keywordtype">void</span> <a class="code" href="group___p_e___shape.html#gaefa1ef444e6c8e12bfe3b4b8310c6147">PE_Shape_setAsTriangle</a>(</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <a class="code" href="struct_p_e___shape__s.html">PE_Shape</a> *shape, <span class="keywordtype">int</span> type,</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordtype">float</span> xLower, <span class="keywordtype">float</span> yLower, <span class="keywordtype">float</span> xUpper, <span class="keywordtype">float</span> yUpper)</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;{</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    shape-&gt;m_type = PE_SHAPE_TRIANGLE;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    shape-&gt;m_skin = PE_SKIN_RADIUS;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    PE_TriangleShape_set(&amp;(shape-&gt;m_data.triangle), type, xLower, yLower, xUpper, yUpper);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;}</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="comment">// Methodes internes</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;PE_INLINE <span class="keywordtype">float</span> PE_Shape_getSkin(<a class="code" href="struct_p_e___shape__s.html">PE_Shape</a> *shape)</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;{</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keywordflow">return</span> shape-&gt;m_skin;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;}</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="astruct_p_e___shape__s_html"><div class="ttname"><a href="struct_p_e___shape__s.html">PE_Shape_s</a></div><div class="ttdoc">Structure représentant la forme d'un collider.</div><div class="ttdef"><b>Definition:</b> PE_Shape.h:60</div></div>
+<div class="ttc" id="astruct_p_e___a_a_b_b__s_html"><div class="ttname"><a href="struct_p_e___a_a_b_b__s.html">PE_AABB_s</a></div><div class="ttdoc">Structure représentant une boîte englobante (rectangle) dont les côtés sont alignés sur les axes....</div><div class="ttdef"><b>Definition:</b> PE_Math.h:40</div></div>
+<div class="ttc" id="agroup___p_e___shape_html_gac3fe7c0276def13cbea2632ab0f7aa3c"><div class="ttname"><a href="group___p_e___shape.html#gac3fe7c0276def13cbea2632ab0f7aa3c">PE_ShapeType</a></div><div class="ttdeci">enum PE_ShapeType_e PE_ShapeType</div><div class="ttdoc">Typedef de l'énumération PE_ShapeType_e.</div><div class="ttdef"><b>Definition:</b> PE_Shape.h:13</div></div>
+<div class="ttc" id="astruct_p_e___box_shape__s_html"><div class="ttname"><a href="struct_p_e___box_shape__s.html">PE_BoxShape_s</a></div><div class="ttdef"><b>Definition:</b> PE_Shape.h:24</div></div>
+<div class="ttc" id="agroup___p_e___shape_html_gaefa1ef444e6c8e12bfe3b4b8310c6147"><div class="ttname"><a href="group___p_e___shape.html#gaefa1ef444e6c8e12bfe3b4b8310c6147">PE_Shape_setAsTriangle</a></div><div class="ttdeci">PE_API PE_INLINE void PE_Shape_setAsTriangle(PE_Shape *shape, int type, float xLower, float yLower, float xUpper, float yUpper)</div><div class="ttdoc">Définit une forme comme étant un triangle rectangle aligné sur les axes.</div><div class="ttdef"><b>Definition:</b> PE_Shape.h:103</div></div>
+<div class="ttc" id="astruct_p_e___vec2__s_html"><div class="ttname"><a href="struct_p_e___vec2__s.html">PE_Vec2_s</a></div><div class="ttdoc">Structure représentant un vecteur 2D dont les composantes sont de type float.</div><div class="ttdef"><b>Definition:</b> PE_Math.h:12</div></div>
+<div class="ttc" id="agroup___p_e___shape_html_ga6589031eb9c1da48ce44e0cacb2a3e6f"><div class="ttname"><a href="group___p_e___shape.html#ga6589031eb9c1da48ce44e0cacb2a3e6f">PE_ShapeType_e</a></div><div class="ttdeci">PE_ShapeType_e</div><div class="ttdoc">Enumération donnant les formes possibles pour un collider.</div><div class="ttdef"><b>Definition:</b> PE_Shape.h:18</div></div>
+<div class="ttc" id="agroup___p_e___shape_html_ga23f947da8024dacde52a98fe66edca34"><div class="ttname"><a href="group___p_e___shape.html#ga23f947da8024dacde52a98fe66edca34">PE_Shape_setAsBox</a></div><div class="ttdeci">PE_API PE_INLINE void PE_Shape_setAsBox(PE_Shape *shape, float xLower, float yLower, float xUpper, float yUpper)</div><div class="ttdoc">Définit une forme comme étant une boîte alignée sur les axes.</div><div class="ttdef"><b>Definition:</b> PE_Shape.h:87</div></div>
+<div class="ttc" id="astruct_p_e___triangle_shape__s_html"><div class="ttname"><a href="struct_p_e___triangle_shape__s.html">PE_TriangleShape_s</a></div><div class="ttdef"><b>Definition:</b> PE_Shape.h:41</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.18
+</small></address>
+</body>
+</html>
