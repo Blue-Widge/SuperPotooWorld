@@ -128,7 +128,7 @@ int Scene_parseLevelBuffer(Scene *scene, char *levelBuffer, long size, int lvlWi
                 Tilemap_setTile(tilemap, x, y, TILE_GROUND);
         }
     }*/
-    int x = 0, y = lvlHeight;
+    int x = lvlWidth, y = lvlHeight;
     int w = lvlHeight;
     for (int i = size -1; i >=0; --i)
     {
@@ -146,18 +146,18 @@ int Scene_parseLevelBuffer(Scene *scene, char *levelBuffer, long size, int lvlWi
             Tilemap_setTile(tilemap, x, y, TILE_WOOD);
             break;
         case 'S':
-            PE_Vec2_set(&scene->m_startPos, x, y+1.0f);
+            PE_Vec2_set(&scene->m_startPos, x+0.5f, y+1.0f);
             break;
         }
 
-        if (x >= lvlWidth)
+        if (x <= 0)
         {
             y = lvlHeight - w;
-            wy--;
-            x = 0;
+            w--;
+            x = lvlWidth;
         }
         else {
-            x++;
+            x--;
         }
         printf("x: %d, y: %d\n", x, y);
 
