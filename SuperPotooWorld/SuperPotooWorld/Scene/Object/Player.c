@@ -391,7 +391,6 @@ void Player_damage(Player *player)
 void Player_kill(Player *player)
 {
     Scene *scene = GameObject_getScene(player->m_object);
-
     // TODO
     // Améliorez cette fonction avec une gestion des vies
     // Vous pouvez modifier les stats du joueur

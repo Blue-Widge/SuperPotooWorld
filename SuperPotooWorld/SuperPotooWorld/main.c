@@ -5,8 +5,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define FULLSCREEN
-//#define NO_MENU
+//#define FULLSCREEN
+#define NO_MENU
 #define NO_MENU_PATH "../Assets/Levels/Level_01.txt"
 
 #ifdef FULLSCREEN

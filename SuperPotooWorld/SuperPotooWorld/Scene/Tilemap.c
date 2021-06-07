@@ -143,10 +143,54 @@ void Tilemap_initTiles(Tilemap *tilemap)
         {
             if (tiles[x][y].m_type == TILE_GROUND)
             {
-                // TODO
-                // Calculez l'indice de la partie de la texture à afficher pour le sol
+                // Calcule l'indice de la partie de la texture à afficher pour le sol
+                int sum = 0;
+                int minX = x > 0;
+                int minY = y > 0;
+                int maxX = x < width - 1;
+                int maxY = y < height - 1;
 
-                tiles[x][y].m_partIdx = BINARY_TO_PART_INDEX[255];
+                if (maxY) {
+
+                    if (maxX && tiles[x+1][y+1].m_type == TILE_GROUND) {
+                        sum += 2;
+                    }
+
+                    if (minX && tiles[x-1][y+1].m_type == TILE_GROUND) {
+                        sum += 128;
+                    }
+
+                    if (tiles[x][y+1].m_type == TILE_GROUND) {
+                        sum += 1;
+                    }
+
+                }
+
+                if (minY) {
+
+                    if (maxX && tiles[x+1][y-1].m_type == TILE_GROUND) {
+                        sum += 8;
+                    }
+
+                    if (minX && tiles[x-1][y-1].m_type == TILE_GROUND) {
+                        sum += 32;
+                    }
+
+                    if (tiles[x][y-1].m_type == TILE_GROUND) {
+                        sum += 16;
+                    }
+
+                }
+
+                if (minX && tiles[x-1][y].m_type == TILE_GROUND) {
+                    sum += 64;
+                }
+
+                if (maxX && tiles[x + 1][y].m_type == TILE_GROUND) {
+                    sum += 4;
+                }
+
+                tiles[x][y].m_partIdx = BINARY_TO_PART_INDEX[sum];
             }
             else
             {

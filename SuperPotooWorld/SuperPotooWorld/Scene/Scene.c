@@ -75,6 +75,7 @@ ERROR_LABEL:
 
 int Scene_getLevelDim(char *levelBuffer, long size, int *lvlWidth, int *lvlHeight)
 {
+    int Width = 0, Height = 0;
     for (int i = 0; i < size; i++)
     {
         char c = levelBuffer[i];
@@ -83,12 +84,24 @@ int Scene_getLevelDim(char *levelBuffer, long size, int *lvlWidth, int *lvlHeigh
         // Calculez la largeur et la hauteur du niveau
         // La tableau levelBuffer contient les caractères de votre fichier de niveau
         // avec un pré-traitement pour supprimer les caractères inutiles et la légende.
+        if (Scene_isValidChar(c))
+        {
+            if (c == '\n')
+            {
+                Height++;
+            } 
+            else
+                Width++;
+        }
+        
     }
+
+    Width /= Height;
 
     // TODO
     // Remplacer les valeurs suivantes avec celles que vous avez calculées.
-    *lvlWidth = 30;
-    *lvlHeight = 14;
+    *lvlWidth = Width;
+    *lvlHeight = Height;
 
     return EXIT_SUCCESS;
 }
@@ -105,7 +118,7 @@ int Scene_parseLevelBuffer(Scene *scene, char *levelBuffer, long size, int lvlWi
     // Vous ne devez avoir qu'une seule boucle.
     
     // Exemple. Création d'un sol de hauteur 2
-    for (int y = lvlHeight - 1; y >= 0; y--)
+    /*for (int y = lvlHeight - 1; y >= 0; y--)
     {
         for (int x = 0; x < lvlWidth; x++)
         {
@@ -114,9 +127,43 @@ int Scene_parseLevelBuffer(Scene *scene, char *levelBuffer, long size, int lvlWi
             else
                 Tilemap_setTile(tilemap, x, y, TILE_GROUND);
         }
+    }*/
+    int x = 0, y = lvlHeight;
+    int w = lvlHeight;
+    for (int i = size -1; i >=0; --i)
+    {
+        char c = levelBuffer[i];
+        
+        switch (c)
+        {
+        case '.' : 
+            Tilemap_setTile(tilemap, x, y, TILE_EMPTY);
+            break;
+        case '#':
+            Tilemap_setTile(tilemap, x, y, TILE_GROUND);
+            break;
+        case 'F' : 
+            Tilemap_setTile(tilemap, x, y, TILE_WOOD);
+            break;
+        case 'S':
+            PE_Vec2_set(&scene->m_startPos, x, y+1.0f);
+            break;
+        }
+
+        if (x >= lvlWidth)
+        {
+            y = lvlHeight - w;
+            wy--;
+            x = 0;
+        }
+        else {
+            x++;
+        }
+        printf("x: %d, y: %d\n", x, y);
+
     }
 
-    // Exemple. Pour le plaisir, on met une bûche à la fin du niveau
+  /*  // Exemple. Pour le plaisir, on met une bûche à la fin du niveau
     Tilemap_setTile(tilemap, lvlWidth - 1, 2, TILE_WOOD);
 
     // Exemple. On place une série de lucioles
@@ -132,7 +179,7 @@ int Scene_parseLevelBuffer(Scene *scene, char *levelBuffer, long size, int lvlWi
 
     // On définit la position de départ du joueur en (2,1)
     PE_Vec2_set(&scene->m_startPos, (float)1.f + 0.5f, (float)2.f);
-
+    */
     // FIN TODO
     // La partie qui suit ne doit pas être modifiée pour la partie obligatoire
 
