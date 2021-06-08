@@ -61,6 +61,12 @@
     <Filter Include="Fichiers d%27en-tête\Menu">
       <UniqueIdentifier>{b4a7b006-76af-4f1f-8c47-b9a559114219}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Fichiers sources\GameUI">
+      <UniqueIdentifier>{f3d9aae1-3582-4ae5-88e1-03114cd3a973}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\GameUI">
+      <UniqueIdentifier>{2d388828-fdd9-4bf1-b522-37ed17d210e0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c">
@@ -144,9 +150,6 @@
     <ClCompile Include="Scene\GameTextures.c">
       <Filter>Fichiers sources\Scene</Filter>
     </ClCompile>
-    <ClCompile Include="Scene\GameUI.c">
-      <Filter>Fichiers sources\Scene</Filter>
-    </ClCompile>
     <ClCompile Include="Scene\Gizmos.c">
       <Filter>Fichiers sources\Scene</Filter>
     </ClCompile>
@@ -161,6 +164,12 @@
     </ClCompile>
     <ClCompile Include="Scene\Tilemap.c">
       <Filter>Fichiers sources\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\GameUI.c">
+      <Filter>Fichiers sources\GameUI</Filter>
+    </ClCompile>
+    <ClCompile Include="UITextures.c">
+      <Filter>Fichiers sources\GameUI</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -245,9 +254,6 @@
     <ClInclude Include="Scene\GameTextures.h">
       <Filter>Fichiers d%27en-tête\Scene</Filter>
     </ClInclude>
-    <ClInclude Include="Scene\GameUI.h">
-      <Filter>Fichiers d%27en-tête\Scene</Filter>
-    </ClInclude>
     <ClInclude Include="Scene\Gizmos.h">
       <Filter>Fichiers d%27en-tête\Scene</Filter>
     </ClInclude>
@@ -262,6 +268,12 @@
     </ClInclude>
     <ClInclude Include="Scene\Tilemap.h">
       <Filter>Fichiers d%27en-tête\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\GameUI.h">
+      <Filter>Fichiers d%27en-tête\GameUI</Filter>
+    </ClInclude>
+    <ClInclude Include="UITextures.h">
+      <Filter>Fichiers d%27en-tête\GameUI</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

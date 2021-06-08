@@ -24,6 +24,8 @@
 
 #include <stdio.h>
 
+#include "../UITextures.h"
+
 typedef struct Scene_s
 {
     PE_World *m_world;
@@ -51,6 +53,8 @@ typedef struct Scene_s
     ObjectManager *m_manager;
 
     PE_Vec2 m_startPos;
+
+    UITextures* m_UItextures;
 } Scene;
 
 Scene *Scene_new(RE_Renderer *renderer, FILE *levelFile, RE_Timer *time, float timeStep);

@@ -109,7 +109,41 @@ void Player_onCollisionStay(PE_Collision *collision)
     // TODO
     // Vous pouvez infliger des dommages aux ennemis dans cette fonction
     // Utilisez GameObject_getEnemy(otherObject) et testez le pointeur
+    if (GameObject_getType(otherObject) == ENEMY_NUT)
+    {
+        int relPos = PE_Collision_getRelativePosition(collision);
+        PE_Vec2 velocity;
 
+        switch (relPos)
+        {
+        case PE_ABOVE:
+            // Take damages
+            velocity.y = 2.0f;
+            Player_damage(thisBody);
+            PE_Body_setCollisionResponse(thisBody, &velocity);
+            break;
+        case PE_LEFT:
+            // Take damages and get bounced to the right
+            velocity.y = 2.0f;
+            velocity.x = 4.f;
+            Player_damage(thisBody);
+            PE_Body_setCollisionResponse(thisBody, &velocity);
+            break;
+        case PE_RIGHT:
+            //Take damages and get bounced to the left
+            velocity.y = 4.f;
+            velocity.x = -2.0f;
+            Player_damage(thisBody);
+            PE_Body_setCollisionResponse(thisBody, &velocity);
+            break;
+        case PE_BELOW:
+            //Kill the enemy
+            Player_bounce(thisBody);
+            break;
+        default:
+            break;
+        }
+    }
     if (GameObject_getType(otherObject) == GAME_BLOCK)
     {
         int relPos = PE_Collision_getRelativePosition(collision);
@@ -339,8 +373,12 @@ int Player_onRespawn(GameObject *object)
     scene = GameObject_getScene(object);
     body = GameObject_getBody(object);
 
-    // TODO
+    
     // Réinitialisez les paramètres du joueur ici lorsqu'il réapparait après avoir perdu une vie
+
+    player->m_state = PLAYER_IDLE;
+    player->m_stats.nbFireflies = 0;
+    player->m_stats.nbHearts = 3;
 
     exitStatus = PE_Body_setPosition(body, &scene->m_startPos);
     if (exitStatus != EXIT_SUCCESS) goto ERROR_LABEL;
@@ -369,9 +407,12 @@ void Player_setStartPosition(Player *player, PE_Vec2 *position)
 
 void Player_bounce(Player *player)
 {
-    // TODO
+    
     // Améliorez cette fonction pour que le joueur rebondisse quand elle est appelée
     // C'est l'ennemi qui appelle cette fonction quand il entre en collision avec le joueur et qu'il meurt.
+    PE_Vec2 velocity = GameObject_getVelocity(player);
+    velocity.y = 1.0f;
+    PE_Body_setVelocity(player, &velocity);
 
     printf("Player_bounce() : Po rebondit sur une noisette magique !\n");
 }
@@ -380,12 +421,18 @@ void Player_damage(Player *player)
 {
     Scene *scene = GameObject_getScene(player->m_object);
 
-    // TODO
+    
     // Améliorez cette fonction avec une gestion des coeurs ou des vies
     // Vous pouvez modifier les stats du joueur
     // Vous pouvez quitter le jeu en appelant Scene_gameOver(scene);
 
-    printf("Player_damage() : Po a mal !\n");
+    player->m_stats.nbHearts--;
+    if (!player->m_stats.nbHearts)
+    {
+        Player_kill(player);
+    }
+
+    printf("Player_damage() : Po a mal ! Nombre de coeurs restants : %d\n", player->m_stats.nbHearts);
 
     Scene_respawn(scene);
 }
@@ -393,11 +440,18 @@ void Player_damage(Player *player)
 void Player_kill(Player *player)
 {
     Scene *scene = GameObject_getScene(player->m_object);
-    // TODO
+    
     // Améliorez cette fonction avec une gestion des vies
     // Vous pouvez modifier les stats du joueur
     // Vous pouvez quitter le jeu en appelant Scene_gameOver(scene);
 
+    player->m_state = PLAYER_DYING;
+    player->m_stats.nbLives--;
+    if (player->m_stats.nbLives < 0)
+    {
+        Scene_gameOver(scene);
+    }
+    printf(" Nombre de vies : %d\n", player->m_stats.nbLives);
     printf("Player_kill() : Po est mort !\n");
 
     Scene_respawn(scene);
@@ -405,16 +459,18 @@ void Player_kill(Player *player)
 
 void Player_addFirefly(Player *player)
 {
-    // TODO
+    
     // Améliorez cette fonction avec une gestion lucioles et des vies
+    player->m_stats.nbFireflies++;
 
     printf("Player_addFirefly() : Po gobe une luciole !\n");
 }
 
 void Player_addHeart(Player *player)
 {
-    // TODO
+    
     // Améliorez cette fonction
+    player->m_stats.nbHearts++;
 
     printf("Player_addHeart() : Po gagne un coeur !\n");
 }
@@ -440,8 +496,9 @@ int Player_update(GameObject *object)
     if (input->jumpPressed)
         player->m_jump = TRUE;
 
-    // TODO
     // Améliorez cette fonction avec par exemple une meilleure gestion du saut
+    if (player->m_jump == TRUE && player->m_state == PLAYER_FALLING)
+        player->m_jump = FALSE;
 
     // Mise à jour de l'animateur
     RE_Animator_update(player->m_animator, time);

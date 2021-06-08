@@ -254,6 +254,11 @@ Scene *Scene_new(RE_Renderer *renderer, FILE *levelFile, RE_Timer *time, float t
     scene->m_manager = ObjectManager_new(scene);
     if (!scene->m_manager) goto ERROR_LABEL;
 
+    // AJOUTS
+    scene->m_UItextures = UITextures_new(renderer);
+    if (!scene->m_UItextures) goto ERROR_LABEL;
+
+
     // Initialisation de la scène
     exitStatus = Scene_parseLevelBuffer(scene, levelBuffer, size, lvlWidth, lvlHeight);
     if (exitStatus != EXIT_SUCCESS) goto ERROR_LABEL;
