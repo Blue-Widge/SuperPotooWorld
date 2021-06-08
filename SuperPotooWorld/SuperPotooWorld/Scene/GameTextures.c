@@ -68,6 +68,17 @@ GameTextures *GameTextures_new(RE_Renderer *renderer)
         "../Assets/Images/Background/Full.png", renderer);
     if (!textures->background) goto ERROR_LABEL;
 
+
+    // AJOUTS
+
+    textures->playerRunningFire = RE_Texture_newSet(
+        "../Assets/Images/Player/RunningFire.png", renderer, 1, 6);
+    if (!textures->playerRunningFire) goto ERROR_LABEL;
+
+    textures->playerFallingFire = RE_Texture_newSet(
+        "../Assets/Images/Player/FallingFire.png", renderer, 1, 8);
+    if (!textures->playerFallingFire) goto ERROR_LABEL;
+
     return textures;
 
 ERROR_LABEL:
@@ -94,6 +105,10 @@ void GameTextures_free(GameTextures *textures)
     RE_Texture_free(textures->hazelnut);
     RE_Texture_free(textures->hazelnut_dead);
     RE_Texture_free(textures->heart);
+
+    //AJOUTS
+    RE_Texture_free(textures->playerRunningFire);
+    RE_Texture_free(textures->playerFallingFire);
 
     free(textures);
 }

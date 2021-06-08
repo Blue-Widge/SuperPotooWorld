@@ -7,6 +7,13 @@
 
 typedef struct Scene_s Scene;
 
+// AJOUT
+typedef enum PlayerPowerUP_e
+{
+    PLAYER_NORMAL,
+    PLAYER_FIRE
+
+}PlayerPowerUP;
 typedef enum PlayerState_e
 {
     PLAYER_IDLE,
@@ -22,6 +29,8 @@ typedef struct PlayerStats_s
     int nbFireflies;
     int nbHearts;
     int nbLives;
+    PlayerPowerUP PowerUP;
+
 } PlayerStats;
 
 typedef struct Player_s

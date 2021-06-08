@@ -26,8 +26,15 @@ void GameUI_render(Scene *scene, PlayerStats *stats)
     w = RE_Texture_getWidth(textures->Lives);
     h = RE_Texture_getHeight(textures->Lives);
 
-    RE_Texture_render(textures->Lives, 0, 5, 2);
-    
+    switch (stats->PowerUP)
+    {
+    case PLAYER_FIRE:
+        RE_Texture_render(textures->LivesFire, 0, 5, 2);
+        break;
+    default:
+        RE_Texture_render(textures->Lives, 0, 5, 2);
+        break;
+    }    
     RE_Texture_render(textures->digits, nbLives, w + 10, 2 + h / 2);
 
     w += RE_Texture_getWidth(textures->digits) / 10 + 30;

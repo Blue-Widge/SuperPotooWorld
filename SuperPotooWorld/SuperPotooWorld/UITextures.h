@@ -9,6 +9,8 @@ typedef struct UITextures_s
     RE_Texture* Hearts;
     RE_Texture* digits;
 
+    RE_Texture* LivesFire;
+
 } UITextures;
 
 UITextures* UITextures_new(RE_Renderer* renderer);

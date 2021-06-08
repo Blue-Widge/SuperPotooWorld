@@ -76,4 +76,7 @@ void Bonus_render(Block *block)
 void Bonus_hit(Block *block)
 {
     ++block->m_nbHits;
+
+    // FAIRE SPAWN MACHIN DE FEU OU LE RESTE QUE J'AI PAS FAIT MAIS C TRO KOOL DEJA
+
 }

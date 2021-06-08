@@ -12,7 +12,7 @@ UITextures* UITextures_new(RE_Renderer* renderer)
     textures = (UITextures*)calloc(1, sizeof(UITextures));
     if (!textures) goto ERROR_LABEL;
 
-    // Chargement des textures du menu
+    // Chargement des textures de l'UI
     textures->Lives = RE_Texture_new(
         "../Assets/Images/Player/Idle.png", renderer);  
     if (!textures->Lives) goto ERROR_LABEL;
@@ -25,15 +25,20 @@ UITextures* UITextures_new(RE_Renderer* renderer)
         "../Assets/Images/Menu/Digits.png", renderer, 1, 10);
     if (!textures->digits) goto ERROR_LABEL;
 
+
+    textures->LivesFire = RE_Texture_new(
+        "../Assets/Images/Player/IdleFire.png", renderer);
+    if (!textures->Lives) goto ERROR_LABEL;
+
     return textures;
 
 ERROR_LABEL:
     printf("ERROR - UITextures_new()\n");
-    MenuTextures_free(textures);
+    UITextures_free(textures);
     return NULL;
 }
 
-void UITexture_free(UITextures* UITex)
+void UITextures_free(UITextures* UITex)
 {
     if (!UITex)
         return;

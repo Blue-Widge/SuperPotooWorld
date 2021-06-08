@@ -4,8 +4,6 @@ C:\Users\bluew\CLionProjects\SuperPotooWorld\SuperPotooWorld\SuperPotooWorld\Sup
 C:\Users\bluew\CLionProjects\SuperPotooWorld\SuperPotooWorld\SuperPotooWorld\SuperPotooWorld\Scene\Object\Player.c(136,35): warning C4133: 'fonction' : types incompatibles - de 'PE_Body *' à 'Player *'
 C:\Users\bluew\CLionProjects\SuperPotooWorld\SuperPotooWorld\SuperPotooWorld\SuperPotooWorld\Scene\Object\Player.c(141,35): warning C4133: 'fonction' : types incompatibles - de 'PE_Body *' à 'Player *'
 C:\Users\bluew\CLionProjects\SuperPotooWorld\SuperPotooWorld\SuperPotooWorld\SuperPotooWorld\Scene\Object\Player.c(184,19): warning C4189: 'parAnim' : variable locale initialisée mais non référencée
-C:\Users\bluew\CLionProjects\SuperPotooWorld\SuperPotooWorld\SuperPotooWorld\SuperPotooWorld\Scene\Object\Player.c(413,53): warning C4133: 'fonction' : types incompatibles - de 'Player *' à 'GameObject *'
-C:\Users\bluew\CLionProjects\SuperPotooWorld\SuperPotooWorld\SuperPotooWorld\SuperPotooWorld\Scene\Object\Player.c(415,31): warning C4133: 'fonction' : types incompatibles - de 'Player *' à 'PE_Body *'
-C:\Users\bluew\CLionProjects\SuperPotooWorld\SuperPotooWorld\SuperPotooWorld\SuperPotooWorld\Scene\Object\Player.c(545,13): warning C4189: 'exitStatus' : variable locale initialisée mais non référencée
-C:\Users\bluew\CLionProjects\SuperPotooWorld\SuperPotooWorld\SuperPotooWorld\SuperPotooWorld\Scene\Object\Player.c(550,13): warning C4189: 'exitStatus' : variable locale initialisée mais non référencée
+C:\Users\bluew\CLionProjects\SuperPotooWorld\SuperPotooWorld\SuperPotooWorld\SuperPotooWorld\Scene\Object\Player.c(435,53): warning C4133: 'fonction' : types incompatibles - de 'Player *' à 'GameObject *'
+C:\Users\bluew\CLionProjects\SuperPotooWorld\SuperPotooWorld\SuperPotooWorld\SuperPotooWorld\Scene\Object\Player.c(437,31): warning C4133: 'fonction' : types incompatibles - de 'Player *' à 'PE_Body *'
   SuperPotooWorld.vcxproj -> C:\Users\bluew\CLionProjects\SuperPotooWorld\SuperPotooWorld\SuperPotooWorld\x64\Debug\SuperPotooWorld.exe

@@ -203,9 +203,27 @@ int Player_createAnimator(Player *player)
 
     // TODO
     // Définissez d'autres animations
+    texAnim = RE_Animator_createTextureAnim(animator, textures->playerRunningFire, "RunningFire");
+    if (!texAnim) goto ERROR_LABEL;
+
+    RE_TextureAnim_setCycleTime(texAnim, 0.3f);
+
+    texAnim = RE_Animator_createTextureAnim(animator, textures->playerFallingFire, "FallingFire");
+    if (!texAnim) goto ERROR_LABEL;
+
+    RE_TextureAnim_setCycleTime(texAnim, 0.2f);
 
     // Initialisation de l'animator
-    exitStatus = RE_Animator_playTextureAnim(player->m_animator, "Running");
+    switch (player->m_stats.PowerUP)
+    {
+    case PLAYER_FIRE:
+        exitStatus = RE_Animator_playTextureAnim(player->m_animator, "RunningFire");
+        break;
+    default:
+        exitStatus = RE_Animator_playTextureAnim(player->m_animator, "Running");
+        break;
+    }
+    
 
     return EXIT_SUCCESS;
 
@@ -293,6 +311,9 @@ int Player_onStart(GameObject *object)
     // Initialisation
     player->m_state = PLAYER_RUNNING;
 
+    // AJOUT
+    player->m_stats.PowerUP = PLAYER_NORMAL;
+
     scene = GameObject_getScene(object);
     world = Scene_getWorld(scene);
 
@@ -378,7 +399,8 @@ int Player_onRespawn(GameObject *object)
 
     player->m_state = PLAYER_IDLE;
     player->m_stats.nbFireflies = 0;
-    player->m_stats.nbHearts = 3;
+    player->m_stats.nbHearts = 2;
+    player->m_stats.PowerUP = PLAYER_NORMAL;
 
     exitStatus = PE_Body_setPosition(body, &scene->m_startPos);
     if (exitStatus != EXIT_SUCCESS) goto ERROR_LABEL;
@@ -538,16 +560,38 @@ int Player_fixedUpdate(GameObject *object)
     // TODO
     // Améliorer cette fonction, et il y a beaucoup à faire !
 
+
     // Mise à jour de l'état du joueur
     if (player->m_onGround && (player->m_state == PLAYER_FALLING))
     {
         player->m_state = PLAYER_RUNNING;
-        int exitStatus = RE_Animator_playTextureAnim(player->m_animator, "Running");
+        int exitStatus;
+
+        switch(player->m_stats.PowerUP)
+        {
+        case PLAYER_FIRE:
+            exitStatus = RE_Animator_playTextureAnim(player->m_animator, "RunningFire");
+            break;
+        default:
+            exitStatus = RE_Animator_playTextureAnim(player->m_animator, "Running");
+            break;
+        }
+  
     }
     else if (!player->m_onGround && (player->m_state == PLAYER_RUNNING))
     {
         player->m_state = PLAYER_FALLING;
-        int exitStatus = RE_Animator_playTextureAnim(player->m_animator, "Falling");
+        int exitStatus;
+
+        switch (player->m_stats.PowerUP)
+        {
+        case PLAYER_FIRE:
+            exitStatus = RE_Animator_playTextureAnim(player->m_animator, "FallingFire");
+            break;
+        default:
+            exitStatus = RE_Animator_playTextureAnim(player->m_animator, "Falling");
+            break;
+        }
     }
 
     // Déplacement du joueur

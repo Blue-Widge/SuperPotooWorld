@@ -23,6 +23,11 @@ typedef struct GameTextures_s
   
     RE_Texture *background;
     RE_Texture *heart;
+
+    // AJOUTS
+
+    RE_Texture* playerRunningFire;
+    RE_Texture* playerFallingFire;
 } GameTextures;
 
 GameTextures *GameTextures_new(RE_Renderer *renderer);
