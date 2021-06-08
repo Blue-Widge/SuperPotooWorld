@@ -427,7 +427,7 @@ void Player_damage(Player *player)
     // Vous pouvez quitter le jeu en appelant Scene_gameOver(scene);
 
     player->m_stats.nbHearts--;
-    if (!player->m_stats.nbHearts)
+    if (player->m_stats.nbHearts < 0)
     {
         Player_kill(player);
     }
@@ -470,9 +470,12 @@ void Player_addHeart(Player *player)
 {
     
     // Améliorez cette fonction
-    player->m_stats.nbHearts++;
+    if (player->m_stats.nbHearts < 2)
+    {
+        player->m_stats.nbHearts++;
+    }
 
-    printf("Player_addHeart() : Po gagne un coeur !\n");
+    printf("Player_addHeart() : Po gagne un coeur ! Nombre de coeurs restants : %d\n", player->m_stats.nbHearts);
 }
 
 int Player_update(GameObject *object)

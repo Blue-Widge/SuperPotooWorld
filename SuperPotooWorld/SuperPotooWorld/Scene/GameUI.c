@@ -30,11 +30,10 @@ void GameUI_render(Scene *scene, PlayerStats *stats)
     
     RE_Texture_render(textures->digits, nbLives, w + 10, 2 + h / 2);
 
-    w = RE_Texture_getWidth(textures->Hearts);
-
+    w += RE_Texture_getWidth(textures->digits) / 10 + 30;
     for (; nbHearts >= 0; nbHearts--)
     {
-        RE_Texture_render(textures->Hearts, 0, w + 10, 2);
-        w += w;
+        RE_Texture_render(textures->Hearts, 0, w + 5, h / 4);
+        w += RE_Texture_getWidth(textures->Hearts);
     }
 }
