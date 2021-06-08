@@ -33,13 +33,13 @@ GameTextures *GameTextures_new(RE_Renderer *renderer)
         "../Assets/Images/Map/Bonus.png", renderer, 4, 4);
     if (!textures->bonus) goto ERROR_LABEL;
     
-    textures->hazelnut = RE_Texture_newSet(
-        "../Assets/Images/Enemies/Hazelnut.png", renderer, 4, 1);
-    if (!textures->hazelnut) goto ERROR_LABEL;
-    
     textures->hazelnut_dead = RE_Texture_new(
         "../Assets/Images/Enemies/HazelnutDead.png", renderer);
     if (!textures->hazelnut_dead) goto ERROR_LABEL;
+
+    textures->hazelnut = RE_Texture_newSet(
+        "../Assets/Images/Enemies/Hazelnut.png", renderer, 1, 4);
+    if (!textures->hazelnut) goto ERROR_LABEL;
     
     textures->heart = RE_Texture_new(
         "../Assets/Images/Collectables/Heart.png", renderer);

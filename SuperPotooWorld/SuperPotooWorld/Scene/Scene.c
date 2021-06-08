@@ -172,26 +172,6 @@ int Scene_parseLevelBuffer(Scene *scene, char *levelBuffer, long size, int lvlWi
 
     }
 
-  /*  // Exemple. Pour le plaisir, on met une bûche à la fin du niveau
-    Tilemap_setTile(tilemap, lvlWidth - 1, 2, TILE_WOOD);
-
-    // Exemple. On place une série de lucioles
-    for (int x = 0; x < lvlWidth; x++)
-    {
-        Collectable *collectable = NULL;
-        int y = 4;
-
-        PE_Vec2_set(&position, (float)x + 0.5f, (float)y + 0.5f);
-        collectable = Scene_createCollectable(scene, COLLECTABLE_FIREFLY, &position);
-        if (!collectable) goto ERROR_LABEL;
-    }
-
-    // On définit la position de départ du joueur en (2,1)
-    PE_Vec2_set(&scene->m_startPos, (float)1.f + 0.5f, (float)2.f);
-    */
-    // FIN TODO
-    // La partie qui suit ne doit pas être modifiée pour la partie obligatoire
-
     // Création d'un Hazard en dessous du niveau pour tuer le joueur quand il tombe
     PE_Vec2_set(&position, 0.f, 0.f);
     PE_AABB_set(&aabb, -2.f, -4.f, (float)lvlWidth + 2.f, -2.f);

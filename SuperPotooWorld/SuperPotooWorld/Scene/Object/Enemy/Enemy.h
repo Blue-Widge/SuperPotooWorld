@@ -11,6 +11,13 @@ typedef enum EnemyType_e
     ENEMY_NUT,
 } EnemyType;
 
+typedef enum Direction_e
+{
+    NONE,
+    LEFT,
+    RIGHT
+} DetectionDirection;
+
 typedef struct Enemy_s
 {
     GameObject *m_object;
@@ -18,6 +25,8 @@ typedef struct Enemy_s
     int m_state;
     RE_Animator *m_animator;
     PE_Vec2 m_startPos;
+    DetectionDirection direction;
+    
 } Enemy;
 
 Enemy *Enemy_new(Scene *scene, int type, PE_Vec2 *position);
