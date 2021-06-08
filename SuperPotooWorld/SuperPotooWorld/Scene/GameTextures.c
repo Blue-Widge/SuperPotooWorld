@@ -12,9 +12,6 @@ GameTextures *GameTextures_new(RE_Renderer *renderer)
     textures = (GameTextures *)calloc(1, sizeof(GameTextures));
     if (!textures) goto ERROR_LABEL;
 
-    // TODO
-    // Chargez de nouvelles textures en fonction de vos besoins
-
     // Chargement des textures de la tilemap
     textures->ground = RE_Texture_newSet(
         "../Assets/Images/Map/Ground.png", renderer, 6, 8);
@@ -27,6 +24,30 @@ GameTextures *GameTextures_new(RE_Renderer *renderer)
     textures->oneWay = RE_Texture_new(
         "../Assets/Images/Map/OneWay.png", renderer);
     if (!textures->oneWay) goto ERROR_LABEL;
+    
+    textures->brick = RE_Texture_new(
+        "../Assets/Images/Map/Brick.png", renderer);
+    if (!textures->brick) goto ERROR_LABEL;
+    
+    textures->bonus = RE_Texture_newSet(
+        "../Assets/Images/Map/Bonus.png", renderer, 4, 4);
+    if (!textures->bonus) goto ERROR_LABEL;
+    
+    textures->hazelnut = RE_Texture_newSet(
+        "../Assets/Images/Enemies/Hazelnut.png", renderer, 4, 1);
+    if (!textures->hazelnut) goto ERROR_LABEL;
+    
+    textures->hazelnut_dead = RE_Texture_new(
+        "../Assets/Images/Enemies/HazelnutDead.png", renderer);
+    if (!textures->hazelnut_dead) goto ERROR_LABEL;
+    
+    textures->heart = RE_Texture_new(
+        "../Assets/Images/Collectables/Heart.png", renderer);
+    if (!textures->heart) goto ERROR_LABEL;
+    
+    textures->bonus_empty = RE_Texture_new(
+        "../Assets/Images/Map/BonusEmpty.png", renderer);
+    if (!textures->bonus_empty) goto ERROR_LABEL;
 
     // Chargement des textures du joueur
     textures->playerRunning = RE_Texture_newSet(
@@ -60,9 +81,6 @@ void GameTextures_free(GameTextures *textures)
     if (!textures)
         return;
 
-    // TODO
-    // Supprimez vos nouvelles textures
-
     RE_Texture_free(textures->ground);
     RE_Texture_free(textures->wood);
     RE_Texture_free(textures->oneWay);
@@ -70,6 +88,12 @@ void GameTextures_free(GameTextures *textures)
     RE_Texture_free(textures->playerFalling);
     RE_Texture_free(textures->firefly);
     RE_Texture_free(textures->background);
+    RE_Texture_free(textures->brick);
+    RE_Texture_free(textures->bonus_empty);
+    RE_Texture_free(textures->bonus);
+    RE_Texture_free(textures->hazelnut);
+    RE_Texture_free(textures->hazelnut_dead);
+    RE_Texture_free(textures->heart);
 
     free(textures);
 }

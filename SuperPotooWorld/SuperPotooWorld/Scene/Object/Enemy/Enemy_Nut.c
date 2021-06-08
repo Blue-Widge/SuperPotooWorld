@@ -10,6 +10,12 @@ int Nut_init(Enemy *enemy)
 {
     Scene *scene = GameObject_getScene(enemy->m_object);
     RE_Animator *animator = enemy->m_animator;
+    GameTextures* textures = Scene_getTextures(scene);
+
+    RE_TextureAnim* texAnim = RE_Animator_createTextureAnim(animator, textures->hazelnut, "Hazelnut");
+
+    RE_TextureAnim_setCycleTime(texAnim, 0.2f);
+    RE_Animator_playTextureAnim(animator, "Hazelnut");
 
     // TODO
     // Cette fonction est appelée lors de la création d'une noisette

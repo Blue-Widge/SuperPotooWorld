@@ -57,7 +57,7 @@ int Firefly_onStart(Collectable *collectable)
 
     // Création du collider
     PE_ColliderDef_setDefault(&colliderDef);
-    PE_Shape_setAsBox(&colliderDef.shape, -0.25f, -0.25f, 0.25f, 0.25f);
+    PE_Shape_setAsBox(&colliderDef.shape,0.0, 0.0, 1.0f, 1.0f);
     colliderDef.isTrigger = TRUE;
     colliderDef.filter.categoryBits = FILTER_COLLECTABLE | FILTER_VISIBLE;
     colliderDef.filter.maskBits = FILTER_PLAYER | FILTER_CAMERA;
@@ -66,6 +66,10 @@ int Firefly_onStart(Collectable *collectable)
 
     // Callback du collider
     PE_Collider_setOnTriggerEnter(collider, Firefly_onTriggerEnter);
+
+    RE_Animator* animator = Scene_getAnimators(scene)->firefly;
+    RE_Animator_playTextureAnim(animator, "Firefly");
+
 
     return EXIT_SUCCESS;
 
@@ -90,17 +94,14 @@ void Firefly_render(Collectable *collectable)
 {
     Scene *scene = GameObject_getScene(collectable->m_object);
     GameTextures *textures = Scene_getTextures(scene);
-    //GameAnimators *animators = Scene_getAnimators(scene);
+    GameAnimators *animators = Scene_getAnimators(scene);
     PE_Vec2 position = GameObject_getPosition(collectable->m_object);
     Camera *camera = Scene_getCamera(scene);
 
     float x, y;
+    position.x = collectable->m_startPos.x;
+    position.y = collectable->m_startPos.y + 1;
     Camera_worldToView(camera, &position, &x, &y);
-    y -= RE_Texture_getPartHeight(textures->firefly, 0) / 2.f;
-    x -= RE_Texture_getPartWidth(textures->firefly, 0) / 2.f;
-    RE_Texture_renderF(textures->firefly, 0, x, y);
+    RE_Animator_renderF(animators->firefly, x, y);
 
-    // TODO
-    // Initialisez un animateur de luciole dans la structure GameAnimators
-    // Utilisez cet animateur pour dessiner toutes les lucioles
 }

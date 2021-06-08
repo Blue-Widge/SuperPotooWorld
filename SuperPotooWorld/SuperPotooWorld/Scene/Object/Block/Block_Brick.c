@@ -8,12 +8,42 @@
 
 int Brick_onStart(Block *block)
 {
-    // TODO
-    // Inspirez-vous de la fonction Ground_onStart()
+    Scene *scene = GameObject_getScene(block->m_object);
+    PE_Vec2 *position = &block->m_startPos;
+    PE_AABB *aabb = &block->m_startAABB;
+    PE_World *world = NULL;
+    PE_Body *body = NULL;
+    PE_BodyDef bodyDef;
+    PE_Collider *collider = NULL;
+    PE_ColliderDef colliderDef;
 
+    // Ajout dans le moteur physique
+    world = Scene_getWorld(scene);
+
+    // Création du corps associé
+    PE_BodyDef_setDefault(&bodyDef);
+    bodyDef.type = PE_STATIC_BODY;
+    bodyDef.position = *position;
+    body = PE_World_createBody(world, &bodyDef);
+    if (!body) goto ERROR_LABEL;
+
+    GameObject_setBody(block->m_object, body);
+
+    // Création du collider
+    PE_ColliderDef_setDefault(&colliderDef);
+    PE_Shape_setAsBox(&colliderDef.shape,
+                      aabb->lower.x, aabb->lower.y, aabb->upper.x, aabb->upper.y);
+    colliderDef.filter.categoryBits = FILTER_BLOCK | FILTER_VISIBLE;
+    colliderDef.filter.maskBits = FILTER_PLAYER | FILTER_ENEMY | FILTER_CAMERA;
+    collider = PE_Body_createCollider(body, &colliderDef);
+    if (!collider) goto ERROR_LABEL;
     printf("Brick_onStart : Initialisation d'un bloc cassable\n");
 
     return EXIT_SUCCESS;
+
+    ERROR_LABEL:
+        printf("ERROR - Brick_onStart()\n");
+    return EXIT_FAILURE;
 }
 
 int Brick_onRespawn(Block *block)
@@ -28,16 +58,30 @@ int Brick_onRespawn(Block *block)
 
 void Brick_render(Block *block)
 {
-    // TODO
-    // Dessinez le bloc cassable.
 
-    printf("Brick_render : Affichage d'un bloc cassable\n");
+    Camera *camera = Scene_getCamera(block->m_object->m_scene);
+    GameTextures *textures = Scene_getTextures(block->m_object->m_scene);
+
+    float viewX, viewY;
+    PE_Vec2 position;
+    position.x = block->m_startPos.x;
+    position.y = block->m_startPos.y + 1;
+    Camera_worldToView(camera, &position, &viewX, &viewY);
+    
+    RE_Texture_render(textures->brick, 0, (int)viewX, (int)viewY);
+    
 }
 
 void Brick_hit(Block *block)
 {
-    // TODO
-    // Cette fonction doit être appelée par le joueur
-    // quand il entre en collision avec un bloc cassable.
-    // Modifiez le bonus en conséquence.
+    Player *player = NULL;
+    Scene *scene = GameObject_getScene(block->m_object);
+
+    player = Scene_getPlayer(scene);
+    
+    if (player)
+    {
+        Scene_disableObject(scene, block->m_object);
+    }
+    
 }

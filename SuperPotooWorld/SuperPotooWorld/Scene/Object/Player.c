@@ -26,6 +26,7 @@ void Player_aboveTriggerStay(PE_Trigger *trigger)
 {
     PE_Body *thisBody = PE_Trigger_getBody(trigger);
     GameObject *thisObject = PE_Body_getUserData(thisBody);
+
     if (!thisObject)
     {
         printf("ERROR - Player_aboveTriggerStay()\n");
@@ -125,6 +126,7 @@ void Player_onCollisionStay(PE_Collision *collision)
         case PE_BELOW:
             if (velocity.y > 0.f)
                 velocity.y = 0.f;
+            Block_hit(GameObject_getBlock(otherObject));
             break;
 
         case PE_RIGHT:

@@ -13,8 +13,16 @@ typedef struct GameTextures_s
     RE_Texture *playerFalling;
 
     RE_Texture *firefly;
+    RE_Texture *brick;
 
+    RE_Texture* hazelnut;
+    RE_Texture* hazelnut_dead;
+
+    RE_Texture *bonus;
+    RE_Texture *bonus_empty;
+  
     RE_Texture *background;
+    RE_Texture *heart;
 } GameTextures;
 
 GameTextures *GameTextures_new(RE_Renderer *renderer);

@@ -8,7 +8,7 @@ Camera *Scene_createCamera(Scene *scene, PE_AABB *worldView, PE_AABB *worldAABB)
 
 int Scene_isValidChar(char c)
 {
-    char validChar[] = { '\n', '.', '#', '=', 'W', 'C', 'e', 'S', 'X', 'o', '?', 'F' };
+    char validChar[] = { '\n', '.', '#', '=', 'W', 'C', 'e', 'S', 'X', 'o', '?', 'F', 'H' };
     int nbValidChar = sizeof(validChar) / sizeof(char);
     int i;
 
@@ -79,11 +79,7 @@ int Scene_getLevelDim(char *levelBuffer, long size, int *lvlWidth, int *lvlHeigh
     for (int i = 0; i < size; i++)
     {
         char c = levelBuffer[i];
-
-        // TODO
-        // Calculez la largeur et la hauteur du niveau
-        // La tableau levelBuffer contient les caractères de votre fichier de niveau
-        // avec un pré-traitement pour supprimer les caractères inutiles et la légende.
+        
         if (Scene_isValidChar(c))
         {
             if (c == '\n')
@@ -98,8 +94,6 @@ int Scene_getLevelDim(char *levelBuffer, long size, int *lvlWidth, int *lvlHeigh
 
     Width /= Height;
 
-    // TODO
-    // Remplacer les valeurs suivantes avec celles que vous avez calculées.
     *lvlWidth = Width;
     *lvlHeight = Height;
 
@@ -109,31 +103,18 @@ int Scene_getLevelDim(char *levelBuffer, long size, int *lvlWidth, int *lvlHeigh
 int Scene_parseLevelBuffer(Scene *scene, char *levelBuffer, long size, int lvlWidth, int lvlHeight)
 {
     Tilemap *tilemap = scene->m_tilemap;
-    PE_Vec2 position;
+    PE_Vec2 position = {0};
     PE_AABB aabb;
 
-    // TODO
-    // Cette fonction crée une scène par défaut.
-    // Vous devez remplacer le code qui suit pour interpréter le contenu de levelBuffer.
-    // Vous ne devez avoir qu'une seule boucle.
-    
-    // Exemple. Création d'un sol de hauteur 2
-    /*for (int y = lvlHeight - 1; y >= 0; y--)
-    {
-        for (int x = 0; x < lvlWidth; x++)
-        {
-            if (y >= 2)
-                Tilemap_setTile(tilemap, x, y, TILE_EMPTY);
-            else
-                Tilemap_setTile(tilemap, x, y, TILE_GROUND);
-        }
-    }*/
-    int x = 0, y = lvlHeight;
-    int w = lvlHeight;
+    int x = lvlWidth, y = 0;
+    int w = lvlWidth;
     for (int i = size -1; i >=0; --i)
     {
         char c = levelBuffer[i];
-        
+
+        PE_Vec2_set(&position, x, y);
+        PE_AABB_set(&aabb, 0, 0, 1, 1);
+
         switch (c)
         {
         case '.' : 
@@ -142,24 +123,52 @@ int Scene_parseLevelBuffer(Scene *scene, char *levelBuffer, long size, int lvlWi
         case '#':
             Tilemap_setTile(tilemap, x, y, TILE_GROUND);
             break;
-        case 'F' : 
+        case 'W':
             Tilemap_setTile(tilemap, x, y, TILE_WOOD);
             break;
+        case '=':
+            Tilemap_setTile(tilemap, x, y, TILE_ONE_WAY);
+            break;
         case 'S':
-            PE_Vec2_set(&scene->m_startPos, x, y+1.0f);
+            PE_Vec2_set(&scene->m_startPos, x, y);
+            break;
+            // Bloc cassable
+        case 'X':
+            Scene_createBlock(scene, BLOCK_BRICK, &position, &aabb);
+            break;
+            // Arrivee
+        case 'F':
+            Scene_createTool(scene, TOOL_FINISH, &position, &aabb);
+            break;
+            // Checkpoint
+        case 'C':
+            Scene_createTool(scene, TOOL_CHECKPOINT, &position, &aabb);
+            break;
+            // Bonus
+        case '?':
+            Scene_createBlock(scene, BLOCK_BONUS, &position, &aabb);
+            break;
+            // Luciole
+        case 'o':
+            Scene_createCollectable(scene, COLLECTABLE_FIREFLY, &position);
+            break;
+        case 'H':
+            Scene_createCollectable(scene, COLLECTABLE_HEART, &position);
+            break;
+            // Noisette
+        case 'e':
+            Scene_createEnemy(scene, ENEMY_NUT, &position);
             break;
         }
 
-        if (x >= lvlWidth)
+        if (x == 0)
         {
-            y = lvlHeight - w;
-            wy--;
-            x = 0;
+            ++y;
+            x = lvlWidth;
         }
         else {
-            x++;
+            --x;
         }
-        printf("x: %d, y: %d\n", x, y);
 
     }
 
@@ -275,7 +284,6 @@ Scene *Scene_new(RE_Renderer *renderer, FILE *levelFile, RE_Timer *time, float t
     if (exitStatus != EXIT_SUCCESS) goto ERROR_LABEL;
 
     Tilemap_initTiles(scene->m_tilemap);
-
     scene->m_player = Scene_createPlayer(scene, &scene->m_startPos);
     if (!scene->m_player) goto ERROR_LABEL;
 

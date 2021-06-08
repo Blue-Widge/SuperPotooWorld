@@ -27,6 +27,16 @@ GameAnimators *GameAnimators_new(Scene *scene)
     // Créez les animations des lucioles et bonus
     // Initialisez les animateurs
 
+    GameTextures* textures = Scene_getTextures(scene);
+    RE_TextureAnim* texAnim = RE_Animator_createTextureAnim(animators->bonus, textures->bonus, "Bonus");
+    if (!texAnim) goto ERROR_LABEL;
+    RE_TextureAnim_setCycleTime(texAnim, 0.2f);
+
+    texAnim = RE_Animator_createTextureAnim(animators->firefly, textures->firefly, "Firefly");
+    if (!texAnim) goto ERROR_LABEL;
+
+    RE_TextureAnim_setCycleTime(texAnim, 0.2f);
+
     return animators;
 
 ERROR_LABEL:

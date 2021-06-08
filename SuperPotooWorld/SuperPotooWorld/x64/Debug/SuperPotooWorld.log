@@ -1,3 +1,5 @@
 ﻿  Scene.c
-C:\Users\bluew\CLionProjects\SuperPotooWorld\SuperPotooWorld\SuperPotooWorld\SuperPotooWorld\Scene\Scene.c(149,46): warning C4244: 'fonction' : conversion de 'int' en 'float', perte possible de données
-C:\Users\bluew\CLionProjects\SuperPotooWorld\SuperPotooWorld\SuperPotooWorld\SuperPotooWorld\Scene\Scene.c(155,30): error C2065: 'w' : identificateur non déclaré
+C:\Users\isl4s\Documents\GitHub\SuperPotooWorld\SuperPotooWorld\SuperPotooWorld\Scene\Scene.c(152,46): warning C4244: 'function': conversion from 'int' to 'float', possible loss of data
+C:\Users\isl4s\Documents\GitHub\SuperPotooWorld\SuperPotooWorld\SuperPotooWorld\Scene\Scene.c(152,49): warning C4244: 'function': conversion from 'int' to 'float', possible loss of data
+C:\Users\isl4s\Documents\GitHub\SuperPotooWorld\SuperPotooWorld\SuperPotooWorld\Scene\Scene.c(132,9): warning C4189: 'w': local variable is initialized but not referenced
+  SuperPotooWorld.vcxproj -> C:\Users\isl4s\Documents\GitHub\SuperPotooWorld\SuperPotooWorld\x64\Debug\SuperPotooWorld.exe
