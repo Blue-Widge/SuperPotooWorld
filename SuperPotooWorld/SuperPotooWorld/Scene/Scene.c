@@ -306,6 +306,7 @@ void Scene_free(Scene *scene)
     Tilemap_free(scene->m_tilemap);
     Gizmos_free(scene->m_gizmos);
     Parallax_free(scene->m_parallax);
+    UITextures_free(scene->m_UItextures);
 
     // Destruction du moteur physique
     PE_World_free(scene->m_world);
