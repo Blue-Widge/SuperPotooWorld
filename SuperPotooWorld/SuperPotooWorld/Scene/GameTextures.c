@@ -271,7 +271,6 @@ GameTextures *GameTextures_new(RE_Renderer *renderer)
         "../Assets/Images/Collectables/RollingPowerUP_Fire.png", renderer, 1, 8);
     if (!textures->RollingPowerUP_Fire) goto ERROR_LABEL;
 
-<<<<<<< Updated upstream
     textures->IdlePlayer = RE_Texture_new(
         "../Assets/Images/Player/Idle.png", renderer);
     if (!textures->IdlePlayer) goto ERROR_LABEL;
@@ -283,7 +282,7 @@ GameTextures *GameTextures_new(RE_Renderer *renderer)
     textures->fireball = RE_Texture_new(
         "../Assets/Images/Player/FireBall.png", renderer);
     if (!textures->fireball) goto ERROR_LABEL;
-=======
+
     textures->background_default = load_background_default(renderer);
     if (!textures->background_default) goto ERROR_LABEL;
     
@@ -296,7 +295,6 @@ GameTextures *GameTextures_new(RE_Renderer *renderer)
     textures->background_03 = load_background_03(renderer);
     if (!textures->background_03) goto ERROR_LABEL;
 
->>>>>>> Stashed changes
     return textures;
 
 ERROR_LABEL:

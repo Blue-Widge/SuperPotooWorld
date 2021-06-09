@@ -140,7 +140,6 @@
     <ClInclude Include="Scene\Object\Collectable\Collectable.h" />
     <ClInclude Include="Scene\Object\Collectable\Collectable_Firefly.h" />
     <ClInclude Include="Scene\Object\Collectable\Collectable_Heart.h" />
-    <ClInclude Include="Scene\Object\Collectable\Collectable_Poweup.h" />
     <ClInclude Include="Scene\Object\Collectable\PowerUP_Fire.h" />
     <ClInclude Include="Scene\Object\Enemy\Enemy.h" />
     <ClInclude Include="Scene\Object\Enemy\Enemy_Nut.h" />
@@ -156,9 +155,6 @@
     <ClInclude Include="Scene\Tilemap.h" />
     <ClInclude Include="Settings.h" />
     <ClInclude Include="UITextures.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="Scene\Object\Collectable\Collectable_Poweup.c" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

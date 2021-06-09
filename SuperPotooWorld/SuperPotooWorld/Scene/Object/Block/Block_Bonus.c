@@ -85,8 +85,6 @@ void Bonus_hit(Block *block)
 
     ++block->m_nbHits;
 
-<<<<<<< Updated upstream
-    // FAIRE SPAWN MACHIN DE FEU OU LE RESTE QUE J'AI PAS FAIT MAIS C TRO KOOL DEJA
     if (block->m_nbHits == 1)
     {
         PE_Vec2 position = block->m_startPos;
@@ -94,8 +92,4 @@ void Bonus_hit(Block *block)
         Scene_createCollectable(GameObject_getScene(block->m_object), POWERUP_FIRE, &position);
         printf("nb hits block %d\n", block->m_nbHits);
     }
-=======
-   
-
->>>>>>> Stashed changes
 }

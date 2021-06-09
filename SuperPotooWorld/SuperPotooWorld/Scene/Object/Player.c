@@ -264,7 +264,6 @@ int Player_createAnimator(Player *player)
     GameTextures *textures = Scene_getTextures(scene);
     RE_Animator *animator = NULL;
     RE_TextureAnim *texAnim = NULL;
-    RE_ParamAnim *parAnim = NULL;
     int exitStatus = EXIT_SUCCESS;
 
     animator = RE_Animator_new();
@@ -618,7 +617,7 @@ int Player_update(GameObject *object)
 
     if(player->m_immune && RE_Timer_getElapsed(Scene_getTime(scene)) - player->m_immune_time > 2.0f)
     {
-        player->m_immune = 0.0f;
+        player->m_immune = FALSE;
         player->m_immune_time = -1.0f;
         player->m_damageableCollider = Player_makeDamageableCollider(player);
         PE_Collider_setOnCollisionStay(player->m_damageableCollider, Player_onTakeDamage);
@@ -790,16 +789,3 @@ ERROR_LABEL:
     printf("ERROR - Player_render()\n");
     return EXIT_FAILURE;
 }
-<<<<<<< Updated upstream
-=======
-
-void Player_PowerUP(Player* player, int type)
-{
-    switch (type)
-    {
-    case POWERUP_FIRE:
-
-        break;
-    }
-}
->>>>>>> Stashed changes
