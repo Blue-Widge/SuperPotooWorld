@@ -10,7 +10,7 @@ int Menu_createAnimator(Menu *menu)
     RE_Animator *animator = NULL;
     MenuTextures *textures = menu->m_textures;
     RE_TextureAnim *texAnim = NULL;
-    RE_ParamAnim *param = NULL;
+    RE_ParamAnim* param;
     int exitStatus = EXIT_SUCCESS;
 
     animator = RE_Animator_new();

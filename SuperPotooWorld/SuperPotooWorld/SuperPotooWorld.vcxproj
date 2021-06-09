@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="PowerUP_Fire.c" />
     <ClCompile Include="DataStructure\PHT.c" />
     <ClCompile Include="DataStructure\PVector.c" />
     <ClCompile Include="Menu\Menu.c" />
@@ -53,6 +54,7 @@
     <ClCompile Include="Scene\Scene.c" />
     <ClCompile Include="Scene\Tilemap.c" />
     <ClCompile Include="UITextures.c" />
+    <ClInclude Include="PowerUP_Fire.h" />
     <ClInclude Include="DataStructure\PHT.h" />
     <ClInclude Include="DataStructure\PVector.h" />
     <ClInclude Include="Menu\Menu.h" />

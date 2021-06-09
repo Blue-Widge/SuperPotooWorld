@@ -1,7 +1,7 @@
 #include "Collectable.h"
 #include "Collectable_Firefly.h"
 #include "Collectable_Heart.h"
-
+#include "../../../PowerUP_Fire.h"
 #include "../../Scene.h"
 
 #include <stdio.h>
@@ -81,7 +81,9 @@ int Collectable_onStart(GameObject *object)
     case COLLECTABLE_HEART:
         exitStatus = Heart_onStart(collectable);
         break;
-
+    case POWERUP_FIRE:
+        exitStatus = PowerUP_Fire_onStart(collectable);
+        break;
     default:
         printf("ERROR - Unknown collectable type\n");
         goto ERROR_LABEL;
@@ -115,7 +117,10 @@ int Collectable_onRespawn(GameObject *object)
     case COLLECTABLE_HEART:
         exitStatus = Heart_onRespawn(collectable);
         break;
-
+        //AJOUT
+    case POWERUP_FIRE:
+        exitStatus = PowerUP_Fire_onRespawn(collectable);
+        break;
     default:
         printf("ERROR - Unknown collectable type\n");
         goto ERROR_LABEL;
@@ -148,7 +153,10 @@ int Collectable_render(GameObject *object)
     case COLLECTABLE_HEART:
         Heart_render(collectable);
         break;
-
+    //AJOUT
+    case POWERUP_FIRE:
+        PowerUP_Fire_render(collectable);
+        break;
     default:
         break;
     }

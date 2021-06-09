@@ -67,6 +67,12 @@
     <Filter Include="Fichiers d%27en-tête\GameUI">
       <UniqueIdentifier>{2d388828-fdd9-4bf1-b522-37ed17d210e0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Fichiers sources\Scene\Object\PowerUP">
+      <UniqueIdentifier>{9ff3d989-0d23-404b-b159-36df87d27523}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\Scene\Object\PowerUP">
+      <UniqueIdentifier>{d492b2aa-2e93-4ca3-a3d3-ab8a0f9b3db5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c">
@@ -171,6 +177,9 @@
     <ClCompile Include="UITextures.c">
       <Filter>Fichiers sources\GameUI</Filter>
     </ClCompile>
+    <ClCompile Include="PowerUP_Fire.c">
+      <Filter>Fichiers sources\Scene\Object\PowerUP</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Settings.h">
@@ -274,6 +283,9 @@
     </ClInclude>
     <ClInclude Include="UITextures.h">
       <Filter>Fichiers d%27en-tête\GameUI</Filter>
+    </ClInclude>
+    <ClInclude Include="PowerUP_Fire.h">
+      <Filter>Fichiers d%27en-tête\Scene\Object\PowerUP</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

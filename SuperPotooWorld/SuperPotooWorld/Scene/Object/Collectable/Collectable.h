@@ -9,7 +9,9 @@ typedef struct Scene_s Scene;
 typedef enum CollectableType_e
 {
     COLLECTABLE_FIREFLY,
-    COLLECTABLE_HEART
+    COLLECTABLE_HEART,
+
+    POWERUP_FIRE
 } CollectableType;
 
 typedef struct Collectable_s

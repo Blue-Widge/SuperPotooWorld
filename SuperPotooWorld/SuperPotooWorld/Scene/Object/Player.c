@@ -745,3 +745,13 @@ ERROR_LABEL:
     printf("ERROR - Player_render()\n");
     return EXIT_FAILURE;
 }
+
+Player_PowerUP(Player* player, int type)
+{
+    switch (type)
+    {
+    case POWERUP_FIRE:
+
+        break;
+    }
+}

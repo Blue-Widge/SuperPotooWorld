@@ -11,6 +11,9 @@ typedef struct GameAnimators_s
 
     RE_Animator *firefly;
     RE_Animator *bonus;
+
+    //AJOUT
+    RE_Animator* RollingPowerUP_Fire;
 } GameAnimators;
 
 GameAnimators *GameAnimators_new(Scene *scene);
