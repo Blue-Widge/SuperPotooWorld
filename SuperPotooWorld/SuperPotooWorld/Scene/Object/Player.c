@@ -22,6 +22,39 @@ void Player_belowTriggerStay(PE_Trigger *trigger);
 void Player_belowTriggerExit(PE_Trigger *trigger);
 void Player_onCollisionStay(PE_Collision *collision);
 
+PE_Collider* Player_makeDefaultCollider(Player* player)
+{
+    PE_ColliderDef colliderDef;    
+    PE_ColliderDef_setDefault(&colliderDef);
+    PE_Shape_setAsBox(&colliderDef.shape, -0.35f, 0.01f, 0.35f, 0.95f);
+    colliderDef.filter.categoryBits = FILTER_PLAYER | FILTER_VISIBLE;
+    colliderDef.filter.maskBits = FILTER_BLOCK | FILTER_CAMERA | FILTER_COLLECTABLE | FILTER_TOOL;
+     return PE_Body_createCollider(GameObject_getBody(Player_getObject(player)), &colliderDef);
+}
+
+
+PE_Collider* Player_makeDamagerCollider(Player* player)
+{
+    PE_ColliderDef colliderDef;    
+    PE_ColliderDef_setDefault(&colliderDef);
+    PE_Shape_setAsBox(&colliderDef.shape, -0.35f, 0.01f, 0.35f, 0.95f);
+    colliderDef.isTrigger = TRUE;
+    colliderDef.filter.categoryBits = FILTER_DAMAGER | FILTER_VISIBLE;
+    colliderDef.filter.maskBits = FILTER_DAMAGEABLE;
+    return PE_Body_createCollider(GameObject_getBody(Player_getObject(player)), &colliderDef);
+}
+
+PE_Collider* Player_makeDamageableCollider(Player* player)
+{
+    PE_ColliderDef colliderDef;    
+    PE_ColliderDef_setDefault(&colliderDef);
+    PE_Shape_setAsBox(&colliderDef.shape, -0.35f, 0.01f, 0.35f, 0.95f);
+    colliderDef.filter.categoryBits = FILTER_DAMAGEABLE | FILTER_VISIBLE;
+    colliderDef.filter.maskBits = FILTER_DAMAGER;
+    return PE_Body_createCollider(GameObject_getBody(Player_getObject(player)), &colliderDef);
+}
+
+
 void Player_aboveTriggerStay(PE_Trigger *trigger)
 {
     PE_Body *thisBody = PE_Trigger_getBody(trigger);
@@ -93,6 +126,58 @@ void Player_belowTriggerExit(PE_Trigger *trigger)
     }
 }
 
+void Player_onTakeDamage(PE_Collision* collision)
+{
+
+    PE_Body *thisBody = PE_Collision_getBody(collision);
+    PE_Body *otherBody = PE_Collision_getOtherBody(collision);
+    GameObject *thisObject = PE_Body_getUserData(thisBody);
+    GameObject *otherObject = PE_Body_getUserData(otherBody);
+
+    if (!thisObject || !otherObject)
+    {
+        printf("ERROR - Player_onCollisionStay()\n");
+        return;
+    }
+
+    // TODO
+    // Vous pouvez infliger des dommages aux ennemis dans cette fonction
+    // Utilisez GameObject_getEnemy(otherObject) et testez le pointeur
+    if (GameObject_getType(otherObject) == GAME_ENEMY)
+    {
+        int relPos = PE_Collision_getRelativePosition(collision);
+        PE_Vec2 velocity;
+
+        switch (relPos)
+        {
+        case PE_ABOVE:
+            //Kill the enemy
+            Player_bounce(GameObject_getPlayer(thisObject));
+            Enemy_damage(GameObject_getEnemy(otherObject));
+            break;
+        case PE_LEFT:
+            velocity.y = 0.0f;
+
+            Player_damage(GameObject_getPlayer(thisObject));
+            PE_Body_setCollisionResponse(thisBody, &velocity);
+        case PE_RIGHT:
+            velocity.y = 0.0f;
+
+            Player_damage(GameObject_getPlayer(thisObject));
+            PE_Body_setCollisionResponse(thisBody, &velocity);
+            break;
+        case PE_BELOW:
+            velocity.y = 0.0f;
+            Player_damage(GameObject_getPlayer(thisObject));
+            PE_Body_setCollisionResponse(thisBody, &velocity);
+            break;
+        default:
+            break;
+        }
+    }
+    
+}
+
 void Player_onCollisionStay(PE_Collision *collision)
 {
     PE_Body *thisBody = PE_Collision_getBody(collision);
@@ -109,7 +194,7 @@ void Player_onCollisionStay(PE_Collision *collision)
     // TODO
     // Vous pouvez infliger des dommages aux ennemis dans cette fonction
     // Utilisez GameObject_getEnemy(otherObject) et testez le pointeur
-    if (GameObject_getType(otherObject) == ENEMY_NUT)
+    if (GameObject_getType(otherObject) == GAME_ENEMY)
     {
         int relPos = PE_Collision_getRelativePosition(collision);
         PE_Vec2 velocity;
@@ -119,26 +204,26 @@ void Player_onCollisionStay(PE_Collision *collision)
         case PE_ABOVE:
             // Take damages
             velocity.y = 2.0f;
-            Player_damage(thisBody);
+            Player_damage(GameObject_getPlayer(thisObject));
             PE_Body_setCollisionResponse(thisBody, &velocity);
             break;
         case PE_LEFT:
             // Take damages and get bounced to the right
-            velocity.y = 2.0f;
-            velocity.x = 4.f;
-            Player_damage(thisBody);
+            velocity.y = 10.0f;
+            velocity.x = -8.0f;
+            Player_damage(GameObject_getPlayer(thisObject));
             PE_Body_setCollisionResponse(thisBody, &velocity);
-            break;
         case PE_RIGHT:
             //Take damages and get bounced to the left
-            velocity.y = 4.f;
+            velocity.y = 10.f;
             velocity.x = -2.0f;
-            Player_damage(thisBody);
+            Player_damage(GameObject_getPlayer(thisObject));
             PE_Body_setCollisionResponse(thisBody, &velocity);
             break;
         case PE_BELOW:
             //Kill the enemy
-            Player_bounce(thisBody);
+            Player_bounce(GameObject_getPlayer(thisObject));
+            Enemy_damage(GameObject_getEnemy(otherObject));
             break;
         default:
             break;
@@ -327,13 +412,15 @@ int Player_onStart(GameObject *object)
     GameObject_setBody(player->m_object, body);
 
     // Création du collider principal
-    PE_ColliderDef_setDefault(&colliderDef);
-    PE_Shape_setAsBox(&colliderDef.shape, -0.35f, 0.01f, 0.35f, 0.95f);
-    colliderDef.filter.categoryBits = FILTER_PLAYER | FILTER_VISIBLE;
-    colliderDef.filter.maskBits = FILTER_BLOCK | FILTER_CAMERA | FILTER_COLLECTABLE | FILTER_ENEMY | FILTER_TOOL;
-    mainCollider = PE_Body_createCollider(body, &colliderDef);
+    mainCollider = Player_makeDefaultCollider(player);
     if (!mainCollider) goto ERROR_LABEL;
 
+    PE_Collider* damageableCollider = Player_makeDamageableCollider(player);
+    if (!damageableCollider) goto ERROR_LABEL;
+
+    PE_Collider* damagerCollider = Player_makeDamagerCollider(player);
+    if (!damagerCollider) goto ERROR_LABEL;
+    
     // Création du détecteur en dessous du sol
     PE_ColliderDef_setDefault(&colliderDef);
     PE_Shape_setAsBox(&colliderDef.shape, -0.35f, -0.1f, 0.35f, 0.f);
@@ -360,6 +447,10 @@ int Player_onStart(GameObject *object)
     PE_Collider_setOnTriggerExit(aboveDetector, Player_aboveTriggerExit);
     PE_Collider_setOnTriggerStay(belowDetector, Player_belowTriggerStay);
     PE_Collider_setOnTriggerExit(belowDetector, Player_belowTriggerExit);
+
+    PE_Collider_setOnCollisionStay(damageableCollider, Player_onTakeDamage);
+
+    player->m_damageableCollider = damageableCollider;
 
     // Activation des méthodes de la classe mère
     exitStatus = Scene_setToUpdate(scene, object);
@@ -393,7 +484,6 @@ int Player_onRespawn(GameObject *object)
 
     scene = GameObject_getScene(object);
     body = GameObject_getBody(object);
-
     
     // Réinitialisez les paramètres du joueur ici lorsqu'il réapparait après avoir perdu une vie
 
@@ -429,34 +519,30 @@ void Player_setStartPosition(Player *player, PE_Vec2 *position)
 
 void Player_bounce(Player *player)
 {
-    
-    // Améliorez cette fonction pour que le joueur rebondisse quand elle est appelée
-    // C'est l'ennemi qui appelle cette fonction quand il entre en collision avec le joueur et qu'il meurt.
-    PE_Vec2 velocity = GameObject_getVelocity(player);
-    velocity.y = 1.0f;
-    PE_Body_setVelocity(player, &velocity);
-
-    printf("Player_bounce() : Po rebondit sur une noisette magique !\n");
+    player->m_should_bounce = TRUE;
 }
 
 void Player_damage(Player *player)
 {
+
+    if(player->m_immune) { return; }
+    
     Scene *scene = GameObject_getScene(player->m_object);
 
     
     // Améliorez cette fonction avec une gestion des coeurs ou des vies
     // Vous pouvez modifier les stats du joueur
     // Vous pouvez quitter le jeu en appelant Scene_gameOver(scene);
-
+    
     player->m_stats.nbHearts--;
     if (player->m_stats.nbHearts < 0)
     {
         Player_kill(player);
     }
 
-    printf("Player_damage() : Po a mal ! Nombre de coeurs restants : %d\n", player->m_stats.nbHearts);
+    player->m_immune = 1;
+    player->m_immune_time = RE_Timer_getElapsed(Scene_getTime(scene));
 
-    Scene_respawn(scene);
 }
 
 void Player_kill(Player *player)
@@ -484,8 +570,6 @@ void Player_addFirefly(Player *player)
     
     // Améliorez cette fonction avec une gestion lucioles et des vies
     player->m_stats.nbFireflies++;
-
-    printf("Player_addFirefly() : Po gobe une luciole !\n");
 }
 
 void Player_addHeart(Player *player)
@@ -497,7 +581,6 @@ void Player_addHeart(Player *player)
         player->m_stats.nbHearts++;
     }
 
-    printf("Player_addHeart() : Po gagne un coeur ! Nombre de coeurs restants : %d\n", player->m_stats.nbHearts);
 }
 
 int Player_update(GameObject *object)
@@ -515,6 +598,13 @@ int Player_update(GameObject *object)
     scene = GameObject_getScene(object);
     time = Scene_getTime(scene);
     input = Scene_getInput(scene);
+
+    if(player->m_immune && RE_Timer_getElapsed(Scene_getTime(scene)) - player->m_immune_time > 2.0f)
+    {
+        player->m_immune = 0.0f;
+        player->m_immune_time = -1.0f;
+        player->m_damageableCollider = Player_makeDamageableCollider(player);
+    }
 
     // Récupération des actions de l'utilisateur
     player->m_hDirection = input->hAxis;
@@ -557,9 +647,23 @@ int Player_fixedUpdate(GameObject *object)
     // Initialisation du booléen indiquant si le joueur touche le sol
     player->m_onGround = player->m_belowDetector && !player->m_aboveDetector;
 
+    if(player->m_immune && player->m_damageableCollider)
+    {
+        PE_Body_removeCollider(player->m_damageableCollider->m_body, player->m_damageableCollider);
+        player->m_damageableCollider = NULL;
+    }
+
     // TODO
     // Améliorer cette fonction, et il y a beaucoup à faire !
 
+    PE_Body_getVelocity(body, &velocity);
+    velocity.x = player->m_hDirection * 8.f;
+    if (player->m_should_bounce)
+    {
+        velocity.y = 17.f;
+        player->m_should_bounce = FALSE;
+    }
+    PE_Body_setVelocity(body, &velocity);
 
     // Mise à jour de l'état du joueur
     if (player->m_onGround && (player->m_state == PLAYER_FALLING))
