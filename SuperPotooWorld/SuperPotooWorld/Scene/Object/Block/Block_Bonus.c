@@ -34,7 +34,7 @@ int Bonus_onStart(Block *block)
     PE_Shape_setAsBox(&colliderDef.shape,
                       aabb->lower.x, aabb->lower.y, aabb->upper.x, aabb->upper.y);
     colliderDef.filter.categoryBits = FILTER_BLOCK | FILTER_VISIBLE;
-    colliderDef.filter.maskBits = FILTER_PLAYER | FILTER_ENEMY | FILTER_CAMERA;
+    colliderDef.filter.maskBits = FILTER_BLOCK | FILTER_PLAYER | FILTER_ENEMY | FILTER_CAMERA | FILTER_COLLECTABLE;
     collider = PE_Body_createCollider(body, &colliderDef);
     if (!collider) goto ERROR_LABEL;
 
@@ -75,8 +75,17 @@ void Bonus_render(Block *block)
 
 void Bonus_hit(Block *block)
 {
+
+    if(!block->m_nbHits)
+    {
+        PE_Vec2 position = block->m_startPos;
+        position.y += 1.f;
+        Scene_createCollectable(GameObject_getScene(block->m_object), POWERUP_FIRE, &position);
+    }
+
     ++block->m_nbHits;
 
+<<<<<<< Updated upstream
     // FAIRE SPAWN MACHIN DE FEU OU LE RESTE QUE J'AI PAS FAIT MAIS C TRO KOOL DEJA
     if (block->m_nbHits == 1)
     {
@@ -85,4 +94,8 @@ void Bonus_hit(Block *block)
         Scene_createCollectable(GameObject_getScene(block->m_object), POWERUP_FIRE, &position);
         printf("nb hits block %d\n", block->m_nbHits);
     }
+=======
+   
+
+>>>>>>> Stashed changes
 }

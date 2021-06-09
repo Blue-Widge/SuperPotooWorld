@@ -6,5 +6,6 @@
 typedef struct Tool_s Tool;
 
 int Finish_onStart(Tool *tool);
+void Finish_render(Tool *tool);
 
 #endif

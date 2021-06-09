@@ -110,6 +110,16 @@ int Tilemap_initCollider(Tilemap *tilemap)
                 Block *block = Scene_createBlock(scene, BLOCK_GROUND, &position, &aabb);
                 if (!block) goto ERROR_LABEL;
             }
+
+            if(tile->m_type == TILE_ONE_WAY)
+            {
+                PE_Vec2 position;
+                PE_AABB aabb;
+                PE_Vec2_set(&position, (float)x, (float)(y + 1));
+                PE_AABB_set(&aabb, 0.f, -0.25f, 1.0f, 0.f);
+                Block *block = Scene_createBlock(scene, BLOCK_ONE_WAY, &position, &aabb);
+                if (!block) goto ERROR_LABEL;
+            }
         }
     }
 

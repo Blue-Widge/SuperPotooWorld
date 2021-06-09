@@ -135,11 +135,6 @@ int Nut_onRespawn(Enemy *enemy)
 
 int Nut_fixedUpdate(Enemy *enemy)
 {
-    // TODO
-    // Utilisez cette fonction pour modifier la physique d'une noisette.
-    // Vous pouvez la mettre en mouvement quand elle est dans l'état NUT_STARTING.
-    // Cet état signifie qu'elle a vu le joueur mais qu'elle ne tourne pas encore.
-
     GameObject* object = enemy->m_object;
     Scene *scene = NULL;
     RE_Timer *time = NULL;
@@ -206,7 +201,6 @@ void Nut_onCollisionEnter(PE_Collision* collision)
         case PE_BELOW:
             if (velocity.y > 0.f)
                 velocity.y = 0.f;
-            Block_hit(GameObject_getBlock(otherObject));
             break;
 
         case PE_RIGHT:
@@ -238,9 +232,5 @@ void Nut_render(Enemy *enemy)
 
 void Nut_damage(Enemy *enemy)
 {
-    // TODO
-    // Faire disparaître la noisette en cas de dommage.
-    // Cette fonction peut être appelée par le joueur quand il entre en collision
-    // avec un noisette et qu'il est situé au-dessus.
     Scene_removeObject(GameObject_getScene(Enemy_getObject(enemy)), Enemy_getObject(enemy));
 }

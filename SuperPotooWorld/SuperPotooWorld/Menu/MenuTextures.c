@@ -32,7 +32,7 @@ MenuTextures *MenuTextures_new(RE_Renderer *renderer)
 
     // Chargement du fond
     textures->background = RE_Texture_new(
-        "../Assets/Images/Background/Full.png", renderer);
+        "../Assets/Images/Backgrounds/Default/Full.png", renderer);
     if (!textures->background) goto ERROR_LABEL;
 
     return textures;

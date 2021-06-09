@@ -34,7 +34,7 @@ int Brick_onStart(Block *block)
     PE_Shape_setAsBox(&colliderDef.shape,
                       aabb->lower.x, aabb->lower.y, aabb->upper.x, aabb->upper.y);
     colliderDef.filter.categoryBits = FILTER_BLOCK | FILTER_VISIBLE;
-    colliderDef.filter.maskBits = FILTER_PLAYER | FILTER_ENEMY | FILTER_CAMERA;
+    colliderDef.filter.maskBits = FILTER_PLAYER | FILTER_ENEMY | FILTER_CAMERA | FILTER_COLLECTABLE;
     collider = PE_Body_createCollider(body, &colliderDef);
     if (!collider) goto ERROR_LABEL;
     printf("Brick_onStart : Initialisation d'un bloc cassable\n");
@@ -74,14 +74,6 @@ void Brick_render(Block *block)
 
 void Brick_hit(Block *block)
 {
-    Player *player = NULL;
     Scene *scene = GameObject_getScene(block->m_object);
-
-    player = Scene_getPlayer(scene);
-    
-    if (player)
-    {
-        Scene_disableObject(scene, block->m_object);
-    }
-    
+    Scene_disableObject(scene, block->m_object);
 }

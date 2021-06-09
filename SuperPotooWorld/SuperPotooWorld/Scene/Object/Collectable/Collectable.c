@@ -1,17 +1,19 @@
 #include "Collectable.h"
 #include "Collectable_Firefly.h"
 #include "Collectable_Heart.h"
-#include "../../../PowerUP_Fire.h"
 #include "../../Scene.h"
 
 #include <stdio.h>
 #include <stdlib.h>
+
+#include "PowerUP_Fire.h"
 
 // Fonctions du GameObject
 int Collectable_free(GameObject *object);
 int Collectable_onStart(GameObject *object);
 int Collectable_onRespawn(GameObject *object);
 int Collectable_render(GameObject *object);
+int Collectable_fixedUpdate(GameObject *object);
 
 Collectable *Collectable_new(Scene *scene, int type, PE_Vec2 *position)
 {
@@ -35,6 +37,10 @@ Collectable *Collectable_new(Scene *scene, int type, PE_Vec2 *position)
     object->cm_onStart = Collectable_onStart;
     object->cm_onRespawn = Collectable_onRespawn;
     object->cm_render = Collectable_render;
+    object->cm_fixedUpdate = Collectable_fixedUpdate;
+
+    int exitStatus = Scene_setToFixedUpdate(scene, object);
+    if (exitStatus != EXIT_SUCCESS) goto ERROR_LABEL;
 
     return collectable;
 
@@ -42,6 +48,32 @@ ERROR_LABEL:
     printf("ERROR - Collectable_new()\n");
     GameObject_free(object);
     return NULL;
+}
+
+int Collectable_fixedUpdate(GameObject* object)
+{
+    Collectable *collectable = NULL;
+    int exitStatus;
+
+    if (!object) goto ERROR_LABEL;
+
+    collectable = GameObject_getCollectable(object);
+    if (!collectable) goto ERROR_LABEL;
+
+    switch (collectable->m_type)
+    {
+        case POWERUP_FIRE:
+            return PowerUP_Fire_fixedUpdate(object);
+        default:
+            break;
+    }
+
+    return EXIT_SUCCESS;
+
+    ERROR_LABEL:
+    printf("ERROR - Collectable_fixedUpdate()\n");
+    return EXIT_FAILURE;
+    
 }
 
 int Collectable_free(GameObject *object)

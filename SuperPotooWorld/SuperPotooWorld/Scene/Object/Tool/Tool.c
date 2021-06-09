@@ -107,8 +107,8 @@ ERROR_LABEL:
     printf("ERROR - Tool_onStart()\n");
     return EXIT_FAILURE;
 }
-
-/*int Tool_onRespawn(GameObject *object)
+/*
+int Tool_onRespawn(GameObject *object)
 {
     Tool *tool = NULL;
     int exitStatus = EXIT_SUCCESS;
@@ -118,11 +118,9 @@ ERROR_LABEL:
     tool = GameObject_getTool(object);
     if (!tool) goto ERROR_LABEL;
 
-    switch (tool->m_type)
+    switch (tool->m_type)        
     {
     default:
-        printf("ERROR - This tool cannot be respawn\n");
-        goto ERROR_LABEL;
         break;
     }
     if (exitStatus != EXIT_SUCCESS) goto ERROR_LABEL;
@@ -147,6 +145,10 @@ int Tool_render(GameObject *object)
     {
     case TOOL_CHECKPOINT:
         Checkpoint_render(tool);
+        break;
+
+    case TOOL_FINISH:
+        Finish_render(tool);
         break;
 
     default:

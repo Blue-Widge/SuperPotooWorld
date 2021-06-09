@@ -24,11 +24,8 @@ GameAnimators *GameAnimators_new(Scene *scene)
     animators->bonus = RE_Animator_new();
     if (!animators->bonus) goto ERROR_LABEL;
     
-    // AJOUTS
-
     animators->RollingPowerUP_Fire = RE_Animator_new();
     if (!animators->RollingPowerUP_Fire) goto ERROR_LABEL;
-
 
     GameTextures* textures = Scene_getTextures(scene);
     
@@ -39,8 +36,6 @@ GameAnimators *GameAnimators_new(Scene *scene)
     texAnim = RE_Animator_createTextureAnim(animators->firefly, textures->firefly, "Firefly");
     if (!texAnim) goto ERROR_LABEL;
     RE_TextureAnim_setCycleTime(texAnim, 0.2f);
-
-    // AJOUT
 
     texAnim = RE_Animator_createTextureAnim(animators->RollingPowerUP_Fire, textures->PowerUP_Fire, "RollingPowerUP_Fire");
     if (!texAnim) goto ERROR_LABEL;

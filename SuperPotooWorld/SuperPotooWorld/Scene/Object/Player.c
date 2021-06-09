@@ -140,9 +140,6 @@ void Player_onTakeDamage(PE_Collision* collision)
         return;
     }
 
-    // TODO
-    // Vous pouvez infliger des dommages aux ennemis dans cette fonction
-    // Utilisez GameObject_getEnemy(otherObject) et testez le pointeur
     if (GameObject_getType(otherObject) == GAME_ENEMY)
     {
         int relPos = PE_Collision_getRelativePosition(collision);
@@ -191,9 +188,6 @@ void Player_onCollisionStay(PE_Collision *collision)
         return;
     }
 
-    // TODO
-    // Vous pouvez infliger des dommages aux ennemis dans cette fonction
-    // Utilisez GameObject_getEnemy(otherObject) et testez le pointeur
     if (GameObject_getType(otherObject) == GAME_ENEMY)
     {
         int relPos = PE_Collision_getRelativePosition(collision);
@@ -234,7 +228,7 @@ void Player_onCollisionStay(PE_Collision *collision)
         int relPos = PE_Collision_getRelativePosition(collision);
         PE_Vec2 velocity;
         PE_Body_getVelocity(thisBody, &velocity);
-
+        Block* block = GameObject_getBlock(otherObject);
         switch (relPos)
         {
         case PE_ABOVE:
@@ -243,9 +237,13 @@ void Player_onCollisionStay(PE_Collision *collision)
             break;
 
         case PE_BELOW:
-            if (velocity.y > 0.f)
-                velocity.y = 0.f;
-            Block_hit(GameObject_getBlock(otherObject));
+
+            if(block->m_type != BLOCK_ONE_WAY)
+            {
+                if (velocity.y > 0.f)
+                    velocity.y = 0.f;
+                Block_hit(GameObject_getBlock(otherObject));
+            }
             break;
 
         case PE_RIGHT:
@@ -286,8 +284,6 @@ int Player_createAnimator(Player *player)
 
     RE_TextureAnim_setCycleTime(texAnim, 0.2f);
 
-    // TODO
-    // Définissez d'autres animations
     texAnim = RE_Animator_createTextureAnim(animator, textures->playerRunningFire, "RunningFire");
     if (!texAnim) goto ERROR_LABEL;
 
@@ -417,9 +413,6 @@ int Player_onStart(GameObject *object)
 
     PE_Collider* damageableCollider = Player_makeDamageableCollider(player);
     if (!damageableCollider) goto ERROR_LABEL;
-
-    PE_Collider* damagerCollider = Player_makeDamagerCollider(player);
-    if (!damagerCollider) goto ERROR_LABEL;
     
     // Création du détecteur en dessous du sol
     PE_ColliderDef_setDefault(&colliderDef);
@@ -484,6 +477,17 @@ int Player_onRespawn(GameObject *object)
 
     scene = GameObject_getScene(object);
     body = GameObject_getBody(object);
+
+    player->m_immune = FALSE;
+    player->m_immune_time = -1;
+
+    if(player->m_damageableCollider)
+    {
+        PE_Body_removeCollider(body, player->m_damageableCollider);
+    }
+
+    player->m_damageableCollider = Player_makeDamageableCollider(player);
+    PE_Collider_setOnCollisionStay(player->m_damageableCollider, Player_onTakeDamage);
     
     // Réinitialisez les paramètres du joueur ici lorsqu'il réapparait après avoir perdu une vie
 
@@ -539,9 +543,11 @@ void Player_damage(Player *player)
     {
         Player_kill(player);
     }
-
-    player->m_immune = 1;
-    player->m_immune_time = RE_Timer_getElapsed(Scene_getTime(scene));
+    else
+    {
+        player->m_immune = TRUE;
+        player->m_immune_time = RE_Timer_getElapsed(Scene_getTime(scene));
+    }
 
 }
 
@@ -557,11 +563,9 @@ void Player_kill(Player *player)
     player->m_stats.nbLives--;
     if (player->m_stats.nbLives < 0)
     {
-        Scene_gameOver(scene);
+        //Scene_gameOver(scene);
     }
-    printf(" Nombre de vies : %d\n", player->m_stats.nbLives);
-    printf("Player_kill() : Po est mort !\n");
-
+    
     Scene_respawn(scene);
 }
 
@@ -617,6 +621,8 @@ int Player_update(GameObject *object)
         player->m_immune = 0.0f;
         player->m_immune_time = -1.0f;
         player->m_damageableCollider = Player_makeDamageableCollider(player);
+        PE_Collider_setOnCollisionStay(player->m_damageableCollider, Player_onTakeDamage);
+
     }
 
     // Récupération des actions de l'utilisateur
@@ -784,3 +790,16 @@ ERROR_LABEL:
     printf("ERROR - Player_render()\n");
     return EXIT_FAILURE;
 }
+<<<<<<< Updated upstream
+=======
+
+void Player_PowerUP(Player* player, int type)
+{
+    switch (type)
+    {
+    case POWERUP_FIRE:
+
+        break;
+    }
+}
+>>>>>>> Stashed changes

@@ -3,6 +3,14 @@
 
 #include "../Settings.h"
 
+typedef struct Background_s
+{
+    
+    RE_Texture** layers;
+    int layer_count;
+    
+} Background;
+
 typedef struct GameTextures_s
 {
     RE_Texture *ground;
@@ -23,11 +31,10 @@ typedef struct GameTextures_s
   
     RE_Texture *background;
 
-    RE_Texture* background_layer_0;
-    RE_Texture* background_layer_1;
-    RE_Texture* background_layer_2;
-    RE_Texture* background_layer_3;
-    RE_Texture* background_layer_4;
+    Background* background_default;
+    Background* background_01;
+    Background* background_02;
+    Background* background_03;
     
     RE_Texture *heart;
 
@@ -35,6 +42,11 @@ typedef struct GameTextures_s
 
     RE_Texture* playerRunningFire;
     RE_Texture* playerFallingFire;
+
+    RE_Texture* finish;
+    
+    RE_Texture* checkpoint_enabled;
+    RE_Texture* checkpoint_disabled;
 
     RE_Texture* PowerUP_Fire;
     RE_Texture* RollingPowerUP_Fire;

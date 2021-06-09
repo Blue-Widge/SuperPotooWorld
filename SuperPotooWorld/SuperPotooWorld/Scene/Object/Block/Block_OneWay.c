@@ -29,16 +29,16 @@ int OneWay_onStart(Block *block)
     if (!body) goto ERROR_LABEL;
 
     GameObject_setBody(block->m_object, body);
-
+    
     // Création du collider
     PE_ColliderDef_setDefault(&colliderDef);
     PE_Shape_setAsBox(&colliderDef.shape,
                       aabb->lower.x, aabb->lower.y, aabb->upper.x, aabb->upper.y);
     colliderDef.filter.categoryBits = FILTER_BLOCK;
+    colliderDef.isOneWay = TRUE;
     colliderDef.filter.maskBits = FILTER_PLAYER | FILTER_ENEMY;
     collider = PE_Body_createCollider(body, &colliderDef);
     if (!collider) goto ERROR_LABEL;
-    printf("OneWay_onStart : Initialisation d'un bloc OneWay\n");
 
     return EXIT_SUCCESS;
 

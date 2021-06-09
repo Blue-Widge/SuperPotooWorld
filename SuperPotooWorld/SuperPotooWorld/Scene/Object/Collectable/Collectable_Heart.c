@@ -66,7 +66,7 @@ int Heart_onStart(Collectable *collectable)
     return EXIT_SUCCESS;
 
     ERROR_LABEL:
-        printf("ERROR - Firefly_onStart()\n");
+        printf("ERROR - Heart_onStart()\n");
     return EXIT_FAILURE;
 
 }
