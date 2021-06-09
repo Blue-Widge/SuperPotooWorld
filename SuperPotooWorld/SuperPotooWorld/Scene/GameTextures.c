@@ -108,6 +108,17 @@ GameTextures *GameTextures_new(RE_Renderer *renderer)
         "../Assets/Images/Collectables/RollingPowerUP_Fire.png", renderer, 1, 8);
     if (!textures->RollingPowerUP_Fire) goto ERROR_LABEL;
 
+    textures->IdlePlayer = RE_Texture_new(
+        "../Assets/Images/Player/Idle.png", renderer);
+    if (!textures->IdlePlayer) goto ERROR_LABEL;
+
+    textures->IdleFirePlayer = RE_Texture_new(
+        "../Assets/Images/Player/IdleFire.png", renderer);
+    if (!textures->IdleFirePlayer) goto ERROR_LABEL;
+
+    textures->fireball = RE_Texture_new(
+        "../Assets/Images/Player/FireBall.png", renderer);
+    if (!textures->fireball) goto ERROR_LABEL;
     return textures;
 
 ERROR_LABEL:
@@ -147,5 +158,9 @@ void GameTextures_free(GameTextures *textures)
     RE_Texture_free(textures->PowerUP_Fire);
     RE_Texture_free(textures->RollingPowerUP_Fire);
 
+    RE_Texture_free(textures->IdlePlayer);
+    RE_Texture_free(textures->IdleFirePlayer);
+
+    RE_Texture_free(textures->fireball);
     free(textures);
 }

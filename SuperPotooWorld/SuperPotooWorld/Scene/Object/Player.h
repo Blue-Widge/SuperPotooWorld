@@ -14,12 +14,13 @@ typedef enum PlayerPowerUP_e
     PLAYER_FIRE
 
 }PlayerPowerUP;
+
 typedef enum PlayerState_e
 {
     PLAYER_IDLE,
     PLAYER_WALKING,
     PLAYER_RUNNING,
-    PLAYER_SKIDDING,
+    PLAYER_²SKIDDING,
     PLAYER_FALLING,
     PLAYER_DYING
 } PlayerState;
@@ -54,6 +55,8 @@ typedef struct Player_s
 
     PE_Collider* m_damageableCollider;
     
+
+    Bool m_shoot;
 } Player;
 
 Player *Player_new(Scene *scene, PE_Vec2 *position);

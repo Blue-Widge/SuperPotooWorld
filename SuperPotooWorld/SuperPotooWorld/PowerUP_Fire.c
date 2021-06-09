@@ -2,7 +2,6 @@
 #include "../SuperPotooWorld/Scene/Object/Collectable/Collectable.h"
 #include "PowerUP_Fire.h"
 #include "../SuperPotooWorld/Scene/Scene.h"
-
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -22,6 +21,7 @@ void PowerUP_Fire_onTriggerEnter(PE_Trigger* trigger)
     }
 
     player = GameObject_getPlayer(otherObject);
+
     if (player)
     {
         Scene* scene = GameObject_getScene(thisObject);

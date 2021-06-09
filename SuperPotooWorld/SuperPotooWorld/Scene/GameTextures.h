@@ -38,6 +38,11 @@ typedef struct GameTextures_s
 
     RE_Texture* PowerUP_Fire;
     RE_Texture* RollingPowerUP_Fire;
+
+    RE_Texture* IdlePlayer;
+    RE_Texture* IdleFirePlayer;
+
+    RE_Texture* fireball;
 } GameTextures;
 
 GameTextures *GameTextures_new(RE_Renderer *renderer);

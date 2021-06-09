@@ -35,6 +35,7 @@ void GameInput_update(GameInput *input)
     input->exitPressed = FALSE;
     input->jumpPressed = FALSE;
     input->toggleGizmos = FALSE;
+    input->shootPressed = FALSE;
 
     while (SDL_PollEvent(&evt))
     {
@@ -86,8 +87,12 @@ void GameInput_update(GameInput *input)
             {
                 input->toggleGizmos = TRUE;
             }
-            break;
 
+            if (scanCode == SDL_SCANCODE_F)
+            {
+                input->shootPressed = TRUE;
+            }
+            break;
         case SDL_KEYUP:
             scanCode = evt.key.keysym.scancode;
 
@@ -110,8 +115,12 @@ void GameInput_update(GameInput *input)
             {
                 input->jumpDown = FALSE;
             }
-            break;
 
+            if (scanCode == SDL_SCANCODE_F)
+            {
+                input->shootPressed = FALSE;
+            }
+            break;
         default:
             break;
         }

@@ -583,6 +583,19 @@ void Player_addHeart(Player *player)
 
 }
 
+void Player_PowerUP(Player* player, int type)
+{
+    switch (type)
+    {
+    case POWERUP_FIRE:
+        player->m_stats.PowerUP = PLAYER_FIRE;
+        break;
+    default : 
+        player->m_stats.PowerUP = PLAYER_NORMAL;
+        break;
+    }
+}
+
 int Player_update(GameObject *object)
 {
     Player *player = NULL;
@@ -617,6 +630,12 @@ int Player_update(GameObject *object)
 
     // Mise à jour de l'animateur
     RE_Animator_update(player->m_animator, time);
+
+
+    if (input->shootPressed)
+    {
+        player->m_shoot = TRUE;
+    }
 
     return EXIT_SUCCESS;
 
@@ -655,6 +674,12 @@ int Player_fixedUpdate(GameObject *object)
 
     // TODO
     // Améliorer cette fonction, et il y a beaucoup à faire !
+
+    if (player->m_stats.PowerUP != PLAYER_NORMAL && player->m_shoot == TRUE)
+    {
+        printf("PIOU PIOU \n");
+        player->m_shoot = FALSE;
+    }
 
     PE_Body_getVelocity(body, &velocity);
     velocity.x = player->m_hDirection * 8.f;
@@ -707,7 +732,21 @@ int Player_fixedUpdate(GameObject *object)
         player->m_jump = FALSE;
     }
     PE_Body_setVelocity(body, &velocity);
-
+/*
+    if (velocity.x == 0 && velocity.y == 0)
+    {
+        switch (player->m_stats.PowerUP)
+        {
+        case PLAYER_FIRE:
+            RE_Texture_render(textures->IdleFirePlayer, 0, player->m_startPos.x, player->m_startPos.y);
+            RE_Animator_stopTextureAnim(player->m_animator);
+                break;
+        default:
+            RE_Texture_render(textures->IdlePlayer, 0, player->m_startPos.x, player->m_startPos.y);
+            RE_Animator_stopTextureAnim(player->m_animator);
+            break;
+        }
+    }*/
     return EXIT_SUCCESS;
 
 ERROR_LABEL:
@@ -744,14 +783,4 @@ int Player_render(GameObject *object)
 ERROR_LABEL:
     printf("ERROR - Player_render()\n");
     return EXIT_FAILURE;
-}
-
-Player_PowerUP(Player* player, int type)
-{
-    switch (type)
-    {
-    case POWERUP_FIRE:
-
-        break;
-    }
 }

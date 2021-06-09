@@ -1,8 +1,4 @@
-﻿  Menu.c
-  GameUI.c
-C:\Users\bluew\CLionProjects\SuperPotooWorld\SuperPotooWorld\SuperPotooWorld\SuperPotooWorld\Scene\GameUI.c(20,9): warning C4189: 'width' : variable locale initialisée mais non référencée
-C:\Users\bluew\CLionProjects\SuperPotooWorld\SuperPotooWorld\SuperPotooWorld\SuperPotooWorld\Scene\GameUI.c(22,12): warning C4101: 'y' : variable locale non référencée
-C:\Users\bluew\CLionProjects\SuperPotooWorld\SuperPotooWorld\SuperPotooWorld\SuperPotooWorld\Scene\GameUI.c(21,9): warning C4189: 'heigth' : variable locale initialisée mais non référencée
-C:\Users\bluew\CLionProjects\SuperPotooWorld\SuperPotooWorld\SuperPotooWorld\SuperPotooWorld\Scene\GameUI.c(22,9): warning C4101: 'x' : variable locale non référencée
-  Génération de code en cours...
+﻿  Player.c
+C:\Users\bluew\CLionProjects\SuperPotooWorld\SuperPotooWorld\SuperPotooWorld\SuperPotooWorld\Scene\Object\Player.c(269,19): warning C4189: 'parAnim' : variable locale initialisée mais non référencée
+C:\Users\bluew\CLionProjects\SuperPotooWorld\SuperPotooWorld\SuperPotooWorld\SuperPotooWorld\Scene\Object\Player.c(617,32): warning C4244: '=' : conversion de 'float' en 'int', perte possible de données
   SuperPotooWorld.vcxproj -> C:\Users\bluew\CLionProjects\SuperPotooWorld\SuperPotooWorld\SuperPotooWorld\x64\Debug\SuperPotooWorld.exe
