@@ -457,7 +457,7 @@ Camera *Scene_createCamera(Scene *scene, PE_AABB *worldView, PE_AABB *worldAABB)
     Camera *camera = NULL;
     GameObject *object = NULL;
 
-    camera = Camera_new(scene, worldView, worldAABB);
+    camera = Camera_new(scene, worldView, worldAABB, 0.5f);
     if (!camera) goto ERROR_LABEL;
 
     object = Camera_getObject(camera);

@@ -51,20 +51,29 @@ void Parallax_renderBackground(Parallax *parallax)
     PE_Vec2_set(&position, 0.f, 0.f);
     Camera_worldToView(camera, &position, &x, &y);
 
+    RE_Texture* layers[5] = { textures->background_layer_0, textures->background_layer_1, textures->background_layer_2, textures->background_layer_3, textures->background_layer_4 };
+
+    for (int i = 0; i < 5; ++i)
+    {
+        xShift = 0.1 / 1 * (i + 1) * x;
+        while (xShift < width)
+        {
+            xShift += width;
+        }
+        while (xShift > width)
+        {
+            xShift -= width;
+        }
+        if (xShift < camWidth)
+            RE_Texture_renderF(layers[i], 0, xShift, 0);
+        if (xShift > 0.f)
+            RE_Texture_renderF(layers[i], 0, xShift - width, 0);
+        
+    }
+    
     // Ici, le facteur 0.8f permet au fond de se déplacer moins vite que la zone de jeu
-    xShift = 0.8f * x;
-    while (xShift < width)
-    {
-        xShift += width;
-    }
-    while (xShift > width)
-    {
-        xShift -= width;
-    }
-    if (xShift < camWidth)
-        RE_Texture_renderF(textures->background, 0, xShift, 0);
-    if (xShift > 0.f)
-        RE_Texture_renderF(textures->background, 0, xShift - width, 0);
+
+
 }
 
 void Parallax_renderForeground(Parallax *parallax)

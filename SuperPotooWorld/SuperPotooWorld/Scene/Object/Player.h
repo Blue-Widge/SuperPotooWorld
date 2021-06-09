@@ -46,6 +46,14 @@ typedef struct Player_s
 
     RE_Animator *m_animator;
     PE_Vec2 m_startPos;
+    
+    float m_immune_time;
+    int m_immune;
+
+    int m_should_bounce;
+
+    PE_Collider* m_damageableCollider;
+    
 } Player;
 
 Player *Player_new(Scene *scene, PE_Vec2 *position);

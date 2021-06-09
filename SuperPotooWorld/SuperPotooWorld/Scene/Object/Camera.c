@@ -76,7 +76,7 @@ void Camera_onTriggerExit(PE_Trigger *trigger)
 //-------------------------------------------------------------------------------------------------
 //  Fonctions principales
 
-Camera *Camera_new(Scene *scene, PE_AABB *worldView, PE_AABB *worldAABB)
+Camera *Camera_new(Scene *scene, PE_AABB *worldView, PE_AABB *worldAABB, float speed)
 {
     GameObject *object = NULL;
     Camera *camera = NULL;
@@ -93,6 +93,7 @@ Camera *Camera_new(Scene *scene, PE_AABB *worldView, PE_AABB *worldAABB)
     camera->m_object = object;
     camera->m_width = RE_Renderer_getWidth(renderer);
     camera->m_height = RE_Renderer_getHeight(renderer);
+    camera->m_speed = speed;
 
     // Initialisation de la classe mère
     object->m_data = (void *)camera;
@@ -204,6 +205,20 @@ ERROR_LABEL:
     return EXIT_FAILURE;
 }
 
+float clamp01(float value)
+{
+    if (value < 0.0f)
+        return 0.0f;
+    if (value > 1.0f)
+        return 1.0f;
+    return value;
+}
+
+float lerpf(float a, float b, float t)
+{
+    return a + (b - a) * t;
+}
+
 int Camera_update(GameObject *object)
 {
     Scene *scene = NULL;
@@ -222,14 +237,14 @@ int Camera_update(GameObject *object)
     playerPos = GameObject_getPosition(Player_getObject(player));
     cameraPos = camera->m_worldView.lower;
 
-    // TODO
-    // Améliorez le déplacement de la caméra en fonction de la position du joueur
-
-    x = playerPos.x - 10.f;
-    displacement.x = x - cameraPos.x;
+    float diff = playerPos.x < 10.0f ? 0.0f : playerPos.x - 10.0f;
+    float diff2 = playerPos.x > scene->m_tilemap->m_width - 14.0f ? scene->m_tilemap->m_width - 24.3f : diff;
+    
+    float lerpX = lerpf(cameraPos.x,diff2, 5.0f * RE_Timer_getDelta(Scene_getTime(scene)));
+    displacement.x = lerpX - cameraPos.x;
     displacement.y = 0.f;
     PE_AABB_translate(&camera->m_worldView, &displacement);
-
+    
     return EXIT_SUCCESS;
 
 ERROR_LABEL:

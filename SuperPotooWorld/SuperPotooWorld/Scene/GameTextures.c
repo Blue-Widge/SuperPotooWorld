@@ -29,6 +29,26 @@ GameTextures *GameTextures_new(RE_Renderer *renderer)
         "../Assets/Images/Map/Brick.png", renderer);
     if (!textures->brick) goto ERROR_LABEL;
     
+    textures->background_layer_0 = RE_Texture_new(
+        "../Assets/Images/Background/Layer_00.png", renderer);
+    if (!textures->background_layer_0) goto ERROR_LABEL;
+    
+    textures->background_layer_1 = RE_Texture_new(
+        "../Assets/Images/Background/Layer_01.png", renderer);
+    if (!textures->background_layer_1) goto ERROR_LABEL;
+    
+    textures->background_layer_2 = RE_Texture_new(
+        "../Assets/Images/Background/Layer_02.png", renderer);
+    if (!textures->background_layer_2) goto ERROR_LABEL;
+    
+    textures->background_layer_3 = RE_Texture_new(
+        "../Assets/Images/Background/Layer_03.png", renderer);
+    if (!textures->background_layer_3) goto ERROR_LABEL;
+    
+    textures->background_layer_4 = RE_Texture_new(
+        "../Assets/Images/Background/Layer_04.png", renderer);
+    if (!textures->background_layer_4) goto ERROR_LABEL;
+    
     textures->bonus = RE_Texture_newSet(
         "../Assets/Images/Map/Bonus.png", renderer, 4, 4);
     if (!textures->bonus) goto ERROR_LABEL;
@@ -105,6 +125,11 @@ void GameTextures_free(GameTextures *textures)
     RE_Texture_free(textures->hazelnut);
     RE_Texture_free(textures->hazelnut_dead);
     RE_Texture_free(textures->heart);
+    RE_Texture_free(textures->background_layer_0);
+    RE_Texture_free(textures->background_layer_1);
+    RE_Texture_free(textures->background_layer_2);
+    RE_Texture_free(textures->background_layer_3);
+    RE_Texture_free(textures->background_layer_4);
 
     //AJOUTS
     RE_Texture_free(textures->playerRunningFire);

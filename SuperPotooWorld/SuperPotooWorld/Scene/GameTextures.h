@@ -22,6 +22,13 @@ typedef struct GameTextures_s
     RE_Texture *bonus_empty;
   
     RE_Texture *background;
+
+    RE_Texture* background_layer_0;
+    RE_Texture* background_layer_1;
+    RE_Texture* background_layer_2;
+    RE_Texture* background_layer_3;
+    RE_Texture* background_layer_4;
+    
     RE_Texture *heart;
 
     // AJOUTS

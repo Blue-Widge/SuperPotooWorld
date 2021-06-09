@@ -6,10 +6,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void Enemy_onLeftTriggerStay(PE_Trigger *trigger);
-void Enemy_onLeftTriggerExit(PE_Trigger *trigger);
-void Enemy_onRightTriggerStay(PE_Trigger *trigger);
-void Enemy_onRightTriggerExit(PE_Trigger *trigger);
+void Nut_onLeftTriggerStay(PE_Trigger *trigger);
+void Nut_onLeftTriggerExit(PE_Trigger *trigger);
+void Nut_onRightTriggerStay(PE_Trigger *trigger);
+void Nut_onRightTriggerExit(PE_Trigger *trigger);
+void Nut_onCollisionEnter(PE_Collision* collision);
 
 int Nut_init(Enemy *enemy)
 {
@@ -52,34 +53,34 @@ int Nut_onStart(Enemy *enemy)
     // Création du collider
     PE_ColliderDef_setDefault(&colliderDef);
     PE_Shape_setAsBox(&colliderDef.shape,0.0, 0.0, 1.0f, 1.0f);
-    colliderDef.filter.categoryBits = FILTER_ENEMY | FILTER_VISIBLE;
-    colliderDef.filter.maskBits = FILTER_PLAYER | FILTER_BLOCK | FILTER_CAMERA;
+    colliderDef.filter.categoryBits = FILTER_ENEMY | FILTER_VISIBLE | FILTER_DAMAGER;
+    colliderDef.filter.maskBits = FILTER_PLAYER | FILTER_BLOCK | FILTER_CAMERA | FILTER_DAMAGEABLE;
     collider = PE_Body_createCollider(body, &colliderDef);
     if (!collider) goto ERROR_LABEL;
 
     int exitStatus = Scene_setToFixedUpdate(scene, enemy->m_object);
     if (exitStatus != EXIT_SUCCESS) goto ERROR_LABEL;
 
-    // Création du collider principal
     PE_ColliderDef_setDefault(&colliderDef);
     PE_Shape_setAsBox(&colliderDef.shape, -8.0f, 0.0f, 0.5f, 10.0f);
     colliderDef.isTrigger = TRUE;
-    colliderDef.filter.categoryBits = FILTER_ENEMY | FILTER_VISIBLE;
-    colliderDef.filter.maskBits = FILTER_PLAYER;
+    colliderDef.filter.categoryBits = FILTER_ENEMY | FILTER_VISIBLE | FILTER_DAMAGER;
+    colliderDef.filter.maskBits = FILTER_PLAYER | FILTER_DAMAGEABLE;
     PE_Collider* leftTrigger = PE_Body_createCollider(body, &colliderDef);
 
-    // Création du collider principal
     PE_ColliderDef_setDefault(&colliderDef);
     PE_Shape_setAsBox(&colliderDef.shape, 0.5f, 0.0f, 8.0f, 10.0f);
     colliderDef.isTrigger = TRUE;
-    colliderDef.filter.categoryBits = FILTER_ENEMY | FILTER_VISIBLE;
-    colliderDef.filter.maskBits = FILTER_PLAYER;
+    colliderDef.filter.categoryBits = FILTER_ENEMY | FILTER_VISIBLE | FILTER_DAMAGER;
+    colliderDef.filter.maskBits = FILTER_PLAYER | FILTER_DAMAGEABLE;
     PE_Collider* rightTrigger = PE_Body_createCollider(body, &colliderDef);
 
-    PE_Collider_setOnTriggerStay(leftTrigger, Enemy_onLeftTriggerStay);
-    PE_Collider_setOnTriggerExit(leftTrigger, Enemy_onLeftTriggerExit);
-    PE_Collider_setOnTriggerStay(rightTrigger, Enemy_onRightTriggerStay);
-    PE_Collider_setOnTriggerExit(rightTrigger, Enemy_onRightTriggerExit);
+    PE_Collider_setOnTriggerStay(leftTrigger, Nut_onLeftTriggerStay);
+    PE_Collider_setOnTriggerExit(leftTrigger, Nut_onLeftTriggerExit);
+    PE_Collider_setOnTriggerStay(rightTrigger, Nut_onRightTriggerStay);
+    PE_Collider_setOnTriggerExit(rightTrigger, Nut_onRightTriggerExit);
+    
+    PE_Collider_setOnCollisionEnter(collider, Nut_onCollisionEnter);
 
     printf("Nut_onStart : Initialisation d'une noisette\n");
 
@@ -91,7 +92,7 @@ int Nut_onStart(Enemy *enemy)
     
 }
 
-void Enemy_onLeftTriggerStay(PE_Trigger *trigger)
+void Nut_onLeftTriggerStay(PE_Trigger *trigger)
 {
     PE_Body *thisBody = PE_Trigger_getBody(trigger);
     GameObject *thisObject = PE_Body_getUserData(thisBody);
@@ -102,12 +103,12 @@ void Enemy_onLeftTriggerStay(PE_Trigger *trigger)
 
 }
 
-void Enemy_onLeftTriggerExit(PE_Trigger *trigger)
+void Nut_onLeftTriggerExit(PE_Trigger *trigger)
 {
     
 }
 
-void Enemy_onRightTriggerStay(PE_Trigger *trigger)
+void Nut_onRightTriggerStay(PE_Trigger *trigger)
 {
     PE_Body *thisBody = PE_Trigger_getBody(trigger);
     GameObject *thisObject = PE_Body_getUserData(thisBody);
@@ -117,7 +118,7 @@ void Enemy_onRightTriggerStay(PE_Trigger *trigger)
     enemy->direction = RIGHT;
 }
 
-void Enemy_onRightTriggerExit(PE_Trigger *trigger)
+void Nut_onRightTriggerExit(PE_Trigger *trigger)
 {
     
 }
@@ -172,9 +173,7 @@ int Nut_fixedUpdate(Enemy *enemy)
                 break;
                 
         }
-        printf("Detected!");
     }
-
 
     return EXIT_SUCCESS;
 
@@ -183,6 +182,45 @@ int Nut_fixedUpdate(Enemy *enemy)
     return EXIT_FAILURE;
     
 }
+
+void Nut_onCollisionEnter(PE_Collision* collision)
+{
+    PE_Body *thisBody = PE_Collision_getBody(collision);
+    PE_Body *otherBody = PE_Collision_getOtherBody(collision);
+    GameObject *thisObject = PE_Body_getUserData(thisBody);
+    GameObject *otherObject = PE_Body_getUserData(otherBody);
+    
+    if (GameObject_getType(otherObject) == GAME_BLOCK)
+    {
+        int relPos = PE_Collision_getRelativePosition(collision);
+        PE_Vec2 velocity;
+        PE_Body_getVelocity(thisBody, &velocity);
+
+        switch (relPos)
+        {
+        case PE_ABOVE:
+            if (velocity.y < 0.f)
+                velocity.y = 0.f;
+            break;
+
+        case PE_BELOW:
+            if (velocity.y > 0.f)
+                velocity.y = 0.f;
+            Block_hit(GameObject_getBlock(otherObject));
+            break;
+
+        case PE_RIGHT:
+        case PE_LEFT:
+            velocity.x = 0.f;
+            break;
+
+        default:
+            break;
+        }
+        PE_Body_setCollisionResponse(thisBody, &velocity);
+    }
+}
+
 
 void Nut_render(Enemy *enemy)
 {
@@ -204,4 +242,5 @@ void Nut_damage(Enemy *enemy)
     // Faire disparaître la noisette en cas de dommage.
     // Cette fonction peut être appelée par le joueur quand il entre en collision
     // avec un noisette et qu'il est situé au-dessus.
+    Scene_removeObject(GameObject_getScene(Enemy_getObject(enemy)), Enemy_getObject(enemy));
 }

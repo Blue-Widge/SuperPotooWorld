@@ -38,12 +38,14 @@ typedef struct Camera_s
 
     PHT *m_visibleObjects;
     PVector *m_sortedObjects;
+
+    float m_speed;
 } Camera;
 
 /// @brief Crée une caméra.
 /// @param[in] scene la scène vue par la caméra.
 /// @return La caméra créée ou NULL en cas d'erreur.
-Camera *Camera_new(Scene *scene, PE_AABB *worldView, PE_AABB *worldAABB);
+Camera *Camera_new(Scene *scene, PE_AABB *worldView, PE_AABB *worldAABB, float speed);
 
 INLINE GameObject *Camera_getObject(Camera *camera)
 {
