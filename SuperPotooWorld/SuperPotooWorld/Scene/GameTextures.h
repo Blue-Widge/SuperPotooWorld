@@ -35,6 +35,7 @@ typedef struct GameTextures_s
     Background* background_01;
     Background* background_02;
     Background* background_03;
+    Background* background_04;
     
     RE_Texture *heart;
 
@@ -53,11 +54,15 @@ typedef struct GameTextures_s
 
     RE_Texture* IdlePlayer;
     RE_Texture* IdleFirePlayer;
+    
+    RE_Texture* gravityInverter;
 
     RE_Texture* fireball;
 } GameTextures;
 
 GameTextures *GameTextures_new(RE_Renderer *renderer);
 void GameTextures_free(GameTextures *textures);
+Background* Background_get(GameTextures* textures, int index);
+
 
 #endif

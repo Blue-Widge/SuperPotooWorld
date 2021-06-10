@@ -130,6 +130,52 @@ ERROR_LABEL:
     
 }
 
+Background* load_background_04(RE_Renderer *renderer)
+{
+
+    Background* background = calloc(1, sizeof(Background*));
+    background->layer_count = 8;
+    background->layers = calloc(background->layer_count, sizeof(RE_Texture**));
+
+    background->layers[0] = RE_Texture_new(
+        "../Assets/Images/Backgrounds/Background 3/layers/sky.png", renderer);
+    if (!background->layers[0]) goto ERROR_LABEL;
+
+    background->layers[1] = RE_Texture_new(
+        "../Assets/Images/Backgrounds/Background 3/layers/rocks.png", renderer);
+    if (!background->layers[1]) goto ERROR_LABEL;
+
+    background->layers[2] = RE_Texture_new(
+        "../Assets/Images/Backgrounds/Background 3/layers/clouds_1.png", renderer);
+    if (!background->layers[2]) goto ERROR_LABEL;
+
+    background->layers[3] = RE_Texture_new(
+        "../Assets/Images/Backgrounds/Background 3/layers/clouds_2.png", renderer);
+    if (!background->layers[3]) goto ERROR_LABEL;
+
+    background->layers[4] = RE_Texture_new(
+        "../Assets/Images/Backgrounds/Background 3/layers/ground_1.png", renderer);
+    if (!background->layers[4]) goto ERROR_LABEL;
+
+    background->layers[5] = RE_Texture_new(
+        "../Assets/Images/Backgrounds/Background 3/layers/ground_2.png", renderer);
+    if (!background->layers[5]) goto ERROR_LABEL;
+
+    background->layers[6] = RE_Texture_new(
+        "../Assets/Images/Backgrounds/Background 3/layers/ground_3.png", renderer);
+    if (!background->layers[6]) goto ERROR_LABEL;
+
+    background->layers[7] = RE_Texture_new(
+        "../Assets/Images/Backgrounds/Background 3/layers/plant.png", renderer);
+    if (!background->layers[7]) goto ERROR_LABEL;
+
+    return background;
+
+ERROR_LABEL:
+    return NULL;
+    
+}
+
 Background* load_background_default(RE_Renderer *renderer)
 {
 
@@ -279,6 +325,10 @@ GameTextures *GameTextures_new(RE_Renderer *renderer)
         "../Assets/Images/Player/IdleFire.png", renderer);
     if (!textures->IdleFirePlayer) goto ERROR_LABEL;
 
+    textures->gravityInverter = RE_Texture_new(
+        "../Assets/Images/Map/1.png", renderer);
+    if (!textures->gravityInverter) goto ERROR_LABEL;
+
     textures->fireball = RE_Texture_newSet(
             "../Assets/Images/Player/FireBall.png", renderer,1,6);
     if (!textures->fireball) goto ERROR_LABEL;
@@ -295,6 +345,9 @@ GameTextures *GameTextures_new(RE_Renderer *renderer)
     textures->background_03 = load_background_03(renderer);
     if (!textures->background_03) goto ERROR_LABEL;
 
+    textures->background_04 = load_background_04(renderer);
+    if (!textures->background_03) goto ERROR_LABEL;
+
     return textures;
 
 ERROR_LABEL:
@@ -302,6 +355,25 @@ ERROR_LABEL:
     GameTextures_free(textures);
     return NULL;
 }
+
+Background* Background_get(GameTextures* textures, int index)
+{
+    switch (index)
+    {
+        case 1:
+            return textures->background_01;
+        case 2:
+            return textures->background_02;
+        case 3:
+            return textures->background_03;
+        case 4:
+            return textures->background_04;
+        default:
+            return textures->background_default;
+    }
+    
+}
+
 
 void GameTextures_free(GameTextures *textures)
 {
@@ -329,8 +401,8 @@ void GameTextures_free(GameTextures *textures)
     Background_free(textures->background_01);
     Background_free(textures->background_02);
     Background_free(textures->background_03);
+    Background_free(textures->background_04);
     
-    //AJOUTS
     RE_Texture_free(textures->playerRunningFire);
     RE_Texture_free(textures->playerFallingFire);
 

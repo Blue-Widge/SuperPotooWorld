@@ -32,7 +32,7 @@ void PowerUP_Fire_onCollisionEnter(PE_Collision* collision)
         {
             Scene* scene = GameObject_getScene(thisObject);
             Scene_disableObject(scene, thisObject);
-            Player_PowerUP(player, POWERUP_FIRE);
+            Player_powerUp(player, POWERUP_FIRE);
         }
     }
     

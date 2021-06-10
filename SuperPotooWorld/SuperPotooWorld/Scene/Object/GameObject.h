@@ -33,7 +33,8 @@ typedef enum CollisionFilter_e
     FILTER_TOOL        = 1 << 5,
     FILTER_VISIBLE     = 1 << 6,
     FILTER_DAMAGEABLE  = 1 << 7,
-    FILTER_DAMAGER     = 1 << 8
+    FILTER_DAMAGER     = 1 << 8,
+    FILTER_GRAVITY     = 1 << 9
 } CollisionFilter;
 
 typedef enum GameObjectFlag_e

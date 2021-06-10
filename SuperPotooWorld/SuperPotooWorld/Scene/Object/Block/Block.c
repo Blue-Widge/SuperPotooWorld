@@ -9,6 +9,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#include "Block_GravityInverter.h"
+
 // Méthodes du GameObject
 int Block_free(GameObject *object);
 int Block_onStart(GameObject *object);
@@ -92,6 +94,10 @@ int Block_onStart(GameObject *object)
     case BLOCK_BONUS:
         exitStatus = Bonus_onStart(block);
         break;
+        
+    case BLOCK_GRAVITY_INVERTER:
+        exitStatus = GravityInverter_onStart(block);
+        break;
 
     default:
         printf("ERROR - Unknown block type\n");
@@ -125,6 +131,10 @@ int Block_onRespawn(GameObject *object)
 
     case BLOCK_BONUS:
         exitStatus = Bonus_onRespawn(block);
+        break;
+        
+    case BLOCK_GRAVITY_INVERTER:
+        exitStatus = GravityInverter_onRespawn(block);
         break;
 
     case BLOCK_GROUND:
@@ -164,6 +174,10 @@ int Block_render(GameObject *object)
 
     case BLOCK_BONUS:
         Bonus_render(block);
+        break;
+
+    case BLOCK_GRAVITY_INVERTER:
+        GravityInverter_render(block);
         break;
 
     default:

@@ -13,9 +13,9 @@ typedef enum EnemyType_e
 
 typedef enum Direction_e
 {
-    NONE,
-    LEFT,
-    RIGHT
+    NONE = 0,
+    LEFT = -1,
+    RIGHT = 1
 } DetectionDirection;
 
 typedef struct Enemy_s

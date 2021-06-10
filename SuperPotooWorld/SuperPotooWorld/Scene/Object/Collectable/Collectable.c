@@ -14,6 +14,7 @@ int Collectable_onStart(GameObject *object);
 int Collectable_onRespawn(GameObject *object);
 int Collectable_render(GameObject *object);
 int Collectable_fixedUpdate(GameObject *object);
+int Collectable_update(GameObject *object);
 
 Collectable *Collectable_new(Scene *scene, int type, PE_Vec2 *position)
 {
@@ -37,9 +38,13 @@ Collectable *Collectable_new(Scene *scene, int type, PE_Vec2 *position)
     object->cm_onStart = Collectable_onStart;
     object->cm_onRespawn = Collectable_onRespawn;
     object->cm_render = Collectable_render;
+    object->cm_update = Collectable_update;
     object->cm_fixedUpdate = Collectable_fixedUpdate;
 
     int exitStatus = Scene_setToFixedUpdate(scene, object);
+    if (exitStatus != EXIT_SUCCESS) goto ERROR_LABEL;
+
+    exitStatus = Scene_setToUpdate(scene, object);
     if (exitStatus != EXIT_SUCCESS) goto ERROR_LABEL;
 
     return collectable;
@@ -197,5 +202,26 @@ int Collectable_render(GameObject *object)
 
 ERROR_LABEL:
     printf("ERROR - Collectable_onRespawn()\n");
+    return EXIT_FAILURE;
+}
+
+int Collectable_update(GameObject *object)
+{
+    Collectable * collectable = NULL;
+    Scene *scene = NULL;
+    RE_Timer *time = NULL;
+
+    if (!object || !object->m_data) goto ERROR_LABEL;
+
+    collectable = GameObject_getCollectable(object);
+    if (!collectable) goto ERROR_LABEL;
+
+    scene = GameObject_getScene(object);
+    time = Scene_getTime(scene);
+
+    return EXIT_SUCCESS;
+
+    ERROR_LABEL:
+        printf("ERROR - Collectable_update()\n");
     return EXIT_FAILURE;
 }

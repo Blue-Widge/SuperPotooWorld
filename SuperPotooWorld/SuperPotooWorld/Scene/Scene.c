@@ -8,7 +8,7 @@ Camera *Scene_createCamera(Scene *scene, PE_AABB *worldView, PE_AABB *worldAABB)
 
 int Scene_isValidChar(char c)
 {
-    char validChar[] = { '\n', '.', '#', '=', 'W', 'C', 'e', 'S', 'X', 'o', '?', 'F', 'H' };
+    char validChar[] = { '\n', '.', '#', '=', 'W', 'C', 'e', 'S', 'X', 'o', '?', 'F', 'H', 'I', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
     int nbValidChar = sizeof(validChar) / sizeof(char);
     int i;
 
@@ -108,7 +108,7 @@ int Scene_parseLevelBuffer(Scene *scene, char *levelBuffer, long size, int lvlWi
 
     int x = lvlWidth, y = 0;
     int w = lvlWidth;
-    for (int i = size -1; i >=0; --i)
+    for (int i = size - 1; i > 0; --i)
     {
         char c = levelBuffer[i];
 
@@ -158,6 +158,9 @@ int Scene_parseLevelBuffer(Scene *scene, char *levelBuffer, long size, int lvlWi
             // Noisette
         case 'e':
             Scene_createEnemy(scene, ENEMY_NUT, &position);
+            break;
+        case 'I':
+            Scene_createBlock(scene, BLOCK_GRAVITY_INVERTER, &position, &aabb);
             break;
         }
 
@@ -248,7 +251,7 @@ Scene *Scene_new(RE_Renderer *renderer, FILE *levelFile, RE_Timer *time, float t
     scene->m_tilemap = Tilemap_new(scene, lvlWidth, lvlHeight);
     if (!scene->m_tilemap) goto ERROR_LABEL;
 
-    scene->m_parallax = Parallax_new(scene);
+    scene->m_parallax = Parallax_new(scene, levelBuffer[0] - '0');
     if (!scene->m_parallax) goto ERROR_LABEL;
 
     scene->m_manager = ObjectManager_new(scene);
@@ -257,7 +260,6 @@ Scene *Scene_new(RE_Renderer *renderer, FILE *levelFile, RE_Timer *time, float t
     // AJOUTS
     scene->m_UItextures = UITextures_new(renderer);
     if (!scene->m_UItextures) goto ERROR_LABEL;
-
 
     // Initialisation de la scène
     exitStatus = Scene_parseLevelBuffer(scene, levelBuffer, size, lvlWidth, lvlHeight);

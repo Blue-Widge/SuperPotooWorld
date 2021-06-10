@@ -88,7 +88,5 @@ void GameAnimators_update(GameAnimators *animators)
     RE_Timer *time = Scene_getTime(animators->m_scene);
     RE_Animator_update(animators->firefly, time);
     RE_Animator_update(animators->bonus, time);
-
-    //AJOUT
     RE_Animator_update(animators->RollingPowerUP_Fire, time);
 }

@@ -52,7 +52,7 @@ int Nut_onStart(Enemy *enemy)
 
     // Création du collider
     PE_ColliderDef_setDefault(&colliderDef);
-    PE_Shape_setAsBox(&colliderDef.shape,0.0, 0.0, 1.0f, 1.0f);
+    PE_Shape_setAsBox(&colliderDef.shape,0.05f, 0.05f, 0.95f, 0.95f);
     colliderDef.filter.categoryBits = FILTER_ENEMY | FILTER_VISIBLE | FILTER_DAMAGER;
     colliderDef.filter.maskBits = FILTER_PLAYER | FILTER_BLOCK | FILTER_CAMERA | FILTER_DAMAGEABLE | FILTER_DAMAGER;
     collider = PE_Body_createCollider(body, &colliderDef);
@@ -62,14 +62,14 @@ int Nut_onStart(Enemy *enemy)
     if (exitStatus != EXIT_SUCCESS) goto ERROR_LABEL;
 
     PE_ColliderDef_setDefault(&colliderDef);
-    PE_Shape_setAsBox(&colliderDef.shape, -8.0f, 0.0f, 0.5f, 10.0f);
+    PE_Shape_setAsBox(&colliderDef.shape, -10.0, -2.5f, 0.5f, 2.5f);
     colliderDef.isTrigger = TRUE;
     colliderDef.filter.categoryBits = FILTER_ENEMY | FILTER_VISIBLE | FILTER_DAMAGER;
     colliderDef.filter.maskBits = FILTER_PLAYER | FILTER_DAMAGEABLE;
     PE_Collider* leftTrigger = PE_Body_createCollider(body, &colliderDef);
 
     PE_ColliderDef_setDefault(&colliderDef);
-    PE_Shape_setAsBox(&colliderDef.shape, 0.5f, 0.0f, 8.0f, 10.0f);
+    PE_Shape_setAsBox(&colliderDef.shape, 0.5f, -2.5f, 10.0f, 2.5f);
     colliderDef.isTrigger = TRUE;
     colliderDef.filter.categoryBits = FILTER_ENEMY | FILTER_VISIBLE | FILTER_DAMAGER;
     colliderDef.filter.maskBits = FILTER_PLAYER | FILTER_DAMAGEABLE;
@@ -98,8 +98,12 @@ void Nut_onLeftTriggerStay(PE_Trigger *trigger)
     GameObject *thisObject = PE_Body_getUserData(thisBody);
     Enemy* enemy = GameObject_getEnemy(thisObject);
 
-    enemy->m_state = NUT_STARTING;
-    enemy->direction = LEFT;
+    if(enemy->m_state != NUT_SPINNING)
+    { 
+        enemy->m_state = NUT_STARTING;
+        enemy->direction = LEFT;
+    }
+
 
 }
 
@@ -114,8 +118,12 @@ void Nut_onRightTriggerStay(PE_Trigger *trigger)
     GameObject *thisObject = PE_Body_getUserData(thisBody);
     Enemy* enemy = GameObject_getEnemy(thisObject);
 
-    enemy->m_state = NUT_STARTING;
-    enemy->direction = RIGHT;
+    if(enemy->m_state != NUT_SPINNING)
+    {
+        enemy->m_state = NUT_STARTING;
+        enemy->direction = RIGHT;
+    }
+    
 }
 
 void Nut_onRightTriggerExit(PE_Trigger *trigger)
@@ -151,23 +159,13 @@ int Nut_fixedUpdate(Enemy *enemy)
 
     if(enemy->m_state == NUT_STARTING)
     {
+        enemy->m_state = NUT_SPINNING;
+    }
+    if(enemy->m_state == NUT_SPINNING)
+    {
         PE_Body_getVelocity(body, &velocity);
-        switch (enemy->direction)
-        {
-            case LEFT:
-                velocity.x = -8.f;
-                PE_Body_setVelocity(body, &velocity);
-                enemy->m_state = NUT_SPINNING;
-                break;
-            case RIGHT:
-                velocity.x = -8.f;
-                PE_Body_setVelocity(body, &velocity);
-                enemy->m_state = NUT_SPINNING;
-                break;
-            default:
-                break;
-                
-        }
+        velocity.x = enemy->direction * 8.f;
+        PE_Body_setVelocity(body, &velocity);
     }
 
     return EXIT_SUCCESS;
@@ -185,11 +183,12 @@ void Nut_onCollisionEnter(PE_Collision* collision)
     GameObject *thisObject = PE_Body_getUserData(thisBody);
     GameObject *otherObject = PE_Body_getUserData(otherBody);
     
-    if (GameObject_getType(otherObject) == GAME_BLOCK)
+    if (GameObject_getType(otherObject) == GAME_BLOCK || GameObject_getType(otherObject) == GAME_ENEMY)
     {
         int relPos = PE_Collision_getRelativePosition(collision);
         PE_Vec2 velocity;
         PE_Body_getVelocity(thisBody, &velocity);
+        Enemy* enemy = GameObject_getEnemy(thisObject);
 
         switch (relPos)
         {
@@ -205,7 +204,7 @@ void Nut_onCollisionEnter(PE_Collision* collision)
 
         case PE_RIGHT:
         case PE_LEFT:
-            velocity.x = 0.f;
+            enemy->direction *= -1;
             break;
 
         default:
@@ -226,7 +225,15 @@ void Nut_render(Enemy *enemy)
     position.x = body->m_position.x;
     position.y = body->m_position.y + 1;
     Camera_worldToView(camera, &position, &viewX, &viewY);
-    RE_Animator_renderF(enemy->m_animator, (int)viewX, (int)viewY);
+    GameTextures* textures = Scene_getTextures(GameObject_getScene(enemy->m_object));
+    if(enemy->m_state == NUT_ASLEEP)
+    {
+        RE_Texture_renderF(textures->hazelnut, 0, viewX, viewY);
+    }
+    else
+    {
+        RE_Animator_renderF(enemy->m_animator, viewX, viewY);
+    }
 
 }
 

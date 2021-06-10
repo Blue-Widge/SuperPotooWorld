@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-Parallax *Parallax_new(Scene *scene)
+Parallax *Parallax_new(Scene *scene, int backgroundIndex)
 {
     Parallax *parallax = NULL;
     GameTextures *textures = NULL;
@@ -14,8 +14,9 @@ Parallax *Parallax_new(Scene *scene)
     parallax = (Parallax *)calloc(1, sizeof(Parallax));
     if (!parallax) goto ERROR_LABEL;
     parallax->m_scene = scene;
-    parallax->m_width = RE_Texture_getWidth(textures->background_03->layers[0]);
-    parallax->m_height = RE_Texture_getHeight(textures->background_03->layers[0]);
+    parallax->m_backgroundIndex = backgroundIndex;
+    parallax->m_width = RE_Texture_getWidth(Background_get(scene->m_textures, backgroundIndex)->layers[0]);
+    parallax->m_height = RE_Texture_getHeight(Background_get(scene->m_textures, backgroundIndex)->layers[0]);
 
     return parallax;
 
@@ -47,7 +48,7 @@ void Parallax_renderBackground(Parallax *parallax)
     PE_Vec2_set(&position, 0.f, 0.f);
     Camera_worldToView(camera, &position, &x, &y);
 
-    Background* background = textures->background_03;
+    Background* background = Background_get(scene->m_textures, parallax->m_backgroundIndex);
     
     for (int i = 0; i < background->layer_count; ++i)
     {

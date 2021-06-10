@@ -40,6 +40,8 @@ Enemy *Enemy_new(Scene *scene, int type, PE_Vec2 *position)
     object->cm_fixedUpdate = Enemy_fixedUpdate;
     object->cm_render = Enemy_render;
 
+    Scene_setToUpdate(scene, object);
+
     // Allocations supplémentaires
     enemy->m_animator = RE_Animator_new();
     if (!enemy->m_animator) goto ERROR_LABEL;

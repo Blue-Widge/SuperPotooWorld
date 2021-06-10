@@ -15,39 +15,28 @@ int Player_fixedUpdate(GameObject *object);
 int Player_render(GameObject *object);
 
 // Fonction locales
-int  Player_createAnimator(Player *player);
+int Player_createAnimator(Player *player);
 void Player_aboveTriggerStay(PE_Trigger *trigger);
 void Player_aboveTriggerExit(PE_Trigger *trigger);
 void Player_belowTriggerStay(PE_Trigger *trigger);
 void Player_belowTriggerExit(PE_Trigger *trigger);
 void Player_onCollisionStay(PE_Collision *collision);
-void Player_Shoot(Player* player, int type);
+void Player_shoot(Player *player, int type);
+void Player_internal_switchGravity(Player *player);
 
-PE_Collider* Player_makeDefaultCollider(Player* player)
+PE_Collider *Player_makeDefaultCollider(Player *player)
 {
-    PE_ColliderDef colliderDef;    
+    PE_ColliderDef colliderDef;
     PE_ColliderDef_setDefault(&colliderDef);
     PE_Shape_setAsBox(&colliderDef.shape, -0.35f, 0.01f, 0.35f, 0.95f);
-    colliderDef.filter.categoryBits = FILTER_PLAYER | FILTER_VISIBLE;
+    colliderDef.filter.categoryBits = FILTER_PLAYER | FILTER_VISIBLE | FILTER_GRAVITY;
     colliderDef.filter.maskBits = FILTER_BLOCK | FILTER_CAMERA | FILTER_COLLECTABLE | FILTER_TOOL;
-     return PE_Body_createCollider(GameObject_getBody(Player_getObject(player)), &colliderDef);
-}
-
-
-PE_Collider* Player_makeDamagerCollider(Player* player)
-{
-    PE_ColliderDef colliderDef;    
-    PE_ColliderDef_setDefault(&colliderDef);
-    PE_Shape_setAsBox(&colliderDef.shape, -0.35f, 0.01f, 0.35f, 0.95f);
-    colliderDef.isTrigger = TRUE;
-    colliderDef.filter.categoryBits = FILTER_DAMAGER | FILTER_VISIBLE;
-    colliderDef.filter.maskBits = FILTER_DAMAGEABLE;
     return PE_Body_createCollider(GameObject_getBody(Player_getObject(player)), &colliderDef);
 }
 
-PE_Collider* Player_makeDamageableCollider(Player* player)
+PE_Collider *Player_makeDamageableCollider(Player *player)
 {
-    PE_ColliderDef colliderDef;    
+    PE_ColliderDef colliderDef;
     PE_ColliderDef_setDefault(&colliderDef);
     PE_Shape_setAsBox(&colliderDef.shape, -0.35f, 0.01f, 0.35f, 0.95f);
     colliderDef.filter.categoryBits = FILTER_DAMAGEABLE | FILTER_VISIBLE;
@@ -55,12 +44,11 @@ PE_Collider* Player_makeDamageableCollider(Player* player)
     return PE_Body_createCollider(GameObject_getBody(Player_getObject(player)), &colliderDef);
 }
 
-
 void Player_aboveTriggerStay(PE_Trigger *trigger)
 {
+
     PE_Body *thisBody = PE_Trigger_getBody(trigger);
     GameObject *thisObject = PE_Body_getUserData(thisBody);
-
     if (!thisObject)
     {
         printf("ERROR - Player_aboveTriggerStay()\n");
@@ -127,9 +115,8 @@ void Player_belowTriggerExit(PE_Trigger *trigger)
     }
 }
 
-void Player_onTakeDamage(PE_Collision* collision)
+void Player_onTakeDamage(PE_Collision *collision)
 {
-
     PE_Body *thisBody = PE_Collision_getBody(collision);
     PE_Body *otherBody = PE_Collision_getOtherBody(collision);
     GameObject *thisObject = PE_Body_getUserData(thisBody);
@@ -173,7 +160,6 @@ void Player_onTakeDamage(PE_Collision* collision)
             break;
         }
     }
-    
 }
 
 void Player_onCollisionStay(PE_Collision *collision)
@@ -229,7 +215,7 @@ void Player_onCollisionStay(PE_Collision *collision)
         int relPos = PE_Collision_getRelativePosition(collision);
         PE_Vec2 velocity;
         PE_Body_getVelocity(thisBody, &velocity);
-        Block* block = GameObject_getBlock(otherObject);
+        Block *block = GameObject_getBlock(otherObject);
         switch (relPos)
         {
         case PE_ABOVE:
@@ -239,7 +225,7 @@ void Player_onCollisionStay(PE_Collision *collision)
 
         case PE_BELOW:
 
-            if(block->m_type != BLOCK_ONE_WAY)
+            if (block->m_type != BLOCK_ONE_WAY)
             {
                 if (velocity.y > 0.f)
                     velocity.y = 0.f;
@@ -298,7 +284,7 @@ int Player_createAnimator(Player *player)
     if (!texAnim) goto ERROR_LABEL;
 
     RE_TextureAnim_setCycleTime(texAnim, 0.2f);
-    
+
     texAnim = RE_Animator_createTextureAnim(animator, textures->IdleFirePlayer, "IdleFire");
     if (!texAnim) goto ERROR_LABEL;
 
@@ -411,9 +397,9 @@ int Player_onStart(GameObject *object)
     mainCollider = Player_makeDefaultCollider(player);
     if (!mainCollider) goto ERROR_LABEL;
 
-    PE_Collider* damageableCollider = Player_makeDamageableCollider(player);
+    PE_Collider *damageableCollider = Player_makeDamageableCollider(player);
     if (!damageableCollider) goto ERROR_LABEL;
-    
+
     // Création du détecteur en dessous du sol
     PE_ColliderDef_setDefault(&colliderDef);
     PE_Shape_setAsBox(&colliderDef.shape, -0.35f, -0.1f, 0.35f, 0.f);
@@ -433,13 +419,16 @@ int Player_onStart(GameObject *object)
     aboveDetector = PE_Body_createCollider(body, &colliderDef);
     if (!aboveDetector) goto ERROR_LABEL;
 
+    player->m_aboveCollider = aboveDetector;
+    player->m_belowCollider = belowDetector;
+
     // Ajout des callbacks
     PE_Collider_setOnCollisionStay(mainCollider, Player_onCollisionStay);
 
-    PE_Collider_setOnTriggerStay(aboveDetector, Player_aboveTriggerStay);
-    PE_Collider_setOnTriggerExit(aboveDetector, Player_aboveTriggerExit);
-    PE_Collider_setOnTriggerStay(belowDetector, Player_belowTriggerStay);
-    PE_Collider_setOnTriggerExit(belowDetector, Player_belowTriggerExit);
+    PE_Collider_setOnTriggerStay(player->m_aboveCollider, Player_aboveTriggerStay);
+    PE_Collider_setOnTriggerExit(player->m_aboveCollider, Player_aboveTriggerExit);
+    PE_Collider_setOnTriggerStay(player->m_belowCollider, Player_belowTriggerStay);
+    PE_Collider_setOnTriggerExit(player->m_belowCollider, Player_belowTriggerExit);
 
     PE_Collider_setOnCollisionStay(damageableCollider, Player_onTakeDamage);
 
@@ -455,8 +444,6 @@ int Player_onStart(GameObject *object)
     exitStatus = Scene_setToRespawn(scene, object);
     if (exitStatus != EXIT_SUCCESS) goto ERROR_LABEL;
 
-    //PE_Body_setGravityScale(body, -1);
-    
     return EXIT_SUCCESS;
 
 ERROR_LABEL:
@@ -483,14 +470,19 @@ int Player_onRespawn(GameObject *object)
     player->m_immune = FALSE;
     player->m_immune_time = -1;
 
-    if(player->m_damageableCollider)
+    if (player->m_damageableCollider)
     {
         PE_Body_removeCollider(body, player->m_damageableCollider);
     }
 
+    if (Player_getGravityDirection(player) == INVERTED)
+    {
+        Player_switchGravity(player);
+    }
+
     player->m_damageableCollider = Player_makeDamageableCollider(player);
     PE_Collider_setOnCollisionStay(player->m_damageableCollider, Player_onTakeDamage);
-    
+
     // Réinitialisez les paramètres du joueur ici lorsqu'il réapparait après avoir perdu une vie
 
     player->m_state = PLAYER_IDLE;
@@ -530,16 +522,16 @@ void Player_bounce(Player *player)
 
 void Player_damage(Player *player)
 {
+    if (player->m_immune) { return; }
 
-    if(player->m_immune) { return; }
-    
     Scene *scene = GameObject_getScene(player->m_object);
+    player->m_stats.PowerUP = PLAYER_NORMAL;
 
-    
+
     // Améliorez cette fonction avec une gestion des coeurs ou des vies
     // Vous pouvez modifier les stats du joueur
     // Vous pouvez quitter le jeu en appelant Scene_gameOver(scene);
-    
+
     player->m_stats.nbHearts--;
     if (player->m_stats.nbHearts < 0)
     {
@@ -550,13 +542,12 @@ void Player_damage(Player *player)
         player->m_immune = TRUE;
         player->m_immune_time = RE_Timer_getElapsed(Scene_getTime(scene));
     }
-
 }
 
 void Player_kill(Player *player)
 {
     Scene *scene = GameObject_getScene(player->m_object);
-    
+
     // Améliorez cette fonction avec une gestion des vies
     // Vous pouvez modifier les stats du joueur
     // Vous pouvez quitter le jeu en appelant Scene_gameOver(scene);
@@ -567,36 +558,33 @@ void Player_kill(Player *player)
     {
         //Scene_gameOver(scene);
     }
-    
+
     Scene_respawn(scene);
 }
 
 void Player_addFirefly(Player *player)
 {
-    
     // Améliorez cette fonction avec une gestion lucioles et des vies
     player->m_stats.nbFireflies++;
 }
 
 void Player_addHeart(Player *player)
 {
-    
     // Améliorez cette fonction
     if (player->m_stats.nbHearts < 2)
     {
         player->m_stats.nbHearts++;
     }
-
 }
 
-void Player_PowerUP(Player* player, int type)
+void Player_powerUp(Player *player, int type)
 {
     switch (type)
     {
     case POWERUP_FIRE:
         player->m_stats.PowerUP = PLAYER_FIRE;
         break;
-    default : 
+    default:
         player->m_stats.PowerUP = PLAYER_NORMAL;
         break;
     }
@@ -618,13 +606,12 @@ int Player_update(GameObject *object)
     time = Scene_getTime(scene);
     input = Scene_getInput(scene);
 
-    if(player->m_immune && RE_Timer_getElapsed(Scene_getTime(scene)) - player->m_immune_time > 2.0f)
+    if (player->m_immune && RE_Timer_getElapsed(Scene_getTime(scene)) - player->m_immune_time > 2.0f)
     {
         player->m_immune = FALSE;
         player->m_immune_time = -1.0f;
         player->m_damageableCollider = Player_makeDamageableCollider(player);
         PE_Collider_setOnCollisionStay(player->m_damageableCollider, Player_onTakeDamage);
-
     }
 
     // Récupération des actions de l'utilisateur
@@ -643,7 +630,7 @@ int Player_update(GameObject *object)
     {
         player->m_shoot = TRUE;
     }
-    
+
     if (input->skiddingPressed && !player->m_onGround)
     {
         player->m_state = PLAYER_SKIDDING;
@@ -652,6 +639,9 @@ int Player_update(GameObject *object)
     {
         player->m_state = PLAYER_FALLING;
     }
+
+    printf("Falling: %d | onGround: %d\n", player->m_state == PLAYER_FALLING, player->m_onGround);
+
     return EXIT_SUCCESS;
 
 ERROR_LABEL:
@@ -678,17 +668,16 @@ int Player_fixedUpdate(GameObject *object)
     time = Scene_getTime(scene);
     input = Scene_getInput(scene);
 
-    // Initialisation du booléen indiquant si le joueur touche le sol
-    if(Player_getGravityDirection(player) == NORMAL)
+    if (player->m_switchGravity)
     {
-        player->m_onGround = player->m_belowDetector && !player->m_aboveDetector;
-    }
-    else
-    {
-        player->m_onGround = !player->m_belowDetector && player->m_aboveDetector;
+        Player_internal_switchGravity(player);
+        player->m_switchGravity = FALSE;
     }
 
-    if(player->m_immune && player->m_damageableCollider)
+    // Initialisation du booléen indiquant si le joueur touche le sol
+    player->m_onGround = player->m_belowDetector && !player->m_aboveDetector;
+
+    if (player->m_immune && player->m_damageableCollider)
     {
         PE_Body_removeCollider(player->m_damageableCollider->m_body, player->m_damageableCollider);
         player->m_damageableCollider = NULL;
@@ -696,7 +685,7 @@ int Player_fixedUpdate(GameObject *object)
 
     if (player->m_stats.PowerUP != PLAYER_NORMAL && player->m_shoot == TRUE)
     {
-        Player_Shoot(player, player->m_stats.PowerUP);
+        Player_shoot(player, player->m_stats.PowerUP);
         player->m_shoot = FALSE;
     }
     else
@@ -716,11 +705,10 @@ int Player_fixedUpdate(GameObject *object)
     // Mise à jour de l'état du joueur
     if (player->m_onGround && (player->m_state == PLAYER_FALLING))
     {
-
-        if(player->m_hDirection == 0)
+        if (player->m_hDirection == 0)
         {
             player->m_state = PLAYER_IDLE;
-            switch(player->m_stats.PowerUP)
+            switch (player->m_stats.PowerUP)
             {
             case PLAYER_FIRE:
                 RE_Animator_playTextureAnim(player->m_animator, "IdleFire");
@@ -732,8 +720,7 @@ int Player_fixedUpdate(GameObject *object)
         }
         else
         {
-
-            switch(player->m_stats.PowerUP)
+            switch (player->m_stats.PowerUP)
             {
             case PLAYER_FIRE:
                 RE_Animator_playTextureAnim(player->m_animator, "RunningFire");
@@ -744,7 +731,6 @@ int Player_fixedUpdate(GameObject *object)
             }
 
             player->m_state = PLAYER_RUNNING;
-
         }
     }
     else if (!player->m_onGround && (player->m_state != PLAYER_FALLING && player->m_state != PLAYER_SKIDDING))
@@ -763,12 +749,12 @@ int Player_fixedUpdate(GameObject *object)
         }
     }
 
-    if(player->m_onGround && player->m_state != PLAYER_FALLING)
+    if (player->m_onGround && player->m_state != PLAYER_FALLING)
     {
-        if(player->m_hDirection == 0)
+        if (player->m_hDirection == 0)
         {
             player->m_state = PLAYER_IDLE;
-            switch(player->m_stats.PowerUP)
+            switch (player->m_stats.PowerUP)
             {
             case PLAYER_FIRE:
                 RE_Animator_playTextureAnim(player->m_animator, "IdleFire");
@@ -780,9 +766,9 @@ int Player_fixedUpdate(GameObject *object)
         }
         else
         {
-            if(player->m_state != PLAYER_RUNNING)
-            {             
-                switch(player->m_stats.PowerUP)
+            if (player->m_state != PLAYER_RUNNING)
+            {
+                switch (player->m_stats.PowerUP)
                 {
                 case PLAYER_FIRE:
                     RE_Animator_playTextureAnim(player->m_animator, "RunningFire");
@@ -794,7 +780,6 @@ int Player_fixedUpdate(GameObject *object)
             }
 
             player->m_state = PLAYER_RUNNING;
-
         }
     }
 
@@ -809,21 +794,24 @@ int Player_fixedUpdate(GameObject *object)
 
     if (!player->m_onGround && player->m_state == PLAYER_SKIDDING)
     {
-        velocity.y = -2.f;
+        velocity.y = Player_getGravityDirection(player) * -2.f;
     }
     PE_Body_setVelocity(body, &velocity);
 
-    if(player->m_hDirection == -1)
+    if (player->m_hDirection == -1)
     {
         player->facingDirection = FACING_LEFT;
-        RE_Transform transform = RE_Transform_getDefault();
-        transform.flipFlags = RE_FLIP_HORIZONTAL;
+        RE_Transform transform;
+        RE_Animator_getTransform(player->m_animator, &transform);
+        transform.flipFlags |= RE_FLIP_HORIZONTAL;
         RE_Animator_setTransform(player->m_animator, &transform);
     }
-    else if(player->m_hDirection == 1)
+    else if (player->m_hDirection == 1)
     {
         player->facingDirection = FACING_RIGHT;
-        RE_Transform transform = RE_Transform_getDefault();
+        RE_Transform transform;
+        RE_Animator_getTransform(player->m_animator, &transform);
+        transform.flipFlags &= ~RE_FLIP_HORIZONTAL;
         RE_Animator_setTransform(player->m_animator, &transform);
     }
     return EXIT_SUCCESS;
@@ -856,6 +844,11 @@ int Player_render(GameObject *object)
     viewY -= RE_Texture_getPartHeight(textures->playerRunning, 0);
     viewX -= RE_Texture_getPartWidth(textures->playerRunning, 0) / 2;
 
+    if (Player_getGravityDirection(player) == INVERTED)
+    {
+        viewY += 35.0f;
+    }
+
     RE_Animator_renderF(player->m_animator, viewX, viewY);
 
     return EXIT_SUCCESS;
@@ -864,14 +857,71 @@ ERROR_LABEL:
     printf("ERROR - Player_render()\n");
     return EXIT_FAILURE;
 }
-
-void Player_Shoot(Player* player, int type)
+void Player_switchGravity(Player *player)
 {
-    GameObject* object = Player_getObject(player);
-    Scene* scene = GameObject_getScene(object);
+    player->m_switchGravity = TRUE;
+}
+
+
+void Player_internal_switchGravity(Player *player)
+{
+    GameObject *object = Player_getObject(player);
+    PE_Body *body = GameObject_getBody(object);
+    PE_ColliderDef colliderDef;
+    RE_Transform transform;
+
+    PE_Body_setGravityScale(GameObject_getBody(object), -Player_getGravityDirection(player));
+    RE_Animator_getTransform(player->m_animator, &transform);
+
+    PE_Body_removeCollider(body, player->m_aboveCollider);
+    PE_Body_removeCollider(body, player->m_belowCollider);
+
+    PE_ColliderDef_setDefault(&colliderDef);
+    colliderDef.isTrigger = TRUE;
+    colliderDef.filter.categoryBits = FILTER_PLAYER;
+    colliderDef.filter.maskBits = FILTER_BLOCK;
+
+    if (Player_getGravityDirection(player) == INVERTED)
+    {
+        transform.flipFlags |= RE_FLIP_VERTICAL;
+
+        PE_Shape_setAsBox(&colliderDef.shape, -0.35f, 0.0f, 0.35f, 1.0f);
+        player->m_belowCollider = PE_Body_createCollider(body, &colliderDef);
+
+        PE_Shape_setAsBox(&colliderDef.shape, -0.3f, -1.0f, 0.3f, 0.0f);
+        player->m_aboveCollider = PE_Body_createCollider(body, &colliderDef);
+    }
+    else
+    {
+        transform.flipFlags &= ~RE_FLIP_VERTICAL;
+
+        PE_Shape_setAsBox(&colliderDef.shape, -0.35f, -1.0f, 0.35f, 0.f);
+        player->m_belowCollider = PE_Body_createCollider(body, &colliderDef);
+
+        PE_Shape_setAsBox(&colliderDef.shape, -0.3f, 0.1f, 0.3f, 0.2f);
+        player->m_aboveCollider = PE_Body_createCollider(body, &colliderDef);
+        
+    }
+
+    RE_Animator_setTransform(player->m_animator, &transform);
+
+    PE_Collider_setOnTriggerStay(player->m_aboveCollider, Player_aboveTriggerStay);
+    PE_Collider_setOnTriggerExit(player->m_aboveCollider, Player_aboveTriggerExit);
+    PE_Collider_setOnTriggerStay(player->m_belowCollider, Player_belowTriggerStay);
+    PE_Collider_setOnTriggerExit(player->m_belowCollider, Player_belowTriggerExit);
+
+    player->m_aboveDetector = FALSE;
+    player->m_belowDetector = FALSE;
+}
+
+void Player_shoot(Player *player, int type)
+{
+    GameObject *object = Player_getObject(player);
+    Scene *scene = GameObject_getScene(object);
     PE_Vec2 position = GameObject_getPosition(object);
     position.y += 0.25;
     position.x += player->facingDirection * 1;
+
     switch (type)
     {
     case PLAYER_FIRE:

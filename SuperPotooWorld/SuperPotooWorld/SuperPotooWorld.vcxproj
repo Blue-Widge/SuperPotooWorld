@@ -33,6 +33,7 @@
     <ClCompile Include="Scene\Object\Block\Block.c" />
     <ClCompile Include="Scene\Object\Block\Block_Bonus.c" />
     <ClCompile Include="Scene\Object\Block\Block_Brick.c" />
+    <ClCompile Include="Scene\Object\Block\Block_GravityInverter.c" />
     <ClCompile Include="Scene\Object\Block\Block_Ground.c" />
     <ClCompile Include="Scene\Object\Block\Block_OneWay.c" />
     <ClCompile Include="Scene\Object\Camera.c" />
@@ -159,6 +160,9 @@
     <ClInclude Include="Scene\Tilemap.h" />
     <ClInclude Include="Settings.h" />
     <ClInclude Include="UITextures.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Scene\Object\Block\Block_GravityInverter.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

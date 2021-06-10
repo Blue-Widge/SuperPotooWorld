@@ -69,7 +69,11 @@ typedef struct Player_s
 
     int m_should_bounce;
 
+    int m_switchGravity;
+
     PE_Collider* m_damageableCollider;
+    PE_Collider* m_aboveCollider;
+    PE_Collider* m_belowCollider;
     Bool m_shoot;
 } Player;
 
@@ -103,5 +107,6 @@ void Player_bounce(Player *player);
 void Player_kill(Player *player);
 void Player_addFirefly(Player *player);
 void Player_addHeart(Player *player);
-void Player_PowerUP(Player* player, int type);
+void Player_powerUp(Player* player, int type);
+void Player_switchGravity(Player* player);
 #endif

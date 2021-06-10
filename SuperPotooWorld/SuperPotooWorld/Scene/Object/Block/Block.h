@@ -11,7 +11,8 @@ typedef enum BlockType_e
     BLOCK_GROUND,
     BLOCK_ONE_WAY,
     BLOCK_BRICK,
-    BLOCK_BONUS
+    BLOCK_BONUS,
+    BLOCK_GRAVITY_INVERTER
 } BlockType;
 
 typedef struct Block_s
