@@ -54,7 +54,7 @@ int Nut_onStart(Enemy *enemy)
     PE_ColliderDef_setDefault(&colliderDef);
     PE_Shape_setAsBox(&colliderDef.shape,0.0, 0.0, 1.0f, 1.0f);
     colliderDef.filter.categoryBits = FILTER_ENEMY | FILTER_VISIBLE | FILTER_DAMAGER;
-    colliderDef.filter.maskBits = FILTER_PLAYER | FILTER_BLOCK | FILTER_CAMERA | FILTER_DAMAGEABLE;
+    colliderDef.filter.maskBits = FILTER_PLAYER | FILTER_BLOCK | FILTER_CAMERA | FILTER_DAMAGEABLE | FILTER_DAMAGER;
     collider = PE_Body_createCollider(body, &colliderDef);
     if (!collider) goto ERROR_LABEL;
 

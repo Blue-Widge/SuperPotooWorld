@@ -16,8 +16,10 @@ typedef struct Skill_s
 {
     GameObject* m_object;
     int m_type;
-
     PE_Vec2 m_startPos;
+    int direction;
+    RE_Animator* animator;
+    
 } Skill;
 
 Skill* Skill_new(Scene* scene, int type, PE_Vec2* position);

@@ -13,6 +13,7 @@ void FireBall_onTriggerEnter(PE_Trigger* trigger)
     GameObject* thisObject = (GameObject*)PE_Body_getUserData(thisBody);
     GameObject* otherObject = (GameObject*)PE_Body_getUserData(otherBody);
     Enemy* enemy = NULL;
+    Block* block = NULL;
 
     if (!thisObject || !otherObject)
     {
@@ -21,13 +22,21 @@ void FireBall_onTriggerEnter(PE_Trigger* trigger)
     }
 
     enemy = GameObject_getEnemy(otherObject);
-
     if (enemy)
     {
-        Scene* scene = GameObject_getScene(thisObject);
-        Scene_disableObject(scene, thisObject);
         Enemy_damage(enemy);
     }
+
+    if(enemy || otherObject->m_type == GAME_BLOCK)
+    {
+        if(!GameObject_hasOneFlag(thisObject, OBJECT_TO_REMOVE))
+        {
+            Scene* scene = GameObject_getScene(thisObject);
+            Scene_removeObject(scene, thisObject);
+        }
+    }    
+    
+    
 }
 
 int FireBall_onStart(Skill* skill)
@@ -45,7 +54,7 @@ int FireBall_onStart(Skill* skill)
 
     // Création du corps associé
     PE_BodyDef_setDefault(&bodyDef);
-    bodyDef.type = PE_STATIC_BODY;
+    bodyDef.type = PE_DYNAMIC_BODY;
     bodyDef.position = *position;
     body = PE_World_createBody(world, &bodyDef);
     if (!body) goto ERROR_LABEL;
@@ -54,18 +63,34 @@ int FireBall_onStart(Skill* skill)
 
     // Création du collider
     PE_ColliderDef_setDefault(&colliderDef);
-    PE_Shape_setAsBox(&colliderDef.shape, 0.0, 0.0, 1.0f, 1.0f);
+    PE_Shape_setAsBox(&colliderDef.shape, .1f, .1f, .9f, .9f);
     colliderDef.isTrigger = TRUE;
-    colliderDef.filter.categoryBits = FILTER_VISIBLE;
-    colliderDef.filter.maskBits = FILTER_ENEMY | FILTER_BLOCK | FILTER_CAMERA | FILTER_DAMAGER;
+    colliderDef.filter.categoryBits = FILTER_VISIBLE | FILTER_DAMAGER ;
+    colliderDef.filter.maskBits = FILTER_ENEMY | FILTER_CAMERA | FILTER_BLOCK;
     collider = PE_Body_createCollider(body, &colliderDef);
     if (!collider) goto ERROR_LABEL;
 
     // Callback du collider
     PE_Collider_setOnTriggerEnter(collider, FireBall_onTriggerEnter);
+    
+    PE_Body_setGravityScale(body, 0);
 
-    RE_Animator* animator = Scene_getAnimators(scene)->fireball;
-    RE_Animator_playTextureAnim(animator, "Fireball");
+    Player* player = Scene_getPlayer(scene);
+    skill->direction = player->facingDirection;
+    
+    GameTextures* textures = Scene_getTextures(scene);
+    RE_TextureAnim* texAnim = RE_Animator_createTextureAnim(skill->animator, textures->fireball, "Fireball");
+    if (!texAnim) goto ERROR_LABEL;
+    RE_TextureAnim_setCycleTime(texAnim, 0.3f);
+
+    if(player->facingDirection == FACING_LEFT)
+    {
+        RE_Transform transform = RE_Transform_getDefault();
+        transform.flipFlags = RE_FLIP_HORIZONTAL;
+        RE_Animator_setTransform(skill->animator, &transform);
+    }
+
+    RE_Animator_playTextureAnim(skill->animator, "Fireball");
 
     return EXIT_SUCCESS;
 
@@ -86,6 +111,17 @@ ERROR_LABEL:
     return EXIT_FAILURE;
 }
 
+int Fireball_fixedUpdate(GameObject* object)
+{
+    Skill* skill = GameObject_getSkill(object);
+    PE_Vec2 velocity;
+    PE_Body_getVelocity(object->m_body, &velocity);
+    velocity.x = skill->direction * 10.0f;
+    velocity.y = 0.0f;
+    PE_Body_setVelocity(GameObject_getBody(object), &velocity);
+    return EXIT_SUCCESS;
+}
+
 void FireBall_render(Skill* skill)
 {
     Scene* scene = GameObject_getScene(skill->m_object);
@@ -95,9 +131,9 @@ void FireBall_render(Skill* skill)
     Camera* camera = Scene_getCamera(scene);
 
     float x, y;
-    position.x = skill->m_startPos.x;
-    position.y = skill->m_startPos.y + 1;
+    position.x = position.x;
+    position.y = position.y + 1;
     Camera_worldToView(camera, &position, &x, &y);
-    RE_Animator_renderF(animators->fireball, x, y);
+    RE_Animator_renderF(skill->animator, x, y);
 
 }

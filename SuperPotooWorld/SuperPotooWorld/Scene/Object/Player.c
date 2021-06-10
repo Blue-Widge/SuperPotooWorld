@@ -798,12 +798,14 @@ int Player_fixedUpdate(GameObject *object)
 
     if(player->m_hDirection == -1)
     {
+        player->facingDirection = FACING_LEFT;
         RE_Transform transform = RE_Transform_getDefault();
         transform.flipFlags = RE_FLIP_HORIZONTAL;
         RE_Animator_setTransform(player->m_animator, &transform);
     }
     else if(player->m_hDirection == 1)
     {
+        player->facingDirection = FACING_RIGHT;
         RE_Transform transform = RE_Transform_getDefault();
         RE_Animator_setTransform(player->m_animator, &transform);
     }
@@ -866,6 +868,8 @@ void Player_Shoot(Player* player, int type)
     GameObject* object = Player_getObject(player);
     Scene* scene = GameObject_getScene(object);
     PE_Vec2 position = GameObject_getPosition(object);
+    position.y += 0.25;
+    position.x += player->facingDirection * 1;
     switch (type)
     {
     case PLAYER_FIRE:

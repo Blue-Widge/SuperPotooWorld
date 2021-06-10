@@ -9,6 +9,7 @@ int Skill_free(GameObject* object);
 int Skill_onStart(GameObject* object);
 int Skill_onRespawn(GameObject* object);
 int Skill_render(GameObject* object);
+int Skill_fixedUpdate(GameObject* object);
 
 Skill* Skill_new(Scene* scene, int type, PE_Vec2* position)
 {
@@ -32,6 +33,9 @@ Skill* Skill_new(Scene* scene, int type, PE_Vec2* position)
     object->cm_onStart = Skill_onStart;
     object->cm_onRespawn = Skill_onRespawn;
     object->cm_render = Skill_render;
+    object->cm_fixedUpdate = Skill_fixedUpdate;
+
+    Scene_setToFixedUpdate(scene, object);
 
     return skill;
 
@@ -39,6 +43,17 @@ ERROR_LABEL:
     printf("ERROR - Skill_new()\n");
     GameObject_free(object);
     return NULL;
+}
+
+int Skill_fixedUpdate(GameObject* object)
+{
+    Skill* skill = GameObject_getSkill(object);
+    switch(skill->m_type)
+    {
+        case FIREBALL:
+            Fireball_fixedUpdate(object);
+            break;;
+    }
 }
 
 int Skill_free(GameObject* object)
@@ -49,6 +64,7 @@ int Skill_free(GameObject* object)
 
     skill = GameObject_getSkill(object);
     if (!skill) goto ERROR_LABEL;
+    RE_Animator_free(skill->animator);
 
     free(skill);
 
@@ -68,6 +84,12 @@ int Skill_onStart(GameObject* object)
 
     skill = GameObject_getSkill(object);
     if (!skill) goto ERROR_LABEL;
+
+    
+    RE_Animator* animator = RE_Animator_new();
+    if (!animator) goto ERROR_LABEL;
+
+    skill->animator = animator;
 
     switch (skill->m_type)
     {
@@ -126,6 +148,7 @@ int Skill_render(GameObject* object)
 
     skill = GameObject_getSkill(object);
     if (!skill) goto ERROR_LABEL;
+    RE_Animator_update(skill->animator, Scene_getTime(GameObject_getScene(object)));
 
     switch (skill->m_type)
     {

@@ -13,6 +13,15 @@ typedef enum GravityDirection_e
     INVERTED = -1
 } GravityDirection;
 
+
+
+typedef enum FacingDirection_e
+{
+    FACING_RIGHT = 1,
+    FACING_LEFT = -1
+} FacingDirection;
+
+
 // AJOUT
 typedef enum PlayerPowerUP_e
 {
@@ -50,6 +59,7 @@ typedef struct Player_s
     Bool m_jump;
     int m_state;
     float m_hDirection;
+    FacingDirection facingDirection;
 
     RE_Animator *m_animator;
     PE_Vec2 m_startPos;
@@ -78,6 +88,11 @@ INLINE PlayerStats *Player_getStats(Player *player)
 INLINE GravityDirection Player_getGravityDirection(Player* player)
 {
     return PE_Body_getGravityScale(GameObject_getBody(Player_getObject(player))) >= 0 ? NORMAL : INVERTED;
+} 
+
+INLINE GravityDirection Player_getFacingDirection(Player* player)
+{
+    return player->facingDirection;
 } 
 
 void Player_setStartPosition(Player *player, PE_Vec2 *position);

@@ -26,9 +26,6 @@ GameAnimators *GameAnimators_new(Scene *scene)
     
     animators->RollingPowerUP_Fire = RE_Animator_new();
     if (!animators->RollingPowerUP_Fire) goto ERROR_LABEL;
-    
-    animators->fireball = RE_Animator_new();
-    if (!animators->fireball) goto ERROR_LABEL;
 
     GameTextures* textures = Scene_getTextures(scene);
     
@@ -43,10 +40,6 @@ GameAnimators *GameAnimators_new(Scene *scene)
     texAnim = RE_Animator_createTextureAnim(animators->RollingPowerUP_Fire, textures->PowerUP_Fire, "RollingPowerUP_Fire");
     if (!texAnim) goto ERROR_LABEL;
     RE_TextureAnim_setCycleTime(texAnim, 0.2f);
-
-    texAnim = RE_Animator_createTextureAnim(animators->fireball, textures->fireball, "Fireball");
-    if (!texAnim) goto ERROR_LABEL;
-    RE_TextureAnim_setCycleTime(texAnim, 0.3f);
 
     /*
     param = RE_Animator_createParamAnim(animator, "xShift");
@@ -83,7 +76,6 @@ void GameAnimators_free(GameAnimators *animators)
 
     RE_Animator_free(animators->firefly);
     RE_Animator_free(animators->bonus);
-    RE_Animator_free(animators->fireball);
 
     //AJOUT
     RE_Animator_free(animators->RollingPowerUP_Fire);
@@ -96,7 +88,6 @@ void GameAnimators_update(GameAnimators *animators)
     RE_Timer *time = Scene_getTime(animators->m_scene);
     RE_Animator_update(animators->firefly, time);
     RE_Animator_update(animators->bonus, time);
-    RE_Animator_update(animators->fireball, time);
 
     //AJOUT
     RE_Animator_update(animators->RollingPowerUP_Fire, time);
