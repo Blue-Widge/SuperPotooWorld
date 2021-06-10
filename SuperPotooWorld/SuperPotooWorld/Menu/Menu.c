@@ -4,6 +4,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 int Menu_createAnimator(Menu *menu)
 {
@@ -43,6 +44,18 @@ int Menu_createAnimator(Menu *menu)
     exitStatus = RE_Animator_playTextureAnim(animator, "Firefly");
     exitStatus = RE_Animator_playParamAnim(animator, "xShift");
     exitStatus = RE_Animator_playParamAnim(animator, "yShift");
+
+    RE_Animator* Loading = RE_Animator_new();
+    texAnim = RE_Animator_createTextureAnim(Loading, textures->loading, "Loading");
+    if (!texAnim) goto ERROR_LABEL;
+    RE_TextureAnim_setCycleTime(texAnim, 0.5f);
+
+    menu->m_loading = Loading;
+
+    param = RE_Animator_createParamAnim(Loading, "Launch");
+
+    exitStatus = RE_Animator_playTextureAnim(Loading, "Loading");
+    exitStatus = RE_Animator_playParamAnim(Loading, "Launch");
 
     return EXIT_SUCCESS;
 
@@ -101,9 +114,49 @@ void Menu_free(Menu *menu)
     MenuInput_free(menu->m_input);
     MenuTextures_free(menu->m_textures);
     free(menu->m_buttons);
-
     free(menu);
 }
+
+
+int Menu_updateLoading(Menu* menu)
+{
+    MenuInput* input = menu->m_input;
+    RE_Timer* time = menu->m_time;
+
+    int accu = 0.f;
+    MenuInput_update(input);
+    RE_Animator_update(menu->m_animator, time);
+
+    if (input->quitPressed)
+        return -1;
+    else if (input->buttonPressed)
+        return 1;
+        
+}
+
+void Menu_renderLoading(Menu* menu, Bool Loading)
+{
+    RE_Renderer* renderer = menu->m_renderer;
+    MenuTextures* textures = menu->m_textures;
+    int width = RE_Renderer_getWidth(renderer);
+    int height = RE_Renderer_getHeight(renderer);
+    int w = RE_Texture_getWidth(textures->loading);
+    int h = RE_Texture_getHeight(textures->loading);
+
+    RE_Texture_render(textures->background, 0, 0, 0);
+    RE_Texture_render(textures->controls, 0, 0, 0);
+    RE_Renderer_fill(renderer, RE_Color_set(0, 0, 0, 64));
+    if (Loading)
+    {
+        RE_Animator_render(menu->m_loading, (width / 2) - (w / 28) , height/2);
+    }
+    else
+    {
+        
+    }
+    
+}
+
 
 int Menu_update(Menu *menu)
 {

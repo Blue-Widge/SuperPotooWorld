@@ -11,6 +11,8 @@ typedef struct MenuInput_s
     Bool quitPressed; // On ferme fenetre
     Bool rightClick;
     Vec2 mousePos;
+    Bool buttonPressed;
+
 } MenuInput;
 
 MenuInput *MenuInput_new();

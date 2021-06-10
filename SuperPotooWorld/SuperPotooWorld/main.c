@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
     FILE *levelFile = NULL;
     int exitStatus;
     float timeStep = 1.f / 50.f;
-
+    Bool Loading = TRUE;
     exitStatus = RE_init();
     if (exitStatus == EXIT_FAILURE) goto ERROR_LABEL;
 
@@ -66,10 +66,65 @@ int main(int argc, char *argv[])
 
         menu = Menu_new(renderer, timer);
         if (!menu) goto ERROR_LABEL;
+        RE_Timer* chrono = RE_Timer_new();
+        RE_Timer_start(chrono);
+        while (!quitLoop)
+        {
+            exitStatus = Menu_updateLoading(menu);
+            RE_Timer_update(chrono);
+            if (RE_Timer_getElapsed(chrono) > 2)
+                Loading = FALSE;
+            switch (exitStatus)
+            {
+            case -1:
+                quitLoop = TRUE;
+                quitGame = TRUE;
+            case 1:
+                if(!Loading)
+                    quitLoop = TRUE;
+                break;
+            default:
+                break;
+            }
+            if (quitLoop)
+                break;
+            RE_Renderer_clear(renderer);
+            Menu_renderLoading(menu, Loading);
+            RE_Renderer_update(renderer);
+        }
+        //Copie colle d'un assombrissement de pro, car c'est encore plus pro, mais avec un ECLAIRCISSEMENT de pro, et ouais
+        RE_Timer_update(timer);
+        delay = 0.5f;
+        accu = 0.f;
+        while (accu < delay)
+        {
+            RE_Renderer_clear(renderer);
+            Menu_renderLoading(menu, Loading);
+            RE_Renderer_fill(renderer, RE_Color_set(0, 0, 0, (int)(255 * accu / delay)));
+            RE_Renderer_update(renderer);
 
+            RE_Timer_update(timer);
+            accu += RE_Timer_getDelta(timer);
+        }
+        RE_Renderer_clear(renderer);
+        RE_Renderer_update(renderer);
+        delay = 0.5f;
+        accu = 0.f;
+        while (accu < delay)
+        {
+            RE_Renderer_clear(renderer);
+            Menu_render(menu);
+            RE_Renderer_fill(renderer, RE_Color_set(0, 0, 0, (int)(255 - (255 * accu / delay))));
+            RE_Renderer_update(renderer);
+
+            RE_Timer_update(timer);
+            accu += RE_Timer_getDelta(timer);
+        }
+        RE_Renderer_clear(renderer);
+        RE_Renderer_update(renderer);
         //------------------------------------------------------------------------------------------
         // Boucle de rendu du menu
-
+        quitLoop = FALSE;
         while (!quitLoop)
         {
             RE_Timer_update(timer);
