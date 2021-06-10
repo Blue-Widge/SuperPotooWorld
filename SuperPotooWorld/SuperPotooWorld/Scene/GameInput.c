@@ -92,6 +92,11 @@ void GameInput_update(GameInput *input)
             {
                 input->shootPressed = TRUE;
             }
+
+            if (scanCode == SDL_SCANCODE_S)
+            {
+                input->skiddingPressed = TRUE;
+            }
             break;
         case SDL_KEYUP:
             scanCode = evt.key.keysym.scancode;
@@ -119,6 +124,11 @@ void GameInput_update(GameInput *input)
             if (scanCode == SDL_SCANCODE_F)
             {
                 input->shootPressed = FALSE;
+            }
+
+            if (scanCode == SDL_SCANCODE_S)
+            {
+                input->skiddingPressed = FALSE;
             }
             break;
         default:
