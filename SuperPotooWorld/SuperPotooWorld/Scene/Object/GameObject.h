@@ -10,6 +10,7 @@ typedef struct Collectable_s Collectable;
 typedef struct Camera_s Camera;
 typedef struct Enemy_s Enemy;
 typedef struct Tool_s Tool;
+typedef struct Skill_s Skill;
 
 typedef enum GameObjectType_e
 {
@@ -18,7 +19,8 @@ typedef enum GameObjectType_e
     GAME_COLLECTABLE,
     GAME_ENEMY,
     GAME_CAMERA,
-    GAME_TOOL
+    GAME_TOOL,
+    GAME_SKILL
 } GameObjectType;
 
 typedef enum CollisionFilter_e
@@ -146,6 +148,14 @@ INLINE Tool *GameObject_getTool(GameObject *object)
 {
     if (object->m_type == GAME_TOOL)
         return (Tool *)object->m_data;
+    else
+        return NULL;
+}
+
+INLINE Skill* GameObject_getSkill(GameObject* object)
+{
+    if (object->m_type == GAME_SKILL)
+        return (Skill*)object->m_data;
     else
         return NULL;
 }

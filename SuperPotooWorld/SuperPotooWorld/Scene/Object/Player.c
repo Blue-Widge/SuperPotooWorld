@@ -21,6 +21,7 @@ void Player_aboveTriggerExit(PE_Trigger *trigger);
 void Player_belowTriggerStay(PE_Trigger *trigger);
 void Player_belowTriggerExit(PE_Trigger *trigger);
 void Player_onCollisionStay(PE_Collision *collision);
+void Player_Shoot(Player* player, int type);
 
 PE_Collider* Player_makeDefaultCollider(Player* player)
 {
@@ -687,7 +688,7 @@ int Player_fixedUpdate(GameObject *object)
 
     if (player->m_stats.PowerUP != PLAYER_NORMAL && player->m_shoot == TRUE)
     {
-        printf("PIOU PIOU \n");
+        Player_Shoot(player, player->m_stats.PowerUP);
         player->m_shoot = FALSE;
     }
 
@@ -858,4 +859,19 @@ int Player_render(GameObject *object)
 ERROR_LABEL:
     printf("ERROR - Player_render()\n");
     return EXIT_FAILURE;
+}
+
+void Player_Shoot(Player* player, int type)
+{
+    GameObject* object = Player_getObject(player);
+    Scene* scene = GameObject_getScene(object);
+    PE_Vec2 position = GameObject_getPosition(object);
+    switch (type)
+    {
+    case PLAYER_FIRE:
+        Scene_createSkill(scene, FIREBALL, &position);
+        break;
+    default:
+        break;
+    }
 }

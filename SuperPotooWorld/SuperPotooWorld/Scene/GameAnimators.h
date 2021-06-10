@@ -12,6 +12,7 @@ typedef struct GameAnimators_s
     RE_Animator *firefly;
     RE_Animator *bonus;
     RE_Animator* RollingPowerUP_Fire;
+    RE_Animator* fireball;
     
 } GameAnimators;
 

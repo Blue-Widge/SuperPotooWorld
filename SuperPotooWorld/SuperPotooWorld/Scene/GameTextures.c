@@ -279,8 +279,8 @@ GameTextures *GameTextures_new(RE_Renderer *renderer)
         "../Assets/Images/Player/IdleFire.png", renderer);
     if (!textures->IdleFirePlayer) goto ERROR_LABEL;
 
-    textures->fireball = RE_Texture_new(
-        "../Assets/Images/Player/FireBall.png", renderer);
+    textures->fireball = RE_Texture_newSet(
+            "../Assets/Images/Player/FireBall.png", renderer,1,6);
     if (!textures->fireball) goto ERROR_LABEL;
 
     textures->background_default = load_background_default(renderer);

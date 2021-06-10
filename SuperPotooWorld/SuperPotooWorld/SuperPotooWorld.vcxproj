@@ -111,6 +111,8 @@
     <ClCompile Include="main.c" />
     <ClCompile Include="Scene\Object\GameObject.c" />
     <ClCompile Include="Scene\Object\Player.c" />
+    <ClCompile Include="Scene\Object\Powerups\Fireball.c" />
+    <ClCompile Include="Scene\Object\Powerups\Skill.c" />
     <ClCompile Include="Scene\Object\Tool\Tool.c" />
     <ClCompile Include="Scene\Object\Tool\Tool_Bound.c" />
     <ClCompile Include="Scene\Object\Tool\Tool_Checkpoint.c" />
@@ -145,6 +147,8 @@
     <ClInclude Include="Scene\Object\Enemy\Enemy_Nut.h" />
     <ClInclude Include="Scene\Object\GameObject.h" />
     <ClInclude Include="Scene\Object\Player.h" />
+    <ClInclude Include="Scene\Object\Powerups\Fireball.h" />
+    <ClInclude Include="Scene\Object\Powerups\Skill.h" />
     <ClInclude Include="Scene\Object\Tool\Tool.h" />
     <ClInclude Include="Scene\Object\Tool\Tool_Bound.h" />
     <ClInclude Include="Scene\Object\Tool\Tool_Checkpoint.h" />

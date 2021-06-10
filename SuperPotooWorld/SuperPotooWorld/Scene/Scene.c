@@ -520,3 +520,27 @@ ERROR_LABEL:
     GameObject_free(object);
     return NULL;
 }
+
+
+Skill* Scene_createSkill(Scene* scene, int type, PE_Vec2* position)
+{
+    Skill* skill = NULL;
+    GameObject* object = NULL;
+
+    skill = Skill_new(scene, type, position);
+    if (!skill) goto ERROR_LABEL;
+
+    object = Skill_getObject(skill);
+    int exitStatus = ObjectManager_addObject(scene->m_manager, object);
+    if (exitStatus != EXIT_SUCCESS) goto ERROR_LABEL;
+
+    exitStatus = Scene_startOject(scene, object);
+    if (exitStatus != EXIT_SUCCESS) goto ERROR_LABEL;
+
+    return skill;
+
+    ERROR_LABEL:
+        printf("ERROR - Scene_createSkill()\n");
+    GameObject_free(object);
+    return NULL;
+}

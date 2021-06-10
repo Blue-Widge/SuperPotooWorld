@@ -14,6 +14,8 @@
 #include "Parallax.h"
 #include "Tilemap.h"
 
+#include "Object/Powerups//Skill.h"
+
 #include "Object/GameObject.h"
 #include "Object/Camera.h"
 #include "Object/Player.h"
@@ -129,6 +131,7 @@ INLINE float Scene_getAlpha(Scene *scene)
     return scene->m_alpha;
 }
 
+
 // Création d'objets
 
 Collectable *Scene_createCollectable(Scene *scene, int type, PE_Vec2 *position);
@@ -138,6 +141,8 @@ Enemy *Scene_createEnemy(Scene *scene, int type, PE_Vec2 *position);
 Block *Scene_createBlock(Scene *scene, int type, PE_Vec2 *position, PE_AABB *aabb);
 
 Tool *Scene_createTool(Scene *scene, int type, PE_Vec2 *position, PE_AABB *aabb);
+
+Skill* Scene_createSkill(Scene* scene, int type, PE_Vec2* position);
 
 // Gestion des objets
 
