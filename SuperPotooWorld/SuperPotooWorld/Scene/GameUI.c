@@ -22,9 +22,11 @@ void GameUI_render(Scene *scene, PlayerStats *stats)
     int x, y, w, h;
     int nbLives = stats->nbLives;
     int nbHearts = stats->nbHearts;
-
-    w = RE_Texture_getWidth(textures->Lives);
+    int nbFireflies = stats->nbFireflies;
+    int widthLives = RE_Texture_getWidth(textures->Lives);
+    w = widthLives;
     h = RE_Texture_getHeight(textures->Lives);
+    int digitWidth = RE_Texture_getWidth(textures->digits) / 10;
 
     switch (stats->PowerUP)
     {
@@ -34,13 +36,45 @@ void GameUI_render(Scene *scene, PlayerStats *stats)
     default:
         RE_Texture_render(textures->Lives, 0, 5, 2);
         break;
-    }    
-    RE_Texture_render(textures->digits, nbLives, w + 10, 2 + h / 2);
+    }
+    RE_Texture_render(textures->Fireflies, 1, 5, 12 + h);
 
-    w += RE_Texture_getWidth(textures->digits) / 10 + 30;
+    int nbDigitsLives = 0, nbDigitsFireflies = 0, temp = nbLives;
+    while (temp > 0)
+    {
+        temp /= 10;
+        nbDigitsLives++;
+    }
+
+    temp = nbFireflies;
+
+    while (temp > 0)
+    {
+        temp /= 10;
+        nbDigitsFireflies++;
+    }
+
+    int widthfinalHeart = (nbDigitsLives - 1) * digitWidth + widthLives;
+    int widthfinal = (nbDigitsFireflies - 1) * digitWidth + widthLives;
+    w = widthfinal;
+    for (; nbDigitsLives > 0; --nbDigitsLives)
+    {
+        RE_Texture_render(textures->digits, nbLives % 10 , w + 10, 2 + h / 2);
+        w -= digitWidth;
+        nbLives /= 10;
+    }
+
+    w = widthfinalHeart + 30;
     for (; nbHearts >= 0; nbHearts--)
     {
         RE_Texture_render(textures->Hearts, 0, w + 5, h / 4);
         w += RE_Texture_getWidth(textures->Hearts);
+    }
+    w = widthfinal;
+    for (; nbDigitsFireflies > 0; --nbDigitsFireflies)
+    {
+        RE_Texture_render(textures->digits, nbFireflies % 10, w + 10, 24 + h);
+        w -= digitWidth;
+        nbFireflies /= 10;
     }
 }

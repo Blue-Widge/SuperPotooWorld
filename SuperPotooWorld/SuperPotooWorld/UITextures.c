@@ -21,10 +21,13 @@ UITextures* UITextures_new(RE_Renderer* renderer)
         "../Assets/Images/Collectables/Heart.png", renderer);
     if (!textures->Hearts) goto ERROR_LABEL;
 
+    textures->Fireflies = RE_Texture_newSet(
+        "../Assets/Images/Collectables/Firefly.png", renderer, 2, 4);
+    if (!textures->Fireflies) goto ERROR_LABEL;
+
     textures->digits = RE_Texture_newSet(
         "../Assets/Images/Menu/Digits.png", renderer, 1, 10);
     if (!textures->digits) goto ERROR_LABEL;
-
 
     textures->LivesFire = RE_Texture_new(
         "../Assets/Images/Player/IdleFire.png", renderer);
@@ -46,6 +49,6 @@ void UITextures_free(UITextures* UITex)
     RE_Texture_free(UITex->Lives);
     RE_Texture_free(UITex->Hearts);
     RE_Texture_free(UITex->digits);
-
+    RE_Texture_free(UITex->Fireflies);
     free(UITex);
 }

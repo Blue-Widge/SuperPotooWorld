@@ -643,7 +643,15 @@ int Player_update(GameObject *object)
     {
         player->m_shoot = TRUE;
     }
-
+    
+    if (input->skiddingPressed && !player->m_onGround)
+    {
+        player->m_state = PLAYER_SKIDDING;
+    }
+    else if (!(input->skiddingPressed) && !player->m_onGround)
+    {
+        player->m_state = PLAYER_FALLING;
+    }
     return EXIT_SUCCESS;
 
 ERROR_LABEL:
@@ -691,6 +699,10 @@ int Player_fixedUpdate(GameObject *object)
         Player_Shoot(player, player->m_stats.PowerUP);
         player->m_shoot = FALSE;
     }
+    else
+    {
+        player->m_shoot = FALSE;
+    }
 
     PE_Body_getVelocity(body, &velocity);
     velocity.x = player->m_hDirection * 8.f;
@@ -735,7 +747,7 @@ int Player_fixedUpdate(GameObject *object)
 
         }
     }
-    else if (!player->m_onGround && (player->m_state != PLAYER_FALLING))
+    else if (!player->m_onGround && (player->m_state != PLAYER_FALLING && player->m_state != PLAYER_SKIDDING))
     {
         player->m_state = PLAYER_FALLING;
         int exitStatus;
@@ -794,6 +806,11 @@ int Player_fixedUpdate(GameObject *object)
         velocity.y = Player_getGravityDirection(player) * 17.f;
         player->m_jump = FALSE;
     }
+
+    if (!player->m_onGround && player->m_state == PLAYER_SKIDDING)
+    {
+        velocity.y = -2.f;
+    }
     PE_Body_setVelocity(body, &velocity);
 
     if(player->m_hDirection == -1)
@@ -809,21 +826,6 @@ int Player_fixedUpdate(GameObject *object)
         RE_Transform transform = RE_Transform_getDefault();
         RE_Animator_setTransform(player->m_animator, &transform);
     }
-/*
-    if (velocity.x == 0 && velocity.y == 0)
-    {
-        switch (player->m_stats.PowerUP)
-        {
-        case PLAYER_FIRE:
-            RE_Texture_render(textures->IdleFirePlayer, 0, player->m_startPos.x, player->m_startPos.y);
-            RE_Animator_stopTextureAnim(player->m_animator);
-                break;
-        default:
-            RE_Texture_render(textures->IdlePlayer, 0, player->m_startPos.x, player->m_startPos.y);
-            RE_Animator_stopTextureAnim(player->m_animator);
-            break;
-        }
-    }*/
     return EXIT_SUCCESS;
 
 ERROR_LABEL:

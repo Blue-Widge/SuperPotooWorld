@@ -16,6 +16,7 @@ typedef struct GameInput_s
     Bool toggleGizmos;
 
     Bool shootPressed;
+    Bool skiddingPressed;
 } GameInput;
 
 GameInput *GameInput_new();
