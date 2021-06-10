@@ -114,7 +114,6 @@ void Menu_free(Menu *menu)
     MenuInput_free(menu->m_input);
     MenuTextures_free(menu->m_textures);
     free(menu->m_buttons);
-
     free(menu);
 }
 

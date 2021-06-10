@@ -1,6 +1,1 @@
-﻿  Menu.c
-C:\Users\bluew\CLionProjects\SuperPotooWorld\SuperPotooWorld\SuperPotooWorld\SuperPotooWorld\Menu\Menu.c(127,1): warning C4244: 'initialisation' : conversion de 'float' en 'int', perte possible de données
-C:\Users\bluew\CLionProjects\SuperPotooWorld\SuperPotooWorld\SuperPotooWorld\SuperPotooWorld\Menu\Menu.c(127,9): warning C4189: 'accu' : variable locale initialisée mais non référencée
-C:\Users\bluew\CLionProjects\SuperPotooWorld\SuperPotooWorld\SuperPotooWorld\SuperPotooWorld\Menu\Menu.c(145,9): warning C4189: 'h' : variable locale initialisée mais non référencée
-C:\Users\bluew\CLionProjects\SuperPotooWorld\SuperPotooWorld\SuperPotooWorld\SuperPotooWorld\Menu\Menu.c(136): warning C4715: 'Menu_updateLoading' : les chemins de contrôle ne retournent pas tous une valeur
-  SuperPotooWorld.vcxproj -> C:\Users\bluew\CLionProjects\SuperPotooWorld\SuperPotooWorld\SuperPotooWorld\x64\Debug\SuperPotooWorld.exe
+﻿  SuperPotooWorld.vcxproj -> C:\Users\bluew\CLionProjects\SuperPotooWorld\SuperPotooWorld\SuperPotooWorld\x64\Debug\SuperPotooWorld.exe
