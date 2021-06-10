@@ -575,22 +575,25 @@ void Player_addFirefly(Player *player)
 {
     
     // Améliorez cette fonction avec une gestion lucioles et des vies
-    player->m_stats.nbFireflies++;
+    if (player->m_stats.nbFireflies < 99)   player->m_stats.nbFireflies++;
 }
 
 void Player_addHeart(Player *player)
 {
     
     // Améliorez cette fonction
-    if (player->m_stats.nbHearts < 2)
-    {
-        player->m_stats.nbHearts++;
-    }
+    if (player->m_stats.nbHearts < 2)   player->m_stats.nbHearts++;
 
+}
+
+void Player_addLives(Player* player)
+{
+    if (player->m_stats.nbLives < 99)   player->m_stats.nbLives++;
 }
 
 void Player_PowerUP(Player* player, int type)
 {
+    player->m_state = PLAYER_IDLE;
     switch (type)
     {
     case POWERUP_FIRE:
@@ -644,11 +647,11 @@ int Player_update(GameObject *object)
         player->m_shoot = TRUE;
     }
     
-    if (input->skiddingPressed && !player->m_onGround)
+    if (input->skiddingPressed && !player->m_onGround && player->m_state != PLAYER_IDLE)
     {
         player->m_state = PLAYER_SKIDDING;
     }
-    else if (!(input->skiddingPressed) && !player->m_onGround)
+    else if (!(input->skiddingPressed) && !player->m_onGround && player->m_state != PLAYER_IDLE)
     {
         player->m_state = PLAYER_FALLING;
     }
@@ -697,12 +700,9 @@ int Player_fixedUpdate(GameObject *object)
     if (player->m_stats.PowerUP != PLAYER_NORMAL && player->m_shoot == TRUE)
     {
         Player_Shoot(player, player->m_stats.PowerUP);
-        player->m_shoot = FALSE;
     }
-    else
-    {
-        player->m_shoot = FALSE;
-    }
+
+    player->m_shoot = FALSE;
 
     PE_Body_getVelocity(body, &velocity);
     velocity.x = player->m_hDirection * 8.f;
@@ -732,7 +732,6 @@ int Player_fixedUpdate(GameObject *object)
         }
         else
         {
-
             switch(player->m_stats.PowerUP)
             {
             case PLAYER_FIRE:
@@ -797,7 +796,6 @@ int Player_fixedUpdate(GameObject *object)
 
         }
     }
-
     // Déplacement du joueur
     PE_Body_getVelocity(body, &velocity);
     velocity.x = player->m_hDirection * 8.f;
@@ -810,6 +808,7 @@ int Player_fixedUpdate(GameObject *object)
     if (!player->m_onGround && player->m_state == PLAYER_SKIDDING)
     {
         velocity.y = -2.f;
+        player->m_state == PLAYER_FALLING;
     }
     PE_Body_setVelocity(body, &velocity);
 

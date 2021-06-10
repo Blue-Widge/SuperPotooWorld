@@ -19,14 +19,18 @@ typedef struct Menu_s
     int m_idxOver;
 
     RE_Animator *m_animator;
+    RE_Animator* m_loading;
 } Menu;
 
 
 Menu *Menu_new(RE_Renderer *renderer, RE_Timer *time);
 void Menu_free(Menu *menu);
 
-int Menu_update(Menu *menu);
-void Menu_render(Menu *menu);
+int Menu_update(Menu* menu);
+void Menu_render(Menu* menu);
+
+int Menu_updateLoading(Menu* menu);
+void Menu_renderLoading(Menu* menu, Bool Loading);
 
 INLINE char *Menu_getLevelPath(Menu *menu)
 {

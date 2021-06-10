@@ -88,5 +88,6 @@ void Player_bounce(Player *player);
 void Player_kill(Player *player);
 void Player_addFirefly(Player *player);
 void Player_addHeart(Player *player);
+void Player_addLives(Player* player);
 void Player_PowerUP(Player* player, int type);
 #endif
