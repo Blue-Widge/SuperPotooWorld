@@ -577,8 +577,9 @@ void Player_addHeart(Player *player)
     }
 }
 
-void Player_powerUp(Player *player, int type)
+void Player_powerUp(Player* player, int type)
 {
+    player->m_state = PLAYER_IDLE;
     switch (type)
     {
     case POWERUP_FIRE:
@@ -631,17 +632,14 @@ int Player_update(GameObject *object)
         player->m_shoot = TRUE;
     }
 
-    if (input->skiddingPressed && !player->m_onGround)
+    if (input->skiddingPressed && !player->m_onGround && player->m_state != PLAYER_IDLE)
     {
         player->m_state = PLAYER_SKIDDING;
     }
-    else if (!(input->skiddingPressed) && !player->m_onGround)
+    else if (!(input->skiddingPressed) && !player->m_onGround && player->m_state != PLAYER_IDLE)
     {
         player->m_state = PLAYER_FALLING;
     }
-
-    printf("Falling: %d | onGround: %d\n", player->m_state == PLAYER_FALLING, player->m_onGround);
-
     return EXIT_SUCCESS;
 
 ERROR_LABEL:
