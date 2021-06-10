@@ -89,9 +89,6 @@ int Tilemap_initCollider(Tilemap *tilemap)
     int width = tilemap->m_width;
     int height = tilemap->m_height;
 
-    // TODO
-    // Améliorez l'algorithme de création du collider
-
     // Création du sol
     for (int x = 0; x < width; x++)
     {

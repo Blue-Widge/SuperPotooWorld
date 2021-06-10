@@ -293,17 +293,17 @@ int Player_createAnimator(Player *player)
 
     RE_TextureAnim_setCycleTime(texAnim, 0.2f);
 
-    // Initialisation de l'animator
-    switch (player->m_stats.PowerUP)
-    {
-    case PLAYER_FIRE:
-        exitStatus = RE_Animator_playTextureAnim(player->m_animator, "RunningFire");
-        break;
-    default:
-        exitStatus = RE_Animator_playTextureAnim(player->m_animator, "Running");
-        break;
-    }
+    texAnim = RE_Animator_createTextureAnim(animator, textures->IdlePlayer, "Idle");
+    if (!texAnim) goto ERROR_LABEL;
+
+    RE_TextureAnim_setCycleTime(texAnim, 0.2f);
     
+    texAnim = RE_Animator_createTextureAnim(animator, textures->IdleFirePlayer, "IdleFire");
+    if (!texAnim) goto ERROR_LABEL;
+
+    RE_TextureAnim_setCycleTime(texAnim, 0.2f);
+
+    RE_Animator_playTextureAnim(player->m_animator, "Idle");
 
     return EXIT_SUCCESS;
 
@@ -454,6 +454,8 @@ int Player_onStart(GameObject *object)
     exitStatus = Scene_setToRespawn(scene, object);
     if (exitStatus != EXIT_SUCCESS) goto ERROR_LABEL;
 
+    //PE_Body_setGravityScale(body, -1);
+    
     return EXIT_SUCCESS;
 
 ERROR_LABEL:
@@ -636,7 +638,6 @@ int Player_update(GameObject *object)
     // Mise à jour de l'animateur
     RE_Animator_update(player->m_animator, time);
 
-
     if (input->shootPressed)
     {
         player->m_shoot = TRUE;
@@ -669,16 +670,20 @@ int Player_fixedUpdate(GameObject *object)
     input = Scene_getInput(scene);
 
     // Initialisation du booléen indiquant si le joueur touche le sol
-    player->m_onGround = player->m_belowDetector && !player->m_aboveDetector;
+    if(Player_getGravityDirection(player) == NORMAL)
+    {
+        player->m_onGround = player->m_belowDetector && !player->m_aboveDetector;
+    }
+    else
+    {
+        player->m_onGround = !player->m_belowDetector && player->m_aboveDetector;
+    }
 
     if(player->m_immune && player->m_damageableCollider)
     {
         PE_Body_removeCollider(player->m_damageableCollider->m_body, player->m_damageableCollider);
         player->m_damageableCollider = NULL;
     }
-
-    // TODO
-    // Améliorer cette fonction, et il y a beaucoup à faire !
 
     if (player->m_stats.PowerUP != PLAYER_NORMAL && player->m_shoot == TRUE)
     {
@@ -698,21 +703,38 @@ int Player_fixedUpdate(GameObject *object)
     // Mise à jour de l'état du joueur
     if (player->m_onGround && (player->m_state == PLAYER_FALLING))
     {
-        player->m_state = PLAYER_RUNNING;
-        int exitStatus;
 
-        switch(player->m_stats.PowerUP)
+        if(player->m_hDirection == 0)
         {
-        case PLAYER_FIRE:
-            exitStatus = RE_Animator_playTextureAnim(player->m_animator, "RunningFire");
-            break;
-        default:
-            exitStatus = RE_Animator_playTextureAnim(player->m_animator, "Running");
-            break;
+            player->m_state = PLAYER_IDLE;
+            switch(player->m_stats.PowerUP)
+            {
+            case PLAYER_FIRE:
+                RE_Animator_playTextureAnim(player->m_animator, "IdleFire");
+                break;
+            default:
+                RE_Animator_playTextureAnim(player->m_animator, "Idle");
+                break;
+            }
         }
-  
+        else
+        {
+
+            switch(player->m_stats.PowerUP)
+            {
+            case PLAYER_FIRE:
+                RE_Animator_playTextureAnim(player->m_animator, "RunningFire");
+                break;
+            default:
+                RE_Animator_playTextureAnim(player->m_animator, "Running");
+                break;
+            }
+
+            player->m_state = PLAYER_RUNNING;
+
+        }
     }
-    else if (!player->m_onGround && (player->m_state == PLAYER_RUNNING))
+    else if (!player->m_onGround && (player->m_state != PLAYER_FALLING))
     {
         player->m_state = PLAYER_FALLING;
         int exitStatus;
@@ -728,15 +750,62 @@ int Player_fixedUpdate(GameObject *object)
         }
     }
 
+    if(player->m_onGround && player->m_state != PLAYER_FALLING)
+    {
+        if(player->m_hDirection == 0)
+        {
+            player->m_state = PLAYER_IDLE;
+            switch(player->m_stats.PowerUP)
+            {
+            case PLAYER_FIRE:
+                RE_Animator_playTextureAnim(player->m_animator, "IdleFire");
+                break;
+            default:
+                RE_Animator_playTextureAnim(player->m_animator, "Idle");
+                break;
+            }
+        }
+        else
+        {
+            if(player->m_state != PLAYER_RUNNING)
+            {             
+                switch(player->m_stats.PowerUP)
+                {
+                case PLAYER_FIRE:
+                    RE_Animator_playTextureAnim(player->m_animator, "RunningFire");
+                    break;
+                default:
+                    RE_Animator_playTextureAnim(player->m_animator, "Running");
+                    break;
+                }
+            }
+
+            player->m_state = PLAYER_RUNNING;
+
+        }
+    }
+
     // Déplacement du joueur
     PE_Body_getVelocity(body, &velocity);
     velocity.x = player->m_hDirection * 8.f;
     if (player->m_jump)
     {
-        velocity.y = 17.f;
+        velocity.y = Player_getGravityDirection(player) * 17.f;
         player->m_jump = FALSE;
     }
     PE_Body_setVelocity(body, &velocity);
+
+    if(player->m_hDirection == -1)
+    {
+        RE_Transform transform = RE_Transform_getDefault();
+        transform.flipFlags = RE_FLIP_HORIZONTAL;
+        RE_Animator_setTransform(player->m_animator, &transform);
+    }
+    else if(player->m_hDirection == 1)
+    {
+        RE_Transform transform = RE_Transform_getDefault();
+        RE_Animator_setTransform(player->m_animator, &transform);
+    }
 /*
     if (velocity.x == 0 && velocity.y == 0)
     {
@@ -781,6 +850,7 @@ int Player_render(GameObject *object)
     Camera_worldToView(camera, &position, &viewX, &viewY);
     viewY -= RE_Texture_getPartHeight(textures->playerRunning, 0);
     viewX -= RE_Texture_getPartWidth(textures->playerRunning, 0) / 2;
+
     RE_Animator_renderF(player->m_animator, viewX, viewY);
 
     return EXIT_SUCCESS;

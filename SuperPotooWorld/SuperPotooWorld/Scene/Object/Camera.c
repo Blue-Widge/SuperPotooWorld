@@ -237,12 +237,15 @@ int Camera_update(GameObject *object)
     playerPos = GameObject_getPosition(Player_getObject(player));
     cameraPos = camera->m_worldView.lower;
 
-    float diff = playerPos.x < 10.0f ? 0.0f : playerPos.x - 10.0f;
-    float diff2 = playerPos.x > scene->m_tilemap->m_width - 14.0f ? scene->m_tilemap->m_width - 24.3f : diff;
+    float diffX = playerPos.x < 10.0f ? 0.0f : playerPos.x - 10.0f;
+    float diffX2 = playerPos.x > scene->m_tilemap->m_width - 14.0f ? scene->m_tilemap->m_width - 24.3f : diffX;
+
+    float diffY = playerPos.y < 5.0f ? 0.0f : playerPos.y - 5.0f;
     
-    float lerpX = lerpf(cameraPos.x,diff2, 5.0f * RE_Timer_getDelta(Scene_getTime(scene)));
+    float lerpX = lerpf(cameraPos.x,diffX2, 5.0f * RE_Timer_getDelta(Scene_getTime(scene)));
+    float lerpY = lerpf(cameraPos.y, diffY, 2.0f * RE_Timer_getDelta(Scene_getTime(scene)));
     displacement.x = lerpX - cameraPos.x;
-    displacement.y = 0.f;
+    displacement.y = lerpY - cameraPos.y;
     PE_AABB_translate(&camera->m_worldView, &displacement);
     
     return EXIT_SUCCESS;
