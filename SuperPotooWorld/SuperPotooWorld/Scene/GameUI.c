@@ -40,7 +40,7 @@ void GameUI_render(Scene *scene, PlayerStats *stats)
     RE_Texture_render(textures->Fireflies, 1, 5, 12 + h);
 
     int nbDigitsLives = 0, nbDigitsFireflies = 0, temp = nbLives;
-    while (temp)
+    while (temp > 0)
     {
         temp /= 10;
         nbDigitsLives++;
@@ -48,7 +48,7 @@ void GameUI_render(Scene *scene, PlayerStats *stats)
 
     temp = nbFireflies;
 
-    while (temp)
+    while (temp > 0)
     {
         temp /= 10;
         nbDigitsFireflies++;
