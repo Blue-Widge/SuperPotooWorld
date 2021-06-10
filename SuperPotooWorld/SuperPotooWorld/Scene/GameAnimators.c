@@ -41,26 +41,6 @@ GameAnimators *GameAnimators_new(Scene *scene)
     if (!texAnim) goto ERROR_LABEL;
     RE_TextureAnim_setCycleTime(texAnim, 0.2f);
 
-    /*
-    param = RE_Animator_createParamAnim(animator, "xShift");
-    if (!param) goto ERROR_LABEL;
-
-    RE_ParamAnim_setShift(param, Vec2_set(-40.f, 0.f), Vec2_set(0.f, 0.f));
-    RE_ParamAnim_setFlags(param, RE_ANIM_ALTERNATE);
-    RE_ParamAnim_setCycleTime(param, 2.0f);
-    RE_ParamAnim_setEasing(param, RE_EasingFct_cos);
-
-    param = RE_Animator_createParamAnim(animator, "yShift");
-    if (!param) goto ERROR_LABEL;
-
-    RE_ParamAnim_setShift(param, Vec2_set(0.f, -5.f), Vec2_set(0.f, 5.f));
-    RE_ParamAnim_setFlags(param, RE_ANIM_ALTERNATE);
-    RE_ParamAnim_setCycleTime(param, 1.4f);
-    RE_ParamAnim_setEasing(param, RE_EasingFct_cos);
-
-    // Lancement de l'animation
-    exitStatus = RE_Animator_playTextureAnim(animator, "RollingPowerUP_Fire");*/
-
     return animators;
 
 ERROR_LABEL:
