@@ -4,6 +4,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 //#define FULLSCREEN
 //#define NO_MENU
@@ -22,6 +23,7 @@
 
 int main(int argc, char *argv[])
 {
+    srand(time(NULL));
     RE_Window *window = NULL;
     RE_Renderer *renderer = NULL;
     RE_Timer *timer = NULL;
@@ -66,13 +68,12 @@ int main(int argc, char *argv[])
 
         menu = Menu_new(renderer, timer);
         if (!menu) goto ERROR_LABEL;
-        RE_Timer* chrono = RE_Timer_new();
-        RE_Timer_start(chrono);
+
         while (!quitLoop)
         {
             exitStatus = Menu_updateLoading(menu);
-            RE_Timer_update(chrono);
-            if (RE_Timer_getElapsed(chrono) > 2)
+            RE_Timer_update(timer);
+            if (RE_Timer_getElapsed(timer) > 3)
                 Loading = FALSE;
             switch (exitStatus)
             {
@@ -120,8 +121,6 @@ int main(int argc, char *argv[])
             RE_Timer_update(timer);
             accu += RE_Timer_getDelta(timer);
         }
-        RE_Renderer_clear(renderer);
-        RE_Renderer_update(renderer);
         //------------------------------------------------------------------------------------------
         // Boucle de rendu du menu
         quitLoop = FALSE;

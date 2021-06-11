@@ -1,7 +1,7 @@
 #ifndef _UITEXTURES_H_
 #define _UITEXTURES_H_
 
-#include "./Settings.h"
+#include "../Settings.h"
 
 typedef struct UITextures_s
 {

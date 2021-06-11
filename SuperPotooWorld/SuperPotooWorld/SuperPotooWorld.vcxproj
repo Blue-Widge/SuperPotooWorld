@@ -21,13 +21,15 @@
   <ItemGroup>
     <ClCompile Include="DataStructure\PHT.c" />
     <ClCompile Include="DataStructure\PVector.c" />
+    <ClCompile Include="GameUI\GameUI.c" />
+    <ClCompile Include="GameUI\UITextures.c" />
+    <ClCompile Include="main.c" />
     <ClCompile Include="Menu\Menu.c" />
     <ClCompile Include="Menu\MenuInput.c" />
     <ClCompile Include="Menu\MenuTextures.c" />
     <ClCompile Include="Scene\GameAnimators.c" />
     <ClCompile Include="Scene\GameInput.c" />
     <ClCompile Include="Scene\GameTextures.c" />
-    <ClCompile Include="Scene\GameUI.c" />
     <ClCompile Include="Scene\Gizmos.c" />
     <ClCompile Include="Scene\ObjectManager.c" />
     <ClCompile Include="Scene\Object\Block\Block.c" />
@@ -174,79 +176,14 @@
     <ClCompile Include="Scene\Object\Collectable\Collectable.c" />
     <ClCompile Include="Scene\Object\Collectable\Collectable_Firefly.c" />
     <ClCompile Include="Scene\Object\Collectable\Collectable_Heart.c" />
-    <ClCompile Include="Scene\Object\Collectable\PowerUP_Fire.c">
-      <RuntimeLibrary>MultiThreadedDebugDll</RuntimeLibrary>
-      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
-      <Optimization>Disabled</Optimization>
-      <SupportJustMyCode>true</SupportJustMyCode>
-      <AssemblerOutput>NoListing</AssemblerOutput>
-      <AssemblerListingLocation>x64\Debug\</AssemblerListingLocation>
-      <UndefineAllPreprocessorDefinitions>false</UndefineAllPreprocessorDefinitions>
-      <BrowseInformation>false</BrowseInformation>
-      <BrowseInformationFile>x64\Debug\</BrowseInformationFile>
-      <CompileAs>Default</CompileAs>
-      <ConformanceMode>true</ConformanceMode>
-      <DiagnosticsFormat>Column</DiagnosticsFormat>
-      <DisableLanguageExtensions>false</DisableLanguageExtensions>
-      <ErrorReporting>Prompt</ErrorReporting>
-      <ExpandAttributedSource>false</ExpandAttributedSource>
-      <ExceptionHandling>Sync</ExceptionHandling>
-      <EnableASAN>false</EnableASAN>
-      <EnableFiberSafeOptimizations>false</EnableFiberSafeOptimizations>
-      <EnableEnhancedInstructionSet>NotSet</EnableEnhancedInstructionSet>
-      <FloatingPointModel>Precise</FloatingPointModel>
-      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
-      <GenerateModuleDependencies>false</GenerateModuleDependencies>
-      <GenerateSourceDependencies>false</GenerateSourceDependencies>
-      <GenerateXMLDocumentationFiles>false</GenerateXMLDocumentationFiles>
-      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
-      <IntrinsicFunctions>false</IntrinsicFunctions>
-      <IgnoreStandardIncludePath>false</IgnoreStandardIncludePath>
-      <LanguageStandard>Default</LanguageStandard>
-      <LanguageStandard_C>Default</LanguageStandard_C>
-      <MinimalRebuild>false</MinimalRebuild>
-      <ModuleDependenciesFile>x64\Debug\</ModuleDependenciesFile>
-      <ModuleOutputFile>x64\Debug\</ModuleOutputFile>
-      <OmitDefaultLibName>false</OmitDefaultLibName>
-      <FavorSizeOrSpeed>Neither</FavorSizeOrSpeed>
-      <WholeProgramOptimization>false</WholeProgramOptimization>
-      <ObjectFileName>x64\Debug\</ObjectFileName>
-      <CallingConvention>Cdecl</CallingConvention>
-      <ProgramDataBaseFileName>x64\Debug\vc142.pdb</ProgramDataBaseFileName>
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
-      <PrecompiledHeaderOutputFile>x64\Debug\SuperPotooWorld.pch</PrecompiledHeaderOutputFile>
-      <PreprocessToFile>false</PreprocessToFile>
-      <PreprocessKeepComments>false</PreprocessKeepComments>
-      <PreprocessSuppressLineNumbers>false</PreprocessSuppressLineNumbers>
-      <RemoveUnreferencedCodeData>true</RemoveUnreferencedCodeData>
-      <ShowIncludes>false</ShowIncludes>
-      <SourceDependenciesFile>x64\Debug\</SourceDependenciesFile>
-      <SuppressStartupBanner>true</SuppressStartupBanner>
-      <BufferSecurityCheck>true</BufferSecurityCheck>
-      <SmallerTypeCheck>false</SmallerTypeCheck>
-      <SpectreMitigation>false</SpectreMitigation>
-      <StructMemberAlignment>Default</StructMemberAlignment>
-      <TrackerLogDirectory>x64\Debug\SuperPotooWorld.tlog\</TrackerLogDirectory>
-      <MinimalRebuildFromTracking>true</MinimalRebuildFromTracking>
-      <TreatWarningAsError>false</TreatWarningAsError>
-      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
-      <UseFullPaths>true</UseFullPaths>
-      <WarningLevel>Level4</WarningLevel>
-      <XMLDocumentationFileName>x64\Debug\</XMLDocumentationFileName>
-      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
-      <IntelJCCErratum>false</IntelJCCErratum>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;_UNICODE;UNICODE;</PreprocessorDefinitions>
-      <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>../../_Libraries/SDL2/include;../../_Libraries/SDL2_image/include;../../_Libraries/PlatformerEngine/Include;../../_Libraries/RenderingEngine/Include;</AdditionalIncludeDirectories>
-      <LinkCompiled>true</LinkCompiled>
-    </ClCompile>
+    <ClCompile Include="Scene\Object\Collectable\PowerUP_Fire.c" />
+    <ClCompile Include="Scene\Object\Collectable\PowerUP_Scream.c" />
     <ClCompile Include="Scene\Object\Enemy\Enemy.c" />
     <ClCompile Include="Scene\Object\Enemy\Enemy_Nut.c" />
-    <ClCompile Include="main.c" />
     <ClCompile Include="Scene\Object\GameObject.c" />
     <ClCompile Include="Scene\Object\Player.c" />
     <ClCompile Include="Scene\Object\Powerups\Fireball.c" />
+    <ClCompile Include="Scene\Object\Powerups\Scream.c" />
     <ClCompile Include="Scene\Object\Powerups\Skill.c" />
     <ClCompile Include="Scene\Object\Tool\Tool.c" />
     <ClCompile Include="Scene\Object\Tool\Tool_Bound.c" />
@@ -256,21 +193,24 @@
     <ClCompile Include="Scene\Parallax.c" />
     <ClCompile Include="Scene\Scene.c" />
     <ClCompile Include="Scene\Tilemap.c" />
-    <ClCompile Include="UITextures.c" />
+  </ItemGroup>
+  <ItemGroup>
     <ClInclude Include="DataStructure\PHT.h" />
     <ClInclude Include="DataStructure\PVector.h" />
+    <ClInclude Include="GameUI\GameUI.h" />
+    <ClInclude Include="GameUI\UITextures.h" />
     <ClInclude Include="Menu\Menu.h" />
     <ClInclude Include="Menu\MenuInput.h" />
     <ClInclude Include="Menu\MenuTextures.h" />
     <ClInclude Include="Scene\GameAnimators.h" />
     <ClInclude Include="Scene\GameInput.h" />
     <ClInclude Include="Scene\GameTextures.h" />
-    <ClInclude Include="Scene\GameUI.h" />
     <ClInclude Include="Scene\Gizmos.h" />
     <ClInclude Include="Scene\ObjectManager.h" />
     <ClInclude Include="Scene\Object\Block\Block.h" />
     <ClInclude Include="Scene\Object\Block\Block_Bonus.h" />
     <ClInclude Include="Scene\Object\Block\Block_Brick.h" />
+    <ClInclude Include="Scene\Object\Block\Block_GravityInverter.h" />
     <ClInclude Include="Scene\Object\Block\Block_Ground.h" />
     <ClInclude Include="Scene\Object\Block\Block_kill.h" />
     <ClInclude Include="Scene\Object\Block\Block_OneWay.h" />
@@ -280,11 +220,13 @@
     <ClInclude Include="Scene\Object\Collectable\Collectable_Firefly.h" />
     <ClInclude Include="Scene\Object\Collectable\Collectable_Heart.h" />
     <ClInclude Include="Scene\Object\Collectable\PowerUP_Fire.h" />
+    <ClInclude Include="Scene\Object\Collectable\PowerUP_Scream.h" />
     <ClInclude Include="Scene\Object\Enemy\Enemy.h" />
     <ClInclude Include="Scene\Object\Enemy\Enemy_Nut.h" />
     <ClInclude Include="Scene\Object\GameObject.h" />
     <ClInclude Include="Scene\Object\Player.h" />
     <ClInclude Include="Scene\Object\Powerups\Fireball.h" />
+    <ClInclude Include="Scene\Object\Powerups\Scream.h" />
     <ClInclude Include="Scene\Object\Powerups\Skill.h" />
     <ClInclude Include="Scene\Object\Tool\Tool.h" />
     <ClInclude Include="Scene\Object\Tool\Tool_Bound.h" />
@@ -295,10 +237,6 @@
     <ClInclude Include="Scene\Scene.h" />
     <ClInclude Include="Scene\Tilemap.h" />
     <ClInclude Include="Settings.h" />
-    <ClInclude Include="UITextures.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Scene\Object\Block\Block_GravityInverter.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

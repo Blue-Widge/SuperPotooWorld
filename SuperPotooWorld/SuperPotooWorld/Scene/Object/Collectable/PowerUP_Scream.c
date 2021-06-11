@@ -1,5 +1,5 @@
 
-#include "PowerUP_Fire.h"
+#include "PowerUP_Scream.h"
 #include "Collectable.h"
 
 
@@ -7,9 +7,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void PowerUP_Fire_onCollisionEnter(PE_Collision* collision);
+void PowerUP_Scream_onCollisionEnter(PE_Collision* collision);
 
-int PowerUP_Fire_fixedUpdate(GameObject *object)
+int PowerUP_Scream_fixedUpdate(GameObject *object)
 {
     PE_Vec2 velocity; 
     PE_Body_getVelocity(GameObject_getBody(object), &velocity);
@@ -19,7 +19,7 @@ int PowerUP_Fire_fixedUpdate(GameObject *object)
     return EXIT_SUCCESS;
 }
 
-void PowerUP_Fire_onCollisionEnter(PE_Collision* collision)
+void PowerUP_Scream_onCollisionEnter(PE_Collision* collision)
 {
     PE_Body *thisBody = PE_Collision_getBody(collision);
     PE_Body *otherBody = PE_Collision_getOtherBody(collision);
@@ -33,7 +33,7 @@ void PowerUP_Fire_onCollisionEnter(PE_Collision* collision)
         {
             Scene* scene = GameObject_getScene(thisObject);
             Scene_disableObject(scene, thisObject);
-            Player_powerUp(player, POWERUP_FIRE);
+            Player_powerUp(player, POWERUP_SCREAM);
         }
     }
     
@@ -67,7 +67,7 @@ void PowerUP_Fire_onCollisionEnter(PE_Collision* collision)
     }
 }
 
-int PowerUP_Fire_onStart(Collectable* collectable)
+int PowerUP_Scream_onStart(Collectable* collectable)
 {
     Scene* scene = GameObject_getScene(collectable->m_object);
     PE_Vec2* position = &collectable->m_startPos;
@@ -100,11 +100,11 @@ int PowerUP_Fire_onStart(Collectable* collectable)
     if (!collider) goto ERROR_LABEL;
 
     // Callback du collider
-   // PE_Collider_setOnTriggerEnter(collider, PowerUP_Fire_onTriggerEnter);
-    PE_Collider_setOnCollisionEnter(collider, PowerUP_Fire_onCollisionEnter);
+   // PE_Collider_setOnTriggerEnter(collider, PowerUP_Scream_onTriggerEnter);
+    PE_Collider_setOnCollisionEnter(collider, PowerUP_Scream_onCollisionEnter);
 
-    RE_Animator* animator = Scene_getAnimators(scene)->RollingPowerUP_Fire;
-    RE_Animator_playTextureAnim(animator, "RollingPowerUP_Fire");
+    RE_Animator* animator = Scene_getAnimators(scene)->PowerUP_Scream;
+    RE_Animator_playTextureAnim(animator, "PowerUP_Scream");
 
     PE_Vec2 velocity = GameObject_getVelocity(Collectable_getObject(collectable));
     velocity.y = 10.0f;
@@ -113,16 +113,16 @@ int PowerUP_Fire_onStart(Collectable* collectable)
     return EXIT_SUCCESS;
 
 ERROR_LABEL:
-    printf("ERROR - PowerUP_Fire_onStart()\n");
+    printf("ERROR - PowerUP_Scream_onStart()\n");
     return EXIT_FAILURE;
 }
 
-int PowerUP_Fire_onRespawn(Collectable* collectable, int type)
+int PowerUP_Scream_onRespawn(Collectable* collectable)
 {
     return EXIT_SUCCESS;
 }
 
-void PowerUP_Fire_render(Collectable* collectable, int type)
+void PowerUP_Scream_render(Collectable* collectable)
 {
     Scene* scene = GameObject_getScene(collectable->m_object);
     GameTextures* textures = Scene_getTextures(scene);
@@ -134,7 +134,7 @@ void PowerUP_Fire_render(Collectable* collectable, int type)
     position.x = GameObject_getPosition(collectable->m_object).x;
     position.y = GameObject_getPosition(collectable->m_object).y + 1;
     Camera_worldToView(camera, &position, &x, &y);
-    RE_Animator_renderF(animators->RollingPowerUP_Fire, x, y);
+    RE_Animator_renderF(animators->PowerUP_Scream, x, y);
 
 }
 

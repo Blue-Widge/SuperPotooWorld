@@ -569,7 +569,7 @@ void Player_damage(Player *player)
     if (player->m_immune) { return; }
 
     Scene *scene = GameObject_getScene(player->m_object);
-    player->m_stats.PowerUP = PLAYER_NORMAL;
+    Player_powerUp(player, PLAYER_NORMAL);
 
 
     // Améliorez cette fonction avec une gestion des coeurs ou des vies

@@ -7,6 +7,7 @@
 #include <stdlib.h>
 
 #include "PowerUP_Fire.h"
+#include "PowerUP_Scream.h"
 
 // Fonctions du GameObject
 int Collectable_free(GameObject *object);
@@ -69,6 +70,10 @@ int Collectable_fixedUpdate(GameObject* object)
     {
         case POWERUP_FIRE:
             return PowerUP_Fire_fixedUpdate(object);
+            break;
+        case POWERUP_SCREAM:
+            return PowerUP_Scream_fixedUpdate(object);
+        break;
         default:
             break;
     }
@@ -121,6 +126,9 @@ int Collectable_onStart(GameObject *object)
     case POWERUP_FIRE:
         exitStatus = PowerUP_Fire_onStart(collectable);
         break;
+    case POWERUP_SCREAM:
+        exitStatus = PowerUP_Scream_onStart(collectable);
+        break;
     default:
         printf("ERROR - Unknown collectable type\n");
         goto ERROR_LABEL;
@@ -158,6 +166,9 @@ int Collectable_onRespawn(GameObject *object)
     case POWERUP_FIRE:
         exitStatus = PowerUP_Fire_onRespawn(collectable);
         break;
+    case POWERUP_SCREAM:
+        exitStatus = PowerUP_Scream_onRespawn(collectable);
+        break;
     default:
         printf("ERROR - Unknown collectable type\n");
         goto ERROR_LABEL;
@@ -193,6 +204,9 @@ int Collectable_render(GameObject *object)
     //AJOUT
     case POWERUP_FIRE:
         PowerUP_Fire_render(collectable);
+        break;
+    case POWERUP_SCREAM:
+        PowerUP_Scream_render(collectable);
         break;
     default:
         break;

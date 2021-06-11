@@ -48,14 +48,13 @@ int Menu_createAnimator(Menu *menu)
     RE_Animator* Loading = RE_Animator_new();
     texAnim = RE_Animator_createTextureAnim(Loading, textures->loading, "Loading");
     if (!texAnim) goto ERROR_LABEL;
-    RE_TextureAnim_setCycleTime(texAnim, 0.5f);
+    RE_TextureAnim_setCycleTime(texAnim, 1.f);
 
     menu->m_loading = Loading;
 
     param = RE_Animator_createParamAnim(Loading, "Launch");
 
     exitStatus = RE_Animator_playTextureAnim(Loading, "Loading");
-    exitStatus = RE_Animator_playParamAnim(Loading, "Launch");
 
     return EXIT_SUCCESS;
 
@@ -125,7 +124,7 @@ int Menu_updateLoading(Menu* menu)
 
     int accu = 0.f;
     MenuInput_update(input);
-    RE_Animator_update(menu->m_animator, time);
+    RE_Animator_update(menu->m_loading, time);
 
     if (input->quitPressed)
         return -1;
@@ -141,18 +140,18 @@ void Menu_renderLoading(Menu* menu, Bool Loading)
     int width = RE_Renderer_getWidth(renderer);
     int height = RE_Renderer_getHeight(renderer);
     int w = RE_Texture_getWidth(textures->loading);
-    int h = RE_Texture_getHeight(textures->loading);
+    int h = RE_Texture_getHeight(textures->controls);
 
     RE_Texture_render(textures->background, 0, 0, 0);
-    RE_Texture_render(textures->controls, 0, 0, 0);
+    RE_Texture_render(textures->controls, 0, (width / 2) - w/6, height - h);
     RE_Renderer_fill(renderer, RE_Color_set(0, 0, 0, 64));
     if (Loading)
     {
-        RE_Animator_render(menu->m_loading, (width / 2) - (w / 28) , height/2);
+        RE_Animator_render(menu->m_loading, (width / 2) - (w / 28) , height / 2);
     }
     else
     {
-        
+        RE_Texture_render(textures->press, 0, (width / 2) - (w / 14), height / 2);
     }
     
 }

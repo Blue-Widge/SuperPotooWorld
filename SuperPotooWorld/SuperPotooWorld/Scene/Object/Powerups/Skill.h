@@ -8,7 +8,8 @@ typedef struct Scene_s Scene;
 
 typedef enum SkillType_e
 {
-    FIREBALL
+    FIREBALL,
+    SCREAM
 
 } SkillType;
 

@@ -9,7 +9,7 @@
 #include "GameInput.h"
 #include "GameTextures.h"
 #include "GameAnimators.h"
-#include "GameUI.h"
+#include "../GameUI/GameUI.h"
 #include "Gizmos.h"
 #include "Parallax.h"
 #include "Tilemap.h"
@@ -26,7 +26,7 @@
 
 #include <stdio.h>
 
-#include "../UITextures.h"
+#include "../GameUI/UITextures.h"
 
 typedef struct Scene_s
 {
