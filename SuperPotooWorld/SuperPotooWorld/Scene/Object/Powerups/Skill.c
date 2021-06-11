@@ -1,5 +1,6 @@
 #include "Skill.h"
 #include "FireBall.h"
+#include "Scream.h"
 #include "../../Scene.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -52,7 +53,10 @@ int Skill_fixedUpdate(GameObject* object)
     {
         case FIREBALL:
             Fireball_fixedUpdate(object);
-            break;;
+            break;
+        case SCREAM:
+            Scream_fixedUpdate(object);
+            break;
     }
 }
 
@@ -96,7 +100,9 @@ int Skill_onStart(GameObject* object)
     case FIREBALL:
         exitStatus = FireBall_onStart(skill);
         break;
-
+    case SCREAM:
+        exitStatus = Scream_onStart(skill);
+        break;
     default:
         printf("ERROR - Unknown skill type\n");
         goto ERROR_LABEL;
@@ -126,6 +132,9 @@ int Skill_onRespawn(GameObject* object)
     case FIREBALL:
         exitStatus = FireBall_onRespawn(skill);
         break;
+    case SCREAM:
+        exitStatus = Scream_onRespawn(skill);
+        break;
     default:
         printf("ERROR - Unknown skill type\n");
         goto ERROR_LABEL;
@@ -154,6 +163,9 @@ int Skill_render(GameObject* object)
     {
     case FIREBALL:
         FireBall_render(skill);
+        break;
+    case SCREAM:
+        Scream_render(skill);
         break;
     default:
         break;

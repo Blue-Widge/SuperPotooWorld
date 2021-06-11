@@ -26,7 +26,8 @@ typedef enum FacingDirection_e
 typedef enum PlayerPowerUP_e
 {
     PLAYER_NORMAL,
-    PLAYER_FIRE
+    PLAYER_FIRE,
+    PLAYER_SCREAM
 
 }PlayerPowerUP;
 

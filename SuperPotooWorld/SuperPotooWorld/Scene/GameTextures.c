@@ -348,6 +348,14 @@ GameTextures *GameTextures_new(RE_Renderer *renderer)
     textures->background_04 = load_background_04(renderer);
     if (!textures->background_03) goto ERROR_LABEL;
 
+    textures->PowerUP_Scream = RE_Texture_newSet(
+        "../Assets/Images/Collectables/PowerUP_Scream.png", renderer, 1, 5);
+    if (!textures->PowerUP_Scream) goto ERROR_LABEL;
+
+    textures->scream = RE_Texture_new(
+        "../Assets/Images/Player/Scream.png", renderer);
+    if (!textures->scream) goto ERROR_LABEL;
+
     return textures;
 
 ERROR_LABEL:
@@ -413,5 +421,7 @@ void GameTextures_free(GameTextures *textures)
     RE_Texture_free(textures->IdleFirePlayer);
 
     RE_Texture_free(textures->fireball);
+    RE_Texture_free(textures->PowerUP_Scream);
+    RE_Texture_free(textures->scream);
     free(textures);
 }

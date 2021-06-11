@@ -1,5 +1,11 @@
-﻿  Menu.c
-C:\Users\bluew\CLionProjects\SuperPotooWorld\SuperPotooWorld\SuperPotooWorld\SuperPotooWorld\Menu\Menu.c(125,1): warning C4244: 'initialisation' : conversion de 'float' en 'int', perte possible de données
-C:\Users\bluew\CLionProjects\SuperPotooWorld\SuperPotooWorld\SuperPotooWorld\SuperPotooWorld\Menu\Menu.c(125,9): warning C4189: 'accu' : variable locale initialisée mais non référencée
-C:\Users\bluew\CLionProjects\SuperPotooWorld\SuperPotooWorld\SuperPotooWorld\SuperPotooWorld\Menu\Menu.c(134): warning C4715: 'Menu_updateLoading' : les chemins de contrôle ne retournent pas tous une valeur
-  SuperPotooWorld.vcxproj -> C:\Users\bluew\CLionProjects\SuperPotooWorld\SuperPotooWorld\SuperPotooWorld\x64\Debug\SuperPotooWorld.exe
+﻿main.obj : error LNK2019: symbole externe non résolu Menu_new référencé dans la fonction SDL_main
+main.obj : error LNK2019: symbole externe non résolu Menu_free référencé dans la fonction SDL_main
+main.obj : error LNK2019: symbole externe non résolu Menu_update référencé dans la fonction SDL_main
+main.obj : error LNK2019: symbole externe non résolu Menu_render référencé dans la fonction SDL_main
+main.obj : error LNK2019: symbole externe non résolu Menu_updateLoading référencé dans la fonction SDL_main
+main.obj : error LNK2019: symbole externe non résolu Menu_renderLoading référencé dans la fonction SDL_main
+main.obj : error LNK2019: symbole externe non résolu Scene_new référencé dans la fonction SDL_main
+main.obj : error LNK2019: symbole externe non résolu Scene_free référencé dans la fonction SDL_main
+main.obj : error LNK2019: symbole externe non résolu Scene_update référencé dans la fonction SDL_main
+main.obj : error LNK2019: symbole externe non résolu Scene_render référencé dans la fonction SDL_main
+C:\Users\bluew\CLionProjects\SuperPotooWorld\SuperPotooWorld\SuperPotooWorld\x64\Debug\SuperPotooWorld.exe : fatal error LNK1120: 10 externes non résolus

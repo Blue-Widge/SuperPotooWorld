@@ -4,6 +4,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 //#define FULLSCREEN
 //#define NO_MENU
@@ -22,6 +23,7 @@
 
 int main(int argc, char *argv[])
 {
+    srand(time(NULL));
     RE_Window *window = NULL;
     RE_Renderer *renderer = NULL;
     RE_Timer *timer = NULL;

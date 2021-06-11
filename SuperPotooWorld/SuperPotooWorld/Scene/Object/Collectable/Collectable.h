@@ -10,8 +10,8 @@ typedef enum CollectableType_e
 {
     COLLECTABLE_FIREFLY,
     COLLECTABLE_HEART,
-
-    POWERUP_FIRE
+    POWERUP_FIRE,
+    POWERUP_SCREAM
 } CollectableType;
 
 typedef struct Collectable_s

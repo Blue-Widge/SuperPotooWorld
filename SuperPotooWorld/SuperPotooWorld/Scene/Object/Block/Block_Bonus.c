@@ -89,7 +89,17 @@ void Bonus_hit(Block *block)
     {
         PE_Vec2 position = block->m_startPos;
         position.y += 1.f;
-        Scene_createCollectable(GameObject_getScene(block->m_object), POWERUP_FIRE, &position);
-        printf("nb hits block %d\n", block->m_nbHits);
+        CollectableType collectable = rand()%(POWERUP_SCREAM - POWERUP_FIRE + 1) + POWERUP_FIRE;
+        switch (collectable)
+        {
+            case POWERUP_FIRE:
+                Scene_createCollectable(GameObject_getScene(block->m_object), POWERUP_FIRE, &position);
+            break;
+            case POWERUP_SCREAM:
+                Scene_createCollectable(GameObject_getScene(block->m_object), POWERUP_SCREAM, &position);
+            break;
+            default:
+                break;
+        }
     }
 }

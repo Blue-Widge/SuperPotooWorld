@@ -27,6 +27,9 @@ GameAnimators *GameAnimators_new(Scene *scene)
     animators->RollingPowerUP_Fire = RE_Animator_new();
     if (!animators->RollingPowerUP_Fire) goto ERROR_LABEL;
 
+    animators->PowerUP_Scream = RE_Animator_new();
+    if (!animators->PowerUP_Scream) goto ERROR_LABEL;
+
     GameTextures* textures = Scene_getTextures(scene);
     
     RE_TextureAnim* texAnim = RE_Animator_createTextureAnim(animators->bonus, textures->bonus, "Bonus");
@@ -38,6 +41,10 @@ GameAnimators *GameAnimators_new(Scene *scene)
     RE_TextureAnim_setCycleTime(texAnim, 0.2f);
 
     texAnim = RE_Animator_createTextureAnim(animators->RollingPowerUP_Fire, textures->RollingPowerUP_Fire, "RollingPowerUP_Fire");
+    if (!texAnim) goto ERROR_LABEL;
+    RE_TextureAnim_setCycleTime(texAnim, 0.6f);
+
+    texAnim = RE_Animator_createTextureAnim(animators->PowerUP_Scream, textures->PowerUP_Scream, "PowerUP_Scream");
     if (!texAnim) goto ERROR_LABEL;
     RE_TextureAnim_setCycleTime(texAnim, 0.6f);
 
@@ -59,6 +66,7 @@ void GameAnimators_free(GameAnimators *animators)
 
     //AJOUT
     RE_Animator_free(animators->RollingPowerUP_Fire);
+    RE_Animator_free(animators->PowerUP_Scream);
 
     free(animators);
 }
@@ -69,4 +77,5 @@ void GameAnimators_update(GameAnimators *animators)
     RE_Animator_update(animators->firefly, time);
     RE_Animator_update(animators->bonus, time);
     RE_Animator_update(animators->RollingPowerUP_Fire, time);
+    RE_Animator_update(animators->PowerUP_Scream, time);
 }

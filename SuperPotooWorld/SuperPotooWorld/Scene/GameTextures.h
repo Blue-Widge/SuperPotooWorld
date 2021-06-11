@@ -58,6 +58,8 @@ typedef struct GameTextures_s
     RE_Texture* gravityInverter;
 
     RE_Texture* fireball;
+    RE_Texture* PowerUP_Scream;
+    RE_Texture* scream;
 } GameTextures;
 
 GameTextures *GameTextures_new(RE_Renderer *renderer);
