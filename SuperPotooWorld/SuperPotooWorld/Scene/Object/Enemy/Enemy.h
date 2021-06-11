@@ -5,6 +5,7 @@
 #include "../GameObject.h"
 
 typedef struct Scene_s Scene;
+typedef enum GravityDirection_e GravityDirection;
 
 typedef enum EnemyType_e
 {
@@ -26,10 +27,11 @@ typedef struct Enemy_s
     RE_Animator *m_animator;
     PE_Vec2 m_startPos;
     DetectionDirection direction;
+    GravityDirection m_gravityDirection;
     
 } Enemy;
 
-Enemy *Enemy_new(Scene *scene, int type, PE_Vec2 *position);
+Enemy *Enemy_new(Scene *scene, int type, PE_Vec2 *position, int gravityDirection);
 
 INLINE GameObject *Enemy_getObject(Enemy *enemy)
 {

@@ -13,29 +13,40 @@ void FireBall_onTriggerEnter(PE_Trigger* trigger)
     GameObject* thisObject = (GameObject*)PE_Body_getUserData(thisBody);
     GameObject* otherObject = (GameObject*)PE_Body_getUserData(otherBody);
     Enemy* enemy = NULL;
-    Block* block = NULL;
 
     if (!thisObject || !otherObject)
     {
         printf("ERROR - FireBall_onTriggerEnter()\n");
         return;
     }
-
+    int hit = FALSE;
     enemy = GameObject_getEnemy(otherObject);
     if (enemy)
     {
         Enemy_damage(enemy);
+        hit = TRUE;
     }
 
-    if(enemy || otherObject->m_type == GAME_BLOCK)
+    Scene* scene = GameObject_getScene(thisObject);
+
+    if(otherObject->m_type == GAME_BLOCK)
+    {
+        Block* block = GameObject_getBlock(otherObject);
+
+        if(block->m_type == BLOCK_WOOD)
+        {
+            Scene_removeObject(scene, otherObject);
+        }
+        hit = TRUE;
+    }
+            
+    if(hit)
     {
         if(!GameObject_hasOneFlag(thisObject, OBJECT_TO_REMOVE))
         {
-            Scene* scene = GameObject_getScene(thisObject);
             Scene_removeObject(scene, thisObject);
         }
-    }    
-    
+    }
     
 }
 

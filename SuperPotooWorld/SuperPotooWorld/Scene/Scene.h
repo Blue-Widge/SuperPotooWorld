@@ -136,7 +136,7 @@ INLINE float Scene_getAlpha(Scene *scene)
 
 Collectable *Scene_createCollectable(Scene *scene, int type, PE_Vec2 *position);
 
-Enemy *Scene_createEnemy(Scene *scene, int type, PE_Vec2 *position);
+Enemy *Scene_createEnemy(Scene *scene, int type, PE_Vec2 *position, int gravityDirection);
 
 Block *Scene_createBlock(Scene *scene, int type, PE_Vec2 *position, PE_AABB *aabb);
 

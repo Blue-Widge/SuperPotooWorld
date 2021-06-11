@@ -3,6 +3,8 @@
 #include "Block_Brick.h"
 #include "Block_OneWay.h"
 #include "Block_Bonus.h"
+#include "Block_kill.h"
+#include "Block_Wood.h"
 
 #include "../../Scene.h"
 
@@ -99,6 +101,13 @@ int Block_onStart(GameObject *object)
         exitStatus = GravityInverter_onStart(block);
         break;
 
+    case BLOCK_KILL:
+        exitStatus = Kill_onStart(block);
+        break;
+
+    case BLOCK_WOOD:
+        exitStatus = Wood_onStart(block);
+        break;
     default:
         printf("ERROR - Unknown block type\n");
         goto ERROR_LABEL;
@@ -136,7 +145,14 @@ int Block_onRespawn(GameObject *object)
     case BLOCK_GRAVITY_INVERTER:
         exitStatus = GravityInverter_onRespawn(block);
         break;
+    case BLOCK_KILL:
+        exitStatus = Kill_onRespawn(block);
+        break;
 
+    case BLOCK_WOOD:
+        exitStatus = Wood_onRespawn(block);
+        break;
+        
     case BLOCK_GROUND:
     case BLOCK_ONE_WAY:
         printf("ERROR - This block cannot be respawn\n");
@@ -172,12 +188,20 @@ int Block_render(GameObject *object)
         Brick_render(block);
         break;
 
+    case BLOCK_WOOD:
+        Wood_render(block);
+        break;
+        
     case BLOCK_BONUS:
         Bonus_render(block);
         break;
 
     case BLOCK_GRAVITY_INVERTER:
         GravityInverter_render(block);
+        break;
+
+    case BLOCK_KILL:
+        Kill_render(block);
         break;
 
     default:
