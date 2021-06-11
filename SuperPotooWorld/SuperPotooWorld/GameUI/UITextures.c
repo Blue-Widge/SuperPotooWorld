@@ -33,6 +33,8 @@ UITextures* UITextures_new(RE_Renderer* renderer)
         "../Assets/Images/GameUI/LifeFire.png", renderer);
     if (!textures->LivesFire) goto ERROR_LABEL;
 
+    textures->LivesScream = RE_Texture_new(
+        "../Assets/Images/GameUI/LifeScream.png", renderer);
     return textures;
 
 ERROR_LABEL:
@@ -50,5 +52,6 @@ void UITextures_free(UITextures* UITex)
     RE_Texture_free(UITex->Hearts);
     RE_Texture_free(UITex->digits);
     RE_Texture_free(UITex->Fireflies);
+    RE_Texture_free(UITex->LivesScream);
     free(UITex);
 }

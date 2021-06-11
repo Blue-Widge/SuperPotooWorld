@@ -434,6 +434,18 @@ GameTextures *GameTextures_new(RE_Renderer *renderer)
         "../Assets/Images/Player/Scream.png", renderer);
     if (!textures->scream) goto ERROR_LABEL;
 
+    textures->IdleScreamPlayer = RE_Texture_new(
+        "../Assets/Images/Player/IdleScream.png", renderer);
+    if (!textures->playerRunningFire) goto ERROR_LABEL;
+
+    textures->playerRunningScream = RE_Texture_newSet(
+        "../Assets/Images/Player/RunningScream.png", renderer, 1, 6);
+    if (!textures->playerRunningFire) goto ERROR_LABEL;
+
+    textures->playerFallingScream = RE_Texture_newSet(
+        "../Assets/Images/Player/FallingScream.png", renderer, 1, 8);
+    if (!textures->playerFallingFire) goto ERROR_LABEL;
+    
     return textures;
 
 ERROR_LABEL:
@@ -507,5 +519,8 @@ void GameTextures_free(GameTextures *textures)
     RE_Texture_free(textures->fireball);
     RE_Texture_free(textures->PowerUP_Scream);
     RE_Texture_free(textures->scream);
+    RE_Texture_free(textures->IdleScreamPlayer);
+    RE_Texture_free(textures->playerFallingScream);
+    RE_Texture_free(textures->playerRunningScream);
     free(textures);
 }
