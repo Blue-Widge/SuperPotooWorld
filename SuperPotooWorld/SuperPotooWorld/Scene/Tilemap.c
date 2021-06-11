@@ -104,7 +104,8 @@ int Tilemap_initCollider(Tilemap *tilemap)
                 PE_AABB aabb;
                 PE_Vec2_set(&position, (float)x, (float)(y + 1));
                 PE_AABB_set(&aabb, 0.f, -1.f, 1.f, 0.f);
-                Block *block = Scene_createBlock(scene, BLOCK_GROUND, &position, &aabb);
+                int type = tile->m_type == TILE_GROUND ? BLOCK_GROUND : BLOCK_WOOD;
+                Block *block = Scene_createBlock(scene, type, &position, &aabb);
                 if (!block) goto ERROR_LABEL;
             }
 

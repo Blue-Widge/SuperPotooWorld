@@ -12,6 +12,28 @@ void Nut_onRightTriggerStay(PE_Trigger *trigger);
 void Nut_onRightTriggerExit(PE_Trigger *trigger);
 void Nut_onCollisionEnter(PE_Collision* collision);
 
+void Nut_switchGravity(Enemy* enemy)
+{
+
+    GameObject *object = Enemy_getObject(enemy);
+    RE_Transform transform;
+
+    PE_Body_setGravityScale(GameObject_getBody(object), -Nut_getGravityDirection(enemy));
+    RE_Animator_getTransform(enemy->m_animator, &transform);
+    
+    if (Nut_getGravityDirection(enemy) == INVERTED)
+    {
+        transform.flipFlags |= RE_FLIP_VERTICAL;
+    }
+    else
+    {
+        transform.flipFlags &= ~RE_FLIP_VERTICAL;
+    }
+
+    RE_Animator_setTransform(enemy->m_animator, &transform);
+    
+}
+
 int Nut_init(Enemy *enemy)
 {
     Scene *scene = GameObject_getScene(enemy->m_object);
@@ -62,14 +84,14 @@ int Nut_onStart(Enemy *enemy)
     if (exitStatus != EXIT_SUCCESS) goto ERROR_LABEL;
 
     PE_ColliderDef_setDefault(&colliderDef);
-    PE_Shape_setAsBox(&colliderDef.shape, -10.0, -2.5f, 0.5f, 2.5f);
+    PE_Shape_setAsBox(&colliderDef.shape, -5.0, -2.5f, 0.5f, 2.5f);
     colliderDef.isTrigger = TRUE;
     colliderDef.filter.categoryBits = FILTER_ENEMY | FILTER_VISIBLE | FILTER_DAMAGER;
     colliderDef.filter.maskBits = FILTER_PLAYER | FILTER_DAMAGEABLE;
     PE_Collider* leftTrigger = PE_Body_createCollider(body, &colliderDef);
 
     PE_ColliderDef_setDefault(&colliderDef);
-    PE_Shape_setAsBox(&colliderDef.shape, 0.5f, -2.5f, 10.0f, 2.5f);
+    PE_Shape_setAsBox(&colliderDef.shape, 0.5f, -2.5f, 5.0f, 2.5f);
     colliderDef.isTrigger = TRUE;
     colliderDef.filter.categoryBits = FILTER_ENEMY | FILTER_VISIBLE | FILTER_DAMAGER;
     colliderDef.filter.maskBits = FILTER_PLAYER | FILTER_DAMAGEABLE;
@@ -82,12 +104,18 @@ int Nut_onStart(Enemy *enemy)
     
     PE_Collider_setOnCollisionEnter(collider, Nut_onCollisionEnter);
 
-    printf("Nut_onStart : Initialisation d'une noisette\n");
+    if(enemy->m_gravityDirection == -1)
+    {
+        Nut_switchGravity(enemy);
+    }
 
+    enemy->m_state = NUT_ASLEEP;
+    PE_Body_setPosition(body, &enemy->m_startPos);
+    
     return EXIT_SUCCESS;
 
     ERROR_LABEL:
-        printf("ERROR - Player_onStart()\n");
+        printf("ERROR - Nut_onStart()\n");
     return EXIT_FAILURE;
     
 }
@@ -228,7 +256,14 @@ void Nut_render(Enemy *enemy)
     GameTextures* textures = Scene_getTextures(GameObject_getScene(enemy->m_object));
     if(enemy->m_state == NUT_ASLEEP)
     {
-        RE_Texture_renderF(textures->hazelnut, 0, viewX, viewY);
+        if(Nut_getGravityDirection(enemy) == INVERTED)
+        {
+            RE_Texture_renderFlipF(textures->hazelnut, 0, viewX, viewY, RE_FLIP_VERTICAL);
+        }
+        else
+        {
+            RE_Texture_renderF(textures->hazelnut, 0, viewX, viewY);
+        }
     }
     else
     {

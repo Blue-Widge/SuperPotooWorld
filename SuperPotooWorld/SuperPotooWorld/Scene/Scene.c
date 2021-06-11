@@ -8,7 +8,7 @@ Camera *Scene_createCamera(Scene *scene, PE_AABB *worldView, PE_AABB *worldAABB)
 
 int Scene_isValidChar(char c)
 {
-    char validChar[] = { '\n', '.', '#', '=', 'W', 'C', 'e', 'S', 'X', 'o', '?', 'F', 'H', 'I', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
+    char validChar[] = { '\n', '.', '#', '=', 'W', 'C', 'e', 'S', 'X', 'o', '?', 'F', 'H', 'I', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'E', 'K'};
     int nbValidChar = sizeof(validChar) / sizeof(char);
     int i;
 
@@ -107,7 +107,7 @@ int Scene_parseLevelBuffer(Scene *scene, char *levelBuffer, long size, int lvlWi
     PE_AABB aabb;
 
     int x = lvlWidth, y = 0;
-    int w = lvlWidth;
+
     for (int i = size - 1; i > 0; --i)
     {
         char c = levelBuffer[i];
@@ -124,7 +124,7 @@ int Scene_parseLevelBuffer(Scene *scene, char *levelBuffer, long size, int lvlWi
             Tilemap_setTile(tilemap, x, y, TILE_GROUND);
             break;
         case 'W':
-            Tilemap_setTile(tilemap, x, y, TILE_WOOD);
+            Scene_createBlock(scene, BLOCK_WOOD, &position, &aabb);
             break;
         case '=':
             Tilemap_setTile(tilemap, x, y, TILE_ONE_WAY);
@@ -157,11 +157,18 @@ int Scene_parseLevelBuffer(Scene *scene, char *levelBuffer, long size, int lvlWi
             break;
             // Noisette
         case 'e':
-            Scene_createEnemy(scene, ENEMY_NUT, &position);
+            Scene_createEnemy(scene, ENEMY_NUT, &position, 1);
+            break;
+        case 'E':
+            Scene_createEnemy(scene, ENEMY_NUT, &position, -1);
             break;
         case 'I':
             Scene_createBlock(scene, BLOCK_GRAVITY_INVERTER, &position, &aabb);
             break;
+        case 'K':
+            Scene_createBlock(scene, BLOCK_KILL, &position, &aabb);
+            break;
+                
         }
 
         if (x == 0)
@@ -180,6 +187,12 @@ int Scene_parseLevelBuffer(Scene *scene, char *levelBuffer, long size, int lvlWi
     PE_AABB_set(&aabb, -2.f, -4.f, (float)lvlWidth + 2.f, -2.f);
 
     Tool *tool = Scene_createTool(scene, TOOL_HAZARD, &position, &aabb);
+    if (!tool) goto ERROR_LABEL;
+
+    PE_Vec2_set(&position, 0.f, 0.f);
+    PE_AABB_set(&aabb, -2.f, lvlHeight + 2.0f, (float)lvlWidth + 2.f, lvlHeight + 2.0f);
+
+    Scene_createTool(scene, TOOL_HAZARD, &position, &aabb);
     if (!tool) goto ERROR_LABEL;
 
     // Création d'une limite à gauche du monde
@@ -500,12 +513,12 @@ ERROR_LABEL:
     return NULL;
 }
 
-Enemy *Scene_createEnemy(Scene *scene, int type, PE_Vec2 *position)
+Enemy *Scene_createEnemy(Scene *scene, int type, PE_Vec2 *position, int gravityDirection)
 {
     Enemy *enemy = NULL;
     GameObject *object = NULL;
 
-    enemy = Enemy_new(scene, type, position);
+    enemy = Enemy_new(scene, type, position, gravityDirection);
     if (!enemy) goto ERROR_LABEL;
 
     object = Enemy_getObject(enemy);

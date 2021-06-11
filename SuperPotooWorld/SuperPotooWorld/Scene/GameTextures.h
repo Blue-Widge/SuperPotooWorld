@@ -36,6 +36,8 @@ typedef struct GameTextures_s
     Background* background_02;
     Background* background_03;
     Background* background_04;
+    Background* background_05;
+    Background* background_06;
     
     RE_Texture *heart;
 

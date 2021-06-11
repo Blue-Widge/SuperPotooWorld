@@ -14,7 +14,7 @@ int Enemy_update(GameObject *object);
 int Enemy_fixedUpdate(GameObject *object);
 int Enemy_render(GameObject *object);
 
-Enemy *Enemy_new(Scene *scene, int type, PE_Vec2 *position)
+Enemy *Enemy_new(Scene *scene, int type, PE_Vec2 *position, int gravityDirection)
 {
     GameObject *object = NULL;
     Enemy *enemy = NULL;
@@ -29,6 +29,7 @@ Enemy *Enemy_new(Scene *scene, int type, PE_Vec2 *position)
     enemy->m_object = object;
     enemy->m_type = type;
     enemy->m_startPos = *position;
+    enemy->m_gravityDirection = gravityDirection;
 
     // Initialisation de la classe mère
     object->m_data = (void *)enemy;

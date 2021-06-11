@@ -134,45 +134,117 @@ Background* load_background_04(RE_Renderer *renderer)
 {
 
     Background* background = calloc(1, sizeof(Background*));
-    background->layer_count = 8;
+    background->layer_count = 5;
     background->layers = calloc(background->layer_count, sizeof(RE_Texture**));
 
     background->layers[0] = RE_Texture_new(
-        "../Assets/Images/Backgrounds/Background 3/layers/sky.png", renderer);
+        "../Assets/Images/Backgrounds/Background 4/layers/sky.png", renderer);
     if (!background->layers[0]) goto ERROR_LABEL;
 
     background->layers[1] = RE_Texture_new(
-        "../Assets/Images/Backgrounds/Background 3/layers/rocks.png", renderer);
+        "../Assets/Images/Backgrounds/Background 4/layers/clouds_1.png", renderer);
     if (!background->layers[1]) goto ERROR_LABEL;
 
     background->layers[2] = RE_Texture_new(
-        "../Assets/Images/Backgrounds/Background 3/layers/clouds_1.png", renderer);
+        "../Assets/Images/Backgrounds/Background 4/layers/clouds_2.png", renderer);
     if (!background->layers[2]) goto ERROR_LABEL;
 
     background->layers[3] = RE_Texture_new(
-        "../Assets/Images/Backgrounds/Background 3/layers/clouds_2.png", renderer);
+        "../Assets/Images/Backgrounds/Background 4/layers/rocks.png", renderer);
     if (!background->layers[3]) goto ERROR_LABEL;
 
     background->layers[4] = RE_Texture_new(
-        "../Assets/Images/Backgrounds/Background 3/layers/ground_1.png", renderer);
+        "../Assets/Images/Backgrounds/Background 4/layers/ground.png", renderer);
     if (!background->layers[4]) goto ERROR_LABEL;
-
-    background->layers[5] = RE_Texture_new(
-        "../Assets/Images/Backgrounds/Background 3/layers/ground_2.png", renderer);
-    if (!background->layers[5]) goto ERROR_LABEL;
-
-    background->layers[6] = RE_Texture_new(
-        "../Assets/Images/Backgrounds/Background 3/layers/ground_3.png", renderer);
-    if (!background->layers[6]) goto ERROR_LABEL;
-
-    background->layers[7] = RE_Texture_new(
-        "../Assets/Images/Backgrounds/Background 3/layers/plant.png", renderer);
-    if (!background->layers[7]) goto ERROR_LABEL;
 
     return background;
 
 ERROR_LABEL:
     return NULL;
+    
+}
+
+Background* load_background_05(RE_Renderer *renderer)
+{
+
+    Background* background = calloc(1, sizeof(Background*));
+    background->layer_count = 7;
+    background->layers = calloc(background->layer_count, sizeof(RE_Texture**));
+
+    background->layers[0] = RE_Texture_new(
+        "../Assets/Images/Backgrounds/Background 5/layers/layer07_Sky.png", renderer);
+    if (!background->layers[0]) goto ERROR_LABEL;
+
+    background->layers[1] = RE_Texture_new(
+        "../Assets/Images/Backgrounds/Background 5/layers/layer06_Rocks.png", renderer);
+    if (!background->layers[1]) goto ERROR_LABEL;
+
+    background->layers[2] = RE_Texture_new(
+        "../Assets/Images/Backgrounds/Background 5/layers/layer05_Clouds.png", renderer);
+    if (!background->layers[2]) goto ERROR_LABEL;
+
+    background->layers[3] = RE_Texture_new(
+        "../Assets/Images/Backgrounds/Background 5/layers/layer04_Hills_2.png", renderer);
+    if (!background->layers[3]) goto ERROR_LABEL;
+
+    background->layers[4] = RE_Texture_new(
+        "../Assets/Images/Backgrounds/Background 5/layers/layer03_Hills_1.png", renderer);
+    if (!background->layers[4]) goto ERROR_LABEL;
+
+    background->layers[5] = RE_Texture_new(
+        "../Assets/Images/Backgrounds/Background 5/layers/layer02_Trees.png", renderer);
+    if (!background->layers[5]) goto ERROR_LABEL;
+
+    background->layers[6] = RE_Texture_new(
+        "../Assets/Images/Backgrounds/Background 5/layers/layer01_Ground.png", renderer);
+    if (!background->layers[6]) goto ERROR_LABEL;
+
+    return background;
+
+    ERROR_LABEL:
+        return NULL;
+    
+}
+
+Background* load_background_06(RE_Renderer *renderer)
+{
+
+    Background* background = calloc(1, sizeof(Background*));
+    background->layer_count = 7;
+    background->layers = calloc(background->layer_count, sizeof(RE_Texture**));
+
+    background->layers[0] = RE_Texture_new(
+        "../Assets/Images/Backgrounds/Background 6/layers/7.png", renderer);
+    if (!background->layers[0]) goto ERROR_LABEL;
+
+    background->layers[1] = RE_Texture_new(
+        "../Assets/Images/Backgrounds/Background 6/layers/6.png", renderer);
+    if (!background->layers[1]) goto ERROR_LABEL;
+
+    background->layers[2] = RE_Texture_new(
+        "../Assets/Images/Backgrounds/Background 6/layers/5.png", renderer);
+    if (!background->layers[2]) goto ERROR_LABEL;
+
+    background->layers[3] = RE_Texture_new(
+        "../Assets/Images/Backgrounds/Background 6/layers/4.png", renderer);
+    if (!background->layers[3]) goto ERROR_LABEL;
+
+    background->layers[4] = RE_Texture_new(
+        "../Assets/Images/Backgrounds/Background 6/layers/3.png", renderer);
+    if (!background->layers[4]) goto ERROR_LABEL;
+
+    background->layers[5] = RE_Texture_new(
+        "../Assets/Images/Backgrounds/Background 6/layers/2.png", renderer);
+    if (!background->layers[5]) goto ERROR_LABEL;
+
+    background->layers[6] = RE_Texture_new(
+        "../Assets/Images/Backgrounds/Background 6/layers/1.png", renderer);
+    if (!background->layers[6]) goto ERROR_LABEL;
+
+    return background;
+
+    ERROR_LABEL:
+        return NULL;
     
 }
 
@@ -346,7 +418,13 @@ GameTextures *GameTextures_new(RE_Renderer *renderer)
     if (!textures->background_03) goto ERROR_LABEL;
 
     textures->background_04 = load_background_04(renderer);
-    if (!textures->background_03) goto ERROR_LABEL;
+    if (!textures->background_04) goto ERROR_LABEL;
+
+    textures->background_05 = load_background_05(renderer);
+    if (!textures->background_05) goto ERROR_LABEL;
+
+    textures->background_06 = load_background_06(renderer);
+    if (!textures->background_06) goto ERROR_LABEL;
 
     textures->PowerUP_Scream = RE_Texture_newSet(
         "../Assets/Images/Collectables/PowerUP_Scream.png", renderer, 1, 5);
@@ -376,6 +454,10 @@ Background* Background_get(GameTextures* textures, int index)
             return textures->background_03;
         case 4:
             return textures->background_04;
+        case 5:
+            return textures->background_05;
+        case 6:
+            return textures->background_06;
         default:
             return textures->background_default;
     }
@@ -410,6 +492,8 @@ void GameTextures_free(GameTextures *textures)
     Background_free(textures->background_02);
     Background_free(textures->background_03);
     Background_free(textures->background_04);
+    Background_free(textures->background_05);
+    Background_free(textures->background_06);
     
     RE_Texture_free(textures->playerRunningFire);
     RE_Texture_free(textures->playerFallingFire);
