@@ -628,6 +628,9 @@ void Player_powerUp(Player *player, int type)
     case POWERUP_FIRE:
         player->m_stats.PowerUP = PLAYER_FIRE;
         break;
+    case POWERUP_SCREAM:
+        player->m_stats.PowerUP = PLAYER_SCREAM;
+        break;
     default:
         player->m_stats.PowerUP = PLAYER_NORMAL;
         break;
@@ -968,6 +971,9 @@ void Player_shoot(Player *player, int type)
     {
     case PLAYER_FIRE:
         Scene_createSkill(scene, FIREBALL, &position);
+        break;
+    case PLAYER_SCREAM:
+        Scene_createSkill(scene, SCREAM, &position);
         break;
     default:
         break;

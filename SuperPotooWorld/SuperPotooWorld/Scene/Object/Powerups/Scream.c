@@ -24,19 +24,13 @@ void Scream_onTriggerEnter(PE_Trigger* trigger)
     enemy = GameObject_getEnemy(otherObject);
     if (enemy)
     {
-        Enemy_damage(enemy);
-    }
-
-    if(enemy || otherObject->m_type == GAME_BLOCK)
-    {
+        enemy->direction = thisBody->m_velocity.x > 0 ? 1 : -1;
         if(!GameObject_hasOneFlag(thisObject, OBJECT_TO_REMOVE))
         {
             Scene* scene = GameObject_getScene(thisObject);
             Scene_removeObject(scene, thisObject);
         }
     }    
-    
-    
 }
 
 int Scream_onStart(Skill* skill)

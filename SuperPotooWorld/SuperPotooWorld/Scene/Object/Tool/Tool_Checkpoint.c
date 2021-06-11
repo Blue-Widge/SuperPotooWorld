@@ -76,7 +76,6 @@ int Checkpoint_onStart(Tool *tool)
         printf("ERROR - Finish_onStart()\n");
     return EXIT_FAILURE;
 
-    return EXIT_SUCCESS;
 }
 
 void Checkpoint_render(Tool *tool)
