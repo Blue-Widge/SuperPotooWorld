@@ -35,7 +35,10 @@ void FireBall_onTriggerEnter(PE_Trigger* trigger)
 
         if(block->m_type == BLOCK_WOOD)
         {
-            Scene_removeObject(scene, otherObject);
+            if(!GameObject_hasOneFlag(otherObject, OBJECT_TO_REMOVE))
+            {
+                Scene_removeObject(scene, otherObject);
+            }
         }
         hit = TRUE;
     }

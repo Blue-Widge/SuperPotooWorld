@@ -46,6 +46,9 @@ typedef struct GameTextures_s
     RE_Texture* playerRunningFire;
     RE_Texture* playerFallingFire;
 
+    RE_Texture* playerRunningScream;
+    RE_Texture* playerFallingScream;
+
     RE_Texture* finish;
     
     RE_Texture* checkpoint_enabled;
@@ -56,6 +59,7 @@ typedef struct GameTextures_s
 
     RE_Texture* IdlePlayer;
     RE_Texture* IdleFirePlayer;
+    RE_Texture* IdleScreamPlayer;
     
     RE_Texture* gravityInverter;
 

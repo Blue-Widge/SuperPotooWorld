@@ -321,7 +321,14 @@ int Player_createAnimator(Player *player)
 
     texAnim = RE_Animator_createTextureAnim(animator, textures->playerFallingFire, "FallingFire");
     if (!texAnim) goto ERROR_LABEL;
+    RE_TextureAnim_setCycleTime(texAnim, 0.2f);
 
+    texAnim = RE_Animator_createTextureAnim(animator, textures->playerRunningScream, "RunningScream");
+    if (!texAnim) goto ERROR_LABEL;
+    RE_TextureAnim_setCycleTime(texAnim, 0.3f);
+
+    texAnim = RE_Animator_createTextureAnim(animator, textures->playerFallingScream, "FallingScream");
+    if (!texAnim) goto ERROR_LABEL;
     RE_TextureAnim_setCycleTime(texAnim, 0.2f);
 
     texAnim = RE_Animator_createTextureAnim(animator, textures->IdlePlayer, "Idle");
@@ -334,6 +341,10 @@ int Player_createAnimator(Player *player)
 
     RE_TextureAnim_setCycleTime(texAnim, 0.2f);
 
+    texAnim = RE_Animator_createTextureAnim(animator, textures->IdleScreamPlayer, "IdleScream");
+    if (!texAnim) goto ERROR_LABEL;
+    RE_TextureAnim_setCycleTime(texAnim, 0.2f);
+    
     RE_Animator_playTextureAnim(player->m_animator, "Idle");
 
     return EXIT_SUCCESS;
@@ -623,6 +634,7 @@ void Player_addHeart(Player *player)
 
 void Player_powerUp(Player *player, int type)
 {
+    player->m_state = PLAYER_IDLE;
     switch (type)
     {
     case POWERUP_FIRE:
@@ -758,6 +770,9 @@ int Player_fixedUpdate(GameObject *object)
             case PLAYER_FIRE:
                 RE_Animator_playTextureAnim(player->m_animator, "IdleFire");
                 break;
+            case PLAYER_SCREAM:
+                 RE_Animator_playTextureAnim(player->m_animator, "IdleScream");
+                break;
             default:
                 RE_Animator_playTextureAnim(player->m_animator, "Idle");
                 break;
@@ -769,6 +784,9 @@ int Player_fixedUpdate(GameObject *object)
             {
             case PLAYER_FIRE:
                 RE_Animator_playTextureAnim(player->m_animator, "RunningFire");
+                break;
+            case PLAYER_SCREAM:
+                RE_Animator_playTextureAnim(player->m_animator, "RunningScream");
                 break;
             default:
                 RE_Animator_playTextureAnim(player->m_animator, "Running");
@@ -788,6 +806,9 @@ int Player_fixedUpdate(GameObject *object)
         case PLAYER_FIRE:
             exitStatus = RE_Animator_playTextureAnim(player->m_animator, "FallingFire");
             break;
+        case PLAYER_SCREAM:
+            exitStatus = RE_Animator_playTextureAnim(player->m_animator, "FallingScream");
+            break;
         default:
             exitStatus = RE_Animator_playTextureAnim(player->m_animator, "Falling");
             break;
@@ -804,6 +825,9 @@ int Player_fixedUpdate(GameObject *object)
             case PLAYER_FIRE:
                 RE_Animator_playTextureAnim(player->m_animator, "IdleFire");
                 break;
+            case PLAYER_SCREAM:
+                RE_Animator_playTextureAnim(player->m_animator, "IdleScream");
+                break;
             default:
                 RE_Animator_playTextureAnim(player->m_animator, "Idle");
                 break;
@@ -818,6 +842,9 @@ int Player_fixedUpdate(GameObject *object)
                 case PLAYER_FIRE:
                     RE_Animator_playTextureAnim(player->m_animator, "RunningFire");
                     break;
+                case PLAYER_SCREAM:
+                    RE_Animator_playTextureAnim(player->m_animator, "RunningScream");
+                    break;
                 default:
                     RE_Animator_playTextureAnim(player->m_animator, "Running");
                     break;
@@ -827,7 +854,6 @@ int Player_fixedUpdate(GameObject *object)
             player->m_state = PLAYER_RUNNING;
         }
     }
-
     // Déplacement du joueur
     PE_Body_getVelocity(body, &velocity);
     velocity.x = player->m_hDirection * 8.f;
@@ -839,7 +865,20 @@ int Player_fixedUpdate(GameObject *object)
 
     if (!player->m_onGround && player->m_state == PLAYER_SKIDDING)
     {
-        velocity.y = Player_getGravityDirection(player) * -2.f;
+        if (Player_getGravityDirection(player) < 0)
+        {
+            if (velocity.y > 0)
+            {
+                velocity.y = Player_getGravityDirection(player) * -2.f;
+            }  
+        }
+        else
+        {
+            if (velocity.y < 0)
+            {
+                velocity.y = Player_getGravityDirection(player) * -2.f;
+            }  
+        }
     }
     PE_Body_setVelocity(body, &velocity);
 
@@ -966,7 +1005,6 @@ void Player_shoot(Player *player, int type)
     PE_Vec2 position = GameObject_getPosition(object);
     position.y += 0.25;
     position.x += player->facingDirection * 1;
-
     switch (type)
     {
     case PLAYER_FIRE:

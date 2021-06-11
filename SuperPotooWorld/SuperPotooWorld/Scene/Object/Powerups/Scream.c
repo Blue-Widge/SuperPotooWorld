@@ -14,7 +14,8 @@ void Scream_onTriggerEnter(PE_Trigger* trigger)
     GameObject* otherObject = (GameObject*)PE_Body_getUserData(otherBody);
     Enemy* enemy = NULL;
     Block* block = NULL;
-
+    Scene* scene = GameObject_getScene(thisObject);
+    
     if (!thisObject || !otherObject)
     {
         printf("ERROR - Scream_onTriggerEnter()\n");
@@ -25,12 +26,19 @@ void Scream_onTriggerEnter(PE_Trigger* trigger)
     if (enemy)
     {
         enemy->direction = thisBody->m_velocity.x > 0 ? 1 : -1;
+    }
+    if (enemy || otherObject->m_type == GAME_BLOCK)
+    {
         if(!GameObject_hasOneFlag(thisObject, OBJECT_TO_REMOVE))
         {
-            Scene* scene = GameObject_getScene(thisObject);
             Scene_removeObject(scene, thisObject);
         }
-    }    
+
+        if(otherObject->m_type == GAME_BLOCK && GameObject_getBlock(otherObject)->m_type == BLOCK_WOOD)
+        {
+            Scene_removeObject(GameObject_getScene(otherObject), otherObject);
+        }
+    }
 }
 
 int Scream_onStart(Skill* skill)

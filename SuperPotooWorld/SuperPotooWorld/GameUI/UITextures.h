@@ -10,6 +10,7 @@ typedef struct UITextures_s
     RE_Texture* digits;
     RE_Texture* Fireflies;
     RE_Texture* LivesFire;
+    RE_Texture* LivesScream;
 
 } UITextures;
 

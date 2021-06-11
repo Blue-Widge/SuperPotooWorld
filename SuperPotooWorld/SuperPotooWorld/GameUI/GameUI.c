@@ -26,25 +26,15 @@ void GameUI_render(Scene *scene, PlayerStats *stats)
     case PLAYER_FIRE:
         RE_Texture_render(textures->LivesFire, 0, 5, 2);
         break;
+        case PLAYER_SCREAM:
+            RE_Texture_render(textures->LivesScream, 0, 5, 2);
+        break;
     default:
         RE_Texture_render(textures->Lives, 0, 5, 2);
         break;
     }
     RE_Texture_render(textures->Fireflies, 1, 5, h + 20);
-    if (nbLives > 9)
-    {
-        RE_Texture_render(textures->digits, nbLives / 10, w + 5, 2 + h / 2);
-        w += digitWidth;
-        RE_Texture_render(textures->digits, nbLives % 10, w + 5, 2 + h / 2);
-        w += digitWidth;
-    }
-    else
-    {
-        RE_Texture_render(textures->digits, 0, w + 5, 2 + h / 2);
-        w += digitWidth;
-        RE_Texture_render(textures->digits, nbLives, w + 5, 2 + h / 2);
-        w += digitWidth;
-    }
+    
     w += heartWidth;
     for (; nbHearts >= 0; --nbHearts)
     {
