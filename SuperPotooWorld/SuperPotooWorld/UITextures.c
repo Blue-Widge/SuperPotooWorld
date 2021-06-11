@@ -14,11 +14,11 @@ UITextures* UITextures_new(RE_Renderer* renderer)
 
     // Chargement des textures de l'UI
     textures->Lives = RE_Texture_new(
-        "../Assets/Images/Player/Idle.png", renderer);  
+        "../Assets/Images/GameUI/Life.png", renderer);  
     if (!textures->Lives) goto ERROR_LABEL;
 
     textures->Hearts = RE_Texture_new(
-        "../Assets/Images/Collectables/Heart.png", renderer);
+        "../Assets/Images/GameUI/Heart.png", renderer);
     if (!textures->Hearts) goto ERROR_LABEL;
 
     textures->Fireflies = RE_Texture_newSet(
@@ -30,8 +30,8 @@ UITextures* UITextures_new(RE_Renderer* renderer)
     if (!textures->digits) goto ERROR_LABEL;
 
     textures->LivesFire = RE_Texture_new(
-        "../Assets/Images/Player/IdleFire.png", renderer);
-    if (!textures->Lives) goto ERROR_LABEL;
+        "../Assets/Images/GameUI/LifeFire.png", renderer);
+    if (!textures->LivesFire) goto ERROR_LABEL;
 
     return textures;
 

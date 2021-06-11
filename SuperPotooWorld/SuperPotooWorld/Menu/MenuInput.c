@@ -33,6 +33,7 @@ void MenuInput_update(MenuInput *input)
 
     input->quitPressed = FALSE;
     input->rightClick = FALSE;
+    input->buttonPressed = FALSE;
 
     while (SDL_PollEvent(&evt))
     {
@@ -51,12 +52,13 @@ void MenuInput_update(MenuInput *input)
             if (evt.button.button == SDL_BUTTON_LEFT)
             {
                 input->rightClick = TRUE;
+                input->buttonPressed = TRUE;
             }
             break;
 
         case SDL_KEYDOWN:
             scanCode = evt.key.keysym.scancode;
-
+            input->buttonPressed = TRUE;
             if (evt.key.repeat)
                 break;
 

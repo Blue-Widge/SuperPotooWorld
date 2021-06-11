@@ -12,7 +12,11 @@ typedef struct MenuTextures_s
     RE_Texture *digits;
 
     RE_Texture *firefly;
-    RE_Texture *background;
+    RE_Texture* background;
+    RE_Texture* controls;
+
+    RE_Texture* loading;
+    RE_Texture* press;
 } MenuTextures;
 
 MenuTextures *MenuTextures_new(RE_Renderer *renderer);

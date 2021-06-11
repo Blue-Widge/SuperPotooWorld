@@ -35,6 +35,18 @@ MenuTextures *MenuTextures_new(RE_Renderer *renderer)
         "../Assets/Images/Backgrounds/Default/Full.png", renderer);
     if (!textures->background) goto ERROR_LABEL;
 
+    textures->controls = RE_Texture_new(
+        "../Assets/Images/Menu/Controls.png", renderer);
+    if (!textures->controls) goto ERROR_LABEL;
+
+    textures->loading = RE_Texture_newSet(
+        "../Assets/Images/Menu/Loading.png", renderer, 1, 14);
+    if (!textures->loading) goto ERROR_LABEL;
+
+    textures->press = RE_Texture_new(
+        "../Assets/Images/Menu/press.png", renderer);
+    if (!textures->press) goto ERROR_LABEL;
+
     return textures;
 
 ERROR_LABEL:
@@ -53,6 +65,8 @@ void MenuTextures_free(MenuTextures *gameTex)
     RE_Texture_free(gameTex->digits);
     RE_Texture_free(gameTex->firefly);
     RE_Texture_free(gameTex->background);
-
+    RE_Texture_free(gameTex->controls);
+    RE_Texture_free(gameTex->loading);
+    RE_Texture_free(gameTex->press);
     free(gameTex);
 }
