@@ -11,10 +11,11 @@ void PowerUP_Fire_onCollisionEnter(PE_Collision* collision);
 
 int PowerUP_Fire_fixedUpdate(GameObject *object)
 {
-    PE_Vec2 velocity;
+    PE_Vec2 velocity; 
     PE_Body_getVelocity(GameObject_getBody(object), &velocity);
     velocity.x = 3.0f;
     PE_Body_setVelocity(GameObject_getBody(object), &velocity);
+
     return EXIT_SUCCESS;
 }
 
@@ -104,7 +105,6 @@ int PowerUP_Fire_onStart(Collectable* collectable)
 
     RE_Animator* animator = Scene_getAnimators(scene)->RollingPowerUP_Fire;
     RE_Animator_playTextureAnim(animator, "RollingPowerUP_Fire");
-    RE_Animator_playParamAnim(animator, "Rolling");
 
     PE_Vec2 velocity = GameObject_getVelocity(Collectable_getObject(collectable));
     velocity.y = 10.0f;

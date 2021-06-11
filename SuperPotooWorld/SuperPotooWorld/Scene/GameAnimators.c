@@ -37,9 +37,9 @@ GameAnimators *GameAnimators_new(Scene *scene)
     if (!texAnim) goto ERROR_LABEL;
     RE_TextureAnim_setCycleTime(texAnim, 0.2f);
 
-    texAnim = RE_Animator_createTextureAnim(animators->RollingPowerUP_Fire, textures->PowerUP_Fire, "RollingPowerUP_Fire");
+    texAnim = RE_Animator_createTextureAnim(animators->RollingPowerUP_Fire, textures->RollingPowerUP_Fire, "RollingPowerUP_Fire");
     if (!texAnim) goto ERROR_LABEL;
-    RE_TextureAnim_setCycleTime(texAnim, 0.2f);
+    RE_TextureAnim_setCycleTime(texAnim, 0.6f);
 
     return animators;
 

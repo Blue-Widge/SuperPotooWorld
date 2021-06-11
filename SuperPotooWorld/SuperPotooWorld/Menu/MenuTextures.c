@@ -36,11 +36,11 @@ MenuTextures *MenuTextures_new(RE_Renderer *renderer)
     if (!textures->background) goto ERROR_LABEL;
 
     textures->controls = RE_Texture_new(
-        "../Assets/Images/Menu/Controls.png", renderer);
+        "../Assets/Images/Menu/ControlsGrand.png", renderer);
     if (!textures->controls) goto ERROR_LABEL;
 
     textures->loading = RE_Texture_newSet(
-        "../Assets/Images/Menu/Loading.png", renderer, 1, 14);
+        "../Assets/Images/Menu/Loading.png", renderer, 1, 13);
     if (!textures->loading) goto ERROR_LABEL;
 
     textures->press = RE_Texture_new(
