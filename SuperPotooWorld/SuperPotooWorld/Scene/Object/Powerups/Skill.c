@@ -57,7 +57,10 @@ int Skill_fixedUpdate(GameObject* object)
         case SCREAM:
             Scream_fixedUpdate(object);
             break;
+        default:
+            break;
     }
+    return EXIT_SUCCESS;
 }
 
 int Skill_free(GameObject* object)
@@ -89,7 +92,6 @@ int Skill_onStart(GameObject* object)
     skill = GameObject_getSkill(object);
     if (!skill) goto ERROR_LABEL;
 
-    
     RE_Animator* animator = RE_Animator_new();
     if (!animator) goto ERROR_LABEL;
 
