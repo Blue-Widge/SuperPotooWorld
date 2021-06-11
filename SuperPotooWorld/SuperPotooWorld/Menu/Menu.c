@@ -54,7 +54,7 @@ ERROR_LABEL:
 Menu *Menu_new(RE_Renderer *renderer, RE_Timer *time)
 {
     Menu *menu = NULL;
-    int nbButtons = 2;
+    int nbButtons = 4;
     int width;
     int exitStatus = EXIT_SUCCESS;
 
@@ -133,12 +133,18 @@ int Menu_update(Menu *menu)
         case 0:
             menu->m_lvlPath = "../Assets/Levels/Level_01.txt";
             return 1;
-            break;
 
         case 1:
             menu->m_lvlPath = "../Assets/Levels/Level_02.txt";
             return 1;
-            break;
+
+        case 2:
+            menu->m_lvlPath = "../Assets/Levels/Level_03.txt";
+            return 1;
+
+        case 3:
+            menu->m_lvlPath = "../Assets/Levels/Level_04.txt";
+            return 1;
 
         default:
             break;

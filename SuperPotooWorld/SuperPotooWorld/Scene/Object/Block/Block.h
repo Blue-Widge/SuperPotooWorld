@@ -12,7 +12,9 @@ typedef enum BlockType_e
     BLOCK_ONE_WAY,
     BLOCK_BRICK,
     BLOCK_BONUS,
-    BLOCK_GRAVITY_INVERTER
+    BLOCK_GRAVITY_INVERTER,
+    BLOCK_KILL,
+    BLOCK_WOOD
 } BlockType;
 
 typedef struct Block_s

@@ -20,4 +20,9 @@ void Nut_render(Enemy *enemy);
 
 void Nut_damage(Enemy *enemy);
 
+
+INLINE int Nut_getGravityDirection(Enemy* enemy)
+{
+    return PE_Body_getGravityScale(GameObject_getBody(Enemy_getObject(enemy))) >= 0 ? 1 : -1;
+} 
 #endif

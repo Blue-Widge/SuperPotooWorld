@@ -121,53 +121,7 @@ void Player_onTakeDamage(PE_Collision *collision)
     PE_Body *otherBody = PE_Collision_getOtherBody(collision);
     GameObject *thisObject = PE_Body_getUserData(thisBody);
     GameObject *otherObject = PE_Body_getUserData(otherBody);
-
-    if (!thisObject || !otherObject)
-    {
-        printf("ERROR - Player_onCollisionStay()\n");
-        return;
-    }
-
-    if (GameObject_getType(otherObject) == GAME_ENEMY)
-    {
-        int relPos = PE_Collision_getRelativePosition(collision);
-        PE_Vec2 velocity;
-
-        switch (relPos)
-        {
-        case PE_ABOVE:
-            //Kill the enemy
-            Player_bounce(GameObject_getPlayer(thisObject));
-            Enemy_damage(GameObject_getEnemy(otherObject));
-            break;
-        case PE_LEFT:
-            velocity.y = 0.0f;
-
-            Player_damage(GameObject_getPlayer(thisObject));
-            PE_Body_setCollisionResponse(thisBody, &velocity);
-        case PE_RIGHT:
-            velocity.y = 0.0f;
-
-            Player_damage(GameObject_getPlayer(thisObject));
-            PE_Body_setCollisionResponse(thisBody, &velocity);
-            break;
-        case PE_BELOW:
-            velocity.y = 0.0f;
-            Player_damage(GameObject_getPlayer(thisObject));
-            PE_Body_setCollisionResponse(thisBody, &velocity);
-            break;
-        default:
-            break;
-        }
-    }
-}
-
-void Player_onCollisionStay(PE_Collision *collision)
-{
-    PE_Body *thisBody = PE_Collision_getBody(collision);
-    PE_Body *otherBody = PE_Collision_getOtherBody(collision);
-    GameObject *thisObject = PE_Body_getUserData(thisBody);
-    GameObject *otherObject = PE_Body_getUserData(otherBody);
+    Player* player = GameObject_getPlayer(thisObject);
 
     if (!thisObject || !otherObject)
     {
@@ -185,7 +139,15 @@ void Player_onCollisionStay(PE_Collision *collision)
         case PE_ABOVE:
             // Take damages
             velocity.y = 2.0f;
-            Player_damage(GameObject_getPlayer(thisObject));
+            if(Player_getGravityDirection(player) == INVERTED)
+            {
+                Player_damage(GameObject_getPlayer(thisObject));
+            }
+            else
+            {
+                Player_bounce(GameObject_getPlayer(thisObject));
+                Enemy_damage(GameObject_getEnemy(otherObject));
+            }
             PE_Body_setCollisionResponse(thisBody, &velocity);
             break;
         case PE_LEFT:
@@ -203,8 +165,83 @@ void Player_onCollisionStay(PE_Collision *collision)
             break;
         case PE_BELOW:
             //Kill the enemy
-            Player_bounce(GameObject_getPlayer(thisObject));
-            Enemy_damage(GameObject_getEnemy(otherObject));
+            if(Player_getGravityDirection(player) == INVERTED)
+            {
+                Player_bounce(GameObject_getPlayer(thisObject));
+                Enemy_damage(GameObject_getEnemy(otherObject));
+            }
+            else
+            {
+                Player_damage(GameObject_getPlayer(thisObject));
+            }
+            PE_Body_setCollisionResponse(thisBody, &velocity);
+            break;
+        default:
+            break;
+        }
+    }
+}
+
+void Player_onCollisionStay(PE_Collision *collision)
+{
+    PE_Body *thisBody = PE_Collision_getBody(collision);
+    PE_Body *otherBody = PE_Collision_getOtherBody(collision);
+    GameObject *thisObject = PE_Body_getUserData(thisBody);
+    GameObject *otherObject = PE_Body_getUserData(otherBody);
+    Player* player = GameObject_getPlayer(thisObject);
+
+    if (!thisObject || !otherObject)
+    {
+        printf("ERROR - Player_onCollisionStay()\n");
+        return;
+    }
+
+    if (GameObject_getType(otherObject) == GAME_ENEMY)
+    {
+        int relPos = PE_Collision_getRelativePosition(collision);
+        PE_Vec2 velocity;
+
+        switch (relPos)
+        {
+        case PE_ABOVE:
+            // Take damages
+            velocity.y = 2.0f;
+            if(Player_getGravityDirection(player) == NORMAL)
+            {
+                Player_damage(GameObject_getPlayer(thisObject));
+            }
+            else
+            {
+                Player_bounce(GameObject_getPlayer(thisObject));
+                Enemy_damage(GameObject_getEnemy(otherObject));
+            }
+            PE_Body_setCollisionResponse(thisBody, &velocity);
+            break;
+        case PE_LEFT:
+            // Take damages and get bounced to the right
+            velocity.y = 10.0f;
+            velocity.x = -8.0f;
+            Player_damage(GameObject_getPlayer(thisObject));
+            PE_Body_setCollisionResponse(thisBody, &velocity);
+        case PE_RIGHT:
+            //Take damages and get bounced to the left
+            velocity.y = 10.f;
+            velocity.x = -2.0f;
+            Player_damage(GameObject_getPlayer(thisObject));
+            PE_Body_setCollisionResponse(thisBody, &velocity);
+            break;
+        case PE_BELOW:
+            //Kill the enemy
+            if(Player_getGravityDirection(player) == NORMAL)
+            {
+                Player_bounce(GameObject_getPlayer(thisObject));
+                Enemy_damage(GameObject_getEnemy(otherObject));
+            }
+            else
+            {
+                Player_damage(GameObject_getPlayer(thisObject));
+            }
+            PE_Body_setCollisionResponse(thisBody, &velocity);
             break;
         default:
             break;
@@ -216,6 +253,13 @@ void Player_onCollisionStay(PE_Collision *collision)
         PE_Vec2 velocity;
         PE_Body_getVelocity(thisBody, &velocity);
         Block *block = GameObject_getBlock(otherObject);
+
+        if(block->m_type == BLOCK_KILL)
+        {
+            Player_kill(player);
+            return;
+        }
+        
         switch (relPos)
         {
         case PE_ABOVE:
@@ -639,9 +683,7 @@ int Player_update(GameObject *object)
     {
         player->m_state = PLAYER_FALLING;
     }
-
-    printf("Falling: %d | onGround: %d\n", player->m_state == PLAYER_FALLING, player->m_onGround);
-
+    
     return EXIT_SUCCESS;
 
 ERROR_LABEL:
@@ -697,7 +739,7 @@ int Player_fixedUpdate(GameObject *object)
     velocity.x = player->m_hDirection * 8.f;
     if (player->m_should_bounce)
     {
-        velocity.y = 17.f;
+        velocity.y = Player_getGravityDirection(player) * 17.f;
         player->m_should_bounce = FALSE;
     }
     PE_Body_setVelocity(body, &velocity);
